@@ -149,7 +149,7 @@ console.log(counter, ex14);
 
 console.log('Example-15');
 
-points = 10;
+let points = 10;
 points += 5;
 console.log(points);
 
@@ -161,7 +161,7 @@ console.log('Example-16');
 const name16 = 'Alice';
 const age16 = 30;
 const city16 = 'Paris';
-console.log(`Hello! My name is ${name16}. I am ${age16} years old. I live in ${city16}.`);
+console.log(`${name16} (${age16}) lives in ${city16}.`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
@@ -236,7 +236,7 @@ console.log(counterEx22);
 console.log('Example-23');
 
 let  initialTemperature = 20;
-initialTemperature -= 5;
+initialTemperature += 5;
 console.log(initialTemperature);
 
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
@@ -264,7 +264,7 @@ console.log(numberEx25);
 console.log('Example-26');
 
 let numberEx26 = -3;
-numberEx26 = ++numberEx26;
+++numberEx26;
 let finalResult = numberEx26 * 2;
 console.log(finalResult);
 
@@ -276,7 +276,7 @@ console.log('Example-27');
 let aa = 2;
 let bb = 3;
 
-aa = ++aa;
+++aa;
 let result = aa + bb;
 
 console.log(result);
