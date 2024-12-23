@@ -213,7 +213,7 @@ let finalValue = numberEx11 * 2;
 
 console.log(finalValue); 
 
-// 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
+// 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it
 
 let d = 2;
 let c = 3;
