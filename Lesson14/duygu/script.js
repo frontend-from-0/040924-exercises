@@ -123,6 +123,7 @@ console.log(`${personName} (${personAge}) lives in ${personCity}`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
+
 // Changed variables d, e, and f
 
 const d = 5;
@@ -248,7 +249,7 @@ console.log(finalValue);
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
-
+// changed values to x, y
 let x = 2;
 let y = 3;
 
