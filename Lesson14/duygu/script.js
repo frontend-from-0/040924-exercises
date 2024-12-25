@@ -99,7 +99,7 @@ console.log(number2Ex12);
 
 // 13. Declare a boolean variable isStudent = true. Log it.
 // CODE HERE
-let isStudent = true;
+const isStudent = true;
 console.log(isStudent);
 
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
