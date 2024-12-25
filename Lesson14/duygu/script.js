@@ -66,7 +66,7 @@ console.log(resultWords);
 // I changed variable to k
 const k = 42;
 
-console.log("The type of k is:", typeof k); // Çıktı: The type of x is: number
+console.log("The type of k is:", typeof k);
 
 
 
