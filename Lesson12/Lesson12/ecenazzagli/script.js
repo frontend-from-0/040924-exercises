@@ -1,2 +1,2 @@
-const name = 'Anna';
-const surname = 'Atalay';
+const name = 'EceNaz';
+const surname = 'Zagli';
