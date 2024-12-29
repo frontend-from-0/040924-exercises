@@ -446,7 +446,7 @@ canVote(25);
 function reverseWords(sentence){
   const reverseSentence = [];
   const sentenceParts = sentence.split(' ');
-  for(i=0; i<sentenceParts.length; i++){
+  for(let i=0; i<sentenceParts.length; i++){
     const reverseWord = sentenceParts[i].split('').reverse().join('');
     reverseSentence.push(reverseWord);
   }
