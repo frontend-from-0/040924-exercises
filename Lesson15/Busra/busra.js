@@ -422,7 +422,7 @@ padString("busra",15);
      - "Too young to vote" otherwise
 */
 function canVote(age){
-  if(age>18){
+  if(age>=18){
     console.log("Can vote");
   }
   else{
