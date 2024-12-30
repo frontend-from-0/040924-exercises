@@ -161,7 +161,7 @@ censorWord("I need to study","need");
 */
 
 function startsWithA(str){
-  if(str.charAt(0)==='A'){
+  if(str.charAt(0).toUpperCase() ==='A'){
     console.log("Starts with A");
   }
   else{
