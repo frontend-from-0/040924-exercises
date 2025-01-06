@@ -197,5 +197,5 @@ console.log(result);
 // CODE HERE
 let aEx27 = 2;
 let bEx27 = 3;
-const resoultEx27 = ++aEx27 + bEx27;
-console.log(resoultEx27);
+const resultEx27 = ++aEx27 + bEx27;
+console.log(resultEx27);
