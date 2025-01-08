@@ -193,7 +193,7 @@ console.log("After increment: ", ++numberEx9);
 let numberEx10 = 8;
 
 console.log("Before increment: ", numberEx10);
-console.log("After increment: ", ++numberEx10);
+console.log("After increment: ", numberEx10++);
 
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
