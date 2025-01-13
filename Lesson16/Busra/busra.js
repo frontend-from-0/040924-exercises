@@ -108,7 +108,7 @@ sumWithDoWhile(numbersEx11);
     - Log the new array without duplicates.
 */
 
-let ArrayEx12 = [1,2,3,3,4,4,5,6,7,8,8,9,10];
+let arrayEx12 = [1,2,3,3,4,4,5,6,7,8,8,9,10];
 
 function removeDuplicates(arr){
   let newArray = [];
@@ -121,7 +121,7 @@ function removeDuplicates(arr){
   console.log(newArray);
 }
 
-removeDuplicates(ArrayEx12);
+removeDuplicates(newArray);
 
 
 /*
@@ -132,7 +132,7 @@ removeDuplicates(ArrayEx12);
     - Example: factorial(5) -> 120
 */
 
-function factorial(n){
+function factorial(number){
   let calculator = 1;
   for(let i=1; i<=n; i++ ){
      calculator = calculator * i;
@@ -210,7 +210,7 @@ logElementsWithIndex(myArrayEx16);
       to find and return the smallest number.
     - Log the smallest number.
 */
-const MyNumbersEx17 = [4,9,2,1,7,15,3,11];
+const myNumbersEx17 = [4,9,2,1,7,15,3,11];
 
 
 function findMin(numbers){
@@ -222,7 +222,7 @@ function findMin(numbers){
   }
   return smallestNumber;
 }
-findMin(MyNumbersEx17);
+findMin(myNumbersEx17);
 
 
 
@@ -322,17 +322,26 @@ averageArray(myArrayEx21);
     - Log the flattened array.
 */
 
+
+
+// DÜZELTME
+
 const my2DArray = [[1,4,7],[2,5,8]];
 
 
 function flattenArray(twoDArray){
   let my1DArray =[];
-  for(let i=0; i<twoDArray.length; i++){
-    for(let j=0; i< twoDArray[i].length; j++){
-      my1DArray.push(twoDArray[i][j]);
+      for(let i=0; i<twoDArray.length; i++){
+
+         if(Array.isArray(twoDArray[i])){
+            my1DArray = my1DArray.concat(flattenArray(twoDArray[i]));
+         } else{
+            my1DArray.push(twoDArray[i]);
+      }
+    
 
     }
-  }
+  
 return my1DArray;
 }
 
@@ -378,8 +387,8 @@ findWordsWithLetter(myWordsEx23,"M");
 */
 
 
-let MyArrEx24=["Mercedes","BMW","Wolkswagen","Audi"];
-const MyItem ="Opel";
+let myArrEx24=["Mercedes","BMW","Wolkswagen","Audi"];
+const myItem ="Opel";
 
 function pushPopExample(arr, itemToPush){
   arr.push(itemToPush);
@@ -389,7 +398,7 @@ function pushPopExample(arr, itemToPush){
 
 }
 
-pushPopExample(MyArrEx24,MyItem);
+pushPopExample(myArrEx24,myItem);
 
 /*
 25. Push and Shift Operations
@@ -400,8 +409,8 @@ pushPopExample(MyArrEx24,MyItem);
       - logs the removed person
       - logs the final queue
 */
-let PersonelList = ["ayse","ali","mehmet","zeynep"];
-const Myperson="ahmet";
+let personelList = ["ayse","ali","mehmet","zeynep"];
+const myPerson="ahmet";
 
 
 function manageQueue(queue, newPerson){
@@ -412,7 +421,7 @@ function manageQueue(queue, newPerson){
  
 }
 
-manageQueue(PersonelList,Myperson);
+manageQueue(personelList,myPerson);
 
 /*
 26. To-Do List Application 
@@ -425,7 +434,7 @@ manageQueue(PersonelList,Myperson);
 
 
 
-const MytodoList = ["Study JS", "Eat breakfast", "Walk dog"];
+const myToDoList = ["Study JS", "Eat breakfast", "Walk dog"];
 const myNewTasks = ["go gym","prep dinner"];
 
 function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
@@ -434,8 +443,4 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
   console.log(todoList);
 
 }
-
-updateTodoList(MytodoList,0,2, ...myNewTasks);
-
-
-
+updateTodoList(myToDoList,0,2, ...myNewTasks);
