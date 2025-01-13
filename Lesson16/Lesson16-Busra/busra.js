@@ -363,7 +363,7 @@ return myNewArrayEx23;
 
 }
 
-findWordsWithLetter(MyWordsEx23,"M");
+findWordsWithLetter(myWordsEx23,"M");
 
 
 
