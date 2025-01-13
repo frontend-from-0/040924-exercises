@@ -95,7 +95,6 @@ function sumWithDoWhile(arr){
    
    console.log(sumEx11);
 
-  }
  
 }
 
