@@ -322,7 +322,7 @@ averageArray(myArrayEx21);
     - Log the flattened array.
 */
 
-const My2DArray = [[1,4,7],[2,5,8]];
+const my2DArray = [[1,4,7],[2,5,8]];
 
 
 function flattenArray(twoDArray){
