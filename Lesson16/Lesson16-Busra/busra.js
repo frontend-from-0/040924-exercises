@@ -336,7 +336,7 @@ function flattenArray(twoDArray){
 return my1DArray;
 }
 
-flattenArray(My2DArray);
+flattenArray(my2DArray);
 
 
 
