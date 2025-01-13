@@ -196,7 +196,7 @@ filterLongWords(myWords, 3);
 const myArrayEx16 = ["busra","demirkesen",34,true,false];
 function logElementsWithIndex(arr){
   for(let i=0; i<myArrayEx16.length; i++){
-    console.log(i,myArrayEx16[i]);
+    console.log(`Index: ${i}, Value: ${myArrayEx16[i]}.`);
   }
 
 }
