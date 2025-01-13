@@ -98,7 +98,7 @@ function sumWithDoWhile(arr){
  
 }
 
-sumWithDoWhile(numbers);
+sumWithDoWhile(numbersEx11);
 
 /*
 12. Remove Duplicates from an Array
