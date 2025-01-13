@@ -284,7 +284,7 @@ const strEx20 = "def432ne379";
 function sumDigits(str){
   let countEx20 = 0;
   for(let i=0; i<str.length; i++){
-    if(!isNaN(str[i]) && str[i] !== ' '){
+    if(typeof str[i] === 'number'){
       counter += Number(str[i]);
     }
   }
