@@ -308,7 +308,7 @@ function averageArray(numbers){
     sumEx21 = sumEx21 + Number(numbers[i]);
   }
   let avEx21 = sumEx21 / numbers.length;
-  return AvEx21;
+  return avEx21;
 }
 
 
