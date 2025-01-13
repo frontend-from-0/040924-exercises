@@ -91,7 +91,7 @@ function sumWithDoWhile(arr){
     sumEx11 += arr[i];
     i++;
   }
-  while(i < arr.length){
+  while(i < arr.length);
    
    console.log(sumEx11);
 
