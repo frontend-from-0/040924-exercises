@@ -348,7 +348,7 @@ flattenArray(my2DArray);
     - Log the filtered array.
 */
 
-const MyWordsEx23 = ["Mersin","Manisa","Muğla","Kıriehir","Kırklareli","Kırıkkale"];
+const myWordsEx23 = ["Mersin","Manisa","Muğla","Kıriehir","Kırklareli","Kırıkkale"];
 
 function findWordsWithLetter(words, letter){
   let myNewArrayEx23 = [];
