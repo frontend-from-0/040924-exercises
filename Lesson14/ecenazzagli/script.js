@@ -169,10 +169,10 @@ console.log(counterEx22=counterEx22+1);
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
-const initialTemperature=20;
-const increasedTemperature= initialTemperature + 5;
+let initialTemperature=20;
+initialTemperature += 5 
 
-console.log(increasedTemperature );
+console.log( initialTemperature);
 
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
