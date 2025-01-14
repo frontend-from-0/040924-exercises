@@ -5,7 +5,7 @@
 */
 
 function printCharacters(str) {
-  for (char of str) {
+  for (const char of str) {
     console.log(char);
   }
 }
