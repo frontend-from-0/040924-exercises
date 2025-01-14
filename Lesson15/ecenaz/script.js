@@ -592,7 +592,7 @@ function reverseWords(sentence) {
   const reversed = sentence.split(' ').map(word => word.split('').reverse().join('')).join(' ');
   console.log(reversed);
 }
-reverseWords("I am Ece")
+reverseWords("I am Ece.")
 
 /*
 29. Check Substring Position
