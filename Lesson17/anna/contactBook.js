@@ -168,7 +168,7 @@ Contact Book in action.
 console.log("Initial contact list:");
 displayAllContacts(contacts);
 
-console.log("\nAdding a new contact: Charlie");
+console.log("Adding a new contact: Charlie");
 addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
 displayAllContacts(contacts);
 
