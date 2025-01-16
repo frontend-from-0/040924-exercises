@@ -312,7 +312,7 @@ function sliceLastN(text, n) {
   const slicedWord = text.slice(-n);
   console.log(slicedWord);
 }
-sliceLastN("How are you?", -4);
+sliceLastN("How are you?", 4);
 /*
 17. Switch: Grade Checker
    - Define a function `gradeChecker(score)` that uses a switch (or if-else chain):
