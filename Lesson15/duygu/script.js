@@ -309,7 +309,7 @@ startsWithA("Pantolon");
    - Log the result.
 */
 function sliceLastN(text, n) {
-  const nthword = text.slice(n)
+  const slicedWord = text.slice(-n);
   console.log(nthword);
 }
 sliceLastN("How are you?", -4);
