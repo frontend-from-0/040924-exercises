@@ -469,7 +469,7 @@ console.log(getInitials("İskender Yalım Şen"));
    - Log the season or "Invalid month" if out of range.
 */
 function getSeason(monthNum) {
-  switch (true) {
+  switch (monthNum) {
     case 12:
     case 1:
     case 2:
