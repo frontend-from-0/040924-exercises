@@ -59,7 +59,7 @@ const arrEx3 = [1, 2, 30, 4, 5, 600, 7, 8, 9, 10];
 function countOddEven(numbers) {
   let oddTotal = 0;
   let evenTotal = 0;
-  for (number of numbers) {
+  for (const number of numbers) {
     if (number % 2 === 0) {
       evenTotal = evenTotal + 1;
     } else {
