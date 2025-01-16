@@ -388,7 +388,7 @@ titleCase("javaScript IS fun!");
      - anything else -> "Invalid color"
 */
 function trafficLight(color) {
-  switch (color) {
+  switch (color.toLowerCase()) {
     case "red":
       console.log("Stop");
       break;
