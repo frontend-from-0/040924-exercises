@@ -470,7 +470,11 @@ console.log(getInitials("İskender Yalım Şen"));
 */
 function getSeason(monthNum) {
   switch (true) {
-    case monthNum === 12 || monthNum === 1 || monthNum === 2:
+    case 12:
+    case 1:
+    case 2:
+      console.log("Winter");
+      break;
       console.log("Winter");
       break;
     case monthNum === 3 || monthNum === 4 || monthNum === 5:
