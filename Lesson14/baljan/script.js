@@ -50,6 +50,10 @@ console.log("hello world".toUpperCase());
 
 // 7. Concatenate "Hello" and "World" with a space in between and log the result.
 // CODE HERE
+const word1 = "Hello";
+const word2 = "World";
+
+console.log(word1 + " " + word2);
 
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
@@ -193,11 +197,7 @@ console.log("After increment: ", ++numberEx9);
 let numberEx10 = 8;
 
 console.log("Before increment: ", numberEx10);
-<<<<<<< HEAD
 console.log("After increment: ", ++numberEx10);
-=======
-console.log("After increment: ", numberEx10++);
->>>>>>> 89a98eed6d8b20d7fe5c1c3fa760fa5ff19aa6ec
 
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
