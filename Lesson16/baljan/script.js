@@ -5,7 +5,7 @@
 */
 
 function printCharacters(str) {
-  for (char of str) {
+  for (const char of str) {
     console.log(char);
   }
 }
@@ -23,7 +23,7 @@ printCharacters(name1);
 
 function sumObjectValues(obj) {
   let sum = 0;
-  for (key in obj) {
+  for (const key in obj) {
     const value = obj[key];
     sum += value;
   }
@@ -42,7 +42,7 @@ console.log(sumObjectValues(object));
 */
 
 function printObjectKeys(obj) {
-  for (key in obj) {
+  for (const key in obj) {
     console.log(key);
   }
 }
@@ -82,7 +82,7 @@ sumWithDoWhile(array1);
 
 function removeDuplicates(arr) {
   let uniqueArray = [];
-  for (number of arr) {
+  for (const number of arr) {
     if (!uniqueArray.includes(number)) {
       uniqueArray.push(number);
     }
@@ -144,7 +144,7 @@ reverseWords(sentence);
 
 function filterLongWords(words, minLength) {
   const result = [];
-  for (word of words) {
+  for (const word of words) {
     if (word.length >= minLength) {
       result.push(word);
     }
@@ -235,7 +235,7 @@ countOccurrences(words2, "developer");
 
 function removeFalsyValues(arr) {
   const result = [];
-  for (element of arr) {
+  for (const element of arr) {
     if (element) {
       result.push(element);
     }
@@ -259,7 +259,7 @@ removeFalsyValues(array5);
 function sumDigits(str) {
   let sum = 0;
 
-  for (char of str) {
+  for (const char of str) {
     if (parseInt(char)) {
       sum += parseInt(char);
     }
@@ -280,7 +280,7 @@ sumDigits(parameters);
 
 function averageArray(numbers) {
   let sum = 0;
-  for (number of numbers) {
+  for (const number of numbers) {
     sum += number;
   }
 
@@ -301,7 +301,7 @@ averageArray(array6);
 function flattenArray(twoDArray) {
   const list = [];
 
-  for (array of twoDArray) {
+  for (const array of twoDArray) {
     for (element of array) {
       list.push(element);
     }
@@ -328,7 +328,7 @@ flattenArray(array7);
 function findWordsWithLetter(words, letter) {
   const list = [];
 
-  for (word of words) {
+  for (const word of words) {
     if (word.includes(letter)) {
       list.push(word);
     }
@@ -398,7 +398,7 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
 
   todoList.splice(startIndex, deleteCount);
 
-  for (task of newTasks) {
+  for (const task of newTasks) {
     todoList.push(task);
   }
 
