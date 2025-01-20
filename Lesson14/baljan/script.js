@@ -50,13 +50,17 @@ console.log("hello world".toUpperCase());
 
 // 7. Concatenate "Hello" and "World" with a space in between and log the result.
 // CODE HERE
+const word1 = "Hello";
+const word2 = "World";
+
+console.log(word1 + " " + word2);
 
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
-const name = "sevcan";
-const city = "mersin";
+// const name = "sevcan";
+// const city = "mersin";
 
-console.log(typeof name, typeof city, typeof userAge);
+//console.log(typeof name, typeof city, typeof userAge);
 
 // 9. Convert the number 100 to a string and log the result.
 // CODE HERE
@@ -85,7 +89,7 @@ console.log(number2Ex12);
 
 
 // Prompt can only be used in browser environment
-const userResponse = prompt("What is your age?");
+const userResponse = prompt("What is your age?").trim();;
 const userResposeNumber = parseInt(userResponse);
 
 if (isNaN(userResposeNumber)) {
@@ -96,44 +100,119 @@ if (isNaN(userResposeNumber)) {
 
 // 13. Declare a boolean variable isStudent = true. Log it.
 // CODE HERE
+let isStudent = true;
+console.log(isStudent);
 
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
 // CODE HERE
+let counter = 0;
+counter++;
+console.log(counter);
 
 // 15. Initialize points = 10, add 5 to it using points += 5, then log points.
 // CODE HERE
+let points = 10;
+points += 5;
+console.log(points);
 
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
 // CODE HERE
+let name = "Alice"
+let age = 30;
+let city = "Paris";
+console.log(`${name} (${age}) lives in ${city}`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
+let x = 5;
+let y = 10;
+let z = 15;
+let totalSum = x + y + z;
+
+console.log(totalSum);
 
 // 18. Declare dividend=10 and divisor=3. Log the quotient (divisionResult) and difference (differenceResult).
 // CODE HERE
+let dividend = 10;
+let divisor = 3;
+let divisionResult = dividend / divisor;
+let differenceResult = dividend - divisor;
+
+console.log("Quotient:", divisionResult);
+console.log("Difference:", differenceResult);
 
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
+const firstName = 'Baljan';
+const lastName = 'Kanatbek';
+const fullName = firstName + " " + lastName; ;
+
+console.log(fullName);
 
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
+const firstFactor = 7;
+const secondFactor = 2;
+const product = firstFactor * secondFactor;
+
+console.log(product);
 
 // 21. Log the value of Math.PI.
 // CODE HERE
+console.log(Math.PI);
+
 
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
+let count = 0;
+
+count++;
+console.log(count);
+
+count+=1;
+console.log(count);
+
+count=count+1;
+console.log(count);
+
+
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
+let initialTemperature = 20;
+initialTemperature += 5;
+console.log(initialTemperature);
+
 
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
+let numberEx9 = 6;
+
+console.log("Before increment: ", numberEx9);
+console.log("After increment: ", ++numberEx9);
+
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
+let numberEx10 = 8;
+
+console.log("Before increment: ", numberEx10);
+console.log("After increment: ", ++numberEx10);
+
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
+let numberEx11 =- 3;
+let result = ++numberEx11 *2;
 
-// 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
+console.log(result);
+
+
+
+// 27. Declare c=2 and d=3. Increment a using the prefix ++ operator, then add d to the result and log it.
+// CO
+let c = 2;
+let d = 3;
+let sum = ++c + d;
+
+console.log(sum);
