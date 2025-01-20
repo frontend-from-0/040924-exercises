@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Book</title>
+  <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+
+
+  <div class="container">
+    <h1>Contact Book</h1>
+
+    <!--Kişi Ekleme Formu-->
+<form id="contactForm">
+  <h2>Add New Person</h2>
+         <div class="name">
+         <label for="name">Name:</label>
+         <input type="text" id="name" placeholder="Jhon Wick" required>
+        </div>
+
+       <div class="phone">
+          <label for="phone">Phone:</label>
+          <input type="phone" id="phone" placeholder="054321123" required>
+       </div>
+
+       <div class="email">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" placeholder="example@gmail.com">
+       </div>
+
+ <button type="submit" id="add-contact-button">Add New Person</button>
+ <button type="button" id="seeAllPerson">See all Person</button>
+
+</form>
+
+
+
+
+
+ <table id="resultTable" border="1" class="hidden">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+ 
+  </tbody>
+</table>
+
+
+
+
+
+
+
+  <script src="deneme.js" defer></script>
+</body>
+</html>
