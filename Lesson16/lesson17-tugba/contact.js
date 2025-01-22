@@ -158,12 +158,9 @@ Function: removeContact(name)
 */
 
 function removeContact(name, contactList) {
-  // Find the index of the contact by name
   const index = contactList.findIndex(contact => contact.name === name);
-
-  // Check if the contact exists
   if (index !== -1) {
-    contactList.splice(index, 1); // Remove the contact at the found index
+    contactList.splice(index, 1);
     console.log(`Contact with name "${name}" removed successfully.`);
   } else {
     console.log(`No contact found with the name: "${name}".`);
