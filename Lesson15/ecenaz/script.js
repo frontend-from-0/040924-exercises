@@ -336,29 +336,26 @@ sliceLastN("Hello, World!", 5);
 
 function gradeChecker(score) {
 
-  switch (score) {
-    case '90+':
-      console.log("A");
-      break;
-    case 80 - 89:
-      console.log("B");
-      break;
-    case 70 - 79:
-      console.log("C");
-      break;
-    case 60 - 69:
-      console.log("D");
-      break;
-    case 'below 60':
-      console.log("F");
-      break;
-
-
+  if (score >= 90) {
+    console.log("A");
+  } else if (score === 80-89 ) {
+    console.log("B");
+  } else if (score === 70-79) {
+    console.log("C");
+  } else if (score === 60-69) {
+    console.log("D");
+  } else if (score < 60){ 
+    console.log("F");
+  } else {
+    console.log("not value");
   }
-  console.log(gradeChecker);
+
 }
-gradeChecker(64);
-gradeChecker(80);
+
+gradeChecker(98);
+gradeChecker(55);
+
+
 
 
 /*
@@ -592,7 +589,7 @@ function reverseWords(sentence) {
   const reversed = sentence.split(' ').map(word => word.split('').reverse().join('')).join(' ');
   console.log(reversed);
 }
-reverseWords("I am Ece.")
+reverseWords("I am Ece.");
 
 /*
 29. Check Substring Position
@@ -600,15 +597,15 @@ reverseWords("I am Ece.")
      to find the starting index. If not found, return -1.
    - Log the index or log "Not found" if it's -1.
 */
-function findWordPosition(sentence, word){
+function findWordPosition(sentence, word) {
   const index = sentence.indexOf(word);
-  if (index === -1){
+  if (index === -1) {
     console.log("Not found");
-  }else{
+  } else {
     console.log(index);
   }
 }
-findWordPosition("JavaScript is fun","fun");
+findWordPosition("JavaScript is fun", "fun");
 findWordPosition("Coding requires hard working.", "easy");
 /*
 30. Switch: Simple Calculator
@@ -620,6 +617,28 @@ findWordPosition("Coding requires hard working.", "easy");
      - Otherwise -> "Invalid operator"
    - Log the result.
 */
+function calculate(a, operator, b){
+  let result 
+  switch (operator) {
+    case "+": 
+     console.log("a + b"); 
+     break;
+    case "-":
+      console.log("a - b");
+      break; 
+    case "*":
+      console.log("a * b");
+    case "/":
+      console.log("a / b");
+      break;
+      default: 
+      console.log("Invalid operator");
+      break;
+  }
+
+}
+calculate(5, "+", 4);
+calculate(6,"/",2);
 
 function containWord(sentence, word) {
   return sentence.toLowerCase().includes(word.toLowerCase());
