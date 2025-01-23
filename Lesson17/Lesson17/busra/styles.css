@@ -51,7 +51,7 @@ form button {
   margin-top: 20px;
 }
 
-form button:hover {
+ button:hover {
   background-color: #0056b3;
 }
 table {
