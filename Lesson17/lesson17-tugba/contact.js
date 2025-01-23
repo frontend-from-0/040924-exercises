@@ -44,16 +44,15 @@ Example output:
   Name: Alice, Phone: 123-456-7890, Email: alice@example.com
 */
 
-function displayAllContacts(contactList, uppercaseMode) {
+function displayAllContacts(contactList, uppercaseMode = false) {
   for (const contact of contactList) {
     if (uppercaseMode) {
       console.log(
-        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`,
+        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`
       );
-      continue;
     } else {
       console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
+        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
       );
     }
   }
@@ -70,31 +69,24 @@ Function: addContact(name, phone, email)
 - Logs "Contact added successfully." if everything is good.
 */
 
+function findContact(name, contactList) {
+  return contactList.find(contact => contact.name === name);
+}
+
 function addContact(newName, newPhone, newEmail, contactList) {
-  for (let i = 0; i < contactList.length; i++) {
-    if (newName === contactList[i].name) {
-      console.warn("The contact already exist");
-      return;
-    }
+  const existingContact = findContact(newName, contactList);
+  if (existingContact) {
+    console.warn("The contact already exists.");
+    return;
   }
-  const contactListLengthPrev = contactList.length;
+
   contactList.push({
     name: newName,
     phone: newPhone,
     email: newEmail,
   });
-  const contactListLengthNew = contactList.length;
 
-  if (contactListLengthPrev < contactListLengthNew) {
-    console.log("Contact added successfully.");
-  } else {
-    console.log("An error occured when adding a contact.");
-  }
-
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-  // contactListLengthPrev < contactListLengthNew
-  //   ? console.log("Contact added successfully.")
-  //   : console.log("An error occured when adding a contact.");
+  console.log("Contact added successfully.");
 }
 
 /*
@@ -108,16 +100,12 @@ Function: viewContact(name)
 */
 
 function viewContact(name, contactList) {
-  let isContactFound = false;
-  for (const contact of contactList) {
-    if (name === contact.name) {
-      console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
-      );
-      isContactFound = true;
-    }
-  }
-  if (!isContactFound) {
+  const contact = findContact(name, contactList);
+  if (contact) {
+    console.log(
+      `name: ${contact.name}, phone: ${contact.phone}, email: ${contact.email}`
+    );
+  } else {
     console.log(`No contact found with the name: ${name}`);
   }
 }
@@ -132,17 +120,15 @@ Function: updateContact(name, newPhone, newEmail)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return true;
-    }
-  }
-  return false;
-}
-
 function updateContact(name, newPhone, newEmail, contactList) {
-  const isContactFound = findContact(name, contactList);
+  const contact = findContact(name, contactList);
+  if (contact) {
+    contact.phone = newPhone;
+    contact.email = newEmail;
+    console.log(`Contact with name "${name}" updated successfully.`);
+  } else {
+    console.log(`No contact found with the name: "${name}".`);
+  }
 }
 
 /*
@@ -158,8 +144,9 @@ Function: removeContact(name)
 */
 
 function removeContact(name, contactList) {
-  const index = contactList.findIndex(contact => contact.name === name);
-  if (index !== -1) {
+  const contact = findContact(name, contactList);
+  if (contact) {
+    const index = contactList.indexOf(contact);
     contactList.splice(index, 1);
     console.log(`Contact with name "${name}" removed successfully.`);
   } else {
@@ -192,22 +179,13 @@ viewContact("Bob", contacts);
 console.log("\nViewing Charlie's contact:");
 viewContact("Charlie", contacts);
 
-// console.log("\nUpdating Bob's contact:");
-// updateContact("Bob", "999-999-9999", "bob@updated.com");
-// viewContact("Bob");
+console.log("\nUpdating Charlie's contact:");
+updateContact("Charlie", "999-999-9999", "charlie@updated.com", contacts);
+displayAllContacts(contacts);
 
-// console.log("\nRemoving Alice:");
-// removeContact("Alice");
-// displayAllContacts();
+console.log("\nRemoving Charlie:");
+removeContact("Charlie", contacts);
+displayAllContacts(contacts);
 
-/*
------------------------------------------------------------
-  OPTIONAL ENHANCEMENTS:
------------------------------------------------------------
-1. Partial Name Search:
-   - Instead of strict ===, use .includes() for the name check.
-2. Sort Contacts:
-   - Add a function to sort contacts alphabetically by name.
-3. Search by multiple fields:
-   - e.g., find a contact by phone number or email.
-*/
+console.log("\nTrying to remove a non-existent contact:");
+removeContact("Bob", contacts);
