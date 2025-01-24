@@ -425,18 +425,18 @@ findWordsWithLetter(["elma", "armut","ananas","avokado","muz","turp"],"a");
 */
 function pushPopExample(arr, itemToPush){
 
-  for(let i=0; i<itemToPush.length; i++){
-    arr.push(itemToPush[i]);
-    console.log("Updated arrays",arr); 
-  }
-  for (let i=0; i<itemToPush; i++){
-    let poppedItem = arr.pop();
-    console.log("Popped element:",arr);
-    console.log("Final array:", arr);
-  }
+  arr.push(itemToPush);
+  console.log("Updated array", arr);
+
+  let poppedItem= arr.pop();
+  console.log("Popped Item:", poppedItem);
+
+  console.log("Final array:", arr);
 }
 
-pushPopExample([1,2,3,4], [5]);
+pushPopExample([1,2,3,4,5],6);
+
+
 /*
 25. Push and Shift Operations
     - Define a function `manageQueue(queue, newPerson)` that:
@@ -447,18 +447,16 @@ pushPopExample([1,2,3,4], [5]);
       - logs the final queue
 */
 function manageQueue(queue, newPerson){
-  for(let i=0; i<newPerson.length; i++){
-   queue.push(newPerson[i]); 
-   console.log("Updated queue:", newPerson);
-  }
-  for(let i=0; i<newPerson.length; i++){
-    let removedPerson = queue.shift();
-    console.log("Removed person:" ,removedPerson);
-console.log("Finale queue:", queue);
-  }
-  
+  queue.push(newPerson);
+  console.log("Updated queue:", queue);
+
+  let removedPerson = queue.shift();
+  console.log("Shiftted Item:", removedPerson);
+
+  console.log("Final queue:", queue);
+
 }
-manageQueue(["Ece","Naz","Zagli"], ["Benim","Adım"]);
+manageQueue(["Ece","Naz","Zagli"], "Benim");
 /*
 26. To-Do List Application 
   - Define a function `updateTodoList(todoList, startIndex, deleteCount, ...newTasks)`:
@@ -468,22 +466,21 @@ manageQueue(["Ece","Naz","Zagli"], ["Benim","Adım"]);
    - Logs the updated list.
 */
 
-const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
+const todoList = ["Study JS", "Eat breakfast", "Walk dog", "clean the house", "make lunch "];
 function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
-  console.log("Current list:", todoList);
+ console.log("Current list:", todoList);
 
-  let index= startIndex;
-  for (let i=0; i<deleteCount; i++  ){
-todoList.splice(index,1);
-  }
+ todoList.splice(startIndex,deleteCount);
 
-  for(let i in newTasks){
-    todoList.push(newTasks[i]);
-  }
-  console.log("Updated list:",todoList);
+ todoList.push(...newTasks);
+
+ console.log("Updated list:", todoList);
 }
 
-updateTodoList(["Study JS","Eat breakfast", "Walk dog"],1,2, "Eat breakfast" );
+updateTodoList(["Study JS","Eat breakfast", "Walk dog", "clean the house", "do laundry"],
+  1,
+  2,
+   "make lunch" );
 
 
 
