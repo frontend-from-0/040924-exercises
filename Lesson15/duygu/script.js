@@ -468,27 +468,25 @@ function getSeason(monthNum) {
     case 2:
       console.log("Winter");
       break;
-      console.log("Winter");
-      break;
-    case monthNum === 3 || monthNum === 4 || monthNum === 5:
+    case 3:
+    case 4:
+    case 5:
       console.log("Spring");
       break;
-    case monthNum === 6 || monthNum === 7 || monthNum === 8:
+    case 6:
+    case 7:
+    case 8:
       console.log("Summer");
       break;
-    case monthNum === 9 || monthNum === 10 || monthNum === 11:
+    case 9:
+    case 10:
+    case 11:
       console.log("Autumn");
       break;
     default:
       console.log("Invalid month");
   }
 }
-
-getSeason(1);
-getSeason(4);
-getSeason(7);
-getSeason(10);
-getSeason(13);
 
 /*
 25. Check If String Contains Number
