@@ -478,8 +478,8 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
 }
 
 updateTodoList(["Study JS","Eat breakfast", "Walk dog", "clean the house", "do laundry"],
-  1,
   2,
+  3,
    "make lunch" );
 
 
