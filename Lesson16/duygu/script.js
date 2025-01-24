@@ -230,7 +230,16 @@ function printCharacters(str) {
       - Example: "abc123" -> 6
   */
   
-  
+  function sumDigits(str) {
+    let sum = 0;
+    for (const char of str) {
+        if (!isNaN(char) && char !== ' ') {
+            sum += Number(char);
+        }
+    }
+    console.log(sum);
+    return sum;
+}
   
   /*
   21. Average of Array Elements
