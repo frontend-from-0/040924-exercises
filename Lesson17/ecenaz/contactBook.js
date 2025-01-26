@@ -148,7 +148,7 @@ function updateContact(name, newPhone, newEmail, contactList, findContact) {
     if (contact.name === name) {
       contact.phone = newPhone; contact.email = newEmail;
 
-      console.log(`Contact updated successfully: ${name}`);
+      console.log(`Contact updated successfullyy: ${name}`);
       return;
     }
   }
