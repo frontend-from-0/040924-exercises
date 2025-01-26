@@ -59,6 +59,9 @@ function displayAllContacts(contactList, uppercaseMode) {
   }
 }
 
+console.log("Initial contact list:");
+displayAllContacts(contacts);
+
 /*
 -----------------------------------------------------------
   STEP 3: Add a New Contact
@@ -97,6 +100,10 @@ function addContact(newName, newPhone, newEmail, contactList) {
   //   : console.log("An error occured when adding a contact.");
 }
 
+console.log("\nAdding a new contact: Charlie");
+addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
+displayAllContacts(contacts);
+
 /*
 -----------------------------------------------------------
   STEP 4: View a Contact by Name
@@ -121,6 +128,8 @@ function viewContact(name, contactList) {
     console.log(`No contact found with the name: ${name}`);
   }
 }
+console.log("\nViewing Bob's contact:");
+viewContact("Bob", contacts);
 
 /*
 -----------------------------------------------------------
@@ -132,18 +141,27 @@ Function: updateContact(name, newPhone, newEmail)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-function findContact(name, contactList) {
+function updateContact(name, newPhone, newEmail, contactList, findContact) {
+  const isContactFound = findContact(contacts, contactList);
+
   for (const contact of contactList) {
     if (contact.name === name) {
-      return true;
+      contact.phone = newPhone; contact.email = newEmail;
+
+      console.log(`Contact updated successfully: ${name}`);
+      return;
     }
   }
-  return false;
-}
 
-function updateContact(name, newPhone, newEmail, contactList) {
-  const isContactFound = findContact(name, contactList);
+  if (!isContactFound) {
+    console.log(`No contact found with the name: ${name}`);
+    return;
+  }
+
 }
+// console.log("\nUpdating Bob's contact:");
+// updateContact("Bob", "999-999-9999", "bob@updated.com");
+// viewContact("Bob");
 
 /*
 -----------------------------------------------------------
@@ -156,20 +174,20 @@ Function: removeContact(name)
 - Logs "Contact removed successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-function removeContact(name, contacts, addContact, findContact){
+function removeContact(name, contacts, addContact, findContact) {
   let index = false;
 
-  for (const contact in contacts){
-    if(contacts[i].include(name)){
+  for (const contact in contacts) {
+    if (contacts === name) {
       contacts.splice(index, 1);
       found = true;
       console.log("Contact removed successfully.");
     }
-}
+  }
 
-if(false === name){
-  console.log("No contact found with the name: ${name}");
-}
+  if (false === name) {
+    console.log("No contact found with the name: ${name}");
+  }
 }
 /*
 -----------------------------------------------------------
@@ -179,12 +197,9 @@ Below are some sample function calls to demonstrate the
 Contact Book in action.
 */
 
-console.log("Initial contact list:");
-displayAllContacts(contacts);
 
-console.log("\nAdding a new contact: Charlie");
-addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
-displayAllContacts(contacts);
+
+
 
 console.log("\nAdding a new contact: Charlie");
 console.log("\nAdding a new contact: ecenaz");
@@ -195,17 +210,16 @@ displayAllContacts(contacts);
 console.log("\nViewing Bob's contact:");
 viewContact("Bob", contacts);
 
-console.log("\nViewing Charlie's contact:");
-viewContact("Charlie", contacts);
+
 
 // console.log("\nUpdating Bob's contact:");
 // updateContact("Bob", "999-999-9999", "bob@updated.com");
 // viewContact("Bob");
 
 console.log("\nRemoving Alice:");
-removeContact("Alice");
-console.log("\nRemoving Ali:");
-removeContact("Ali");
+removeContact("Alice",contacts);
+
+
 displayAllContacts();
 
 /*
