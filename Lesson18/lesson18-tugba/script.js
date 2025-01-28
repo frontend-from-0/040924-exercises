@@ -72,6 +72,15 @@ Node.js or a browser console.
 3. Use an object to store discount codes and their values.
 */
 
+const item = {
+  name: "Shoes",
+  price: {
+    value: 75,
+    currency: "USD",
+  },
+  quantity: 2,
+};
+
 class ShoppingCart {
   constructor() {
     this._items = [];
