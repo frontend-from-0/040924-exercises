@@ -48,12 +48,12 @@ function displayAllContacts(contactList, uppercaseMode) {
   for (const contact of contactList) {
     if (uppercaseMode) {
       console.log(
-        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`,
+        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`
       );
       continue;
     } else {
       console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
+        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
       );
     }
   }
@@ -71,14 +71,27 @@ Function: addContact(name, phone, email)
 */
 
 function addContact(name, phone, email, contactList) {
-     if (findContact(name, contactList))  {
-      console.warn("The contact already exist");
-      return;
-    }
+  if (findContact(name, contactList)) {
+    console.warn("The contact already exist");
+    return;
+  }
 
   contactList.push({ name, phone, email });
   console.log(`Contact added successfully.`);
 
+  const contactListLengthPrev = contactList.length;
+  contactList.push({
+    name: newName,
+    phone: newPhone,
+    email: newEmail,
+  });
+  const contactListLengthNew = contactList.length;
+
+  if (contactListLengthPrev < contactListLengthNew) {
+    console.log("Contact added successfully.");
+  } else {
+    console.log("An error occured when adding a contact.");
+  }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
   // contactListLengthPrev < contactListLengthNew
@@ -100,7 +113,9 @@ function viewContact(name, contactList) {
   const contact = findContact(name, contactList);
 
   if (contact) {
-    console.log(`Name: ${contact.name}, Phone: ${contact.phone}, Email: ${contact.email}`);
+    console.log(
+      `Name: ${contact.name}, Phone: ${contact.phone}, Email: ${contact.email}`
+    );
   } else {
     console.log(`No contact found with the name: ${name}`);
   }
@@ -116,19 +131,21 @@ Function: updateContact(name, newPhone, newEmail)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-
 function updateContact(name, newPhone, newEmail, contactList) {
   const isContactFound = findContact(name, contactList);
 
-  if (isContactFound) {
-        contact.phone = newPhone;
-        contact.email = newEmail;
-        console.log(`Contact updated: ${name}`);
-        return;
-      } else {
+  if (!isContactFound) {
     console.log(`No contact found with the name: ${name}`);
+    return;
   }
 
+  for (const contact of contactList) {
+    if (contact.name === name) {
+      contact.phone = newPhone;
+      contact.email = newEmail;
+      console.log(`"Contact ${name} updated successfully.`);
+    }
+  }
 }
 
 /*
@@ -144,18 +161,16 @@ Function: removeContact(name)
 */
 
 function removeContact(name, contactList) {
-  const index = contactList.findIndex(contact => contact.name === name);
+  const index = contactList.findIndex((contact) => contact.name === name);
 
   if (index !== -1) {
     contactList.splice(index, 1);
-      console.log("Contact removed successfully.");
-      return;
-    } else {
-  console.log(`No contact was found with name: ${name}`);
+    console.log("Contact removed successfully.");
+    return;
+  } else {
+    console.log(`No contact was found with name: ${name}`);
+  }
 }
-}
-
-
 
 /*
 -----------------------------------------------------------
@@ -179,9 +194,8 @@ displayAllContacts(contacts);
 console.log("\nViewing Charlie's contact:");
 viewContact("Charlie", contacts);
 
-
 console.log("\nUpdating Charlie's contact:");
-updateContact("Charlie", "999-999-9999", "charlie@updated.com");
+updateContact("Charlie", "999-999-9999", "charlie@updated.com", contacts);
 viewContact("Charlie", contacts);
 
 console.log("\nRemoving Charlie:");
