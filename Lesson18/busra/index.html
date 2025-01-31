@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Shopping Card</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  
+
+  <div class="container">
+
+    <div class="products">
+      <h2>Ürünler</h2>
+      <div class="product" data-name="product-1" data-price="100">
+        <span>ürün 1 - 100TL</span>
+        <button onclick="cart.addItem('product-1', 100)">Add</button>
+
+      </div>
+
+      <div class="product" data-name="product-2" data-price="300">
+        <span>ürün 2 - 300TL</span>
+        <button onclick="cart.addItem('product-2', 300)">Add</button>
+
+      </div>
+
+      <div class="product" data-name="product-3" data-price="200">
+        <span>ürün 1 - 200TL</span>
+        <button onclick="cart.addItem('product-3', 200)">Add</button>
+
+      </div>
+
+    </div>
+
+    <div class="cart">
+      <h2>Sepet</h2>
+      <div id="cart-items"></div>
+      <div class="checkout">
+        <p>Toplam: <span id="total">0 TL</span></p>
+        <input type="text" id="discountCode" placeholder="İndirim Kodu">
+        <button onclick="cart.applyDiscount()">Uygula</button>
+        <button onclick="cart.clearCart()">Sepeti Temizle</button>
+      </div>
+    </div>
+  </div>
 
 
-  <script src="extraAssignment.js"></script>
+
+  <script src="deneme.js" defer></script>
 </body>
+
 </html>
