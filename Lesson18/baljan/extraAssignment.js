@@ -87,18 +87,18 @@ before moving to the next one.
 */
 
 
-
+/*1*/
 
 class Restaurant {
-   constructor(name, location, menu) {
+   constructor(name, location, menu = []) {
       this.name = name;
       this.location = location;
-      this.menu = menu || [];
+      this.menu = menu;
    }
 
    addMenuItem(name, price, category) {
-      const newMenuItem = { name, price, category };
-      this.menu.push(newMenuItem);
+      const menuItem = { name, price, category };
+      this.menu.push(menuItem);
    }
 
    viewMenu() {
@@ -108,8 +108,77 @@ class Restaurant {
             console.log(`name: ${item.name}, price: ${item.price}, category: ${item.category}`,
             );
          }
-      }  else {
+      } else {
          console.log("Menu is empty");
-       }
+      }
    }
 }
+
+const myRestaurant = new Restaurant("Delicious Eats", "Downtown");
+
+
+myRestaurant.addMenuItem("Burger", 8.99, "Main Course");
+myRestaurant.addMenuItem("Pasta", 12.99, "Main Course");
+myRestaurant.addMenuItem("Ice Cream", 4.99, "Dessert");
+
+myRestaurant.viewMenu();
+
+
+/*2*/
+class MenuItem {
+   constructor(name, price, category) {
+      this.name = name;
+      this.price = price;
+      this.category = category;
+   }
+}
+
+const pizza = new MenuItem("Margherita Pizza", 10.99, "Main Course");
+console.log(pizza.name);
+console.log(pizza.price);
+console.log(pizza.category);
+
+
+/*3*/
+
+class Order {
+   constructor(items = []) {
+      this.items = items;
+   }
+
+
+   addItem(name, quantity, price) {
+      const addItem = { name, quantity, price };
+      this.items.push(addItem);
+   }
+
+   calculateTotal() {
+      return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
+   }
+
+   viewOrder() {
+      if (this.items.length > 0) {
+         console.log("Order: ");
+         for (const item of this.items) {
+            console.log(`${item.name}, price: ${item.price}`,
+            );
+         }
+      } else {
+         console.log("Order is empty");
+      }
+   }
+}
+
+const myOrder = new Order();
+
+myOrder.addItem("Burger", 2, 8.99);
+myOrder.addItem("Fries", 1, 3.49);
+myOrder.addItem("Soda", 3, 1.99);
+
+
+myOrder.viewOrder();
+
+const total = myOrder.calculateTotal();
+console.log(`Total: $${total.toFixed(2)}`);
+
+
