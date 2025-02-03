@@ -55,6 +55,14 @@ Function: addContact(name, phone, email)
   exists before adding. If found, logs a warning and returns.
 - Logs "Contact added successfully." if everything is good.
 */
+function findContact(name, contactList) {
+  for (const contact of contactList) {
+    if (contact.name === name) {
+      return true; 
+    }
+  }
+  return false; 
+}
 
 function addContact(newName, newPhone, newEmail, contactList) {
   for (let i = 0; i < contactList.length; i++) {
@@ -159,14 +167,7 @@ function updateContact(name, newPhone, newEmail, contactList) {
 */
 //third option
 
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return true; 
-    }
-  }
-  return false; 
-}
+
 
 function updateContact(name, newPhone, newEmail, contactList) {
   const isFoundContact = findContact(name, contactList); 
@@ -196,17 +197,10 @@ Function: removeContact(name)
 - Logs "Contact removed successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-function findTheContact(name,contactList){
-  for(let i=0; i<contactList.length; i++){
-    if(contactList[i].name.toLowerCase().includes(name.toLowerCase())){
-return i;
-    }
-  }
-return -1;
-}
+
 
 function removeContact(name,contactList){
-  const index=findTheContact(name,contactList);
+  const index = contactList.findIndex((contact) => contact.name.toLowerCase() === name.toLowerCase()); 
     if(index !== -1){
       contactList.splice(index,1);
       console.log("Contact removed successfully.");
