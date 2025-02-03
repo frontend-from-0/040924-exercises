@@ -61,8 +61,10 @@ function sumWithDoWhile(numbers) {
   let index = 0;
   do {
     total += numbers[index];
-    console.log(total);
+   
+    index++;
   } while (index < numbers.length);
+  console.log(total);
 }
 sumWithDoWhile(numbers);
 sumWithDoWhile([1, 2, 3, 4, 5]);
@@ -82,8 +84,8 @@ function removeDuplicates(arr) {
     if (removeDup.indexOf(arr[i] === -1)) {
       removeDup.push(arr[i]);
     }
-    console.log(removeDup);
-  }
+    
+  }console.log(removeDup);
 }
 removeDuplicates(ex1Array);
 
@@ -141,20 +143,12 @@ filterLongWords(["apple", "banana", "cherry", "kiwi"], 6);
 */
 
 function logElementsWithIndex(arr) {
-  for (const element of arr) {
-    console.log(`Index ${element},Value ${arr[element]}`);
+  for (let i=0; i<arr.length; i++) {
+    console.log(`Index ${i},Value ${arr[i]}`);
   }
 }
 
-function logElementsWithIndex2(arr) {
-  let index = 0;
-  for (const element in arr) {
-    console.log(`Index ${index},Value ${arr[element]}`);
-    index++;
-  }
-}
-
-logElementsWithIndex2(["apple", "banana", "cherry", "kiwi"]);
+logElementsWithIndex([1, 2, 3, 4, 5]);
 
 /*
 17. Find the Smallest Number in an Array
@@ -223,7 +217,7 @@ function removeFalsyValues(arr) {
   let withoutFalsyArr = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i]) {
-      withoutFalsyArr = withoutFalsyArr.push(arr[i]);
+    withoutFalsyArr.push(arr[i]);
     }
   }
 }
@@ -304,8 +298,8 @@ flattenArray(arrayEx);
 function findWordsWithLetter(words,letter){
   let filteredArray=[];
   for(let i=0; i<words.length; i++){
-if(words[i].inludes(letter)){
-  filteredArray= filteredArray.push(words[i]);
+if(words[i].includes(letter)){
+filteredArray.push(words[i]);
 }
   }
   console.log(filteredArray);
