@@ -60,7 +60,7 @@ function sumWithDoWhile(numbers) {
   let total = 0;
   let index = 0;
   do {
-    total += numbers([index]);
+    total += numbers[index];
     console.log(total);
   } while (index < numbers.length);
 }
