@@ -109,24 +109,17 @@ Function: viewContact(name)
 - Logs the contact info if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return contact;
-    }
-  }
-  return null;
-}
 
-function viewContact(name, contactList) {
-  if (contact) {
+ 
+const contact = findContact(name, contactList);  
+  if (contact) {  
     console.log(
       `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
     );
   } else {
     console.log(`No contact found with the name: ${name}`);
   }
-}
+
 
 /*
 -----------------------------------------------------------
@@ -240,17 +233,17 @@ viewContact("Bob", contacts);
 console.log("\nViewing Charlie's contact:");
 viewContact("Charlie", contacts);
 
-// console.log("\nUpdating Bob's contact:");
-// updateContact("Bob", "999-999-9999", "bob@updated.com");
-// viewContact("Bob");
+console.log("\nUpdating Bob's contact:");
+updateContact("Bob", "999-999-9999", "bob@updated.com");
+ viewContact("Bob");
 
 console.log("\nUpdating Bob's contact:");
 updateContact("Bob", "999-999-9999", "bob@updated.com", contacts);
 viewContact("Bob", contacts);
 
-// console.log("\nRemoving Alice:");
-// removeContact("Alice");
-// displayAllContacts();
+console.log("\nRemoving Alice:");
+removeContact("Alice");
+displayAllContacts();
 
 console.log("\nRemoving Alice:");
 removeContact("Alice", contacts);
