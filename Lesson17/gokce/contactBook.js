@@ -1,4 +1,3 @@
-
 /*
 -----------------------------------------------------------
   STEP 1: Setup and Initial Data
@@ -8,7 +7,6 @@
 2. Each contact is an object with 'name', 'phone', and 
    'email' properties.
 */
-
 
 const contacts = [
   { name: "Dilek", phone: "0 224 555 88 77", email: "xyz@yahoo.com" },
@@ -27,8 +25,6 @@ Function: displayAllContacts()
 Example output:
   Name: Alice, Phone: 123-456-7890, Email: alice@example.com
 */
-
-
 
 function displayAllContacts(contactList, uppercaseMode) {
   for (const contact of contactList) {
@@ -58,12 +54,25 @@ Function: addContact(name, phone, email)
 function findContact(name, contactList) {
   for (const contact of contactList) {
     if (contact.name === name) {
-      return true; 
+      return contact;
     }
   }
-  return false; 
+  return null;
 }
 
+function addContact(newName, newPhone, newEmail, contactList) {
+  if (findContact(newName, contactList)) {
+    console.warn("The contact already exist");
+    return;
+  }
+  contactList.push({
+    name: newName,
+    phone: newPhone,
+    email: newEmail,
+  });
+  console.log("Contact added successfully.");
+}
+/*
 function addContact(newName, newPhone, newEmail, contactList) {
   for (let i = 0; i < contactList.length; i++) {
     if (newName === contactList[i].name) {
@@ -100,21 +109,21 @@ Function: viewContact(name)
 - Logs the contact info if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-
-
-
-
-function viewContact(name, contactList) {
-  let isContactFound = false;
+function findContact(name, contactList) {
   for (const contact of contactList) {
-    if (name === contact.name) {
-      console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
-      );
-      isContactFound = true;
+    if (contact.name === name) {
+      return contact;
     }
   }
-  if (!isContactFound) {
+  return null;
+}
+
+function viewContact(name, contactList) {
+  if (contact) {
+    console.log(
+      `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
+    );
+  } else {
     console.log(`No contact found with the name: ${name}`);
   }
 }
@@ -167,21 +176,17 @@ function updateContact(name, newPhone, newEmail, contactList) {
 */
 //third option
 
-
-
 function updateContact(name, newPhone, newEmail, contactList) {
-  const isFoundContact = findContact(name, contactList); 
+  const contact = findContact(name, contactList);
 
-  if (isFoundContact) { 
-    for (const contact of contactList) {
-      if (contact.name.toLowerCase().includes(name.toLowerCase())) {  
-        contact.phone = newPhone; 
-        contact.email = newEmail;
-        console.log(`Contact updated successfully: ${contact.name}, ${contact.phone}, ${contact.email}`);
-        return; 
-      }
-    }
-  } else { 
+  if (contact) {
+    contact.phone = newPhone;
+    contact.email = newEmail;
+    console.log(
+      `Contact updated successfully: ${contact.name}, ${contact.phone}, ${contact.email}`,
+    );
+    return;
+  } else {
     console.log(`No contact found with the name: ${name}`);
   }
 }
@@ -198,26 +203,17 @@ Function: removeContact(name)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-
-function removeContact(name,contactList){
-  const index = contactList.findIndex((contact) => contact.name.toLowerCase() === name.toLowerCase()); 
-    if(index !== -1){
-      contactList.splice(index,1);
-      console.log("Contact removed successfully.");
-      }
-    
-  else{
-    console.log(`No contact found with the name: ${name}`);}}
-
-
-
-
-
-
-
-
-
-
+function removeContact(name, contactList) {
+  const index = contactList.findIndex(
+    (contact) => contact.name.toLowerCase() === name.toLowerCase(),
+  );
+  if (index !== -1) {
+    contactList.splice(index, 1);
+    console.log("Contact removed successfully.");
+  } else {
+    console.log(`No contact found with the name: ${name}`);
+  }
+}
 
 /*
 -----------------------------------------------------------
@@ -249,15 +245,15 @@ viewContact("Charlie", contacts);
 // viewContact("Bob");
 
 console.log("\nUpdating Bob's contact:");
-updateContact("Bob", "999-999-9999", "bob@updated.com",contacts);
-viewContact("Bob",contacts);
+updateContact("Bob", "999-999-9999", "bob@updated.com", contacts);
+viewContact("Bob", contacts);
 
 // console.log("\nRemoving Alice:");
 // removeContact("Alice");
 // displayAllContacts();
 
 console.log("\nRemoving Alice:");
-removeContact("Alice",contacts);
+removeContact("Alice", contacts);
 displayAllContacts(contacts);
 
 /*
