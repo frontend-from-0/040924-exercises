@@ -13,11 +13,11 @@ console.log(sumEx1);
 
 // 2. Declare variables userName and userAge. Log a greeting: "Hello! I am (userName) and I am (userAge) years old."
 // CODE HERE
-const userName = "Baljan";
+const userName = 'Baljan';
 const userAge = 28;
 
 console.log(`Hello! I am ${userName} and I am ${userAge} years old.`);
-console.log("Hello! I am " + userName + " and I am " + userAge + " years old.");
+console.log('Hello! I am ' + userName + ' and I am ' + userAge + ' years old.');
 
 // 3. Declare variables a=10 and b=4. Log the result of a-b, a*b, and a/b.
 // CODE HERE
@@ -27,11 +27,11 @@ const b = 4;
 const toplam = a + b;
 const carpim = a * b;
 const bolum = a / b;
-console.log("Toplam sonucu= " + toplam);
+console.log('Toplam sonucu= ' + toplam);
 // 1. Create a single string from "Toplam sonucu= " + toplam
 // 2. Log the result using console.log()
-console.log("Çarpım sonucu= " + carpim);
-console.log("Bölüm sonucu= " + bolum);
+console.log('Çarpım sonucu= ' + carpim);
+console.log('Bölüm sonucu= ' + bolum);
 
 // 4. Use template literals to log: "My name is (userName). I like JS."
 // CODE HERE
@@ -39,28 +39,28 @@ console.log(`My name is ${userName}. I like JS.`);
 
 // 5. Declare a string password = "securePass". Log the length of password.
 // CODE HERE
-const password = "securePass";
+const password = 'securePass';
 console.log(password.length);
 
 // 6. Convert the string "hello world" to uppercase and log it.
 // CODE HERE
-const word = "hello world";
+const word = 'hello world';
 console.log(word.toUpperCase());
-console.log("hello world".toUpperCase());
+console.log('hello world'.toUpperCase());
 
 // 7. Concatenate "Hello" and "World" with a space in between and log the result.
 // CODE HERE
 
-const hello = "Hello";
-const world = "World!";
-const fullGreeting = hello + " " + world;
+const hello = 'Hello';
+const world = 'World!';
+const fullGreeting = hello + ' ' + world;
 
 console.log(fullGreeting);
 
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
-const name = "sevcan";
-const city = "mersin";
+const name = 'sevcan';
+const city = 'mersin';
 
 console.log(typeof name, typeof city, typeof userAge);
 
@@ -73,7 +73,7 @@ console.log(number, numberString);
 
 // 10. Convert the string "50" to a number and log its type to confirm the conversion.
 // CODE HERE
-const string = "50";
+const string = '50';
 
 console.log(parseInt(string));
 
@@ -89,33 +89,31 @@ console.log(number1Ex12);
 const number2Ex12 = Math.ceil(3.2);
 console.log(number2Ex12);
 
-
 // Prompt can only be used in browser environment
-const userResponse = prompt("What is your age?");
+const userResponse = prompt('What is your age?');
 const userResposeNumber = parseInt(userResponse);
 
 if (isNaN(userResposeNumber)) {
-  throw new Error("Please enter a valid number");
+  throw new Error('Please enter a valid number');
 } else {
-  console.log('userResponse',  Math.floor(userResposeNumber));
+  console.log('userResponse', Math.floor(userResposeNumber));
 }
 
 // 13. Declare a boolean variable isStudent = true. Log it.
 
 const isStudent = true;
 
-if (isStudent){
-  console.log(true);}
-else{
-  console.log(false);} 
-
+if (isStudent) {
+  console.log(true);
+} else {
+  console.log(false);
+}
 
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
 
 let counter = 0;
-counter++;      
+counter++;
 console.log(counter);
-
 
 // 15. Initialize points = 10, add 5 to it using points += 5, then log points.
 
@@ -126,9 +124,9 @@ console.log(points);
 
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
 
-const name2 = "Alice";
+const name2 = 'Alice';
 const age = 30;
-const city2 = "Paris";
+const city2 = 'Paris';
 const fullText = `${name2} (${age}) lives in ${city2}.`;
 
 console.log(fullText);
@@ -154,8 +152,8 @@ console.log(differenceResult);
 
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 
-const firstName = "Dilek";
-const lastName = "Taş";
+const firstName = 'Dilek';
+const lastName = 'Taş';
 const fullName = `${firstName} ${lastName}`;
 
 console.log(fullName);
@@ -211,7 +209,7 @@ let numberEx11 = -3;
 numberEx11 = ++numberEx11;
 let finalValue = numberEx11 * 2;
 
-console.log(finalValue); 
+console.log(finalValue);
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it
 

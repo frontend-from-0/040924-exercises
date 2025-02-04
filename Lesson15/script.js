@@ -22,7 +22,6 @@
    - Otherwise, log: "Not a PDF file."
 */
 
-
 /*
 8. Palindrome Check
    - Define a function `isPalindrome(str)` that checks if `str` is the same
@@ -30,7 +29,6 @@
    - If it is, log: "<str> is a palindrome"
    - Otherwise, log: "<str> is not a palindrome"
 */
-
 
 /*
 10. Check Even or Odd (if-else)
@@ -45,7 +43,6 @@
      and checks if it starts with "https" using .startsWith().
    - Log "Secure connection" if true, otherwise "Unsecure connection".
 */
-
 
 /*
 13. Repeat a String
