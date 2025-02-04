@@ -1,9 +1,9 @@
 // INITIAL DATA
 
 const contacts = [
-  { name: "Dilek", phone: "0 224 555 88 77", email: "xyz@yahoo.com" },
-  { name: "Ali", phone: "0 225 555 88 77", email: "xds@yahoo.com" },
-  { name: "Ayşe", phone: "0 224 555 88 55", email: "sdf@yahoo.com" },
+  { name: 'Dilek', phone: '0 224 555 88 77', email: 'xyz@yahoo.com' },
+  { name: 'Ali', phone: '0 225 555 88 77', email: 'xds@yahoo.com' },
+  { name: 'Ayşe', phone: '0 224 555 88 55', email: 'sdf@yahoo.com' },
 ];
 
 // DISPLAY FUNCTION
@@ -12,12 +12,12 @@ function displayAllContacts(contactList, uppercaseMode) {
   for (const contact of contactList) {
     if (uppercaseMode) {
       console.log(
-        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`,
+        `NAME: ${contact.name}, PHONE:${contact.phone}, EMAIL:${contact.email}`
       );
       continue;
     } else {
       console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
+        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
       );
     }
   }
@@ -42,7 +42,7 @@ function findContact(name, phone, email, contactList) {
   return null;
 }
 
-console.log(findContact("Ayşe", '', '', contacts));
+console.log(findContact('Ayşe', '', '', contacts));
 
 // VIEW FUNCTION
 
@@ -50,21 +50,21 @@ function viewContact(name, phone, email, contactList) {
   const contact = findContact(name, phone, email, contactList);
   if (contact) {
     console.log(
-      `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
+      `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
     );
   } else {
     console.log(`No contact found with the given information.`);
   }
 }
 
-viewContact("", "0 225 555 88 77", "", contacts);
+viewContact('', '0 225 555 88 77', '', contacts);
 
 // ADD FUNCTION
 
 function addContact(newName, newPhone, newEmail, contactList) {
   const contact = findContact(newName, newPhone, newEmail, contactList);
   if (contact) {
-    console.warn("The contact already exist");
+    console.warn('The contact already exist');
     return;
   } else {
     contactList.push({
@@ -72,12 +72,12 @@ function addContact(newName, newPhone, newEmail, contactList) {
       phone: newPhone,
       email: newEmail,
     });
-    console.log("Contact added successfully.");
+    console.log('Contact added successfully.');
   }
 }
 
-console.log("\nAdding a new contact: Charlie");
-addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
+console.log('\nAdding a new contact: Charlie');
+addContact('Charlie', '777-777-7777', 'charlie@example.com', contacts);
 displayAllContacts(contacts);
 
 // UPDATE FUNCTION
@@ -87,13 +87,13 @@ function updateContact(name, newPhone, newEmail, contactList) {
   if (contact) {
     contact.phone = newPhone;
     contact.email = newEmail;
-    console.log("Contact updated successfully.");
+    console.log('Contact updated successfully.');
   } else {
     console.log(`No contact found with the name: " + ${name}`);
   }
 }
 
-updateContact("Dilek", "0 224 555 66 77", "dilek@gmail.com", contacts);
+updateContact('Dilek', '0 224 555 66 77', 'dilek@gmail.com', contacts);
 console.log(contacts);
 
 // REMOVE FUNCTION
@@ -106,25 +106,23 @@ function removeContact(name, contactList) {
       return;
     }
   }
- console.log('No contact found with the name: ' + name); 
+  console.log('No contact found with the name: ' + name);
 }
 
 removeContact('Dilek', contacts);
 console.log(contacts);
 
-
 // ADDITIONAL- SORT FUNCTION
 
 function sortContacts(contactList) {
-  return contactList.sort((a,b) => a.name.localeCompare(b.name));
+  return contactList.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 console.log(sortContacts(contacts));
 
-
 // Testing Our Functions
 
-console.log("Initial contact list:");
+console.log('Initial contact list:');
 displayAllContacts(contacts);
 
 console.log("\nViewing Bob's contact:");
@@ -134,5 +132,5 @@ console.log("\nViewing Charlie's contact:");
 viewContact('Charlie', '', '', contacts);
 
 console.log("\nUpdating Ayşe's contact:");
-updateContact("Ayşe", "999-999-9999", "ayse@updated.com", contacts);
+updateContact('Ayşe', '999-999-9999', 'ayse@updated.com', contacts);
 displayAllContacts(contacts);

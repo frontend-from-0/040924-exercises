@@ -341,7 +341,7 @@ function countOccurrences(arr, word) {
 }
 
 console.log(
-  countOccurrences(['apple', 'banana', 'apple', 'cherry', 'apple'], 'apple'),
+  countOccurrences(['apple', 'banana', 'apple', 'cherry', 'apple'], 'apple')
 );
 
 /*
@@ -391,11 +391,11 @@ console.log(sumDigits('abc123'));
 */
 
 function averageArray(numbers) {
-  let sum = 0; 
+  let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
-  return sum / numbers.length;  
+  return sum / numbers.length;
 }
 
 console.log(averageArray([1, 2, 3, 4]));
@@ -417,7 +417,12 @@ function flattenArray(twoDArray) {
   return flattenedArray;
 }
 
-console.log(flattenArray([[1, 2], [3, 4]]));
+console.log(
+  flattenArray([
+    [1, 2],
+    [3, 4],
+  ])
+);
 
 /*
 23. Find Words Containing a Letter
@@ -455,7 +460,7 @@ function pushPopExample(arr, itemToPush) {
   const poppedItem = arr.pop();
   console.log(poppedItem);
   console.log(arr);
-}   
+}
 
 pushPopExample([1, 2, 3], 4);
 
@@ -494,5 +499,10 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
   console.log('updated Todo List', todoList);
 }
 
-updateTodoList(['Study JS', 'Eat Breakfast', 'Walk dog'], 2, 1, 'Cooking', 'Cleaning');
-
+updateTodoList(
+  ['Study JS', 'Eat Breakfast', 'Walk dog'],
+  2,
+  1,
+  'Cooking',
+  'Cleaning'
+);

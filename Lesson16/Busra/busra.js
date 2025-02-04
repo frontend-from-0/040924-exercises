@@ -9,8 +9,7 @@ function printCharacters(str) {
     console.log(char);
   }
 }
-printCharacters("busra");
-
+printCharacters('busra');
 
 /*
 9. Sum All Values in an Object
@@ -19,27 +18,24 @@ printCharacters("busra");
    - Log the sum.
    - Example: {a: 10, b: 20, c: 5} -> 35
 */
-const numbers={
+const numbers = {
   num1: 10,
-  num2:50,
-  num3:3.5,
-  num4:4,
-  num5:"35"
-}
+  num2: 50,
+  num3: 3.5,
+  num4: 4,
+  num5: '35',
+};
 let sum = 0;
-function sumObjectValues(obj){
-for(let num in obj){
-  if (typeof numbers[num] === "number"){
-    sum = sum + obj[num];
+function sumObjectValues(obj) {
+  for (let num in obj) {
+    if (typeof numbers[num] === 'number') {
+      sum = sum + obj[num];
+    }
+    console.log(sum);
   }
-  console.log(sum);
-}
-
 }
 
 sumObjectValues(numbers);
-
-
 
 /*
 10. Print Keys of an Object (For-in)
@@ -48,28 +44,28 @@ sumObjectValues(numbers);
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
 
-let person={
- name:"Busra Demirkesen",
- age:"34",
- job:"Frontend Developer",
- languages:{
-    Turkish:"Mother Language",
-    English:"B1+",
-    German:"A2",
- },
- skills:{
-    HTML:"good",
-    CSS:"good",
-    Javascript:"good"
- }
-}
+let person = {
+  name: 'Busra Demirkesen',
+  age: '34',
+  job: 'Frontend Developer',
+  languages: {
+    Turkish: 'Mother Language',
+    English: 'B1+',
+    German: 'A2',
+  },
+  skills: {
+    HTML: 'good',
+    CSS: 'good',
+    Javascript: 'good',
+  },
+};
 
-
-function printObjectKeys(obj){
-  for(let key in obj){
-    if(typeof obj[key]==="object"&& !Array.isArray(obj[key])){ //I learned this structure by researching in AI because I was curious about what would happen if I used nested objects. Actually, I know that it's not necessary.
+function printObjectKeys(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      //I learned this structure by researching in AI because I was curious about what would happen if I used nested objects. Actually, I know that it's not necessary.
       printObjectKeys(obj[key]);
-    }else{
+    } else {
       console.log(`${key}: ${obj[key]}`);
     }
   }
@@ -82,20 +78,17 @@ printObjectKeys(person);
       to sum all numbers in the array.
     - Log the total.
 */
-const numbersEx11 = [1,2,3,4,5,6,7,8,9,10];
+const numbersEx11 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function sumWithDoWhile(arr){
-    let i=0;
-    let sumEx11 = 0;
-  do{
+function sumWithDoWhile(arr) {
+  let i = 0;
+  let sumEx11 = 0;
+  do {
     sumEx11 += arr[i];
     i++;
-  }
-  while(i < arr.length);
-   
-   console.log(sumEx11);
+  } while (i < arr.length);
 
- 
+  console.log(sumEx11);
 }
 
 sumWithDoWhile(numbersEx11);
@@ -108,13 +101,12 @@ sumWithDoWhile(numbersEx11);
     - Log the new array without duplicates.
 */
 
-let arrayEx12 = [1,2,3,3,4,4,5,6,7,8,8,9,10];
+let arrayEx12 = [1, 2, 3, 3, 4, 4, 5, 6, 7, 8, 8, 9, 10];
 
-function removeDuplicates(arr){
+function removeDuplicates(arr) {
   let newArray = [];
-  for(let i=0; i< arr.length; i++){
-
-    if(!newArray.includes(arr[i])){
+  for (let i = 0; i < arr.length; i++) {
+    if (!newArray.includes(arr[i])) {
       newArray.push(arr[i]);
     }
   }
@@ -122,7 +114,6 @@ function removeDuplicates(arr){
 }
 
 removeDuplicates(newArray);
-
 
 /*
 13. Calculate Factorial (For Loop)
@@ -132,10 +123,10 @@ removeDuplicates(newArray);
     - Example: factorial(5) -> 120
 */
 
-function factorial(number){
+function factorial(number) {
   let calculator = 1;
-  for(let i=1; i<=n; i++ ){
-     calculator = calculator * i;
+  for (let i = 1; i <= n; i++) {
+    calculator = calculator * i;
   }
   return calculator;
 }
@@ -148,20 +139,19 @@ factorial(5);
       a string. Use loops or built-in methods as you like.
     - Log the reversed sentence.
 */
-const sentenceEx14 = "Javascript is the most fun programming language I have ever seen so far";
+const sentenceEx14 =
+  'Javascript is the most fun programming language I have ever seen so far';
 
 function reverseWords(sentence) {
-  let splitSentence = sentence.split(" ");
+  let splitSentence = sentence.split(' ');
   let reversedSentence = [];
   for (let i = splitSentence.length - 1; i >= 0; i--) {
     reversedSentence.push(splitSentence[i]);
   }
-  return reversedSentence.join(" ");
+  return reversedSentence.join(' ');
 }
 
 console.log(reverseWords(sentenceEx14));
-
-
 
 /*
 15. Filter Words Longer Than X
@@ -169,23 +159,19 @@ console.log(reverseWords(sentenceEx14));
       to collect only the words that have a length >= minLength.
     - Log the resulting array.
 */
-const myWords=["bir","iki","üç","dört","beş","altı","yedi","sekiz"];
+const myWords = ['bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz'];
 
-
-
-function filterLongWords(words, minLength){
+function filterLongWords(words, minLength) {
   let newWords = [];
-  for(let i=0; i < words.length; i++){
-    if(words[i].length >= minLength){
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length >= minLength) {
       newWords.push(words[i]);
     }
-    
   }
   return newWords;
 }
 
 filterLongWords(myWords, 3);
-
 
 /*
 16. Log Array Elements with Their Indices
@@ -193,16 +179,14 @@ filterLongWords(myWords, 3);
       and logs "Index: i, Value: arr[i]" for each element.
 */
 
-const myArrayEx16 = ["busra","demirkesen",34,true,false];
-function logElementsWithIndex(arr){
-  for(let i=0; i<myArrayEx16.length; i++){
+const myArrayEx16 = ['busra', 'demirkesen', 34, true, false];
+function logElementsWithIndex(arr) {
+  for (let i = 0; i < myArrayEx16.length; i++) {
     console.log(`Index: ${i}, Value: ${myArrayEx16[i]}.`);
   }
-
 }
 
 logElementsWithIndex(myArrayEx16);
-
 
 /*
 17. Find the Smallest Number in an Array
@@ -210,21 +194,18 @@ logElementsWithIndex(myArrayEx16);
       to find and return the smallest number.
     - Log the smallest number.
 */
-const myNumbersEx17 = [4,9,2,1,7,15,3,11];
+const myNumbersEx17 = [4, 9, 2, 1, 7, 15, 3, 11];
 
-
-function findMin(numbers){
+function findMin(numbers) {
   let smallestNumber = numbers[0];
-  for(let i=0; i < numbers.length; i++){
-    if(numbers[i] < smallestNumber){
-      smallestNumber= numbers[i];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
     }
   }
   return smallestNumber;
 }
 findMin(myNumbersEx17);
-
-
 
 /*
 18. Count Occurrences of a Word in an Array
@@ -234,22 +215,19 @@ findMin(myNumbersEx17);
 
 */
 
-const foods=["apple","egg","banana","apple","bread","apple"];
+const foods = ['apple', 'egg', 'banana', 'apple', 'bread', 'apple'];
 
-
-function countOccurrences(arr, word){
+function countOccurrences(arr, word) {
   let counterEx18 = 0;
-    for(let i =0; i < arr.length; i++){
-        if(arr[i].toLowerCase() === word.toLowerCase()){
-          counterEx18 +=1;
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].toLowerCase() === word.toLowerCase()) {
+      counterEx18 += 1;
     }
-    return counterEx18;
+  }
+  return counterEx18;
 }
 
-
-countOccurrences(foods,"apple");
-
+countOccurrences(foods, 'apple');
 
 /*
 19. Remove Falsy Values
@@ -257,20 +235,29 @@ countOccurrences(foods,"apple");
       and returns a new array without falsy values (false, 0, "", null, undefined, NaN).
     - Log the new array.
 */
-const myArrayEx19=["string", 3 , "number", 8, false, 0 ,"", null, undefined, NaN];
+const myArrayEx19 = [
+  'string',
+  3,
+  'number',
+  8,
+  false,
+  0,
+  '',
+  null,
+  undefined,
+  NaN,
+];
 
-function removeFalsyValues(arr){
-   let myNewArrayEx19=[];
-   for(let i=0; i < arr.length; i++){
-    if(arr[i]){
+function removeFalsyValues(arr) {
+  let myNewArrayEx19 = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
       myNewArrayEx19.push(arr[i]);
     }
     return myNewArrayEx19;
-   }
+  }
 }
 removeFalsyValues(myArrayEx19);
-
-
 
 /*
 20. Sum of All Digits in a String
@@ -280,11 +267,11 @@ removeFalsyValues(myArrayEx19);
     - Example: "abc123" -> 6
 
 */
-const strEx20 = "def432ne379";
-function sumDigits(str){
+const strEx20 = 'def432ne379';
+function sumDigits(str) {
   let countEx20 = 0;
-  for(let i=0; i<str.length; i++){
-    if(typeof str[i] === 'number'){
+  for (let i = 0; i < str.length; i++) {
+    if (typeof str[i] === 'number') {
       counter += Number(str[i]);
     }
   }
@@ -293,7 +280,6 @@ function sumDigits(str){
 
 sumDigits(strEx20);
 
-
 /*
 21. Average of Array Elements
     - Define a function `averageArray(numbers)` that uses a loop
@@ -301,19 +287,17 @@ sumDigits(strEx20);
     - Log the average.
 */
 
-const myArrayEx21 = [5,7,10,520,789,320,2,84];
-function averageArray(numbers){
+const myArrayEx21 = [5, 7, 10, 520, 789, 320, 2, 84];
+function averageArray(numbers) {
   let sumEx21 = 0;
-  for(let i=0; i<numbers.length; i++){
+  for (let i = 0; i < numbers.length; i++) {
     sumEx21 = sumEx21 + Number(numbers[i]);
   }
   let avEx21 = sumEx21 / numbers.length;
   return avEx21;
 }
 
-
 averageArray(myArrayEx21);
-
 
 /*
 22. Flatten a 2D Array (Nested Loops)
@@ -322,32 +306,27 @@ averageArray(myArrayEx21);
     - Log the flattened array.
 */
 
-
-
 // DÜZELTME
 
-const my2DArray = [[1,4,7],[2,5,8]];
+const my2DArray = [
+  [1, 4, 7],
+  [2, 5, 8],
+];
 
-
-function flattenArray(twoDArray){
-  let my1DArray =[];
-      for(let i=0; i<twoDArray.length; i++){
-
-         if(Array.isArray(twoDArray[i])){
-            my1DArray = my1DArray.concat(flattenArray(twoDArray[i]));
-         } else{
-            my1DArray.push(twoDArray[i]);
-      }
-    
-
+function flattenArray(twoDArray) {
+  let my1DArray = [];
+  for (let i = 0; i < twoDArray.length; i++) {
+    if (Array.isArray(twoDArray[i])) {
+      my1DArray = my1DArray.concat(flattenArray(twoDArray[i]));
+    } else {
+      my1DArray.push(twoDArray[i]);
     }
-  
-return my1DArray;
+  }
+
+  return my1DArray;
 }
 
 flattenArray(my2DArray);
-
-
 
 /*
 23. Find Words Containing a Letter
@@ -357,24 +336,28 @@ flattenArray(my2DArray);
     - Log the filtered array.
 */
 
-const myWordsEx23 = ["Mersin","Manisa","Muğla","Kıriehir","Kırklareli","Kırıkkale"];
+const myWordsEx23 = [
+  'Mersin',
+  'Manisa',
+  'Muğla',
+  'Kıriehir',
+  'Kırklareli',
+  'Kırıkkale',
+];
 
-function findWordsWithLetter(words, letter){
+function findWordsWithLetter(words, letter) {
   let myNewArrayEx23 = [];
-  for(let i=0; i < words.length; i++){
+  for (let i = 0; i < words.length; i++) {
     if (words[i].toLowerCase().includes(letter.toLowerCase())) {
       {
-      myNewArrayEx23.push(words[i]);
+        myNewArrayEx23.push(words[i]);
+      }
     }
+    return myNewArrayEx23;
   }
-return myNewArrayEx23;
 }
 
-}
-
-findWordsWithLetter(myWordsEx23,"M");
-
-
+findWordsWithLetter(myWordsEx23, 'M');
 
 /*
 24. Push and Pop Operations
@@ -386,19 +369,17 @@ findWordsWithLetter(myWordsEx23,"M");
       - logs the final array
 */
 
+let myArrEx24 = ['Mercedes', 'BMW', 'Wolkswagen', 'Audi'];
+const myItem = 'Opel';
 
-let myArrEx24=["Mercedes","BMW","Wolkswagen","Audi"];
-const myItem ="Opel";
-
-function pushPopExample(arr, itemToPush){
+function pushPopExample(arr, itemToPush) {
   arr.push(itemToPush);
-  console.log("After push: "+ arr);
+  console.log('After push: ' + arr);
   arr.pop();
-  console.log("After pop: " + arr);
-
+  console.log('After pop: ' + arr);
 }
 
-pushPopExample(myArrEx24,myItem);
+pushPopExample(myArrEx24, myItem);
 
 /*
 25. Push and Shift Operations
@@ -409,19 +390,17 @@ pushPopExample(myArrEx24,myItem);
       - logs the removed person
       - logs the final queue
 */
-let personelList = ["ayse","ali","mehmet","zeynep"];
-const myPerson="ahmet";
+let personelList = ['ayse', 'ali', 'mehmet', 'zeynep'];
+const myPerson = 'ahmet';
 
-
-function manageQueue(queue, newPerson){
+function manageQueue(queue, newPerson) {
   queue.push(newPerson);
   console.log(queue);
   queue.shift();
   console.log(queue);
- 
 }
 
-manageQueue(personelList,myPerson);
+manageQueue(personelList, myPerson);
 
 /*
 26. To-Do List Application 
@@ -432,15 +411,12 @@ manageQueue(personelList,myPerson);
    - Logs the updated list.
 */
 
+const myToDoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+const myNewTasks = ['go gym', 'prep dinner'];
 
-
-const myToDoList = ["Study JS", "Eat breakfast", "Walk dog"];
-const myNewTasks = ["go gym","prep dinner"];
-
-function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
-  todoList.splice(startIndex,deleteCount);
+function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
+  todoList.splice(startIndex, deleteCount);
   todoList.push(...newTasks);
   console.log(todoList);
-
 }
-updateTodoList(myToDoList,0,2, ...myNewTasks);
+updateTodoList(myToDoList, 0, 2, ...myNewTasks);

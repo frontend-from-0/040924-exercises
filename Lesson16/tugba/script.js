@@ -10,7 +10,7 @@ function printCharacters(str) {
   }
 }
 
-printCharacters("Hello");
+printCharacters('Hello');
 
 /*
 9. Sum All Values in an Object
@@ -23,7 +23,7 @@ printCharacters("Hello");
 function sumObjectValues(obj) {
   let sum = 0;
   for (let prop in obj) {
-    if (typeof obj[prop] === "number") {
+    if (typeof obj[prop] === 'number') {
       sum += obj[prop];
     }
   }
@@ -31,7 +31,7 @@ function sumObjectValues(obj) {
 }
 
 console.log(sumObjectValues({ a: 10, b: 20, c: 5 }));
-console.log(sumObjectValues({ x: "merhaba", y: 50, z: 30 }));
+console.log(sumObjectValues({ x: 'merhaba', y: 50, z: 30 }));
 
 /*
 10. Print Keys of an Object (For-in)
@@ -42,11 +42,11 @@ console.log(sumObjectValues({ x: "merhaba", y: 50, z: 30 }));
 
 function printObjectKeys(obj) {
   for (let key in obj) {
-    console.log(key + ":" + obj[key]);
+    console.log(key + ':' + obj[key]);
   }
 }
 
-printObjectKeys({ name: "Tugba", age: 35 });
+printObjectKeys({ name: 'Tugba', age: 35 });
 
 /*
 11. Sum Array Using do-while Loop
@@ -61,7 +61,7 @@ function sumWithDoWhile(numbers) {
     sum += numbers[i];
     i++;
   } while (i < numbers.length);
-  console.log("sum", sum);
+  console.log('sum', sum);
 }
 
 sumWithDoWhile([10, 20, 30, 40]);
@@ -81,7 +81,7 @@ function removeDuplicates(arr) {
       uniqueArr.push(item);
     }
   }
-  console.log("uniqueArr", uniqueArr);
+  console.log('uniqueArr', uniqueArr);
 }
 
 removeDuplicates([1, 2, 3, 2, 4, 5, 3, 6, 5]);
@@ -113,19 +113,19 @@ factorial(5);
 */
 
 function reverseWords(sentence) {
-  let words = sentence.split(" ");
+  let words = sentence.split(' ');
   let reversedWords = [];
 
   for (let i = words.length - 1; i >= 0; i--) {
     reversedWords.push(words[i]);
   }
 
-  let reversedSentence = reversedWords.join(" ");
+  let reversedSentence = reversedWords.join(' ');
 
   console.log(reversedSentence);
 }
 
-reverseWords("Hello World");
+reverseWords('Hello World');
 
 /*
 15. Filter Words Longer Than X
@@ -146,7 +146,7 @@ function filterLongWords(words, minLength) {
   console.log(filteredWords);
 }
 
-filterLongWords(["apple", "banana", "word", "cherry", "date", "elderberry"], 5);
+filterLongWords(['apple', 'banana', 'word', 'cherry', 'date', 'elderberry'], 5);
 
 /*
 16. Log Array Elements with Their Indices
@@ -200,7 +200,7 @@ function countOccurrences(arr, word) {
   console.log(`"${word}" appears ${count} times.`);
 }
 
-countOccurrences(["a", "b", "c", "a", "a"], "a"); // Çıktı: "a" kelimesinin tekrar sayısı: 3
+countOccurrences(['a', 'b', 'c', 'a', 'a'], 'a'); // Çıktı: "a" kelimesinin tekrar sayısı: 3
 
 /*
 19. Remove Falsy Values
@@ -219,7 +219,7 @@ function removeFalsyValues(arr) {
   return newArr;
 }
 
-console.log(removeFalsyValues([0, 1, false, 2, "", 3, null, undefined, NaN]));
+console.log(removeFalsyValues([0, 1, false, 2, '', 3, null, undefined, NaN]));
 
 /*
 20. Sum of All Digits in a String
@@ -232,14 +232,14 @@ console.log(removeFalsyValues([0, 1, false, 2, "", 3, null, undefined, NaN]));
 function sumDigits(str) {
   let sum = 0;
   for (let char of str) {
-    if (!isNaN(char) && char !== " ") {
+    if (!isNaN(char) && char !== ' ') {
       sum += Number(char);
     }
   }
   console.log(sum);
 }
 
-sumDigits("abc123d4");
+sumDigits('abc123d4');
 
 /*
 21. Average of Array Elements
@@ -275,7 +275,7 @@ function flattenArray(twoDArray) {
     }
   }
 
-  console.log("Düzleştirilmiş dizi:", flattened);
+  console.log('Düzleştirilmiş dizi:', flattened);
 }
 
 flattenArray([[10, 20], [30, 40, 50], [60]]);
@@ -300,7 +300,7 @@ function findWordsWithLetter(words, letter) {
   console.log(filteredWords);
 }
 
-findWordsWithLetter(["apple", "banana", "orange", "kiwi"], "a");
+findWordsWithLetter(['apple', 'banana', 'orange', 'kiwi'], 'a');
 
 /*
 24. Push and Pop Operations
@@ -315,13 +315,13 @@ findWordsWithLetter(["apple", "banana", "orange", "kiwi"], "a");
 function loopPushPopExample(arr, itemsToPush) {
   for (let item of itemsToPush) {
     arr.push(item);
-    console.log("Push sonrası dizi:", arr);
+    console.log('Push sonrası dizi:', arr);
 
     let poppedItem = arr.pop();
-    console.log("Pop sonrası çıkarılan eleman:", poppedItem);
+    console.log('Pop sonrası çıkarılan eleman:', poppedItem);
   }
 
-  console.log("Dizinin son hali:", arr);
+  console.log('Dizinin son hali:', arr);
 }
 
 loopPushPopExample([1, 2], [3, 4, 5]);
@@ -338,15 +338,15 @@ loopPushPopExample([1, 2], [3, 4, 5]);
 
 function manageQueue(queue, newPerson) {
   queue.push(newPerson);
-  console.log("After adding to the queue:", queue);
+  console.log('After adding to the queue:', queue);
 
   let removedPerson = queue.shift();
-  console.log("Removed person:", removedPerson);
+  console.log('Removed person:', removedPerson);
 
-  console.log("Final queue:", queue);
+  console.log('Final queue:', queue);
 }
 
-manageQueue(["Alice", "Bob", "Charlie"], "David");
+manageQueue(['Alice', 'Bob', 'Charlie'], 'David');
 
 /*
 26. To-Do List Application 
@@ -357,14 +357,14 @@ manageQueue(["Alice", "Bob", "Charlie"], "David");
    - Logs the updated list.
 */
 function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
-  console.log("Current to-do list:", todoList);
+  console.log('Current to-do list:', todoList);
 
   todoList.splice(startIndex, deleteCount);
 
   todoList.push(...newTasks);
 
-  console.log("Updated to-do list:", todoList);
+  console.log('Updated to-do list:', todoList);
 }
 
-const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
-updateTodoList(todoList, 1, 1, "Do laundry", "Call friend");
+const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+updateTodoList(todoList, 1, 1, 'Do laundry', 'Call friend');

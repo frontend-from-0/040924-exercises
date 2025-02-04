@@ -1,4 +1,3 @@
-
 /*
 8. Print Each Character of a String (For-of)
    - Define a function `printCharacters(str)` that uses a for-of loop
@@ -10,8 +9,7 @@ function printCharacters(str) {
   }
 }
 
-
-const exampleString = "Hello World";
+const exampleString = 'Hello World';
 printCharacters(exampleString);
 /*
 9. Sum All Values in an Object
@@ -29,9 +27,8 @@ function sumObjectValues(obj) {
   console.log(sumKey);
 }
 
-
 const person = {
-  name: "Ali",
+  name: 'Ali',
   age: 25,
   height: 175,
   weight: 70,
@@ -61,7 +58,7 @@ function sumWithDoWhile(numbers) {
   let index = 0;
   do {
     total += numbers[index];
-   
+
     index++;
   } while (index < numbers.length);
   console.log(total);
@@ -84,8 +81,8 @@ function removeDuplicates(arr) {
     if (removeDup.indexOf(arr[i] === -1)) {
       removeDup.push(arr[i]);
     }
-    
-  }console.log(removeDup);
+  }
+  console.log(removeDup);
 }
 removeDuplicates(ex1Array);
 
@@ -114,11 +111,11 @@ factorial(5);
 */
 function reverseWords(sentence) {
   let reversedSentence = [];
-  reversedSentence = sentence.split(" ").reverse().join(" ");
+  reversedSentence = sentence.split(' ').reverse().join(' ');
   console.log(reversedSentence);
 }
 
-reverseWords("Life is challenging sometimes.");
+reverseWords('Life is challenging sometimes.');
 /*
 15. Filter Words Longer Than X
     - Define a function `filterLongWords(words, minLength)` that uses a for loop
@@ -134,7 +131,7 @@ function filterLongWords(words, minLength) {
   }
   console.log(resultArray);
 }
-filterLongWords(["apple", "banana", "cherry", "kiwi"], 6);
+filterLongWords(['apple', 'banana', 'cherry', 'kiwi'], 6);
 
 /*
 16. Log Array Elements with Their Indices
@@ -143,7 +140,7 @@ filterLongWords(["apple", "banana", "cherry", "kiwi"], 6);
 */
 
 function logElementsWithIndex(arr) {
-  for (let i=0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     console.log(`Index ${i},Value ${arr[i]}`);
   }
 }
@@ -167,7 +164,7 @@ function findMin(numbers) {
   return smallestNum;
 }
 
-findMin([2,4,6,7,34,1,-1,-4]);
+findMin([2, 4, 6, 7, 34, 1, -1, -4]);
 
 function findMin2(numbers) {
   let minNum = numbers[0];
@@ -181,7 +178,7 @@ function findMin2(numbers) {
   console.log(minNum);
   return minNum;
 }
-findMin2([2,4,6,7,34,1,-1,-4]);
+findMin2([2, 4, 6, 7, 34, 1, -1, -4]);
 /*
 18. Count Occurrences of a Word in an Array
     - Define a function `countOccurrences(arr, word)` that loops through `arr`
@@ -189,8 +186,8 @@ findMin2([2,4,6,7,34,1,-1,-4]);
     - Log the count.
 */
 
-let exampleArray = ["apple", "banana", "apple", "orange", "apple"];
-let wordToCount = "apple";
+let exampleArray = ['apple', 'banana', 'apple', 'orange', 'apple'];
+let wordToCount = 'apple';
 
 function countOccurrences(arr, word) {
   let occurrencesNum = 0;
@@ -202,9 +199,7 @@ function countOccurrences(arr, word) {
   return occurrencesNum;
 }
 
-countOccurrences(exampleArray,wordToCount)
-
-
+countOccurrences(exampleArray, wordToCount);
 
 /*
 19. Remove Falsy Values
@@ -217,11 +212,11 @@ function removeFalsyValues(arr) {
   let withoutFalsyArr = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i]) {
-    withoutFalsyArr.push(arr[i]);
+      withoutFalsyArr.push(arr[i]);
     }
   }
 }
-removeFalsyValues([0, 1, false, 2, "", 3, null, "hello", undefined, NaN]);
+removeFalsyValues([0, 1, false, 2, '', 3, null, 'hello', undefined, NaN]);
 
 /*
 20. Sum of All Digits in a String
@@ -242,7 +237,7 @@ function sumDigits(str) {
   console.log(`The total ${totalDigit}`);
 }
 
-sumDigits("example345");
+sumDigits('example345');
 
 /*
 21. Average of Array Elements
@@ -251,13 +246,13 @@ sumDigits("example345");
     - Log the average.
 */
 
-let averageEx=[1,3,4,2,1,3];
+let averageEx = [1, 3, 4, 2, 1, 3];
 function averageArray(numbers) {
   let sumOftheArray = 0;
   for (let i = 0; i < numbers.length; i++) {
     sumOftheArray += numbers[i];
   }
-  let averageOftheArray = sumOftheArray /numbers.length;
+  let averageOftheArray = sumOftheArray / numbers.length;
   console.log(averageOftheArray);
 }
 
@@ -270,22 +265,22 @@ averageArray(averageEx);
     - Log the flattened array.
 */
 
-let arrayEx=[[1,2],[3,4],[5,6]];
-function flattenArray(twoDArray){
-  let oneDarray=[];
-  for (let i=0; i<twoDArray.length; i++){
-  for(let j=0; j<twoDArray[i].length; j++){
-    oneDarray.push(twoDArray[i][j]);
+let arrayEx = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+function flattenArray(twoDArray) {
+  let oneDarray = [];
+  for (let i = 0; i < twoDArray.length; i++) {
+    for (let j = 0; j < twoDArray[i].length; j++) {
+      oneDarray.push(twoDArray[i][j]);
+    }
   }
-}
-console.log(oneDarray);
+  console.log(oneDarray);
 }
 
 flattenArray(arrayEx);
-
-
-
-
 
 /*
 23. Find Words Containing a Letter
@@ -295,21 +290,19 @@ flattenArray(arrayEx);
     - Log the filtered array.
 */
 
-function findWordsWithLetter(words,letter){
-  let filteredArray=[];
-  for(let i=0; i<words.length; i++){
-if(words[i].includes(letter)){
-filteredArray.push(words[i]);
-}
+function findWordsWithLetter(words, letter) {
+  let filteredArray = [];
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].includes(letter)) {
+      filteredArray.push(words[i]);
+    }
   }
   console.log(filteredArray);
 }
-let wordsArray = ["apple", "banana", "cherry", "date", "grape"];
-let searchLetter = "a";
+let wordsArray = ['apple', 'banana', 'cherry', 'date', 'grape'];
+let searchLetter = 'a';
 
 findWordsWithLetter(wordsArray, searchLetter);
-
-
 
 /*
 24. Push and Pop Operations
@@ -320,22 +313,19 @@ findWordsWithLetter(wordsArray, searchLetter);
       - logs the popped element
       - logs the final array
 */
-function pushPopExample(arr,itemToPush){
+function pushPopExample(arr, itemToPush) {
   arr.push(itemToPush);
-    console.log(`The updated array after pushing the item ${arr}`);
-  
-    let poppedElement=arr.pop();
-    console.log(`The popped element is ${poppedElement}`);
-    console.log(`Final array after pop: ${arr}`);
-  }
- 
-  let sampleArray = [1, 2, 3];
-  let newItem = 4;
-  
-  pushPopExample(sampleArray, newItem);
+  console.log(`The updated array after pushing the item ${arr}`);
 
+  let poppedElement = arr.pop();
+  console.log(`The popped element is ${poppedElement}`);
+  console.log(`Final array after pop: ${arr}`);
+}
 
+let sampleArray = [1, 2, 3];
+let newItem = 4;
 
+pushPopExample(sampleArray, newItem);
 
 /*
 25. Push and Shift Operations
@@ -347,17 +337,17 @@ function pushPopExample(arr,itemToPush){
       - logs the final queue
 */
 
-function manageQueue(queue,newPerson){
+function manageQueue(queue, newPerson) {
   queue.push(newPerson);
   console.log(`The updated queue is ${queue}`);
-  
- let removedPerson=queue.shift();
+
+  let removedPerson = queue.shift();
   console.log(`Removed person is ${removedPerson}`);
   console.log(`The final queue is ${queue}`);
 }
 
-let queue = ["Alice", "Bob", "Charlie"];
-let newPerson = "David";
+let queue = ['Alice', 'Bob', 'Charlie'];
+let newPerson = 'David';
 
 manageQueue(queue, newPerson);
 
@@ -369,14 +359,12 @@ manageQueue(queue, newPerson);
    - Inserts any new tasks at the end of the array.
    - Logs the updated list.
 */
-const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
-function updateToDoList(todoList,startIndex,deleteCount,...newTasks){
-console.log(`The current list of tasks ${todoList}`);
-todoList.splice(startIndex,deleteCount);
-todoList.push(...newTasks);
-console.log(`You can follow the updated list ${todoList}`);
+const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+function updateToDoList(todoList, startIndex, deleteCount, ...newTasks) {
+  console.log(`The current list of tasks ${todoList}`);
+  todoList.splice(startIndex, deleteCount);
+  todoList.push(...newTasks);
+  console.log(`You can follow the updated list ${todoList}`);
 }
 
-updateToDoList(todoList, 1, 1, "Go for a run", "Complete homework");
-
-
+updateToDoList(todoList, 1, 1, 'Go for a run', 'Complete homework');

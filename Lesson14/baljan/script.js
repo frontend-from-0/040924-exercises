@@ -13,11 +13,11 @@ console.log(sumEx1);
 
 // 2. Declare variables userName and userAge. Log a greeting: "Hello! I am (userName) and I am (userAge) years old."
 // CODE HERE
-const userName = "Baljan";
+const userName = 'Baljan';
 const userAge = 28;
 
 console.log(`Hello! I am ${userName} and I am ${userAge} years old.`);
-console.log("Hello! I am " + userName + " and I am " + userAge + " years old.");
+console.log('Hello! I am ' + userName + ' and I am ' + userAge + ' years old.');
 
 // 3. Declare variables a=10 and b=4. Log the result of a-b, a*b, and a/b.
 // CODE HERE
@@ -27,11 +27,11 @@ const b = 4;
 const toplam = a + b;
 const carpim = a * b;
 const bolum = a / b;
-console.log("Toplam sonucu= " + toplam);
+console.log('Toplam sonucu= ' + toplam);
 // 1. Create a single string from "Toplam sonucu= " + toplam
 // 2. Log the result using console.log()
-console.log("Çarpım sonucu= " + carpim);
-console.log("Bölüm sonucu= " + bolum);
+console.log('Çarpım sonucu= ' + carpim);
+console.log('Bölüm sonucu= ' + bolum);
 
 // 4. Use template literals to log: "My name is (userName). I like JS."
 // CODE HERE
@@ -39,21 +39,21 @@ console.log(`My name is ${userName}. I like JS.`);
 
 // 5. Declare a string password = "securePass". Log the length of password.
 // CODE HERE
-const password = "securePass";
+const password = 'securePass';
 console.log(password.length);
 
 // 6. Convert the string "hello world" to uppercase and log it.
 // CODE HERE
-const word = "hello world";
+const word = 'hello world';
 console.log(word.toUpperCase());
-console.log("hello world".toUpperCase());
+console.log('hello world'.toUpperCase());
 
 // 7. Concatenate "Hello" and "World" with a space in between and log the result.
 // CODE HERE
-const word1 = "Hello";
-const word2 = "World";
+const word1 = 'Hello';
+const word2 = 'World';
 
-console.log(word1 + " " + word2);
+console.log(word1 + ' ' + word2);
 
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
@@ -71,7 +71,7 @@ console.log(number, numberString);
 
 // 10. Convert the string "50" to a number and log its type to confirm the conversion.
 // CODE HERE
-const string = "50";
+const string = '50';
 
 console.log(parseInt(string));
 
@@ -87,15 +87,14 @@ console.log(number1Ex12);
 const number2Ex12 = Math.ceil(3.2);
 console.log(number2Ex12);
 
-
 // Prompt can only be used in browser environment
-const userResponse = prompt("What is your age?").trim();;
+const userResponse = prompt('What is your age?').trim();
 const userResposeNumber = parseInt(userResponse);
 
 if (isNaN(userResposeNumber)) {
-  throw new Error("Please enter a valid number");
+  throw new Error('Please enter a valid number');
 } else {
-  console.log('userResponse',  Math.floor(userResposeNumber));
+  console.log('userResponse', Math.floor(userResposeNumber));
 }
 
 // 13. Declare a boolean variable isStudent = true. Log it.
@@ -117,9 +116,9 @@ console.log(points);
 
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
 // CODE HERE
-let name = "Alice"
+let name = 'Alice';
 let age = 30;
-let city = "Paris";
+let city = 'Paris';
 console.log(`${name} (${age}) lives in ${city}`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
@@ -138,14 +137,14 @@ let divisor = 3;
 let divisionResult = dividend / divisor;
 let differenceResult = dividend - divisor;
 
-console.log("Quotient:", divisionResult);
-console.log("Difference:", differenceResult);
+console.log('Quotient:', divisionResult);
+console.log('Difference:', differenceResult);
 
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
 const firstName = 'Baljan';
 const lastName = 'Kanatbek';
-const fullName = firstName + " " + lastName; ;
+const fullName = firstName + ' ' + lastName;
 
 console.log(fullName);
 
@@ -161,7 +160,6 @@ console.log(product);
 // CODE HERE
 console.log(Math.PI);
 
-
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
 let count = 0;
@@ -169,13 +167,11 @@ let count = 0;
 count++;
 console.log(count);
 
-count+=1;
+count += 1;
 console.log(count);
 
-count=count+1;
+count = count + 1;
 console.log(count);
-
-
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
@@ -183,31 +179,26 @@ let initialTemperature = 20;
 initialTemperature += 5;
 console.log(initialTemperature);
 
-
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
 let numberEx9 = 6;
 
-console.log("Before increment: ", numberEx9);
-console.log("After increment: ", ++numberEx9);
-
+console.log('Before increment: ', numberEx9);
+console.log('After increment: ', ++numberEx9);
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
 let numberEx10 = 8;
 
-console.log("Before increment: ", numberEx10);
-console.log("After increment: ", ++numberEx10);
-
+console.log('Before increment: ', numberEx10);
+console.log('After increment: ', ++numberEx10);
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
-let numberEx11 =- 3;
-let result = ++numberEx11 *2;
+let numberEx11 = -3;
+let result = ++numberEx11 * 2;
 
 console.log(result);
-
-
 
 // 27. Declare c=2 and d=3. Increment a using the prefix ++ operator, then add d to the result and log it.
 // CO

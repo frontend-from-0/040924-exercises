@@ -362,4 +362,3 @@ function printCharacters(str) {
   updateTodoList(["Task 1", "Task 2", "Task 3"], 1, 1, "New Task 2", "New Task 3");
   updateTodoList(["Buy groceries", "Clean house", "Do laundry"], 0, 2, "Walk the dog");
   
-  
