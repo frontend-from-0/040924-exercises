@@ -73,10 +73,10 @@ Node.js or a browser console.
 */
 
 const item = {
-  name: "Shoes",
+  name: 'Shoes',
   price: {
     value: 75,
-    currency: "USD",
+    currency: 'USD',
   },
   quantity: 2,
 };
@@ -88,14 +88,14 @@ class ShoppingCart {
 
   viewCart() {
     if (this._items.length > 0) {
-      console.log("ShoppingCart Items: ");
+      console.log('ShoppingCart Items: ');
       for (const item of this._items) {
         console.log(
-          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`,
+          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`
         );
       }
     } else {
-      console.log("Shopping Cart is empty");
+      console.log('Shopping Cart is empty');
     }
   }
   addItem(name, price, quantity) {
@@ -113,7 +113,7 @@ class ShoppingCart {
       existingItem.quantity += quantity;
     } else {
       const newItem = { name, price, quantity };
-      console.log("Adding new item: ", newItem);
+      console.log('Adding new item: ', newItem);
       this._items.push(newItem);
     }
   }
@@ -132,11 +132,11 @@ class ShoppingCart {
 const cart1 = new ShoppingCart();
 cart1.viewCart();
 
-cart1.addItem("Shoes", { value: 75, currency: "USD" }, 2);
-cart1.addItem("Shoes", { value: 75, currency: "USD" }, 4);
+cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 2);
+cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 4);
 
-cart1.addItem("Bag", { value: 100, currency: "USD" }, 1);
+cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
 cart1.viewCart();
 
-cart1.removeItem("Bag", { value: 100, currency: "USD" }, 1);
+cart1.removeItem('Bag', { value: 100, currency: 'USD' }, 1);
 cart1.viewCart();
