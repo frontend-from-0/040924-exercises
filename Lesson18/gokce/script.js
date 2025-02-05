@@ -131,7 +131,7 @@ class ShoppingCart {
       SAVE20: 20,
       SAVE30: 30,
     };
-    let total = this.getTotal();
+    const total = this.getTotal();
 
     if (!(discountCodes in discounts)) {
       console.log('The discount code is not valid');
