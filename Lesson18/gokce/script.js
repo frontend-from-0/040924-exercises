@@ -133,7 +133,7 @@ class ShoppingCart {
     };
     const total = this.getTotal();
 
-    if (!(discountCodes in discounts)) {
+    if (!(discountCode in discounts)) {
       console.log('The discount code is not valid');
       return;
     }
