@@ -138,7 +138,7 @@ class ShoppingCart {
       return;
     }
     const discountAmount = (total * discounts[discountCode]) / 100;
-    let result = total - discountAmount;
+    const result = total - discountAmount;
     console.log(`Total after discount: ${result}`);
     return result;
   }
