@@ -137,7 +137,7 @@ class ShoppingCart {
       console.log('The discount code is not valid');
       return;
     }
-    let discountAmount = (total * discounts[discountCodes]) / 100;
+    const discountAmount = (total * discounts[discountCode]) / 100;
     let result = total - discountAmount;
     console.log(`Total after discount: ${result}`);
     return result;
