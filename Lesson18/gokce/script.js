@@ -125,7 +125,7 @@ class ShoppingCart {
     }
     return total;
   }
-  applyDiscount(discountCodes) {
+  applyDiscount(discountCode) {
     const discounts = {
       SAVE10: 10,
       SAVE20: 20,
