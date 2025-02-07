@@ -70,6 +70,15 @@ Function: addContact(name, phone, email)
 - Logs "Contact added successfully." if everything is good.
 */
 
+function findContact(name, contactList) {
+  for (const contact of contactList) {
+    if (contact.name === name) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function addContact(newName, newPhone, newEmail, contactList) {
   for (let i = 0; i < contactList.length; i++) {
     if (newName === contactList[i].name) {
@@ -131,15 +140,6 @@ Function: updateContact(name, newPhone, newEmail)
 - Logs "Contact updated successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return true;
-    }
-  }
-  return false;
-}
 
 
 function updateContact(name, newPhone, newEmail, contactList) {
