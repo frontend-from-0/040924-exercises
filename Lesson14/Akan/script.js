@@ -52,7 +52,9 @@ const readline = require('readline').createInterface({
 
   // 7. Concatenate "Hello" and "World" with a space in between and log the result.
   // CODE HERE
-
+  const greeting = "Hello";
+  console.log(greeting + " World");
+   
   // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
   // CODE HERE
   const name = "sevcan";
@@ -119,7 +121,7 @@ console.log(points);
 const name = "Alice";
 const age = 30;
 const city = "Paris";
-console.log('${name}', '(${age}', 'lives in ${city}';
+console.log(`${name} (${age}) lives in ${city}`);
 
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
@@ -127,7 +129,7 @@ console.log('${name}', '(${age}', 'lives in ${city}';
 const x = 5;
 const y = 10;
 const z = 15;
-console.log(x + y + Z);
+console.log(x + y + z);
 
 // 18. Declare dividend=10 and divisor=3. Log the quotient (divisionResult) and difference (differenceResult).
 // CODE HERE
@@ -146,7 +148,7 @@ console.log(fullName);
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
 const firstFactor = 7;
-cosnt secondFactor = 2;
+const secondFactor = 2;
 console.log(firstFactor * secondFactor);
 
 
@@ -157,7 +159,7 @@ console.log(Math.PI);
 
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
-const counter = 0;
+let counter = 0;
 counter++;
 counter += 1;
 counter = counter + 1;
@@ -165,28 +167,28 @@ console.log(counter);
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
-const initialTemperature = 20;
+let initialTemperature = 20;
 initialTemperature += 5;
 console.log(initialTemperature);
 
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
-const numberEx9 = 6;
+let numberEx9 = 6;
 console.log(++numberEx9);
 
 
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
-const numberEx10 = 8;
+let numberEx10 = 8;
 console.log(numberEx10++);
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
-const numberEx11 = -3;
+let numberEx11 = -3;
 console.log(++numberEx11 * 2);
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
 // CODE HERE
-const a = 2;
+let a = 2;
 const b = 3;
 console.log(++a + b);
