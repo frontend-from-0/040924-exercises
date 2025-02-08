@@ -70,6 +70,15 @@ Function: addContact(name, phone, email)
 - Logs "Contact added successfully." if everything is good.
 */
 
+function findContact(name, contactList) {
+  for (const contact of contactList) {
+    if (contact.name === name) {
+      return contact;
+    }
+  }
+  return null;
+}
+
 function addContact(name, phone, email, contactList) {
   if (findContact(name, contactList)) {
     console.warn("The contact already exist");
@@ -81,16 +90,16 @@ function addContact(name, phone, email, contactList) {
 
   const contactListLengthPrev = contactList.length;
   contactList.push({
-    name: newName,
-    phone: newPhone,
-    email: newEmail,
+    name,
+    phone,
+    email,
   });
   const contactListLengthNew = contactList.length;
 
   if (contactListLengthPrev < contactListLengthNew) {
     console.log("Contact added successfully.");
   } else {
-    console.log("An error occured when adding a contact.");
+    console.log("An error occurred when adding a contact.");
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
@@ -98,6 +107,7 @@ function addContact(name, phone, email, contactList) {
   //   ? console.log("Contact added successfully.")
   //   : console.log("An error occured when adding a contact.");
 }
+
 
 /*
 -----------------------------------------------------------
@@ -120,6 +130,8 @@ function viewContact(name, contactList) {
     console.log(`No contact found with the name: ${name}`);
   }
 }
+
+
 
 /*
 -----------------------------------------------------------
@@ -171,6 +183,8 @@ function removeContact(name, contactList) {
     console.log(`No contact was found with name: ${name}`);
   }
 }
+
+
 
 /*
 -----------------------------------------------------------
