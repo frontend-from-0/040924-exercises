@@ -19,7 +19,7 @@ const theme = document.getElementsByClassName('profile-card');
 document.getElementById('change-theme').addEventListener('click', function () {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
   for (let i = 0; i < theme.length; i++) {
-    if (theme[i].style.backgroundColor === 'rgb(173, 216, 230)') {
+    if (theme[i].style.backgroundColor === '#add8e6') {
       theme[i].style.backgroundColor = '#fff';
     } else {
       theme[i].style.backgroundColor = '#add8e6';
@@ -30,15 +30,29 @@ document.getElementById('change-theme').addEventListener('click', function () {
 // 4. Toggle Description
 document.getElementById('toggle-desc').addEventListener('click', function () {
   // TODO: Toggle the display property of the element with ID "profile-desc" between "none" and its default display.
+  const profileDesc = document.getElementById('profile-desc');
+  if (profileDesc.style.display === 'none') {
+    profileDesc.style.display = 'block'; // Показываем элемент
+  } else {
+    profileDesc.style.display = 'none'; // Скрываем элемент
+  }
 });
 
 // 5. Add Social Media Link
 document.getElementById('add-social').addEventListener('click', function () {
   // TODO: Dynamically create a new list item containing a link to a social media profile (e.g., "https://twitter.com/example")
   // Append it to the unordered list with ID "social-list"
+  const socialList = document.getElementById('social-list');
+  const newLink = document.createElement('li');
+  socialList.appendChild(newLink);
+  newLink.textContent = 'https://twitter.com/example';
 });
 
 // 6. Add a New Skill
 document.getElementById('add-skill').addEventListener('click', function () {
   // TODO: Create a new list item with a skill (e.g., "CSS") and append it to the skills list (ID "skills-list")
+  const skillsList = document.getElementById('skills-list');
+  const newSkill = document.createElement('li');
+  skillsList.appendChild(newSkill);
+  newSkill.textContent = 'CSS';
 });
