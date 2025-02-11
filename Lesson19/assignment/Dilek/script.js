@@ -17,7 +17,7 @@ document.getElementById('change-theme').addEventListener('click', function () {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
   const profileCard = document.querySelector('.profile-card');
 
-  if (profileCard.style.bacgroundColor === '#add8e6') {
+  if (profileCard.style.backgroundColor === '#add8e6') {
     profileCard.style.backgroundColor = '#fff';
   } else {
     profileCard.style.backgroundColor = '#add8e6';
