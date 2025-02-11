@@ -33,8 +33,7 @@ document.getElementById('toggle-desc').addEventListener('click', function () {
   } else {
     profileDesc.style.display = 'none';
   }
-}
-);
+});
 
 // 5. Add Social Media Link
 document.getElementById('add-social').addEventListener('click', function () {
