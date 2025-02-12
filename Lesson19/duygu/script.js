@@ -27,7 +27,12 @@ document.getElementById('change-theme').addEventListener('click', function () {
 // 4. Toggle Description
 document.getElementById('toggle-desc').addEventListener('click', function () {
   // TODO: Toggle the display property of the element with ID "profile-desc" between "none" and its default display.
-
+const profileDesc = document.getElementById('profile-desc');
+if (profileDesc.style.display === 'none') {
+  profileDesc.style.display = '';
+} else {
+  profileDesc.style.display = 'none';
+}
 });
 
 // 5. Add Social Media Link
