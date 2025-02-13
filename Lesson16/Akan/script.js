@@ -1,7 +1,7 @@
 /*
 8. Print Each Character of a String (For-of)
-   - Define a function `printCharacters(str)` that uses a for-of loop
-     to log each character in the string on a separate line.
+ - Define a function `printCharacters(str)` that uses a for-of loop
+   to log each character in the string on a separate line.
 */
 
 
@@ -41,15 +41,15 @@ console.log(sumObjectValues({ a: 10, b: 20, c: 5 }));
       to log each key of the object.
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
-const obj = {
+const testObject = {
   name: Mila', age: 5 };
 
 function printObjectKeys(obj) {
       for (const key in obj) {
         console.log(key + ':' + obj[key]);
       }
-      printObjectKeys({ name: 'Mila', age: 5 });
     }
+printObjectKeys(testObject);
 /*
 11. Sum Array Using do-while Loop
     - Define a function `sumWithDoWhile(numbers)` that uses a do-while loop
@@ -155,8 +155,6 @@ filterLongWords(['hello', 'world', 'goodbye', 'hi'], 4);
       and logs "Index: i, Value: arr[i]" for each element.
 */
 
-const arr = ['apple', 'banana', 'cherry'];
-
 function logElementsWithIndex(arr) {
   for (let i = 0; i < arr.length; i++) {
     console.log(`Index: ${i}, Value: ${arr[i]}`);
@@ -192,8 +190,6 @@ findMin([5, 3, 8, 1, 2]);
     - Log the count.
 */
 
-const arr = ['apple', 'banana', 'apple', 'cherry'];
-
 function countOccurrences(arr, word) {
   let count = 0;
   for (const item of arr) {
@@ -211,8 +207,6 @@ countOccurrences(['apple', 'banana', 'apple', 'cherry'], 'apple');
       and returns a new array without falsy values (false, 0, "", null, undefined, NaN).
     - Log the new array.
 */
-
-const arr = [0, 'apple', '', 'banana', null, 'cherry', undefined, NaN];
 
 function removeFalsyValues(arr) {
   const newArr = [];
@@ -317,16 +311,16 @@ findWordsWithLetter(words, 'a');
       - logs the final array
 */
 
-const arr = [1, 2, 3];
+const textArrayEx24 = [1, 2, 3];
 
-function pushPopExample(arr, itemToPush) {
+function pushPopExample(textArrayEx24, 4) {
   arr.push(itemToPush);
   console.log(arr);
   const popped = arr.pop();
   console.log(popped);
   console.log(arr);
 }
-pushPopExample(arr, 4);
+pushPopExample(textArrayEx24, 4);
 
 /*
 25. Push and Shift Operations
