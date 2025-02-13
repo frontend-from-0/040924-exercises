@@ -82,10 +82,10 @@ class Order {
 }
 
 
-const myRestaurant = new Restaurant("Tasty Bites", "Downtown");
-myRestaurant.addMenuItem("Pasta", 12, "Main Course");
+const myRestaurant = new Restaurant("CafeNorda", "Downtown");
+myRestaurant.addMenuItem("Steak", 12, "Main Course");
 myRestaurant.addMenuItem("Salad", 6, "Appetizer");
-myRestaurant.addMenuItem("Cake", 8, "Dessert");
+myRestaurant.addMenuItem("Cheese Cake", 8, "Dessert");
 
 myRestaurant.viewMenu();
 
