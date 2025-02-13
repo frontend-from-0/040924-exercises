@@ -1,21 +1,4 @@
-class MenuItem {
-  constructor(name, price, category) {
-      this.name = name;
-      this.price = price;
-      this.category = category;
-  }
-}
-class Restaurant {
-  constructor(name, location) {
-      this.name = name;
-      this.location = location;
-      this.menu = [];
-  }
 
-  addMenuItem(name, price, category) {
-      const newItem = new MenuItem(name, price, category);
-      this.menu.push(newItem);
-  }
 
 /*
 ===========================================================
