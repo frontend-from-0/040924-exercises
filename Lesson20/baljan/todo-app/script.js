@@ -48,11 +48,19 @@ function handleTodoFormSubmit(event) {
 
   todoInput.value = '';
 
-  document.getElementsByClassName('todo-text');
   spanElement.addEventListener('click', () => {
     spanElement.style.textDecorationLine = 'line-through';
   });
 
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.addEventListener('click', () => {
+    const todoInputValue = document.getElementById('todoInput');
+    if (todoInputValue.value.trim().length === 0) {
+      alert('Please enter a valid todo item!');
+    } else {
+      console.log(todoInputValue.value);
+    }
+  });
   /*
 
   create span element, add text, add class
