@@ -144,3 +144,7 @@ input{
   background-color: #deddff;
   border: none;
 }
+
+input:focus {
+  outline-color: #44445f;
+}
