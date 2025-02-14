@@ -19,6 +19,7 @@ updateName.addEventListener("click", () => {
   input.value = currentName;
   input.id = "profile-name";
   profileName.replaceWith(input);
+  input.focus();
   updateName.textContent = "Save";
 
 
