@@ -61,7 +61,7 @@ function handleTodoFormSubmit(event) {
       console.log(todoInputValue.value);
     }
   });
-  /*
+  /*script
 
   create span element, add text, add class
   create button element, add text, add event listener
