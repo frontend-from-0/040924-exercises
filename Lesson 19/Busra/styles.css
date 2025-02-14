@@ -129,7 +129,9 @@ color: #fff;
 
 }
 
-
+.hidden{
+  display: none;
+}
 
 .social-link{
   text-decoration: none;
@@ -140,4 +142,11 @@ input{
   padding: 10px 10px;
   text-align: center;
   font-size: 16px;
+  border-radius: 5px;
+  background-color: #deddff;
+  border: none;
+}
+
+input:focus{
+  outline-color: #44445f;
 }
