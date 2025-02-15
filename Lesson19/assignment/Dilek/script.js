@@ -28,8 +28,7 @@ document.getElementById('toggle-desc').addEventListener('click', function () {
   } else {
     profileDesc.style.display = 'none';
   }
-}
-);
+});
 
 // 5. Add Social Media Link
 document.getElementById('add-social').addEventListener('click', function () {
@@ -50,7 +49,7 @@ document.getElementById('add-social').addEventListener('click', function () {
     newListItem.appendChild(newSocialLink);
     socialList.appendChild(newListItem);
     socialInput.value = '';
-  } 
+  }
 });
 
 // 6. Add a New Skill
@@ -65,7 +64,7 @@ document.getElementById('add-skill').addEventListener('click', function () {
     newListItem.textContent = userSkill;
 
     skillsList.appendChild(newListItem);
-    skillsInput.value ='';
+    skillsInput.value = '';
   } else {
     console.log('Please enter a skill.');
   }
