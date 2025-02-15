@@ -14,7 +14,7 @@ document.getElementById('update-image').addEventListener('click', function () {
 });
 
 // 3. Change Theme
-const theme = document.getElementsByClassName('profile-card');
+const profileCards = document.getElementsByClassName('profile-card');
 
 document.getElementById('change-theme').addEventListener('click', function () {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
