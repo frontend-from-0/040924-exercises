@@ -73,10 +73,10 @@ Node.js or a browser console.
 */
 
 const item = {
-  name: 'Shoes',
+  name: "Shoes",
   price: {
     value: 75,
-    currency: 'USD',
+    currency: "USD",
   },
   quantity: 2,
 };
@@ -84,48 +84,51 @@ const item = {
 class ShoppingCart {
   constructor() {
     this._items = [];
-
   }
 
   viewCart() {
     if (this._items.length > 0) {
-      console.log('ShoppingCart Items: ');
+      console.log("ShoppingCart Items: ");
       for (const item of this._items) {
         console.log(
-          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`
+          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`,
         );
       }
     } else {
-      console.log('Shopping Cart is empty');
+      console.log("Shopping Cart is empty");
     }
   }
 
-
   addItem(name, price, quantity) {
-
     const existingItem = this._items.find((item) => item.name === name);
     if (existingItem) {
       existingItem.quantity += quantity;
     } else {
-      const newItem = { name, price: { value: price.value, currency: price.currency }, quantity };
-      console.log('Adding new item: ', newItem);
+      const newItem = {
+        name,
+        price: { value: price.value, currency: price.currency },
+        quantity,
+      };
+      console.log("Adding new item: ", newItem);
       this._items.push(newItem);
     }
   }
 
-
   removeItem(name) {
-    this._items = this._items.filter(item => item.name !== name);
+    this._items = this._items.filter((item) => item.name !== name);
   }
 
   getTotal() {
-    return this._items.reduce((total, item) => total + item.price.value * item.quantity, 0);
+    return this._items.reduce(
+      (total, item) => total + item.price.value * item.quantity,
+      0,
+    );
   }
 
   applyDiscount(code) {
     const discounts = {
       SAVE10: 0.1,
-      SAVE20: 0.2
+      SAVE20: 0.2,
     };
 
     let total = this.getTotal();
@@ -136,25 +139,22 @@ class ShoppingCart {
       console.log(`Amount after discount: ${newAmount.toFixed(2)} USD`);
       return newAmount;
     } else {
-      console.log('The discount code is not valid.');
+      console.log("The discount code is not valid.");
       return total;
     }
   }
-
 }
-
 
 const cart1 = new ShoppingCart();
 cart1.viewCart();
 
-cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 2);
-cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
+cart1.addItem("Shoes", { value: 75, currency: "USD" }, 2);
+cart1.addItem("Bag", { value: 100, currency: "USD" }, 1);
 cart1.viewCart();
 
-cart1.removeItem('Bag');
+cart1.removeItem("Bag");
 cart1.viewCart();
 
-console.log('Total Price: $' + cart1.getTotal());
+console.log("Total Price: $" + cart1.getTotal());
 
 console.log("Total Amount After Discount: $" + cart1.applyDiscount("SAVE20"));
-
