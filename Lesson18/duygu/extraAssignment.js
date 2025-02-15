@@ -1,112 +1,111 @@
 class Restaurant {
-   constructor(name, location) {
-     this.name = name;
-     this.location = location;
-     this.menu = [];
-     this.orders = []; // To track multiple orders
-   }
- 
-   addMenuItem(name, price, category) {
-     const menuItem = new MenuItem(name, price, category);
-     this.menu.push(menuItem);
-   }
- 
-   viewMenu() {
-     console.log(`Menu of ${this.name}:`);
-     this.menu.forEach((item) => {
-       console.log(`${item.name} - $${item.price} (${item.category})`);
-     });
-   }
- 
-   placeOrder(order) {
-     this.orders.push(order);
-     console.log("Order placed successfully:");
-     order.viewOrder();
-   }
- 
-   listAllOrders() {
-     console.log("All Orders:");
-     this.orders.forEach((order, index) => {
-       console.log(`Order #${index + 1}:`);
-       order.viewOrder();
-     });
-   }
- 
-   calculateTotalRevenue() {
-     return this.orders.reduce(
-       (total, order) => total + order.calculateTotal(),
-       0,
-     );
-   }
- 
-   requestBill() {
-     const totalRevenue = this.calculateTotalRevenue();
-     console.log(`Total Bill for all orders: $${totalRevenue}`);
-   }
- 
-   applyDiscount(discountPercentage) {
-     const totalRevenue = this.calculateTotalRevenue();
-     const discountedTotal =
-       totalRevenue - totalRevenue * (discountPercentage / 100);
-     console.log(
-       `Total after ${discountPercentage}% discount: $${discountedTotal.toFixed(2)}`,
-     );
-   }
- }
- 
- class MenuItem {
-   constructor(name, price, category) {
-     this.name = name;
-     this.price = price;
-     this.category = category;
-   }
- }
- 
- class Order {
-   constructor() {
-     this.items = [];
-   }
- 
-   addItem(menuItem, quantity) {
-     this.items.push({ menuItem, quantity });
-   }
- 
-   calculateTotal() {
-     return this.items.reduce(
-       (total, item) => total + item.menuItem.price * item.quantity,
-       0,
-     );
-   }
- 
-   viewOrder() {
-     console.log("Order Summary:");
-     this.items.forEach((item) => {
-       console.log(
-         `${item.quantity}x ${item.menuItem.name} - $${item.menuItem.price * item.quantity}`,
-       );
-     });
-     console.log(`Total Price: $${this.calculateTotal()}`);
-   }
- }
- 
- const myRestaurant = new Restaurant("CafeNorda", "Downtown");
- myRestaurant.addMenuItem("Steak", 12, "Main Course");
- myRestaurant.addMenuItem("Salad", 6, "Appetizer");
- myRestaurant.addMenuItem("Cheese Cake", 8, "Dessert");
- 
- myRestaurant.viewMenu();
- 
- const myOrder = new Order();
- myOrder.addItem(myRestaurant.menu[0], 2);
- myOrder.addItem(myRestaurant.menu[2], 1);
- 
- myRestaurant.placeOrder(myOrder);
- myRestaurant.listAllOrders();
- console.log(`Total Revenue: $${myRestaurant.calculateTotalRevenue()}`);
- 
- myRestaurant.requestBill();
- myRestaurant.applyDiscount(10);
- 
+  constructor(name, location) {
+    this.name = name;
+    this.location = location;
+    this.menu = [];
+    this.orders = []; // To track multiple orders
+  }
+
+  addMenuItem(name, price, category) {
+    const menuItem = new MenuItem(name, price, category);
+    this.menu.push(menuItem);
+  }
+
+  viewMenu() {
+    console.log(`Menu of ${this.name}:`);
+    this.menu.forEach((item) => {
+      console.log(`${item.name} - $${item.price} (${item.category})`);
+    });
+  }
+
+  placeOrder(order) {
+    this.orders.push(order);
+    console.log('Order placed successfully:');
+    order.viewOrder();
+  }
+
+  listAllOrders() {
+    console.log('All Orders:');
+    this.orders.forEach((order, index) => {
+      console.log(`Order #${index + 1}:`);
+      order.viewOrder();
+    });
+  }
+
+  calculateTotalRevenue() {
+    return this.orders.reduce(
+      (total, order) => total + order.calculateTotal(),
+      0
+    );
+  }
+
+  requestBill() {
+    const totalRevenue = this.calculateTotalRevenue();
+    console.log(`Total Bill for all orders: $${totalRevenue}`);
+  }
+
+  applyDiscount(discountPercentage) {
+    const totalRevenue = this.calculateTotalRevenue();
+    const discountedTotal =
+      totalRevenue - totalRevenue * (discountPercentage / 100);
+    console.log(
+      `Total after ${discountPercentage}% discount: $${discountedTotal.toFixed(2)}`
+    );
+  }
+}
+
+class MenuItem {
+  constructor(name, price, category) {
+    this.name = name;
+    this.price = price;
+    this.category = category;
+  }
+}
+
+class Order {
+  constructor() {
+    this.items = [];
+  }
+
+  addItem(menuItem, quantity) {
+    this.items.push({ menuItem, quantity });
+  }
+
+  calculateTotal() {
+    return this.items.reduce(
+      (total, item) => total + item.menuItem.price * item.quantity,
+      0
+    );
+  }
+
+  viewOrder() {
+    console.log('Order Summary:');
+    this.items.forEach((item) => {
+      console.log(
+        `${item.quantity}x ${item.menuItem.name} - $${item.menuItem.price * item.quantity}`
+      );
+    });
+    console.log(`Total Price: $${this.calculateTotal()}`);
+  }
+}
+
+const myRestaurant = new Restaurant('CafeNorda', 'Downtown');
+myRestaurant.addMenuItem('Steak', 12, 'Main Course');
+myRestaurant.addMenuItem('Salad', 6, 'Appetizer');
+myRestaurant.addMenuItem('Cheese Cake', 8, 'Dessert');
+
+myRestaurant.viewMenu();
+
+const myOrder = new Order();
+myOrder.addItem(myRestaurant.menu[0], 2);
+myOrder.addItem(myRestaurant.menu[2], 1);
+
+myRestaurant.placeOrder(myOrder);
+myRestaurant.listAllOrders();
+console.log(`Total Revenue: $${myRestaurant.calculateTotalRevenue()}`);
+
+myRestaurant.requestBill();
+myRestaurant.applyDiscount(10);
 
 /*
 ===========================================================

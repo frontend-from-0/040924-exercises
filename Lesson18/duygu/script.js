@@ -73,10 +73,10 @@ Node.js or a browser console.
 */
 
 const item = {
-  name: "Shoes",
+  name: 'Shoes',
   price: {
     value: 75,
-    currency: "USD",
+    currency: 'USD',
   },
   quantity: 2,
 };
@@ -88,14 +88,14 @@ class ShoppingCart {
 
   viewCart() {
     if (this._items.length > 0) {
-      console.log("ShoppingCart Items: ");
+      console.log('ShoppingCart Items: ');
       for (const item of this._items) {
         console.log(
-          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`,
+          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`
         );
       }
     } else {
-      console.log("Shopping Cart is empty");
+      console.log('Shopping Cart is empty');
     }
   }
 
@@ -109,7 +109,7 @@ class ShoppingCart {
         price: { value: price.value, currency: price.currency },
         quantity,
       };
-      console.log("Adding new item: ", newItem);
+      console.log('Adding new item: ', newItem);
       this._items.push(newItem);
     }
   }
@@ -121,7 +121,7 @@ class ShoppingCart {
   getTotal() {
     return this._items.reduce(
       (total, item) => total + item.price.value * item.quantity,
-      0,
+      0
     );
   }
 
@@ -139,7 +139,7 @@ class ShoppingCart {
       console.log(`Amount after discount: ${newAmount.toFixed(2)} USD`);
       return newAmount;
     } else {
-      console.log("The discount code is not valid.");
+      console.log('The discount code is not valid.');
       return total;
     }
   }
@@ -148,14 +148,13 @@ class ShoppingCart {
 const cart1 = new ShoppingCart();
 cart1.viewCart();
 
-cart1.addItem("Shoes", { value: 75, currency: "USD" }, 2);
-cart1.addItem("Bag", { value: 100, currency: "USD" }, 1);
+cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 2);
+cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
 cart1.viewCart();
 
-cart1.removeItem("Bag");
+cart1.removeItem('Bag');
 cart1.viewCart();
 
-console.log("Total Price: $" + cart1.getTotal());
+console.log('Total Price: $' + cart1.getTotal());
 
-console.log("Total Amount After Discount: $" + cart1.applyDiscount("SAVE20"));
-
+console.log('Total Amount After Discount: $' + cart1.applyDiscount('SAVE20'));
