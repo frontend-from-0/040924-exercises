@@ -16,12 +16,7 @@ document.getElementById('update-image').addEventListener('click', function () {
 document.getElementById('change-theme').addEventListener('click', function () {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
   const profileCard = document.querySelector('.profile-card');
-
-  if (profileCard.style.backgroundColor === '#add8e6') {
-    profileCard.style.backgroundColor = '#fff';
-  } else {
-    profileCard.style.backgroundColor = '#add8e6';
-  }
+  profileCard.classList.toggle('theme-blue');
 });
 
 // 4. Toggle Description
@@ -33,7 +28,8 @@ document.getElementById('toggle-desc').addEventListener('click', function () {
   } else {
     profileDesc.style.display = 'none';
   }
-});
+}
+);
 
 // 5. Add Social Media Link
 document.getElementById('add-social').addEventListener('click', function () {
@@ -54,7 +50,7 @@ document.getElementById('add-social').addEventListener('click', function () {
     newListItem.appendChild(newSocialLink);
     socialList.appendChild(newListItem);
     socialInput.value = '';
-  }
+  } 
 });
 
 // 6. Add a New Skill
@@ -69,6 +65,8 @@ document.getElementById('add-skill').addEventListener('click', function () {
     newListItem.textContent = userSkill;
 
     skillsList.appendChild(newListItem);
-    skillsInput.value = '';
+    skillsInput.value ='';
+  } else {
+    console.log('Please enter a skill.');
   }
 });
