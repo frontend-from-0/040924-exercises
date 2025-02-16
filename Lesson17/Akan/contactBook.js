@@ -108,16 +108,12 @@ Function: viewContact(name)
 */
 
 function viewContact(name, contactList) {
-  let isContactFound = false;
-  for (const contact of contactList) {
-    if (name === contact.name) {
-      console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
-      );
-      isContactFound = true;
-    }
-  }
-  if (!isContactFound) {
+  const contact = findContact(name, contactList);
+  if (contact) {
+    console.log(
+      `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
+    );
+  } else {
     console.log(`No contact found with the name: ${name}`);
   }
 }
@@ -142,7 +138,14 @@ function findContact(name, contactList) {
 }
 
 function updateContact(name, newPhone, newEmail, contactList) {
-  const isContactFound = findContact(name, contactList);
+  const contactIndex = contactList.findIndex(contact => contact.name === name);
+  if (contactIndex !== -1) {
+    contactList[contactIndex].phone = newPhone;
+    contactList[contactIndex].email = newEmail;
+    console.log('Contact updated successfully.');
+  } else {
+    console.log(`No contact found with the name: ${name}`);
+  }
 }
 
 /*
