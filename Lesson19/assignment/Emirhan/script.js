@@ -51,3 +51,4 @@ document.getElementById('add-skill').addEventListener('click', function() {
     li.appendChild(link);
     ul.appendChild(li);
 });
+
