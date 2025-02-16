@@ -16,9 +16,13 @@ document.getElementById('update-image').addEventListener('click', function() {
 
   let profilePicElement = document.getElementById('profile-pic');
 
-  profilePicElement.src = "https://unsplash.com/photos/a-woman-sitting-on-a-bench-with-her-hand-on-her-head-D0LtZUq5JCA";
-
+  profilePicElement.src = "https://images.unsplash.com/photo-1739481152766-5658f44147f6?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8A%3D%3D";
+  
+  
+  profilePicElement.alt = "Updated profile picture from Unsplash";
 });
+
+
 
 
 // 3. Change Theme
@@ -26,15 +30,7 @@ document.getElementById('change-theme').addEventListener('click', function() {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
 
   let profileCardElement = document.querySelector('.profile-card');
-
-  let currentColor = profileCardElement.style.backgroundColor;
-
-  if (currentColor === "rgb(255, 255, 255)" || currentColor === "") {
-    profileCardElement.style.backgroundColor = "#add8e6"; // Açık mavi
-} else {
-    profileCardElement.style.backgroundColor = "#fff"; // Beyaz
-}
-
+  profileCardElement.classList.toggle('lightblue-theme'); 
 });
   
 
