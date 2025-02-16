@@ -55,3 +55,21 @@ body {
   margin-top: 20px;
   gap: 20px;
 }
+
+.social-link {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #c0cce6;
+}
+
+.theme-blue {
+  background-color: #add8e6;
+}
