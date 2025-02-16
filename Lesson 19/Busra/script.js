@@ -8,35 +8,30 @@ const h2 = document.getElementById("profile-name");
 
 
 updateName.addEventListener("click", () => {
-
-  if (profileName.tagName.toLocaleLowerCase() === "input") return;
-
-  const currentName = profileName.textContent;
-
-  const input = document.createElement("input");
-  input.classList.add("input");
-  input.type = "text";
-  input.value = currentName;
-  input.id = "profile-name";
-  profileName.replaceWith(input);
-  input.focus();
-  updateName.textContent = "Save";
-
-
-  updateName.addEventListener("click", function saveHandler() {
+  if (updateName.textContent === 'Save') {
+    const input = document.getElementById("profile-name");
     const newName = input.value.trim() || currentName;
     h2.id = "profile-name";
     h2.textContent = newName;
-
+  
     input.replaceWith(h2);
-
+  
     updateName.textContent = "Update Name";
-
-
-    updateName.removeEventListener("click", saveHandler);
-
-  });
-
+    } else {
+      if (profileName.tagName.toLocaleLowerCase() === "input") return;
+      console.log(updateName.textContent);
+    
+      const currentName = profileName.textContent;
+    
+      const input = document.createElement("input");
+      input.classList.add("input");
+      input.type = "text";
+      input.value = currentName;
+      input.id = "profile-name";
+      profileName.replaceWith(input);
+      input.focus();
+      updateName.textContent = "Save";
+    }  
 });
 
 
