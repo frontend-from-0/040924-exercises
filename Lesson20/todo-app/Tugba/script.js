@@ -17,19 +17,17 @@ function handleTodoFormSubmit(event) {
     return;
   }
 
-  // LocalStorage'dan mevcut görevleri al, eğer yoksa boş bir dizi kullan
   let prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
 
-  // Yeni görevi ekle
+  
   prevTodos.push({ text: todoInputValue, completed: false });
 
-  // Güncellenmiş listeyi LocalStorage’a kaydet
+ 
   localStorage.setItem("tasks", JSON.stringify(prevTodos));
 
-  // Yeni öğeyi UI'ya ekle
+ 
   addTodoToUI(todoInputValue, false);
 
-  // Input'u temizle
   todoInput.value = "";
 }
 
@@ -69,7 +67,7 @@ function addTodoToUI(todoText, isCompleted) {
   document.getElementById("list").appendChild(listItemElement);
 }
 
-// 📌 Sayfa yenilendiğinde localStorage'daki görevleri yükle
+
 document.addEventListener("DOMContentLoaded", () => {
   let savedTodos = JSON.parse(localStorage.getItem("tasks")) || [];
   savedTodos.forEach((todo) => {
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// 📌 LocalStorage'daki görev durumunu güncelleme (Üstü çizili olanları kaydetmek için)
+
 function updateTodoStatus(todoText) {
   let todos = JSON.parse(localStorage.getItem("tasks")) || [];
   todos = todos.map((todo) => {
@@ -90,14 +88,13 @@ function updateTodoStatus(todoText) {
   localStorage.setItem("tasks", JSON.stringify(todos));
 }
 
-// 📌 LocalStorage'dan görev silme fonksiyonu
+
 function removeTodoFromLocalStorage(todoText) {
   let todos = JSON.parse(localStorage.getItem("tasks")) || [];
   todos = todos.filter((todo) => todo.text !== todoText);
   localStorage.setItem("tasks", JSON.stringify(todos));
 }
 
-// 📌 "Clear List" butonu: Tüm görevleri temizle ve localStorage'ı sıfırla
 document.getElementById("clearListBtn").addEventListener("click", function () {
   document.getElementById("list").innerHTML = "";
   localStorage.removeItem("tasks");

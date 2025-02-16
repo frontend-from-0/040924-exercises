@@ -1,3 +1,12 @@
+:root {
+  --primary-blue: #818cf8;
+  --hover-lilla: #d8b4fe;
+  --danger-red: #ef4444;
+  --dangerdark-red: #991b1b;
+  
+ 
+}
+
 
 * {
   box-sizing: border-box;
@@ -26,7 +35,7 @@ h1 {
 main {
   max-width: 500px;
   margin: 50px auto;
-  background: white;
+  background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -49,8 +58,8 @@ input {
 
 
 button {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary-blue);
+  color: #fff;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
@@ -58,7 +67,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-lilla);
 }
 
 
@@ -81,21 +90,21 @@ ul {
 
 .todo-text.completed {
   text-decoration: line-through;
-  color: gray;
+  color: #808080;
 }
 
 
 .btn-danger {
-  background: red;
+  background: var(--danger-red);
   border: none;
   padding: 5px 10px;
-  color: white;
+  color: #fff;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .btn-danger:hover {
-  background: darkred;
+  background: var(--dangerdark-red)
 }
 
 
