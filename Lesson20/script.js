@@ -46,6 +46,14 @@ function addTodoToUI(todoText) {
   removeTodoBtn.textContent = "X";
   removeTodoBtn.classList.add("btn-danger");
 
+
+  const buttonGroup = document.createElement("div");
+  buttonGroup.classList.add("btn-group");
+
+
+
+
+
   removeTodoBtn.addEventListener("click", () => {
     listItemElement.remove();
     removeTodoFromStorage(todoText);
@@ -57,8 +65,11 @@ function addTodoToUI(todoText) {
   });
 
   listItemElement.appendChild(spanElement);
-  listItemElement.appendChild(checkTodoBtn);
-  listItemElement.appendChild(removeTodoBtn);
+  buttonGroup.appendChild(checkTodoBtn);
+  buttonGroup.appendChild(removeTodoBtn);
+  listItemElement.appendChild(buttonGroup);
+
+  
 
   document.getElementById("list").appendChild(listItemElement);
 }
