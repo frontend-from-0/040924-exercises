@@ -37,7 +37,7 @@ ul {
 }
 
 .todo-text {
-
+  color:black;
 }
 
 .todo-text.completed {
@@ -45,5 +45,6 @@ ul {
 }
 
 .btn-danger {
-  
+  background-color: red;
+  cursor: pointer;
 }
