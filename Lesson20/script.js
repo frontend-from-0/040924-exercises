@@ -20,7 +20,7 @@ document.getElementById("todoForm").addEventListener("submit", (event) => {
   const todoInputValue = todoInput.value.trim(); 
 
   if (!todoInputValue) {
-    alert("Boş bir görev ekleyemezsiniz!");
+    alert("Please enter a valid task");
     return;
   }
 
