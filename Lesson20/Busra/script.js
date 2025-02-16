@@ -2,14 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   loadTodos();
 });
 
-
-
 const today = new Date();
 const formattedDate = today.toISOString().split("T")[0];
 document.getElementById("date-display").innerText = formattedDate;
-
-
-
 
 document.getElementById("todoForm").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -46,20 +41,14 @@ function addTodoToUI(todoText) {
   removeTodoBtn.textContent = "X";
   removeTodoBtn.classList.add("btn-danger");
 
-
   const buttonGroup = document.createElement("div");
   buttonGroup.classList.add("btn-group");
-
-
-
-
 
   removeTodoBtn.addEventListener("click", () => {
     listItemElement.remove();
     removeTodoFromStorage(todoText);
   });
 
- 
   checkTodoBtn.addEventListener("click", () => {
     listItemElement.classList.toggle("completed");
   });
@@ -68,8 +57,6 @@ function addTodoToUI(todoText) {
   buttonGroup.appendChild(checkTodoBtn);
   buttonGroup.appendChild(removeTodoBtn);
   listItemElement.appendChild(buttonGroup);
-
-  
 
   document.getElementById("list").appendChild(listItemElement);
 }
