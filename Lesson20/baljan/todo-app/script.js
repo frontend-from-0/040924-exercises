@@ -8,72 +8,64 @@ function handleTodoFormSubmit(event) {
   const todoInput = document.getElementById('todoInput');
   console.log(todoInput);
 
-  const todoInputValue = todoInput.value;
-  console.log(todoInputValue);
+  const todoInputValue = todoInput.value.trim();
+  if (todoInputValue === '') {
+    alert('Please enter a valid task.');
+    return;
+  }
 
-  // If we get data from localStorage directly, we will get in a string format.
-  // To get it in a form of array, we need to parse it using JSON.parse() method:
-  // let prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
-  // We well talk more about JSON after a few lessons.
+  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
+  prevTodos.push(todoInputValue);
+  localStorage.setItem('tasks', JSON.stringify(prevTodos));
 
-  const prevTodos = localStorage.getItem('tasks');
+  addTodoToList(todoInputValue);
+  todoInput.value = '';
+}
 
-  localStorage.setItem('todos', [prevTodos, todoInputValue]);
-
+function addTodoToList(todoText) {
   const listItemElement = document.createElement('li');
-  console.log(listItemElement);
-
   listItemElement.classList.add('todo-list-item');
-  console.log(listItemElement);
 
   const spanElement = document.createElement('span');
   spanElement.classList.add('todo-text');
-  console.log(spanElement);
-  spanElement.textContent = todoInputValue;
+  spanElement.textContent = todoText;
 
   const removeTodoBtn = document.createElement('button');
-
   removeTodoBtn.textContent = 'X';
   removeTodoBtn.classList.add('btn-danger');
   removeTodoBtn.addEventListener('click', () => {
     listItemElement.remove();
+    removeTodoFromLocalStorage(todoText);
   });
 
   listItemElement.appendChild(spanElement);
   listItemElement.appendChild(removeTodoBtn);
 
   const ulElement = document.getElementById('list');
-
   ulElement.appendChild(listItemElement);
-
-  todoInput.value = '';
 
   spanElement.addEventListener('click', () => {
     spanElement.style.textDecorationLine = 'line-through';
   });
-
-  const submitBtn = document.getElementById('submitBtn');
-  submitBtn.addEventListener('click', () => {
-    const todoInputValue = document.getElementById('todoInput');
-    if (todoInputValue.value.trim().length === 0) {
-      alert('Please enter a valid todo item!');
-    } else {
-      console.log(todoInputValue.value);
-    }
-  });
-  /*script
-
-  create span element, add text, add class
-  create button element, add text, add event listener
-
-
-   */
 }
 
+/*check*/
+function removeTodoFromLocalStorage(todoText) {
+  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
+  const updatedTodos = prevTodos.filter((todo) => todo !== todoText);
+  localStorage.setItem('tasks', JSON.stringify(updatedTodos));
+}
+/*check*/
 document.getElementById('clearListBtn').addEventListener('click', function () {
   const liElements = document.querySelectorAll('li');
-  console.log(liElements);
-  liElements.forEach((li) => (li.innerText = ''));
+  liElements.forEach((li) => li.remove());
+  localStorage.removeItem('tasks');
+});
+
+/*check*/
+window.addEventListener('load', () => {
+  const savedTodos = JSON.parse(localStorage.getItem('tasks')) || [];
+  savedTodos.forEach((todo) => addTodoToList(todo));
 });
 
 // TODO: when page is loaded, get todo items from local storage and add them to the unordered list element
