@@ -26,6 +26,16 @@ document.getElementById("todoForm").addEventListener("submit", (event) => {
 });
 
 function addTodoToUI(todoText) {
+
+const list = document.getElementById("list");
+
+const existingTodos = Array.from(list.getElementsByClassName("todo-text")).map(todo => todo.textContent);
+
+if (existingTodos.includes(todoText)) {
+  alert("This task is already in the list");
+  return;
+}
+
   const listItemElement = document.createElement("li");
   listItemElement.classList.add("todo-list-item");
 
