@@ -106,7 +106,6 @@ console.log(`Total Revenue: $${myRestaurant.calculateTotalRevenue()}`);
 
 myRestaurant.requestBill();
 myRestaurant.applyDiscount(10);
-
 /*
 ===========================================================
   RESTAURANT MANAGEMENT APP
