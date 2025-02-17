@@ -89,41 +89,87 @@ console.log(isStudent);
 
 // 14. Initialize counter = 0, then increment it by 1 using counter++ and log it.
 // CODE HERE
-
+let counter = 0 ;
+counter++;
+console.log(`Counter = ${counter}`);
 // 15. Initialize points = 10, add 5 to it using points += 5, then log points.
 // CODE HERE
-
+let points = 10 ;
+points += 5;
+console.log(points);
 // 16. Declare name="Alice", age=30, city="Paris". Log "Alice (30) lives in Paris" using template literals.
 // CODE HERE
+let name = "Alice";
+let age = 30;
+let city = "Paris";
+
+console.log (`${name} (${age}) lives in  ${city}`);
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
 // CODE HERE
+let x1 = 5;
+let y1 = 10;
+let z1 = 15;
+console.log(x1+y1+z1);
 
 // 18. Declare dividend=10 and divisor=3. Log the quotient (divisionResult) and difference (differenceResult).
 // CODE HERE
-
+let dividend=10 ;
+let divisor = 3;
+let divisionResult = dividend/divisor;
+console.log(divisionResult);
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
 // CODE HERE
 
+let firstName = "Emirhan";
+let lastName = "Bayatli";
+let fullName =` ${firstName} ${lastName}`;
+console.log(fullName);
+
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
-
+let firstFactor = 7;
+let secondFactor = 2;
+console.log(firstFactor*secondFactor);
 // 21. Log the value of Math.PI.
 // CODE HERE
-
+console.log(Math.PI);
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
-
+counter1 = 0 ;
+counter1+=1;
+console.log(counter1);
+counter1++;
+console.log(counter1);
+counter1=counter+1;
+console.log(counter1);
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
 // CODE HERE
-
+let initialTemperature =20 ;
+initialTemperature+=5;
+console.log(initialTemperature);
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
-
+let numberEx9=6;
+console.log(numberEx9);
+++numberEx9;
+console.log(numberEx9);
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
 // CODE HERE
-
+let numberEx10 = 8;
+console.log(numberEx10);
+numberEx10++;
+console.log(numberEx10);
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
 
+let numberEx11 = -3 ;
+++numberEx11;
+console.log(numberEx11*2);
+
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
+
+let a1 = 2;
+let b1 = 3;
+++a1;
+console.log(a1+b1);
