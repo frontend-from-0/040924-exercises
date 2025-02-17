@@ -22,7 +22,7 @@ document.getElementById('change-theme').addEventListener('click', function () {
 document.getElementById('toggle-desc').addEventListener('click', function () {
   // TODO: Toggle the display property of the element with ID "profile-desc" between "none" and its default display.
 
-const profileDesc = document.getElementById('profile-desc');
+  const profileDesc = document.getElementById('profile-desc');
   profileDesc.style.display = profileDesc.style.display === 'none' ? 'block' : 'none';
 
 });
@@ -32,7 +32,7 @@ document.getElementById('add-social').addEventListener('click', function () {
   // TODO: Dynamically create a new list item containing a link to a social media profile (e.g., "https://twitter.com/example")
   // Append it to the unordered list with ID "social-list"
 
-const socialList = document.getElementById('social-list');
+  const socialList = document.getElementById('social-list');
   const newSocial = document.createElement('li');
   const newLink = document.createElement('a');
   newLink.href = 'https://twitter.com/example';
