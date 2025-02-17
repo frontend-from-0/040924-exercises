@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   loadTodos();
 });
 
+
 const today = new Date();
 const formattedDate = today.toISOString().split("T")[0];
 document.getElementById("date-display").innerText = formattedDate;
+
+
 
 document.getElementById("todoForm").addEventListener("submit", (event) => {
   event.preventDefault();
