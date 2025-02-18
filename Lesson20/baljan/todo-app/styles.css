@@ -4,6 +4,59 @@
 
 body {
   font-size: 16px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e7a0a0;
+}
+
+.todo-text {
+  flex-grow: 1;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.btn-danger {
+  background-color: #ec5757;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.btn-danger:hover {
+  background-color: darkred;
+}
+
+#clearListBtn {
+  border: 1px solid #d88989;
+  color: black;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#clearListBtn:hover {
+  background-color: #a87878;
+}
+
+#submitBtn {
+  color: black;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -13,6 +66,10 @@ h1 {
 main {
   max-width: 500px;
   margin: 50px auto;
+  border: 1px solid #c9412c;
+  padding: 20px;
+  background-color: #e4e8eba0;
+  border-radius: 10px;
 }
 
 form {
@@ -30,17 +87,6 @@ ul {
   list-style-type: none;
 }
 
-.todo-list-item {
-  display: flex;
-  justify-content: space-between;
-}
-
-.todo-text {
-}
-
 .todo-text.completed {
   text-decoration: line-through;
-}
-
-.btn-danger {
 }
