@@ -9,24 +9,95 @@ body {
 
 h1 {
   text-align: center;
+  color:cornflowerblue;
+  font-size: 60px;
 }
 
 main {
-  max-width: 500px;
+  width: 75%;
   margin: 50px auto;
 }
 
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: darkkhaki;
+  height: 300px;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
 form {
+
   display: flex;
   gap: 10px;
   justify-content: center;
 }
 
+.input-container {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  background: #edeef0;
+  border-radius: 30px;
+
+}
+
 input {
+  width: 300px;
   flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  padding: 10px;
+
+}
+
+.btn-add {
+  border: none;
+  outline: none;
+  padding: 20px 30px;
+  background-color: darkseagreen;
+  height: 55px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  
+
+}
+
+.btn-clear {
+  border: none;
+  outline: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color:lightpink;
+  height: 55px;
+
 }
 
 ul {
   padding-left: 0;
   list-style-type: none;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-text {
+
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+
+.btn-danger {
+  
 }
