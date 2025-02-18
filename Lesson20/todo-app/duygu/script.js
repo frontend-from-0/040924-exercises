@@ -1,0 +1,1 @@
+document.getElementById("todoForm").addEventListener("submit")

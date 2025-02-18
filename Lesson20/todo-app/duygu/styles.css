@@ -9,7 +9,7 @@ body {
 
 h1 {
   text-align: center;
-  color:cornflowerblue;
+  color: cornflowerblue;
   font-size: 60px;
 }
 
@@ -20,7 +20,7 @@ main {
 
 .container {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   background-color: darkkhaki;
   height: 300px;
   margin: 100px auto 20px;
@@ -36,7 +36,7 @@ form {
 }
 
 .input-container {
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +48,8 @@ form {
 }
 
 input {
-  width: 300px;
+  width: 500px;
+  max-width: 100px;
   flex: 1;
   border: none;
   outline: none;
@@ -66,7 +67,7 @@ input {
   height: 55px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  
+
 
 }
 
@@ -75,7 +76,7 @@ input {
   outline: none;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color:lightpink;
+  background-color: lightpink;
   height: 55px;
 
 }
@@ -90,14 +91,10 @@ ul {
   justify-content: space-between;
 }
 
-.todo-text {
-
-}
+.todo-text {}
 
 .todo-text.completed {
   text-decoration: line-through;
 }
 
-.btn-danger {
-  
-}
+.btn-danger {}
