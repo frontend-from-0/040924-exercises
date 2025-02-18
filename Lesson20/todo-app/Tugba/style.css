@@ -3,10 +3,7 @@
   --hover-lilla: #d8b4fe;
   --danger-red: #ef4444;
   --dangerdark-red: #991b1b;
-  
- 
 }
-
 
 * {
   box-sizing: border-box;
@@ -25,12 +22,10 @@ body {
   height: 100vh;
 }
 
-
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 
 main {
   max-width: 500px;
@@ -40,7 +35,6 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 form {
   display: flex;
@@ -56,7 +50,6 @@ input {
   border-radius: 5px;
 }
 
-
 button {
   background-color: var(--primary-blue);
   color: #fff;
@@ -69,7 +62,6 @@ button {
 button:hover {
   background-color: var(--hover-lilla);
 }
-
 
 ul {
   padding-left: 0;
@@ -87,12 +79,10 @@ ul {
   border: 1px solid #ddd;
 }
 
-
 .todo-text.completed {
   text-decoration: line-through;
   color: #808080;
 }
-
 
 .btn-danger {
   background: var(--danger-red);
@@ -104,9 +94,8 @@ ul {
 }
 
 .btn-danger:hover {
-  background: var(--dangerdark-red)
+  background: var(--dangerdark-red);
 }
-
 
 @media (max-width: 600px) {
   main {
