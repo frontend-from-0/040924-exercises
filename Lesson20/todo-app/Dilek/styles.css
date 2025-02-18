@@ -1,0 +1,254 @@
+:root {
+  --primary-color: #cdeef1;
+  --secondary-color: #4f4747;
+  --font-family: 'Fredoka', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-family);
+  background-image: url(bicycle-7540835_1280.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(251, 239, 239, 0.5);
+  z-index: -1;
+}
+
+main {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.todo-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: var();
+  min-width: 150px;
+  max-width: calc(100% - 120px);
+  font-family: var(--font-family);
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  min-width: 120px;
+  max-width: 150px;
+}
+
+#todoForm button {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+  font-size: 15px;
+  width: 100px;
+}
+
+#todoForm button:hover {
+  background: #88989a;
+  color: var(--primary-color);
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#list {
+  margin-top: 15px;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-color: #f3f1f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-list-item:hover {
+  background-color: #eceeee;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+
+.btn-danger {
+  background: #fcf2e5;
+  color: var(--secondary-color);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+}
+
+.btn-danger:hover {
+  background: #f09627;
+  color: #4f4747;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #4f4747;
+  opacity: 0.5;
+}
+
+button:focus,
+input:focus {
+  outline: 2px solid #85cfd7;
+  outline: offset 2px;
+}
+
+/* When I asked AI, what else I can do to make my app more accessible, I learned the following method for screen readers. I hope it is an up-to-date and appropriate method. */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.todo-list-item[data-priority='high'] {
+  background-color: #ffcccb;
+}
+
+.todo-list-item[data-priority='medium'] {
+  background-color: #fde4c5;
+}
+
+.todo-list-item[data-priority='low'] {
+  background-color: #cdf1dc;
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    max-width: 95%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #todoForm button {
+    font-size: 12px;
+  }
+
+  #prioritySelect {
+    font-size: 14px;
+  }
+
+  #list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+
+  .todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f3f1f3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex: 0 1 auto;
+  }
+
+  .todo-list-item:hover {
+    background-color: #eceeee;
+  }
+}
