@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (loadTodosLocStorage));
+document.addEventListener('DOMContentLoaded', loadTodosLocStorage);
 
 function loadTodosLocStorage() {
   const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -30,7 +30,9 @@ function loadTodosLocStorage() {
   }
 }
 
-document.getElementById('todoForm').addEventListener('submit', (event) => handleTodoFormSubmit(event));
+document
+  .getElementById('todoForm')
+  .addEventListener('submit', (event) => handleTodoFormSubmit(event));
 
 function handleTodoFormSubmit(event) {
   event.preventDefault();
@@ -51,7 +53,6 @@ function handleTodoFormSubmit(event) {
     const spanElement = document.createElement('span');
     spanElement.classList.add('todo-text');
     spanElement.textContent = todoInputValue;
-
 
     spanElement.addEventListener('click', function () {
       spanElement.classList.toggle('completed');
@@ -81,16 +82,19 @@ function handleTodoFormSubmit(event) {
 
 function removeTodosLocStorage(todoRemove) {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  const updatedTodos = todos.filter((todo) => todo.text !== todoRemove.text || todo.priority !== todoRemove.priority);
+  const updatedTodos = todos.filter(
+    (todo) =>
+      todo.text !== todoRemove.text || todo.priority !== todoRemove.priority
+  );
   localStorage.setItem('todos', JSON.stringify(updatedTodos));
 }
 
 function updateLocalStorage() {
   const todos = [];
-  document.querySelectorAll('.todo-list-item').forEach(item => {
+  document.querySelectorAll('.todo-list-item').forEach((item) => {
     todos.push({
       text: item.querySelector('.todo-text').textContent,
-      priority: item.getAttribute('data-priority')
+      priority: item.getAttribute('data-priority'),
     });
   });
   localStorage.setItem('todos', JSON.stringify(todos));

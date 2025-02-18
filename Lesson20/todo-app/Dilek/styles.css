@@ -1,7 +1,7 @@
 :root {
   --primary-color: #cdeef1;
   --secondary-color: #4f4747;
-  --font-family: "Fredoka", sans-serif;
+  --font-family: 'Fredoka', sans-serif;
 }
 
 * {
@@ -23,7 +23,7 @@ body {
 }
 
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
@@ -178,15 +178,15 @@ input:focus {
   border: 0;
 }
 
-.todo-list-item[data-priority="high"] {
+.todo-list-item[data-priority='high'] {
   background-color: #ffcccb;
 }
 
-.todo-list-item[data-priority="medium"] {
+.todo-list-item[data-priority='medium'] {
   background-color: #fde4c5;
 }
 
-.todo-list-item[data-priority="low"] {
+.todo-list-item[data-priority='low'] {
   background-color: #cdf1dc;
 }
 
