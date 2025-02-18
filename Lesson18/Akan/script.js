@@ -28,24 +28,7 @@ Node.js or a browser console.
 3. Add a `viewCart` method to display all items in the cart.
 */
 
-let ShoppingCart = class {
-  constructor() {
-    this._items = [];
-  }
-
-  viewCart() {
-    if (this._items.length > 0) {
-      console.log('ShoppingCart Items: ');
-      for (const item of this._items) {
-        console.log(
-          `${item.name}, price: ${'item.price.value'} ${'item.price.currency'}, quantity: ${'item.quantity'}`
-        );
-      }
-    } else {
-      console.log('Shopping Cart is empty');
-    }
-  }
-};
+// Removed redundant declaration of ShoppingCart class
 
 /*
 -----------------------------------------------------------
@@ -64,114 +47,6 @@ class ShoppingCart {
     this._items = [];
   }
 
-  addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
-
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      const newItem = { name, price, quantity };
-      this._items.push(newItem);
-    }
-  }
-
-
-// let maybeItem;
-
-// for (const item of this._items) {
-//   if (item.name === name) {
-//     maybeItem = item;
-//     break;
-//   }
-// }
-
-const existingItem = this._items.find((item) => item.name === name);
-if (existingItem) {
-  existingItem.quantity += quantity;
-} else {
-  const newItem = { name, price, quantity };
-  console.log('Adding new item: ', newItem);
-  this._items.push(newItem);
-}
-  }
-}
-
-/*
------------------------------------------------------------
-  STEP 3: Remove Items from the Cart
------------------------------------------------------------
-1. Add a `removeItem` method to the `ShoppingCart` class.
-2. The method should:
-   - Accept the `name` of the item to remove.
-   - Remove the item from the `_items` array if it exists.
-*/
-
-class ShoppingCart {
-  constructor() {
-    this._items = [];
-  }
-
-  removeItem(name) {
-    const updatedItems = [];
-    for (const item of this._items) {
-      if (item.name !== name) {
-        updatedItems.push(item);
-      }
-    }
-    this._items = updatedItems;
-  }
-}
-
-/*
------------------------------------------------------------
-  STEP 4: Calculate the Total Cost
------------------------------------------------------------
-1. Add a `getTotal` method to the `ShoppingCart` class.
-2. The method should:
-   - Calculate and return the total cost of all items in 
-     the cart.
-*/
-
-class ShoppingCart {
-  constructor() {
-    this._items = [];
-  }
-
-  getTotal() {
-    let total = 0;
-    for (const item of this._items) {
-      total += item.price.value * item.quantity;
-    }
-    return total;
-  }
-}
-
-/*
------------------------------------------------------------
-  STEP 5: Apply a Discount
------------------------------------------------------------
-1. Add an `applyDiscount` method to the `ShoppingCart` class.
-2. The method should:
-   - Accept a discount code (e.g., 'SAVE10', 'SAVE20').
-   - Apply a percentage discount to the total cost if the 
-     code is valid.
-3. Use an object to store discount codes and their values.
-*/
-
-const item = {
-  name: 'Shoes',
-  price: {
-    value: 75,
-    currency: 'USD',
-  },
-  quantity: 2,
-};
-
-class ShoppingCart {
-  constructor() {
-    this._items = [];
-  }
-
   viewCart() {
     if (this._items.length > 0) {
       console.log('ShoppingCart Items: ');
@@ -184,16 +59,8 @@ class ShoppingCart {
       console.log('Shopping Cart is empty');
     }
   }
+
   addItem(name, price, quantity) {
-    // let maybeItem;
-
-    // for (const item of this._items) {
-    //   if (item.name === name) {
-    //     maybeItem = item;
-    //     break;
-    //   }
-    // }
-
     const existingItem = this._items.find((item) => item.name === name);
     if (existingItem) {
       existingItem.quantity += quantity;
@@ -213,6 +80,29 @@ class ShoppingCart {
     }
     this._items = updatedItems;
   }
+
+  getTotal() {
+    let total = 0;
+    for (const item of this._items) {
+      total += item.price.value * item.quantity;
+    }
+    return total;
+  }
+
+  applyDiscount(code) {
+    const discounts = {
+      SAVE10: 0.1,
+      SAVE20: 0.2,
+    };
+    const discount = discounts[code];
+    if (discount) {
+      const total = this.getTotal();
+      return total - total * discount;
+    } else {
+      console.log('Invalid discount code');
+      return this.getTotal();
+    }
+  }
 }
 
 const cart1 = new ShoppingCart();
@@ -224,5 +114,5 @@ cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 4);
 cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
 cart1.viewCart();
 
-cart1.removeItem('Bag', { value: 100, currency: 'USD' }, 1);
+cart1.removeItem('Bag');
 cart1.viewCart();
