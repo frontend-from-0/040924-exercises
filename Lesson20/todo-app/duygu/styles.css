@@ -4,6 +4,7 @@
 
 body {
   font-size: 16px;
+  background-color:antiquewhite;
 
 }
 
@@ -22,7 +23,8 @@ main {
   width: 100%;
   max-width: 400px;
   background-color: darkkhaki;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 10px;
@@ -39,7 +41,7 @@ form {
 
 input {
   max-width: 600px;
-  height: 25px;
+  height: 35px;
   flex: 1;
   border: none;
   outline: none;
@@ -55,14 +57,56 @@ ul {
 }
 
 .todo-list-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 30px 1fr 40px;
+  
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
-.todo-text {}
+.todo-text {
+  flex-grow: 1;
+  cursor: pointer;
+  color:darkslategrey;
+  font-size: 18px;
+  
+}
 
 .todo-text.completed {
   text-decoration: line-through;
+  cursor: pointer;
 }
 
-.btn-danger {}
+.btn-danger {
+  background-color:goldenrod;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  
+}
+
+
+#clearListBtn {
+  border: 1px;
+  color:chocolate;
+  cursor: pointer;
+  
+}
+
+
+#submitBtn {
+  border: 1px;
+  color:cadetblue;
+  cursor: pointer;
+  
+}
+
+.todo-checkbox {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}

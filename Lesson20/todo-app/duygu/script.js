@@ -1,45 +1,96 @@
-document.getElementById("todoForm")
+document
+  .getElementById("todoForm")
   .addEventListener("submit", (event) => handleTodoFormSubmit(event));
 
 function handleTodoFormSubmit(event) {
   event.preventDefault();
-  console.log(event);
+
   const todoInput = document.getElementById("todoInput");
-  console.log(todoInput);
+  const todoInputValue = todoInput.value.trim();
 
-  const todoInputValue = todoInput.value;
-  console.log(todoInputValue);
+  if (todoInputValue === "") {
+    showErrorMessage("Please add a task");
+    return; 
+  }
 
-  /* const prevTodos = localStorage.getItem("tasks");
-  localStorage.setItem('todos', [prevTodos, todoInputValue]); */
   const prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
-  prevTodos.push(todoInputValue);
+  prevTodos.push({ text: todoInputValue, completed: false });
   localStorage.setItem("tasks", JSON.stringify(prevTodos));
 
+  addTodoToList(todoInputValue, false);
+
+  todoInput.value = "";
+}
+
+function showErrorMessage(message) {
+  alert(message);
+}
+
+window.addEventListener("load", () => {
+  const savedTodos = JSON.parse(localStorage.getItem("tasks")) || [];
+  savedTodos.forEach((todo) => addTodoToList(todo.text, todo.completed));
+});
+
+function addTodoToList(todoInputValue, isCompleted) {
   const listItemElement = document.createElement("li");
-  console.log(listItemElement);
   listItemElement.classList.add("todo-list-item");
-  console.log(listItemElement);
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.classList.add("todo-checkbox");
+  checkbox.checked = isCompleted;
 
   const spanElement = document.createElement("span");
   spanElement.classList.add("todo-text");
-  console.log(spanElement);
   spanElement.textContent = todoInputValue;
+  if (isCompleted) {
+    spanElement.classList.add("completed");
+  }
 
   const removeTodoBtn = document.createElement("button");
-  removeTodoBtn.textContent = "X";
+  removeTodoBtn.textContent = "x";
   removeTodoBtn.classList.add("btn-danger");
-  removeTodoBtn.addEventListener('click', () => {
+
+  removeTodoBtn.addEventListener("click", () => {
+    removeTodoFromLocalStorage(todoInputValue);
     listItemElement.remove();
   });
 
+  checkbox.addEventListener("change", function () {
+    spanElement.classList.toggle("completed", checkbox.checked);
+    updateTodoStatus(todoInputValue, checkbox.checked);
+  });
+
+  spanElement.addEventListener("click", function () {
+    checkbox.checked = !checkbox.checked;
+    spanElement.classList.toggle("completed", checkbox.checked);
+    updateTodoStatus(todoInputValue, checkbox.checked);
+  });
+
+  listItemElement.appendChild(checkbox);
   listItemElement.appendChild(spanElement);
   listItemElement.appendChild(removeTodoBtn);
-
-  const ulElement = document.getElementById("list");
-  ulElement.appendChild(listItemElement);
-  todoInput.value = "";
-
-
-
+  document.getElementById("list").appendChild(listItemElement);
 }
+
+function removeTodoFromLocalStorage(todoText) {
+  const prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
+  const updatedTodos = prevTodos.filter((todo) => todo.text !== todoText);
+  localStorage.setItem("tasks", JSON.stringify(updatedTodos));
+}
+
+function updateTodoStatus(todoText, isCompleted) {
+  const prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
+  const updatedTodos = prevTodos.map((todo) => {
+    if (todo.text === todoText) {
+      return { ...todo, completed: isCompleted };
+    }
+    return todo;
+  });
+  localStorage.setItem("tasks", JSON.stringify(updatedTodos));
+}
+
+document.getElementById("clearListBtn").addEventListener("click", function () {
+  document.getElementById("list").innerHTML = "";
+  localStorage.removeItem("tasks");
+});
