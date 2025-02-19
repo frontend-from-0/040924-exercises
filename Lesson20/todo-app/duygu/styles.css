@@ -4,7 +4,7 @@
 
 body {
   font-size: 16px;
-  background-color:antiquewhite;
+  background-color: antiquewhite;
 
 }
 
@@ -59,7 +59,7 @@ ul {
 .todo-list-item {
   display: grid;
   grid-template-columns: 30px 1fr 40px;
-  
+
   align-items: center;
   gap: 10px;
   margin-bottom: 5px;
@@ -68,9 +68,9 @@ ul {
 .todo-text {
   flex-grow: 1;
   cursor: pointer;
-  color:darkslategrey;
+  color: darkslategrey;
   font-size: 18px;
-  
+
 }
 
 .todo-text.completed {
@@ -79,28 +79,28 @@ ul {
 }
 
 .btn-danger {
-  background-color:goldenrod;
+  background-color: goldenrod;
   color: #ffffff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  
+
 }
 
 
 #clearListBtn {
   border: 1px;
-  color:chocolate;
+  color: chocolate;
   cursor: pointer;
-  
+
 }
 
 
 #submitBtn {
   border: 1px;
-  color:cadetblue;
+  color: cadetblue;
   cursor: pointer;
-  
+
 }
 
 .todo-checkbox {

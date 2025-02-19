@@ -10,7 +10,7 @@ function handleTodoFormSubmit(event) {
 
   if (todoInputValue === "") {
     showErrorMessage("Please add a task");
-    return; 
+    return;
   }
 
   const prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
