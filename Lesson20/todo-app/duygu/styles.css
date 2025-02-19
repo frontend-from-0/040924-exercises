@@ -20,7 +20,7 @@ main {
 
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 400px;
   background-color: darkkhaki;
   height: 300px;
   margin: 100px auto 20px;
@@ -35,51 +35,19 @@ form {
   justify-content: center;
 }
 
-.input-container {
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  margin-bottom: 25px;
-  background: #edeef0;
-  border-radius: 30px;
-
-}
 
 input {
-  width: 500px;
-  max-width: 100px;
+  max-width: 600px;
+  height: 25px;
   flex: 1;
   border: none;
   outline: none;
-  border-radius: 5px;
-  background: transparent;
+  border-radius: 3px;
   padding: 10px;
 
 }
 
-.btn-add {
-  border: none;
-  outline: none;
-  padding: 20px 30px;
-  background-color: darkseagreen;
-  height: 55px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-
-
-}
-
-.btn-clear {
-  border: none;
-  outline: none;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  background-color: lightpink;
-  height: 55px;
-
-}
 
 ul {
   padding-left: 0;
