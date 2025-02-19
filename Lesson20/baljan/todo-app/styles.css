@@ -4,12 +4,17 @@
 
 body {
   font-size: 16px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Galada', cursive;
   background-image: url('https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .todo-list-item {
@@ -17,13 +22,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px solid #e7a0a0;
+  border-bottom: 1px solid #e7a0a0;
 }
 
 .todo-text {
   flex-grow: 1;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-danger {
@@ -32,8 +36,6 @@ body {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
 }
 
 .btn-danger:hover {
@@ -41,11 +43,10 @@ body {
 }
 
 #clearListBtn {
-  border: 1px solid #d88989;
+  border: 1px solid #c4bbbb;
   color: black;
   cursor: pointer;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #clearListBtn:hover {
@@ -53,14 +54,15 @@ body {
 }
 
 #submitBtn {
+  border: 1px solid #c4bbbb;
   color: black;
   cursor: pointer;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
   text-align: center;
+  color: #942517;
 }
 
 main {
@@ -70,6 +72,7 @@ main {
   padding: 20px;
   background-color: #e4e8eba0;
   border-radius: 10px;
+  width: 100vw;
 }
 
 form {
