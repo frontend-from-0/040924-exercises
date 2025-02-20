@@ -70,6 +70,10 @@ Function: addContact(name, phone, email)
 - Logs "Contact added successfully." if everything is good.
 */
 
+function findContact(name, contactList) {
+  return contactList.find(contact => contact.name === name);
+}
+
 function addContact(newName, newPhone, newEmail, contactList) {
   if (findContact(newName, contactList)) {
     console.warn("The contact already exists");
@@ -92,9 +96,6 @@ function addContact(newName, newPhone, newEmail, contactList) {
   }
 }
 
-function findContact(name, contactList) {
-  return contactList.find(contact => contact.name === name);
-}
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
   // contactListLengthPrev < contactListLengthNew
