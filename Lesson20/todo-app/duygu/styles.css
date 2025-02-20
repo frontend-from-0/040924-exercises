@@ -40,7 +40,8 @@ form {
 
 
 input {
-  max-width: 600px;
+  width: 100%;
+  max-width: 90%;
   height: 35px;
   flex: 1;
   border: none;
