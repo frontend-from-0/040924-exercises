@@ -16,6 +16,10 @@ body {
   transition: all 0.5s ease;
 }
 
+.profile-card.lightblue-theme {
+  background: #add8e6;
+}
+
 .profile-card img {
   width: 100px;
   height: 100px;
