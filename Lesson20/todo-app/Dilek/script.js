@@ -15,7 +15,7 @@ function loadTodosLocStorage() {
     removeTodoBtn.textContent = 'X';
     removeTodoBtn.classList.add('btn-danger');
 
-    /* When I asked ChatGPT, what else I can do to make my app more accessible, I learned the following method for screen readers. I hope it is an up-to-date and appropriate method. */
+    /* When I asked AI, what else I can do to make my app more accessible, I learned the following method for screen readers. I hope it is an up-to-date and appropriate method. */
     removeTodoBtn.setAttribute('aria-label', 'Remove task');
 
     removeTodoBtn.addEventListener('click', () => {
