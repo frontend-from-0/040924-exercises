@@ -70,35 +70,31 @@ Function: addContact(name, phone, email)
 - Logs "Contact added successfully." if everything is good.
 */
 
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return true;
-    }
-  }
-  return false;
+function addContact(newName, newPhone, newEmail, contactList) {
+  if (findContact(newName, contactList)) {
+    console.warn("The contact already exists");
+    return;
 }
 
-function addContact(newName, newPhone, newEmail, contactList) {
-  for (let i = 0; i < contactList.length; i++) {
-    if (newName === contactList[i].name) {
-      console.warn("The contact already exist");
-      return;
-    }
-  }
   const contactListLengthPrev = contactList.length;
   contactList.push({
-    name: newName,
-    phone: newPhone,
-    email: newEmail,
+      name: newName,
+      phone: newPhone,
+      email: newEmail,
   });
+
   const contactListLengthNew = contactList.length;
 
   if (contactListLengthPrev < contactListLengthNew) {
-    console.log("Contact added successfully.");
+      console.log("Contact added successfully.");
   } else {
-    console.log("An error occured when adding a contact.");
+      console.log("An error occurred when adding a contact.");
   }
+}
+
+function findContact(name, contactList) {
+  return contactList.find(contact => contact.name === name);
+}
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
   // contactListLengthPrev < contactListLengthNew
@@ -117,19 +113,14 @@ Function: viewContact(name)
 */
 
 function viewContact(name, contactList) {
-  let isContactFound = false;
-  for (const contact of contactList) {
-    if (name === contact.name) {
-      console.log(
-        `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`,
-      );
-      isContactFound = true;
-    }
-  }
-  if (!isContactFound) {
-    console.log(`No contact found with the name: ${name}`);
+  const contact = findContact(name, contactList);
+  if (contact) {
+      console.log(`name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`);
+  } else {
+      console.log(`No contact found with the name: ${name}`);
   }
 }
+
 
 /*
 -----------------------------------------------------------
@@ -143,22 +134,15 @@ Function: updateContact(name, newPhone, newEmail)
 
 
 function updateContact(name, newPhone, newEmail, contactList) {
-  const isContactFound = findContact(name, contactList);
-  if (isContactFound) {
-
-      for (const contact of contactList) {
-        if (contact.name === name) {
-          contact.phone = newPhone;
-          contact.email = newEmail;
-          console.log("Contact updated successfully.");
-          return;
-        }
-      }
-    } else {
-
-      console.log(`No contact found with the name: ${name}`);
-    }
-  }
+  const contact = findContact(name, contactList);
+if (contact) {
+    contact.phone = newPhone;
+    contact.email = newEmail;
+    console.log("Contact updated successfully.");
+} else {
+    console.log(`No contact found with the name: ${name}`);
+}
+}
 
 
 
