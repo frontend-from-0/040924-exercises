@@ -111,3 +111,9 @@ ul {
   cursor: pointer;
   margin-left: 5px;
 }
+
+@media all and (max-width: 468px) {
+  .todo-text {
+      font-size: 14px;
+  }
+}
