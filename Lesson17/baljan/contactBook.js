@@ -27,9 +27,9 @@ in Node.js or in your browser's console to see the output.
 */
 
 const contacts = [
-  { name: "Dilek", phone: "0 224 555 88 77", email: "xyz@yahoo.com" },
-  { name: "Ali", phone: "0 225 555 88 77", email: "xds@yahoo.com" },
-  { name: "Ayşe", phone: "0 224 555 88 55", email: "sdf@yahoo.com" },
+  { name: 'Dilek', phone: '0 224 555 88 77', email: 'xyz@yahoo.com' },
+  { name: 'Ali', phone: '0 225 555 88 77', email: 'xds@yahoo.com' },
+  { name: 'Ayşe', phone: '0 224 555 88 55', email: 'sdf@yahoo.com' },
 ];
 
 /*
@@ -81,7 +81,7 @@ function findContact(name, contactList) {
 
 function addContact(name, phone, email, contactList) {
   if (findContact(name, contactList)) {
-    console.warn("The contact already exist");
+    console.warn('The contact already exist');
     return;
   }
 
@@ -97,9 +97,9 @@ function addContact(name, phone, email, contactList) {
   const contactListLengthNew = contactList.length;
 
   if (contactListLengthPrev < contactListLengthNew) {
-    console.log("Contact added successfully.");
+    console.log('Contact added successfully.');
   } else {
-    console.log("An error occurred when adding a contact.");
+    console.log('An error occurred when adding a contact.');
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
@@ -107,7 +107,6 @@ function addContact(name, phone, email, contactList) {
   //   ? console.log("Contact added successfully.")
   //   : console.log("An error occured when adding a contact.");
 }
-
 
 /*
 -----------------------------------------------------------
@@ -130,8 +129,6 @@ function viewContact(name, contactList) {
     console.log(`No contact found with the name: ${name}`);
   }
 }
-
-
 
 /*
 -----------------------------------------------------------
@@ -177,14 +174,12 @@ function removeContact(name, contactList) {
 
   if (index !== -1) {
     contactList.splice(index, 1);
-    console.log("Contact removed successfully.");
+    console.log('Contact removed successfully.');
     return;
   } else {
     console.log(`No contact was found with name: ${name}`);
   }
 }
-
-
 
 /*
 -----------------------------------------------------------
@@ -194,26 +189,26 @@ Below are some sample function calls to demonstrate the
 Contact Book in action.
 */
 
-console.log("Initial contact list:");
+console.log('Initial contact list:');
 displayAllContacts(contacts);
 
-console.log("\nAdding a new contact: Charlie");
-addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
+console.log('\nAdding a new contact: Charlie');
+addContact('Charlie', '777-777-7777', 'charlie@example.com', contacts);
 displayAllContacts(contacts);
 
-console.log("\nAdding a new contact: Charlie");
-addContact("Charlie", "777-777-7777", "charlie@example.com", contacts);
+console.log('\nAdding a new contact: Charlie');
+addContact('Charlie', '777-777-7777', 'charlie@example.com', contacts);
 displayAllContacts(contacts);
 
 console.log("\nViewing Charlie's contact:");
-viewContact("Charlie", contacts);
+viewContact('Charlie', contacts);
 
 console.log("\nUpdating Charlie's contact:");
-updateContact("Charlie", "999-999-9999", "charlie@updated.com", contacts);
-viewContact("Charlie", contacts);
+updateContact('Charlie', '999-999-9999', 'charlie@updated.com', contacts);
+viewContact('Charlie', contacts);
 
-console.log("\nRemoving Charlie:");
-removeContact("Charlie", contacts);
+console.log('\nRemoving Charlie:');
+removeContact('Charlie', contacts);
 displayAllContacts(contacts);
 
 /*

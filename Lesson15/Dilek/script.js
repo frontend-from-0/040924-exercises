@@ -6,11 +6,11 @@
    - Example: "user@example.com" -> "example.com"
 */
 function getDomain(email) {
-  let atIndex = email.indexOf("@");
-  return email.slice(atIndex + 1); 
+  let atIndex = email.indexOf('@');
+  return email.slice(atIndex + 1);
 }
 
-console.log(getDomain("dilek.tas@yahoo.com"));
+console.log(getDomain('dilek.tas@yahoo.com'));
 
 /*
 5. Check Substring
@@ -23,12 +23,12 @@ console.log(getDomain("dilek.tas@yahoo.com"));
 function containsWord(sentence, word) {
   if (sentence.includes(word)) {
     return `$ {word} found in sentence.`;
-  } else  {
+  } else {
     return `$ {word} not found in sentence.`;
   }
-  }
+}
 
-  console.log(containsWord('This is an apple.','apple'));
+console.log(containsWord('This is an apple.', 'apple'));
 
 /*
 6. File Extension Check
@@ -62,12 +62,12 @@ function isPalindrome(str) {
 
   if (str === reversed) {
     return `$ {str} is a palindrome`;
-  } else  {
+  } else {
     return `$ {str} is not a palindrome`;
   }
 }
-console.log(isPalindrome("kek"));
-console.log(isPalindrome("Dilek"));
+console.log(isPalindrome('kek'));
+console.log(isPalindrome('Dilek'));
 
 /*
 10. Check Even or Odd (if-else)
@@ -79,7 +79,7 @@ console.log(isPalindrome("Dilek"));
 function evenOrOdd(number) {
   if (number % 2 === 0) {
     return 'Even';
-  } else  {
+  } else {
     return 'Odd';
   }
 }
@@ -142,12 +142,11 @@ censorWord('My name is Dilek', 'Dilek');
 */
 
 function startsWithA(str) {
-
   if (str.charAt(0) === 'A') {
-  return 'Starts with A';
-} else {
-  return 'Does not start with A';
-}
+    return 'Starts with A';
+  } else {
+    return 'Does not start with A';
+  }
 }
 
 console.log(startsWithA('Vinegar'));
@@ -177,13 +176,13 @@ sliceLastN('Elma', 2);
 */
 
 function gradeChecker(score) {
-  if (score >= 90){
+  if (score >= 90) {
     return 'A';
-  } else if (score >= 80 && score <=89){
+  } else if (score >= 80 && score <= 89) {
     return 'B';
-  } else if (score >= 70 && score <=79){
+  } else if (score >= 70 && score <= 79) {
     return 'C';
-  } else if (score >= 60 && score <=69){
+  } else if (score >= 60 && score <= 69) {
     return 'D';
   } else {
     return 'F';
@@ -199,7 +198,7 @@ console.log(gradeChecker(62));
    - Log the result.
 */
 
-function replaceCharacter(str, oldChar,newChar) {
+function replaceCharacter(str, oldChar, newChar) {
   const updatedStr = str.replaceAll(oldChar, newChar);
 
   console.log(updatedStr);
@@ -219,7 +218,7 @@ replaceCharacter('It is o red toble', 'o', 'a');
 function titleCase(sentence) {
   const words = sentence.split(' ');
 
-  const titleCasedWords = words.map(word => {
+  const titleCasedWords = words.map((word) => {
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   });
 
@@ -246,12 +245,12 @@ function trafficLight(color) {
       break;
     case 'yellow':
       answer = 'Caution';
-      break; 
+      break;
     case 'green':
       answer = 'Go';
       break;
     default:
-      answer = 'Invalid color'
+      answer = 'Invalid color';
   }
   return answer;
 }
@@ -269,7 +268,7 @@ function isLongString(str) {
   if (str.length > 10) {
     return 'Long string';
   } else {
-    return 'Short string'; 
+    return 'Short string';
   }
 }
 
@@ -305,7 +304,7 @@ isSpam('This text is just a TEXT.');
 
 function getInitials(fullName) {
   const nameParts = fullName.split(' ');
-  const initials = nameParts.map(part => part.charAt(0).toUpperCase());
+  const initials = nameParts.map((part) => part.charAt(0).toUpperCase());
   const initialsString = initials.join('.') + '.';
   console.log(initialsString);
 }
@@ -323,30 +322,30 @@ getInitials('John C. Maxwell');
 */
 
 function getSeason(monthNum) {
-  switch(monthNum) {
-  case 12:
-  case 1: 
-  case 2:
-    console.log('Winter');
-    break;
-  case 3: 
-  case 4: 
-  case 5:
-    console.log('Spring');
-    break;
-  case 6: 
-  case 7: 
-  case 8:
-    console.log('Summer');
-    break;
-  case 9: 
-  case 10: 
-  case 11:
-    console.log('Autumn');
-    break;
-  default:
-    console.log('Invalid Month');
-}
+  switch (monthNum) {
+    case 12:
+    case 1:
+    case 2:
+      console.log('Winter');
+      break;
+    case 3:
+    case 4:
+    case 5:
+      console.log('Spring');
+      break;
+    case 6:
+    case 7:
+    case 8:
+      console.log('Summer');
+      break;
+    case 9:
+    case 10:
+    case 11:
+      console.log('Autumn');
+      break;
+    default:
+      console.log('Invalid Month');
+  }
 }
 getSeason(13);
 
@@ -361,9 +360,9 @@ function containsNumber(str) {
   let digits = str.match(/\d/g);
 
   if (digits) {
-      console.log('Contains number');
+    console.log('Contains number');
   } else {
-      console.log('No number found');
+    console.log('No number found');
   }
 }
 
@@ -413,7 +412,7 @@ canVote(14);
 
 function reverseWords(sentence) {
   const words = sentence.split(' ');
-  const reversedWords = words.map(word => word.split('').reverse().join(''));
+  const reversedWords = words.map((word) => word.split('').reverse().join(''));
   const reversedSentence = reversedWords.join(' ');
   console.log(reversedSentence);
 }
@@ -452,26 +451,26 @@ findWordPosition('This is a white cat.', 'cat');
 function calculate(a, operator, b) {
   let result;
 
-  switch(operator) {
-  case '+':
-    result = a + b;
-    break;
-  case '-':
-    result = a - b;
-    break;
-  case '*':
-    result = a * b;
-    break;
-  case '/':
-    result = a / b;
-    break;
-  default:
-    result = "Invalid operator"
+  switch (operator) {
+    case '+':
+      result = a + b;
+      break;
+    case '-':
+      result = a - b;
+      break;
+    case '*':
+      result = a * b;
+      break;
+    case '/':
+      result = a / b;
+      break;
+    default:
+      result = 'Invalid operator';
+  }
+  console.log(result);
 }
-console.log(result);
-}
-calculate(6 , '+' , 2);
-calculate(6 , '-' , 2);
-calculate(6 , '*' , 2);
-calculate(6 , '/' , 0);
-calculate(6 , '?' , 2);
+calculate(6, '+', 2);
+calculate(6, '-', 2);
+calculate(6, '*', 2);
+calculate(6, '/', 0);
+calculate(6, '?', 2);
