@@ -10,7 +10,7 @@ function printCharacters(str) {
   }
 }
 
-const name1 = "Computer";
+const name1 = 'Computer';
 printCharacters(name1);
 
 /*
@@ -47,7 +47,7 @@ function printObjectKeys(obj) {
   }
 }
 
-const object1 = { name: "Alice", age: 25 };
+const object1 = { name: 'Alice', age: 25 };
 printObjectKeys(object1);
 
 /*
@@ -79,7 +79,6 @@ sumWithDoWhile(array1);
     - Log the new array without duplicates.
 */
 
-
 function removeDuplicates(arr) {
   let uniqueArray = [];
   for (const number of arr) {
@@ -93,7 +92,6 @@ function removeDuplicates(arr) {
 
 const array2 = [1, 1, 2, 3, 4, 4, 5];
 removeDuplicates(array2);
-
 
 /*
 13. Calculate Factorial (For Loop)
@@ -123,16 +121,16 @@ factorial(number2);
 */
 
 function reverseWords(sentence) {
-  const list = sentence.split(" "); // [ 'Baljan', 'is', 'a', 'JS', 'developer' ]
-  let sum = "";
+  const list = sentence.split(' '); // [ 'Baljan', 'is', 'a', 'JS', 'developer' ]
+  let sum = '';
   for (let i = list.length - 1; i >= 0; i--) {
-    sum += list[i] + " ";
+    sum += list[i] + ' ';
   }
 
   console.log(sum);
 }
 
-const sentence = "Baljan is a JS developer";
+const sentence = 'Baljan is a JS developer';
 reverseWords(sentence);
 
 /*
@@ -153,9 +151,8 @@ function filterLongWords(words, minLength) {
   console.log(result);
 }
 
-const words1 = ["Baljan", "is", "a", "JS", "developer"];
+const words1 = ['Baljan', 'is', 'a', 'JS', 'developer'];
 filterLongWords(words1, 3);
-
 
 /*
 16. Log Array Elements with Their Indices
@@ -169,9 +166,8 @@ function logElementsWithIndex(arr) {
   }
 }
 
-const array3 = ["B", "A", "L", "J", "A", "N"];
+const array3 = ['B', 'A', 'L', 'J', 'A', 'N'];
 logElementsWithIndex(array3);
-
 
 /*
 17. Find the Smallest Number in an Array
@@ -214,17 +210,17 @@ function countOccurrences(arr, word) {
 }
 
 const words2 = [
-  "Baljan",
-  "is",
-  "a",
-  "JS",
-  "developer",
-  "Baljan",
-  "developer",
-  "developer",
+  'Baljan',
+  'is',
+  'a',
+  'JS',
+  'developer',
+  'Baljan',
+  'developer',
+  'developer',
 ];
 
-countOccurrences(words2, "developer");
+countOccurrences(words2, 'developer');
 
 /*
 19. Remove Falsy Values
@@ -244,7 +240,7 @@ function removeFalsyValues(arr) {
   console.log(result);
 }
 
-const array5 = [1, false, 0, "Baljan", null, "", true, undefined, NaN];
+const array5 = [1, false, 0, 'Baljan', null, '', true, undefined, NaN];
 
 removeFalsyValues(array5);
 
@@ -268,7 +264,7 @@ function sumDigits(str) {
   console.log(sum);
 }
 
-const parameters = "JS123HELLOWORLD789";
+const parameters = 'JS123HELLOWORLD789';
 sumDigits(parameters);
 
 /*
@@ -324,7 +320,6 @@ flattenArray(array7);
     - Log the filtered array.
 */
 
-
 function findWordsWithLetter(words, letter) {
   const list = [];
 
@@ -337,10 +332,9 @@ function findWordsWithLetter(words, letter) {
   console.log(list);
 }
 
-const array8 = ["Apple", "Banana", "Orange"];
+const array8 = ['Apple', 'Banana', 'Orange'];
 
-findWordsWithLetter(array8, "e");
-
+findWordsWithLetter(array8, 'e');
 
 /*
 24. Push and Pop Operations
@@ -360,8 +354,8 @@ function pushPopExample(arr, itemToPush) {
   console.log(arr);
 }
 
-const array9 = ["Apple", "Banana", "Orange"];
-pushPopExample(array9, "Watermelon");
+const array9 = ['Apple', 'Banana', 'Orange'];
+pushPopExample(array9, 'Watermelon');
 
 /*
 25. Push and Shift Operations
@@ -382,8 +376,8 @@ function manageQueue(queue, newPerson) {
   console.log(queue);
 }
 
-const persons = ["Ali", "Veli", "Ahmet"];
-manageQueue(persons, "Baljan");
+const persons = ['Ali', 'Veli', 'Ahmet'];
+manageQueue(persons, 'Baljan');
 
 /*
 26. To-Do List Application
@@ -405,8 +399,8 @@ function updateTodoList(todoList, startIndex, deleteCount, ...newTasks) {
   console.log(todoList);
 }
 
-const todoList = ["Ödev Yap", "Pratik Yap"];
+const todoList = ['Ödev Yap', 'Pratik Yap'];
 
-updateTodoList(todoList, 0, 1, "Kod Yaz", "JS Öğren");
+updateTodoList(todoList, 0, 1, 'Kod Yaz', 'JS Öğren');
 
 //const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
