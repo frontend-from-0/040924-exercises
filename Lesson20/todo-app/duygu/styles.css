@@ -5,7 +5,6 @@
 body {
   font-size: 16px;
   background-color: antiquewhite;
-
 }
 
 h1 {
@@ -31,13 +30,10 @@ main {
 }
 
 form {
-
   display: flex;
   gap: 10px;
   justify-content: center;
 }
-
-
 
 input {
   width: 100%;
@@ -48,9 +44,7 @@ input {
   outline: none;
   border-radius: 3px;
   padding: 10px;
-
 }
-
 
 ul {
   padding-left: 0;
@@ -71,7 +65,6 @@ ul {
   cursor: pointer;
   color: darkslategrey;
   font-size: 18px;
-
 }
 
 .todo-text.completed {
@@ -85,23 +78,18 @@ ul {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-
 }
-
 
 #clearListBtn {
   border: 1px;
   color: chocolate;
   cursor: pointer;
-
 }
-
 
 #submitBtn {
   border: 1px;
   color: cadetblue;
   cursor: pointer;
-
 }
 
 .todo-checkbox {
@@ -114,6 +102,6 @@ ul {
 
 @media all and (max-width: 468px) {
   .todo-text {
-      font-size: 14px;
+    font-size: 14px;
   }
 }

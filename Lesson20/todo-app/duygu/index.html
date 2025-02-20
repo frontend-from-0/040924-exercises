@@ -1,35 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>To-Do List</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css" />
-  <title>To-Do List</title>
-</head>
+  <body>
+    <main>
+      <h1>Todo List</h1>
+      <div class="container">
+        <form id="todoForm">
+          <input
+            type="text"
+            id="todoInput"
+            placeholder="Enter your task..."
+            aria-label="task to do"
+          />
+          <button class="btn-add" type="submit" id="submitBtn">Add</button>
+          <button class="btn-clear" type="button" id="clearListBtn">
+            Clear List
+          </button>
+        </form>
 
-<body>
-  <main>
-    <h1>Todo List</h1>
-    <div class="container">
-      <form id="todoForm">
-
-        <input type="text" id="todoInput" placeholder="Enter your task..." aria-label="task to do" />
-        <button class="btn-add" type="submit" id="submitBtn">Add</button>
-        <button class="btn-clear" type="button" id="clearListBtn">Clear List</button>
-
-      </form>
-
-      <ul id="list">
-        <!-- <li class="todo-list-item">
+        <ul id="list">
+          <!-- <li class="todo-list-item">
           <span class="todo-text">Do homework</span>
           <button>X</button>
         </li> -->
-      </ul>
-    </div>
-  </main>
+        </ul>
+      </div>
+    </main>
 
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
