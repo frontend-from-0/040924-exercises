@@ -49,7 +49,9 @@ class Restaurant {
     const discountedTotal =
       totalRevenue - totalRevenue * (discountPercentage / 100);
     console.log(
-      `Total after ${discountPercentage}% discount: $${discountedTotal.toFixed(2)}`
+      `Total after ${discountPercentage}% discount: $${discountedTotal.toFixed(
+        2
+      )}`
     );
   }
 }
@@ -82,7 +84,9 @@ class Order {
     console.log('Order Summary:');
     this.items.forEach((item) => {
       console.log(
-        `${item.quantity}x ${item.menuItem.name} - $${item.menuItem.price * item.quantity}`
+        `${item.quantity}x ${item.menuItem.name} - $${
+          item.menuItem.price * item.quantity
+        }`
       );
     });
     console.log(`Total Price: $${this.calculateTotal()}`);
