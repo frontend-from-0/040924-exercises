@@ -1,5 +1,5 @@
 
-// 1. Update Profile Name
+// 1. Update Profile
 
 const updateName = document.getElementById("update-name");
 const profileName = document.getElementById("profile-name");
