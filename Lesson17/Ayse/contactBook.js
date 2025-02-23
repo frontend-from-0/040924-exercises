@@ -211,7 +211,7 @@ console.log("\nViewing Bob's contact:");
 viewContact("Bob");
 
 console.log("\nViewing Charlie's contact:");
-viewContact("Charlie");,
+viewContact("Charlie");
 
 ////////////////////////////// END //////////////////////////////
 
