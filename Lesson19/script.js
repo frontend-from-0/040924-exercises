@@ -195,9 +195,8 @@ addSkillBtn.addEventListener("click", () => {
       addNewSkill();
     }
   });
-
-  function addNewSkill() {
-   
+   function addNewSkill() {
+    const newSkill = inputSkill.value.trim();
 
     if (newSkill) {
       skillItem.innerHTML = newSkill;
