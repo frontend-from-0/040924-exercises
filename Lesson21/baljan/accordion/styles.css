@@ -1,0 +1,114 @@
+/* Resetting margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Container for centering content */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Header */
+header {
+  background-color: #f0de7bf0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hero-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.intro {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Section for FAQs */
+.faq-section {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left and Right Containers */
+.faq-left,
+.faq-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* FAQ Category */
+.faq-category {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-category h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* FAQ Item styling */
+.faq-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #e2be39;
+}
+
+button {
+  font-size: 1.1rem;
+  color: #555;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Add some space between categories */
+.faq-category:not(:last-child) {
+  margin-bottom: 20px;
+}
