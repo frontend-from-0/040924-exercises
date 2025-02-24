@@ -199,6 +199,10 @@ console.log('STEP 7: Testing Our Functions');
 console.log("Initial contact list:");
 displayAllContacts();
 
+console.log("\nAdding a new contact: Alice");
+addContact("Alice", "999-999-999", "alice@example.com");
+displayAllContacts();
+
 console.log("\nAdding a new contact: Charlie");
 addContact("Charlie", "777-777-7777", "charlie@example.com");
 displayAllContacts();
