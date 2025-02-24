@@ -1,29 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
+  const headers = document.querySelectorAll('.heading');
 
-  const headers = document.querySelectorAll(".heading");
-
-  headers.forEach(header => {
-    header.addEventListener("click", function () {
-
+  headers.forEach((header) => {
+    header.addEventListener('click', function () {
       const content = this.nextElementSibling;
-      const icon = this.querySelector("p");
-
+      const icon = this.querySelector('p');
 
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
-        icon.textContent = "+";
+        icon.textContent = '+';
       } else {
-
-        document.querySelectorAll(".content").forEach(item => {
+        document.querySelectorAll('.content').forEach((item) => {
           item.style.maxHeight = null;
         });
-        document.querySelectorAll(".heading p").forEach(item => {
-          item.textContent = "+";
+        document.querySelectorAll('.heading p').forEach((item) => {
+          item.textContent = '+';
         });
 
-
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.textContent = "−";
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.textContent = '−';
       }
     });
   });

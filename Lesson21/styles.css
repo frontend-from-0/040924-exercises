@@ -33,7 +33,6 @@ h1 {
 }
 
 .heading {
-
   background-color: rgb(249, 249, 222);
 }
 
@@ -45,13 +44,11 @@ h1 {
   padding: 20px;
   cursor: pointer;
   border: 1px solid rgb(86, 113, 86);
-
 }
 
 .heading p {
   font-size: 25px;
   margin: 0px;
-
 }
 
 .content {
@@ -65,7 +62,6 @@ h1 {
 .content {
   margin: 0;
   padding: 0;
-
 }
 
 h3,
@@ -81,5 +77,4 @@ p {
 
 h3 {
   font-size: 22px;
-
 }
