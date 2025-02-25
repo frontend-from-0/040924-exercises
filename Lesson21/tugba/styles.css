@@ -7,10 +7,10 @@
   --bg-light-purple: #c7d2fe;
   --bg-medium-purple: #a5b4fc;
   --bg-deep-purple: #818cf8;
-  
+
   --text-color-dark: #1f2937;
   --text-color-light: #333;
-  
+
   --icon-color: #fff;
   --hover-color: #be93fd;
   --accordion-bg: #fff;
@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
 }
 
@@ -109,7 +109,9 @@ body {
   padding: 0 15px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  transition:
+    max-height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
   border-radius: 5px;
 }
 
@@ -122,7 +124,7 @@ body {
 
 .icon::before,
 .icon::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 14px;
   height: 3px;
