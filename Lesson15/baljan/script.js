@@ -76,10 +76,10 @@ function checkEvenOrOdd(number) {
    - Log "Secure connection" if true, otherwise "Unsecure connection".
 */
 function checkURLProtocol(url) {
-  if (url.startsWith("https://")) {
-    console.log("Secure connection");
+  if (url.startsWith('https://')) {
+    console.log('Secure connection');
   } else {
-    console.log("Unsecure connection");
+    console.log('Unsecure connection');
   }
 }
 
@@ -99,7 +99,7 @@ function repeatWord(word, times) {
    - Log the censored sentence.
 */
 function censorWord(sentence, target) {
-  let censoredSentence = sentence.replaceAll(target, "****");
+  let censoredSentence = sentence.replaceAll(target, '****');
   console.log(censoredSentence);
 }
 /*
@@ -109,12 +109,12 @@ function censorWord(sentence, target) {
    - Log "Starts with A" or "Does not start with A".
 */
 function startsWithA(str) {
-  if (str[0] === "A") {
-    console.log("Starts with A");
+  if (str[0] === 'A') {
+    console.log('Starts with A');
   } else {
-    console.log("Does not start with A");
+    console.log('Does not start with A');
   }
-};
+}
 /*
 16. Slice Last N Characters
    - Define a function `sliceLastN(text, n)` that uses .slice(-n) to extract
@@ -137,15 +137,15 @@ function sliceLastN(text, n) {
 */
 function gradeChecker(score) {
   if (score >= 90) {
-    return "A";
+    return 'A';
   } else if (score >= 80 && score < 90) {
-    return "B";
+    return 'B';
   } else if (score >= 70 && score < 80) {
-    return "C";
+    return 'C';
   } else if (score >= 60 && score < 70) {
-    return "D";
+    return 'D';
   } else {
-    return "F";
+    return 'F';
   }
 }
 /*
@@ -168,9 +168,9 @@ function replaceCharacter(str, oldChar, newChar) {
 */
 function titleCase(sentence) {
   return sentence
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(" ");
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 }
 /*
 20. Switch: Traffic Light
@@ -182,17 +182,17 @@ function titleCase(sentence) {
 */
 function trafficLight(color) {
   switch (color) {
-    case "red":
-      console.log("Stop");
+    case 'red':
+      console.log('Stop');
       break;
-    case "yellow":
-      console.log("Caution");
+    case 'yellow':
+      console.log('Caution');
       break;
-    case "green":
-      console.log("Go");
+    case 'green':
+      console.log('Go');
       break;
     default:
-      console.log("Invalid color");
+      console.log('Invalid color');
   }
 }
 /*
@@ -203,9 +203,9 @@ function trafficLight(color) {
 */
 function isLongString(str) {
   if (str.length > 10) {
-    console.log("Long string");
+    console.log('Long string');
   } else {
-    console.log("Short string");
+    console.log('Short string');
   }
 }
 /*
@@ -217,10 +217,10 @@ function isLongString(str) {
 */
 function isSpam(text) {
   let lowerText = text.toLowerCase();
-  if (lowerText.includes("spam")) {
-    console.log("This text is spam!");
+  if (lowerText.includes('spam')) {
+    console.log('This text is spam!');
   } else {
-    console.log("This text is not spam.");
+    console.log('This text is not spam.');
   }
 }
 /*
@@ -230,10 +230,12 @@ function isSpam(text) {
    - Example: "John Doe" -> "J.D."
 */
 function getInitials(fullName) {
-  return fullName
-    .split(" ")
-    .map(word => word[0].toUpperCase())
-    .join(".") + ".";
+  return (
+    fullName
+      .split(' ')
+      .map((word) => word[0].toUpperCase())
+      .join('.') + '.'
+  );
 }
 /*
 24. Switch: Month to Season
@@ -246,15 +248,15 @@ function getInitials(fullName) {
 */
 function getSeason(monthNum) {
   if (monthNum === 12 || monthNum === 1 || monthNum === 2) {
-    return "Winter";
+    return 'Winter';
   } else if (monthNum === 3 || monthNum === 4 || monthNum === 5) {
-    return "Spring";
+    return 'Spring';
   } else if (monthNum === 6 || monthNum === 7 || monthNum === 8) {
-    return "Summer";
+    return 'Summer';
   } else if (monthNum === 9 || monthNum === 10 || monthNum === 11) {
-    return "Autumn";
+    return 'Autumn';
   } else {
-    return "Invalid month";
+    return 'Invalid month';
   }
 }
 /*
@@ -264,11 +266,11 @@ function getSeason(monthNum) {
    - Log "Contains number" or "No number found".
 */
 function containsNumber(str) {
-  const matches = str.match(/\d/);  // Match any digit (0-9)
+  const matches = str.match(/\d/); // Match any digit (0-9)
   if (matches !== null) {
-    console.log("Contains number");
+    console.log('Contains number');
   } else {
-    console.log("No number found");
+    console.log('No number found');
   }
 }
 /*
@@ -292,9 +294,9 @@ function padString(str, maxLength) {
 */
 function canVote(age) {
   if (age >= 18) {
-    console.log("Can vote");
+    console.log('Can vote');
   } else {
-    console.log("Too young to vote");
+    console.log('Too young to vote');
   }
 }
 /*
@@ -307,7 +309,7 @@ function canVote(age) {
 */
 function reverseWords(sentence) {
   const words = sentence.split(' ');
-  const reversedWords = words.map(word => word.split('').reverse().join(''));
+  const reversedWords = words.map((word) => word.split('').reverse().join(''));
   const reversedSentence = reversedWords.join(' ');
   console.log(reversedSentence);
 }
@@ -322,7 +324,7 @@ function findWordPosition(sentence, word) {
   if (index !== -1) {
     console.log(`The word is at index ${index}`);
   } else {
-    console.log("Not found");
+    console.log('Not found');
   }
 }
 /*
@@ -349,13 +351,13 @@ function calculate(a, operator, b) {
       break;
     case '/':
       if (b === 0) {
-        result = "Cannot divide by zero";
+        result = 'Cannot divide by zero';
       } else {
         result = a / b;
       }
       break;
     default:
-      result = "Invalid operator";
+      result = 'Invalid operator';
   }
   console.log(result);
 }
