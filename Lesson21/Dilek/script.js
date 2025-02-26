@@ -7,15 +7,15 @@ accordionItems.forEach((item) => {
     clickSound.play();
 
     if (!icon) return;
-    accordionItems.forEach((otherItem) => {
-      if (otherItem !== item) {
-        otherItem.classList.remove('active');
-        otherItem.querySelector('.accordion-content').style.maxHeight = null;
+   
+    const openItem = document.querySelector('.accordion-item.active');
+    if (openItem && openItem !== item) {
+      openItem.classList.remove('active');
+      openItem.querySelector('.accordion-content').style.maxHeight = null;
 
-        const otherIcon = otherItem.querySelector('.icon');
-        if (otherIcon) otherIcon.classList.replace('fa-minus', 'fa-plus');
-      }
-    });
+      const openIcon = openItem.querySelector('.icon');
+      if (openIcon) openIcon.classList.replace('fa-minus', 'fa-plus');
+    }
 
     item.classList.toggle('active');
 
