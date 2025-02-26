@@ -85,104 +85,104 @@ before moving to the next one.
 /*1*/
 
 class Restaurant {
-   constructor(name, location, menu = [], order = []) {
-      this.name = name;
-      this.location = location;
-      this.menu = menu;
-      this.order = order;
-   }
+  constructor(name, location, menu = [], order = []) {
+    this.name = name;
+    this.location = location;
+    this.menu = menu;
+    this.order = order;
+  }
 
-   addMenuItem(name, price, category) {
-      const menuItem = { name, price, category };
-      this.menu.push(menuItem);
-   }
+  addMenuItem(name, price, category) {
+    const menuItem = { name, price, category };
+    this.menu.push(menuItem);
+  }
 
-   viewMenu() {
-      if (this.menu.length > 0) {
-         console.log("Menu: ");
-         for (const item of this.menu) {
-            console.log(
-               `name: ${item.name}, price: ${item.price}, category: ${item.category}`
-            );
-         }
-      } else {
-         console.log("Menu is empty");
+  viewMenu() {
+    if (this.menu.length > 0) {
+      console.log('Menu: ');
+      for (const item of this.menu) {
+        console.log(
+          `name: ${item.name}, price: ${item.price}, category: ${item.category}`
+        );
       }
-   }
+    } else {
+      console.log('Menu is empty');
+    }
+  }
 
-   /*4*/
-   placeOrder(order) {
-      if (Array.isArray(order)) {
-         this.order.push(...order); // Spread operator to add multiple orders
-      } else {
-         this.order.push(order); // Add a single order
-      }
-   }
+  /*4*/
+  placeOrder(order) {
+    if (Array.isArray(order)) {
+      this.order.push(...order); // Spread operator to add multiple orders
+    } else {
+      this.order.push(order); // Add a single order
+    }
+  }
 
-   /*5*/
+  /*5*/
 }
 
 /*2*/
 class MenuItem {
-   constructor(name, price, category) {
-      this.name = name;
-      this.price = price;
-      this.category = category;
-   }
+  constructor(name, price, category) {
+    this.name = name;
+    this.price = price;
+    this.category = category;
+  }
 }
 
 /*3*/
 
 class Order {
-   constructor(items = []) {
-      this.items = items;
-   }
+  constructor(items = []) {
+    this.items = items;
+  }
 
-   addItem(name, quantity, price) {
-      const addItem = { name, quantity, price };
-      this.items.push(addItem);
-   }
+  addItem(name, quantity, price) {
+    const addItem = { name, quantity, price };
+    this.items.push(addItem);
+  }
 
-   calculateTotal() {
-      return this.items.reduce(
-         (total, item) => total + item.price * item.quantity,
-         0
-      );
-   }
+  calculateTotal() {
+    return this.items.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  }
 
-   viewOrder() {
-      if (this.items.length > 0) {
-         console.log("Order: ");
-         for (const item of this.items) {
-            console.log(`${item.name}, price: ${item.price}`);
-         }
-      } else {
-         console.log("Order is empty");
+  viewOrder() {
+    if (this.items.length > 0) {
+      console.log('Order: ');
+      for (const item of this.items) {
+        console.log(`${item.name}, price: ${item.price}`);
       }
-   }
+    } else {
+      console.log('Order is empty');
+    }
+  }
 }
 
 // Usage
-const myRestaurant = new Restaurant("Royal", "Downtown");
+const myRestaurant = new Restaurant('Royal', 'Downtown');
 
-myRestaurant.addMenuItem("Burger", 8.99, "Main Course");
-myRestaurant.addMenuItem("Pasta", 12.99, "Main Course");
-myRestaurant.addMenuItem("Ice Cream", 4.99, "Dessert");
+myRestaurant.addMenuItem('Burger', 8.99, 'Main Course');
+myRestaurant.addMenuItem('Pasta', 12.99, 'Main Course');
+myRestaurant.addMenuItem('Ice Cream', 4.99, 'Dessert');
 
 myRestaurant.viewMenu();
 
-myRestaurant.placeOrder({ id: 1, item: "Sushi", quantity: 2 });
+myRestaurant.placeOrder({ id: 1, item: 'Sushi', quantity: 2 });
 
-const pizza = new MenuItem("Margherita Pizza", 10.99, "Main Course");
+const pizza = new MenuItem('Margherita Pizza', 10.99, 'Main Course');
 console.log(pizza.name);
 console.log(pizza.price);
 console.log(pizza.category);
 
 const myOrder = new Order();
 
-myOrder.addItem("Lemonade", 2, 2.99);
-myOrder.addItem("Fries", 1, 3.49);
-myOrder.addItem("Soda", 3, 1.99);
+myOrder.addItem('Lemonade', 2, 2.99);
+myOrder.addItem('Fries', 1, 3.49);
+myOrder.addItem('Soda', 3, 1.99);
 
 myOrder.viewOrder();
 
