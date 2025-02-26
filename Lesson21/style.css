@@ -37,6 +37,7 @@
    
 
   body{
+  
    font-family: 'Poppins', sans-serif;
    font-size: 14px;
    display: flex;
@@ -74,7 +75,7 @@
 
  .question-answer{
     width: 100%;
-    border-bottom: 1px solid #c5c1c1;
+    border-bottom: 1px solid #d4cfcf;
  }
 
 
