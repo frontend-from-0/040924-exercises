@@ -1,30 +1,23 @@
-const questionsAnswers = document.querySelectorAll(".question-answer");
+const questionsAnswers = document.querySelectorAll('.question-answer');
 
-const titleQuestion = document.querySelectorAll(".title_question");
+const titleQuestion = document.querySelectorAll('.title_question');
 
+questionsAnswers.forEach(function (questionAnswer) {
+  const button = questionAnswer.querySelector('.question_button');
 
+  const question = questionAnswer.querySelector('.question');
 
-questionsAnswers.forEach(function (questionAnswer) {  
+  questionAnswer.addEventListener('click', function (event) {
+    const target = event.target.closest('.question, .question_button');
 
-  const button = questionAnswer.querySelector(".question_button");
-  
-  const question = questionAnswer.querySelector(".question");
+    if (!target) return;
 
+    questionsAnswers.forEach(function (item) {
+      if (item !== questionAnswer) {
+        item.classList.remove('show-answer');
+      }
+    });
 
-  questionAnswer.addEventListener("click", function (event) {
-      const target = event.target.closest(".question, .question_button");
-
-      
-      if (!target) return;
-
-     
-      questionsAnswers.forEach(function (item) {
-          if (item !== questionAnswer) {
-              item.classList.remove("show-answer");
-          }
-      });
-
-     
-      questionAnswer.classList.toggle("show-answer");
+    questionAnswer.classList.toggle('show-answer');
   });
 });
