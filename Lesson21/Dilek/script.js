@@ -7,7 +7,7 @@ accordionItems.forEach((item) => {
     clickSound.play();
 
     if (!icon) return;
-   
+
     const openItem = document.querySelector('.accordion-item.active');
     if (openItem && openItem !== item) {
       openItem.classList.remove('active');
