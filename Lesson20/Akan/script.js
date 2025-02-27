@@ -38,6 +38,12 @@ function addTodoToDOM(todo) {
     spanElement.classList.add("completed");
   }
 
+  spanElement.addEventListener("click", () => {
+    todo.completed = !todo.completed;
+    localStorage.setItem('todos', JSON.stringify(todos));
+    spanElement.classList.toggle("completed");
+  });
+
   const removeTodoBtn = document.createElement("button");
   removeTodoBtn.textContent = "X";
   removeTodoBtn.classList.add("btn-danger");

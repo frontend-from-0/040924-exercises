@@ -13,6 +13,16 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+}
+
 h1 {
   text-align: center;
   color: #333;
