@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhanced Profile Card Updater</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="profile-card">
+    <img id="profile-pic"
+      src="https://images.unsplash.com/photo-1618477371303-b2a56f422d9e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fHNvZnR3YXJlJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww"
+      alt="Profile Picture">
+    <h2 id="profile-name">John Doe</h2>
+    <p id="profile-desc">This is your personal profile card.</p>
+
+    <div class="controls">
+      <!-- Buttons for tasks -->
+      <button id="update-name">Update Name</button>
+      <button id="update-image">Update Image</button>
+      <button id="change-theme">Change Theme</button>
+      <button id="toggle-desc">Toggle Description</button>
+      <button id="add-social">Add Social Media Link</button>
+      <button id="add-skill">Add Skill</button>
+    </div>
+
+    <!-- New sections for additional tasks -->
+    <div class="social-media">
+      <h3>Social Media</h3>
+      <ul id="social-list">
+        <!-- Initially empty -->
+      </ul>
+      <input type="text" id="social-input" placeholder="Please Enter Social Media URL" />
+      <button id="add-social">Add Social Media Link</button>
+    </div>
+
+    <div class="skills">
+      <h3>Skills</h3>
+      <ul id="skills-list">
+        <li>JavaScript</li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
