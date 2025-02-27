@@ -49,23 +49,31 @@ function addTodoToList(todoText) {
   });
 }
 
-/*check*/
 function removeTodoFromLocalStorage(todoText) {
   const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
   const updatedTodos = prevTodos.filter((todo) => todo !== todoText);
   localStorage.setItem('tasks', JSON.stringify(updatedTodos));
 }
-/*check*/
+
+function updateTodoInLocalStorage(todoText, completed) {
+  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
+  const updatedTodos = prevTodos.map((todo) => {
+    if (todo.text === todoText) {
+      return { text: todoText, completed: completed };
+    }
+    return todo;
+  });
+  localStorage.setItem('tasks', JSON.stringify(updatedTodos));
+}
+
 document.getElementById('clearListBtn').addEventListener('click', function () {
   const liElements = document.querySelectorAll('li');
   liElements.forEach((li) => li.remove());
   localStorage.removeItem('tasks');
 });
 
-/*check*/
 window.addEventListener('load', () => {
   const savedTodos = JSON.parse(localStorage.getItem('tasks')) || [];
   savedTodos.forEach((todo) => addTodoToList(todo));
 });
 
-// TODO: when page is loaded, get todo items from local storage and add them to the unordered list element
