@@ -1,4 +1,3 @@
-/* Color Variables */
 :root {
   --bg-light-pink: #fde7f3;
   --bg-pastel-pink: #fbcfe8;
@@ -16,7 +15,6 @@
   --accordion-bg: #fff;
 }
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +32,6 @@ body {
   justify-content: center;
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   width: 90%;
@@ -43,37 +40,38 @@ body {
   gap: 40px; /* Add space between the image and the menu */
 }
 
-/* Image */
 .img {
   width: 50%;
   max-width: 500px;
   border-radius: 10px;
 }
 
-/* Accordion Menu */
 .accordion-menu {
   width: 50%;
 }
 
-/* Accordion Title */
+/* Accordion Button Styling */
 .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
+  width: 100%;
+  background: none;
+  border: none;
   cursor: pointer;
+  text-align: left;
+  padding: 15px;
   font-size: 16px;
   font-weight: bold;
   color: var(--text-color-dark);
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title:hover {
   background-color: var(--hover-color);
 }
 
-/* Accordion Title Colors */
 .item:nth-child(1) .title {
   background-color: var(--bg-light-pink);
 }
@@ -102,7 +100,6 @@ body {
   background-color: var(--bg-deep-purple);
 }
 
-/* Accordion Content */
 .text {
   background-color: var(--accordion-bg);
   color: var(--text-color-light);
@@ -113,7 +110,6 @@ body {
   border-radius: 5px;
 }
 
-/* Icon */
 .icon {
   width: 14px;
   height: 14px;
@@ -136,13 +132,74 @@ body {
   transform: rotate(90deg);
 }
 
-/* Active State for Expanded Content */
 .item.active .text {
   max-height: 200px;
   padding: 15px;
 }
 
-/* Open Icon */
 .item.active .icon::after {
   transform: rotate(0deg);
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduce gap on smaller screens */
+  }
+
+  .img {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .accordion-menu {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 14px; /* Reduce text size for smaller screens */
+    padding: 12px;
+  }
+
+  .text {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .img {
+    width: 90%;
+  }
+
+  .accordion-menu {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .text {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .accordion-menu {
+    width: 100%;
+  }
 }

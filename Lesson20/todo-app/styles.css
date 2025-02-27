@@ -35,12 +35,6 @@ ul {
   justify-content: space-between;
 }
 
-.todo-text {
-}
-
 .todo-text.completed {
   text-decoration: line-through;
-}
-
-.btn-danger {
 }
