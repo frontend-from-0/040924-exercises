@@ -93,12 +93,10 @@ input {
   flex: 1;
 }
 
-/* Styling for the input field */
 form {
   display: flex;
   gap: 1vw;
   margin-bottom: 2vh;
-
 }
 
 #todoInput {
@@ -109,7 +107,6 @@ form {
   font-size: 16px;
 }
 
-/* Styling for the buttons */
 button {
   padding: 10px 20px;
   border: none;
@@ -131,4 +128,20 @@ button:hover {
 ul {
   padding-left: 0;
   list-style-type: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .todo-text {
+    font-size: 0.9rem;
+  }
 }

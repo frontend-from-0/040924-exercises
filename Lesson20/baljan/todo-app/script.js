@@ -76,4 +76,3 @@ window.addEventListener('load', () => {
   const savedTodos = JSON.parse(localStorage.getItem('tasks')) || [];
   savedTodos.forEach((todo) => addTodoToList(todo));
 });
-
