@@ -337,31 +337,31 @@ function getSeason(monthNum) {
 */
 let findNumber = "Check If String Contains Number";
 
-function containsNumber(str){
+function containsNumber(str) {
   let isTrue = findNumber.match(/\d/);
-  if (isTrue){
+  if (isTrue) {
     console.log("Contains number");
-  }else{
+  } else {
     console.log("No number found");
   }
 
-}containsNumber(findNumber);
+} containsNumber(findNumber);
 /*
 26. Pad a String
    - Define a function `padString(str, maxLength)` that if str.length < maxLength,
      uses .padEnd() or .padStart() to make the string reach maxLength with '*'.
    - Log the padded string.
 */
-function padString(str, maxLength){
- let str26 = str.length;
- if (maxLength>str26){
-  let newStr = str.padEnd(maxLength , '*');
-  console.log(newStr);
- }
- else{
-  console.log(str);
- }
-}padString("Log the padded string.", 70);
+function padString(str, maxLength) {
+  let str26 = str.length;
+  if (maxLength > str26) {
+    let newStr = str.padEnd(maxLength, '*');
+    console.log(newStr);
+  }
+  else {
+    console.log(str);
+  }
+} padString("Log the padded string.", 70);
 /*
 27. If-Else: Voting Eligibility
    - Define a function `canVote(age)` that logs:
@@ -369,12 +369,12 @@ function padString(str, maxLength){
      - "Too young to vote" otherwise
 */
 let age = -19;
-function canVote(age){
+function canVote(age) {
 
-  if (age>=18){
+  if (age >= 18) {
     console.log("Can vote");
   }
-  else{
+  else {
     console.log("Too young to vote");
   }
 
@@ -387,17 +387,24 @@ function canVote(age){
      - Joins them back
    - Log the result.
 */
-function reverseWords (sentence){
-  
-
-}reverseWords (sentence);
+function reverseWords(sentence) {
+  let reversed = sentence.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+  console.log(reversed);
+} reverseWords("Hi I am learning JavaScript");
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
      to find the starting index. If not found, return -1.
    - Log the index or log "Not found" if it's -1.
 */
-
+function findWordPosition(sentence, word) {
+  let find = sentence.indexOf(word);
+  if (find === -1) {
+    console.log("Not found");
+  } else {
+    console.log(find);
+  }
+} findWordPosition("Examle sentences in my js code", "Emir");
 /*
 30. Switch: Simple Calculator
    - Define a function `calculate(a, operator, b)` that uses switch to handle:
@@ -408,3 +415,27 @@ function reverseWords (sentence){
      - Otherwise -> "Invalid operator"
    - Log the result.
 */
+
+function calculate(value1, whichOperator, value2) {
+  switch (whichOperator) {
+    case "+":
+      let result = value1 + value2;
+      console.log(result);
+      break;
+    case "-":
+      let result2 = value1 - value2;
+      console.log(result2);
+      break;
+    case "*":
+      let result3 = value1 * value2;
+      console.log(result3);
+      break;
+    case "/":
+      let result4 = value1 / value2;
+      console.log(result4);
+      break;
+    default:
+      console.log("operator is not define");
+  }
+}
+
