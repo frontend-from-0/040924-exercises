@@ -18,7 +18,20 @@ const startButton = document.getElementById('start-btn');
 
 const stopButton = document.getElementById('stop-btn');
 
+window.onload = function() {
+  startCarousel();
+};
 
+
+function removeAddClasses(){
+  for (let i = 0; i < imageArrayLength; i++) {
+    images[i].classList.remove('active');
+    indicators[i].classList.remove('active');
+  }
+
+  images[currentImageIndex].classList.add('active');
+  indicators[currentImageIndex].classList.add('active');
+}
 
 nextBtn.addEventListener('click', function() {
   
@@ -27,14 +40,8 @@ nextBtn.addEventListener('click', function() {
   } else {
     currentImageIndex++;
   }
-
-  for (let i = 0; i < imageArrayLength; i++) {
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
-
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+removeAddClasses();
+  
 });
 
 
@@ -46,18 +53,8 @@ prevBtn.addEventListener('click', function () {
     currentImageIndex--;
   }
 
-  for (let i = 0; i < imageArrayLength; i++) {
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+  removeAddClasses();
 });
-
-
-
-
-
 
 
 function startCarousel(){
@@ -84,7 +81,6 @@ startButton.addEventListener('click',
 
 function stopCarousel(){
   clearInterval(interval);
-
   startButton.classList.remove('hidden');
   prevBtn.classList.remove('hidden');
   nextBtn.classList.remove('hidden');
