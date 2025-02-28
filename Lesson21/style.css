@@ -3,14 +3,17 @@
   --text-color: hsl(150, 3%, 13%);
 
   --shadow-color: 225deg 10% 58%;
-  --shadow-elevation-low: 0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.31),
+  --shadow-elevation-low:
+    0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.31),
     0.4px 0.4px 0.6px -1.3px hsl(var(--shadow-color) / 0.3),
     1px 0.8px 1.4px -2.6px hsl(var(--shadow-color) / 0.29);
-  --shadow-elevation-medium: 0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.33),
+  --shadow-elevation-medium:
+    0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.33),
     0.8px 0.7px 1.2px -0.9px hsl(var(--shadow-color) / 0.32),
     1.9px 1.7px 2.8px -1.7px hsl(var(--shadow-color) / 0.31),
     4.8px 4.2px 7.1px -2.6px hsl(var(--shadow-color) / 0.31);
-  --shadow-elevation-high: 0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.35),
+  --shadow-elevation-high:
+    0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.35),
     1.4px 1.3px 2.1px -0.4px hsl(var(--shadow-color) / 0.34),
     2.8px 2.5px 4.2px -0.9px hsl(var(--shadow-color) / 0.34),
     5px 4.4px 7.4px -1.3px hsl(var(--shadow-color) / 0.33),
