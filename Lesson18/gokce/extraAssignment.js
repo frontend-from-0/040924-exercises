@@ -10,7 +10,14 @@ class Restaurant {
     this._menu.push(newItem);
   }
   viewMenu() {
-    console.log(this._menu);
+    if (this._menu.length > 0) {  
+      console.log(`Menu of ${this._name}:`);  
+      this._menu.forEach(item => {  
+          console.log(`${item._name} - $${item._price} (${item._category})`);  
+      });  
+  } else {  
+      console.log(`The menu for ${this._name} is currently empty.`);  
+  }    
   }
   placeOrder(order) {
     console.log(`Order placed at ${this._name}, ${this._location}`);
@@ -28,16 +35,16 @@ class Restaurant {
       order.viewOrder();
     });
   }
-  calculateTotalOrder() {
+  calculateTotalOfAllOrders() {
     if (this._orders.length === 0) {
-      console.log('There is no order.');
+      console.log('There is no orders.');
       return;
     }
-    let totalOrder = 0;
+    let allOrdersTotal = 0;
     this._orders.forEach((order) => {
-      totalOrder += order.calculateTotal();
+      allOrdersTotal += order.calculateTotal();
     });
-    return totalOrder;
+    return allOrdersTotal;
   }
 }
 
@@ -97,3 +104,4 @@ class Order {
     return result;
   }
 }
+module.exports = { Restaurant, MenuItem, Order };
