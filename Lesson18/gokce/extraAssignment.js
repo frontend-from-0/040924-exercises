@@ -10,14 +10,14 @@ class Restaurant {
     this._menu.push(newItem);
   }
   viewMenu() {
-    if (this._menu.length > 0) {  
-      console.log(`Menu of ${this._name}:`);  
-      this._menu.forEach(item => {  
-          console.log(`${item._name} - $${item._price} (${item._category})`);  
-      });  
-  } else {  
-      console.log(`The menu for ${this._name} is currently empty.`);  
-  }    
+    if (this._menu.length > 0) {
+      console.log(`Menu of ${this._name}:`);
+      this._menu.forEach((item) => {
+        console.log(`${item._name} - $${item._price} (${item._category})`);
+      });
+    } else {
+      console.log(`The menu for ${this._name} is currently empty.`);
+    }
   }
   placeOrder(order) {
     console.log(`Order placed at ${this._name}, ${this._location}`);
@@ -94,7 +94,6 @@ class Order {
       console.log('No items in order.Discount code cannot be aplied');
       return total;
     }
-
     if (!(discountCode in discounts)) {
       console.log('The discount code is not valid');
       return total;
