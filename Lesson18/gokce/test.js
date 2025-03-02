@@ -8,9 +8,7 @@ const myOrder = new Order();
 myOrder.addItem('cake', 2, 17, 'dessert');
 myRestaurant.placeOrder(myOrder);
 myRestaurant.listAllOrders();
-console.log(
-  'Total of all order: $' + myRestaurant.calculateTotalOfAllOrders()
-);
+console.log('Total of all order: $' + myRestaurant.calculateTotalOfAllOrders());
 
 console.log(
   'Total after discount (SAVE10): $' + myOrder.applyDiscount('SAVE10')

@@ -26,7 +26,7 @@ class Restaurant {
   }
   listAllOrders() {
     if (this._orders.length === 0) {
-      console.log('There is no order.');
+      console.log('There is no any order.');
       return;
     }
     console.log(`Orders for ${this._name}`);
