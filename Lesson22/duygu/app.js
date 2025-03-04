@@ -1,109 +1,57 @@
 let currentImageIndex = 0;
-const images = document.querySelectorAll('.carousel img');
-const indicators = document.querySelectorAll('.indicator');
-const imageArrayLength = images.length;
-const indexOfLastElementInImageArray = imageArrayLength - 1;
-let autoSlideInterval;
+const images = document.querySelectorAll(".carousel img");
+const indicators = document.querySelectorAll(".indicator");
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
+const autoplayBtn = document.getElementById("toggle-autoplay");
+let autoSlideInterval = null;
 
-console.log(
-  'Index of the last image in the image array',
-  indexOfLastElementInImageArray
-);
+function updateCarousel(index) {
+  images.forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+    indicators[i].classList.toggle("active", i === index);
+  });
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateCarousel(currentImageIndex);
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateCarousel(currentImageIndex);
+}
 
 function startAutoSlide() {
-  stopAutoSlide();
-  autoSlideInterval = setInterval(() => {
-    console.log('Auto slide: moving to next image');
-    document.getElementById('next-btn').click();
-  }, 3000);
+  if (autoSlideInterval) return;
+  autoSlideInterval = setInterval(nextImage, 5000);
+  autoplayBtn.textContent = "Stop";
 }
 
 function stopAutoSlide() {
-  console.log('Stopping auto slide');
   clearInterval(autoSlideInterval);
+  autoSlideInterval = null;
+  autoplayBtn.textContent = "Start";
 }
 
-document.getElementById('next-btn').addEventListener('click', function () {
-  console.log('Current image index', currentImageIndex);
-  if (currentImageIndex >= indexOfLastElementInImageArray) {
-    console.log(
-      'Current image index is >= than indexOfLastElementInImageArray. Setting currentImageIndex to 0.'
-    );
-    currentImageIndex = 0;
-  } else {
-    console.log(
-      'Current image index is < than indexOfLastElementInImageArray. Setting currentImageIndex to +1'
-    );
-    currentImageIndex++;
-  }
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
 
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    if (indicators[i]) {
-      indicators[i].classList.remove('active');
-    }
-  }
-
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  if (indicators[currentImageIndex]) {
-    indicators[currentImageIndex].classList.add('active');
-  }
-});
-
-document.getElementById('prev-btn').addEventListener('click', function () {
-  if (currentImageIndex <= 0) {
-    currentImageIndex = indexOfLastElementInImageArray;
-  } else {
-    currentImageIndex--;
-  }
-
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    if (indicators[i]) {
-      indicators[i].classList.remove('active');
-    }
-  }
-
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  if (indicators[currentImageIndex]) {
-    indicators[currentImageIndex].classList.add('active');
-  }
-});
-
-document.getElementById('toggle-autoplay').addEventListener('click', function () {
+autoplayBtn.addEventListener("click", () => {
   if (autoSlideInterval) {
     stopAutoSlide();
-    this.textContent = 'Start';
-    autoSlideInterval = null;
   } else {
     startAutoSlide();
-    this.textContent = 'Stop';
   }
 });
 
 indicators.forEach((indicator, index) => {
-  indicator.addEventListener('click', () => {
-    console.log(`Indicator ${index} clicked`);
+  indicator.addEventListener("click", () => {
     currentImageIndex = index;
-    images.forEach((img, i) => {
-      img.classList.remove('active');
-      if (indicators[i]) {
-        indicators[i].classList.remove('active');
-      }
-    });
-    images[currentImageIndex].classList.add('active');
-    if (indicators[currentImageIndex]) {
-      indicators[currentImageIndex].classList.add('active');
-    }
+    updateCarousel(currentImageIndex);
   });
 });
 
+updateCarousel(currentImageIndex);
 startAutoSlide();
