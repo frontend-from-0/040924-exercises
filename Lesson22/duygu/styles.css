@@ -70,3 +70,21 @@
 .indicator.active {
   background-color: #555;
 }
+
+.autoplay-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.autoplay-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
