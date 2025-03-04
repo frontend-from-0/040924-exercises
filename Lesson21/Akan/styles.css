@@ -1,0 +1,109 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #e2001a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #f9e200;
+  color: #e2001a;
+  text-align: left;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.accordion-button:hover {
+  background-color: #f7c400;
+}
+
+.accordion-button.active {
+  background-color: #e2001a;
+  color: #f9e200;
+}
+
+
+.accordion-body {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  border-top: 1px solid #ddd;
+  display: none;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.accordion-body.show {
+  display: block;
+  max-height: 500px;
+}
+
+.team-lineup ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.team-lineup li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.team-lineup img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+footer {
+  background-color: #e2001a;
+  color: #f9e200;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
