@@ -101,7 +101,6 @@ function addContact(newName, newPhone, newEmail, contactList) {
   // contactListLengthPrev < contactListLengthNew
   //   ? console.log("Contact added successfully.")
   //   : console.log("An error occured when adding a contact.");
-}
 
 /*
 -----------------------------------------------------------
