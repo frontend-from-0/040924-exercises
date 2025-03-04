@@ -69,16 +69,6 @@ header h1 {
   text-align: left;
 }
 
-.faq-question {
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  align-items: center;
-}
-
 .faq-question::after {
   content: '▼';
   margin-left: 8px;
@@ -140,14 +130,17 @@ header h1 {
 }
 
 .faq-question {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  align-items: center;
   font-size: var(--font-size-small);
   color: var(--color-secondary);
   background: none;
   border: none;
-  padding: 0;
+  padding: 10px;
   font: inherit;
   cursor: pointer;
-  text-align: left;
   width: 100%;
 }
 
