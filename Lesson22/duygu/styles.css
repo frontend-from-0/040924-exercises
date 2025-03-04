@@ -71,18 +71,11 @@
   background-color: #555;
 }
 
-.autoplay-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.autoplay-btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-.autoplay-btn {
   padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -90,8 +83,10 @@
   cursor: pointer;
   font-size: 14px;
   border-radius: 5px;
+  z-index: 10;
 }
 
 .autoplay-btn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
+

@@ -40,14 +40,18 @@ document.getElementById('next-btn').addEventListener('click', function () {
   for (let i = 0; i < imageArrayLength; i++) {
     console.log(`Removing active class from the ${i} element in image array`);
     images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
+    if (indicators[i]) {
+      indicators[i].classList.remove('active');
+    }
   }
 
   console.log(
     `Add active class to the ${currentImageIndex} element in image array`
   );
   images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+  if (indicators[currentImageIndex]) {
+    indicators[currentImageIndex].classList.add('active');
+  }
 });
 
 document.getElementById('prev-btn').addEventListener('click', function () {
@@ -60,20 +64,25 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   for (let i = 0; i < imageArrayLength; i++) {
     console.log(`Removing active class from the ${i} element in image array`);
     images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
+    if (indicators[i]) {
+      indicators[i].classList.remove('active');
+    }
   }
 
   console.log(
     `Add active class to the ${currentImageIndex} element in image array`
   );
   images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+  if (indicators[currentImageIndex]) {
+    indicators[currentImageIndex].classList.add('active');
+  }
 });
 
 document.getElementById('toggle-autoplay').addEventListener('click', function () {
   if (autoSlideInterval) {
     stopAutoSlide();
     this.textContent = 'Start';
+    autoSlideInterval = null;
   } else {
     startAutoSlide();
     this.textContent = 'Stop';
@@ -86,10 +95,14 @@ indicators.forEach((indicator, index) => {
     currentImageIndex = index;
     images.forEach((img, i) => {
       img.classList.remove('active');
-      indicators[i].classList.remove('active');
+      if (indicators[i]) {
+        indicators[i].classList.remove('active');
+      }
     });
     images[currentImageIndex].classList.add('active');
-    indicators[currentImageIndex].classList.add('active');
+    if (indicators[currentImageIndex]) {
+      indicators[currentImageIndex].classList.add('active');
+    }
   });
 });
 
