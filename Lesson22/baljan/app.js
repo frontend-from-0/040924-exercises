@@ -7,6 +7,7 @@ console.log(
   indexOfLastElementInImageArray
 );
 
+// Next button
 document.getElementById('next-btn').addEventListener('click', function () {
   console.log('Current image index', currentImageIndex);
   if (currentImageIndex >= indexOfLastElementInImageArray) {
@@ -34,6 +35,7 @@ document.getElementById('next-btn').addEventListener('click', function () {
   indicators[currentImageIndex].classList.add('active');
 });
 
+// Previous button
 const indicators = document.querySelectorAll('.indicator');
 
 document.getElementById('prev-btn').addEventListener('click', function () {
@@ -56,14 +58,22 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   indicators[currentImageIndex].classList.add('active');
 });
 
-const slides = document.querySelectorAll('.carousel img');
+// Auto slideshow function
+function slideShow() {
+  currentImageIndex = (currentImageIndex + 1) % imageArrayLength;
+  // Remove 'active' class from all images and indicators
+  for (let i = 0; i < imageArrayLength; i++) {
+    images[i].classList.remove('active');
+    indicators[i].classList.remove('active');
+  }
 
-function showSlides() {
-  slides.forEach((slide) => (slide.style.display = 'none'));
-  slides[currentImageIndex].style.display = 'block';
+  // Add 'active' class to the current image and indicator
+  images[currentImageIndex].classList.add('active');
+  indicators[currentImageIndex].classList.add('active');
 
-  currentImageIndex = (currentImageIndex + 1) % slides.length;
-  setTimeout(showSlides, 3000);
+  // Call slideShow again after 3 seconds
+  setTimeout(slideShow, 3000);
 }
 
-showSlides();
+// Start the slideshow
+slideShow();

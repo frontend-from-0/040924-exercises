@@ -3,6 +3,10 @@
   <head>
     <title>Carousel</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
   </head>
   <body>
     <div class="carousel">
@@ -20,6 +24,12 @@
           src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
           alt="Image 3"
         />
+        <button id="play-btn">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="pause-btn" class="active">
+          <i class="fas fa-pause"></i>
+        </button>
       </div>
       <div class="carousel-navigation">
         <button class="carousel-btn prev-btn" id="prev-btn">Prev</button>

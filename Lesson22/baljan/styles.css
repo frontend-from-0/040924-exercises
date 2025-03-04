@@ -31,6 +31,36 @@
   opacity: 1;
 }
 
+#play-btn,
+#pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#play-btn:hover,
+#pause-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#play-btn.hidden,
+#pause-btn.hidden {
+  display: none;
+}
+
 .carousel-navigation {
   position: absolute;
   top: 50%;
