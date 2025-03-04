@@ -1,11 +1,27 @@
 let currentImageIndex = 0;
 const images = document.querySelectorAll('.carousel img');
+const indicators = document.querySelectorAll('.indicator');
 const imageArrayLength = images.length;
 const indexOfLastElementInImageArray = imageArrayLength - 1;
+let autoSlideInterval;
+
 console.log(
   'Index of the last image in the image array',
   indexOfLastElementInImageArray
 );
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlideInterval = setInterval(() => {
+    console.log('Auto slide: moving to next image');
+    document.getElementById('next-btn').click();
+  }, 3000);
+}
+
+function stopAutoSlide() {
+  console.log('Stopping auto slide');
+  clearInterval(autoSlideInterval);
+}
 
 document.getElementById('next-btn').addEventListener('click', function () {
   console.log('Current image index', currentImageIndex);
@@ -34,8 +50,6 @@ document.getElementById('next-btn').addEventListener('click', function () {
   indicators[currentImageIndex].classList.add('active');
 });
 
-const indicators = document.querySelectorAll('.indicator');
-
 document.getElementById('prev-btn').addEventListener('click', function () {
   if (currentImageIndex <= 0) {
     currentImageIndex = indexOfLastElementInImageArray;
@@ -55,3 +69,28 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   images[currentImageIndex].classList.add('active');
   indicators[currentImageIndex].classList.add('active');
 });
+
+document.getElementById('toggle-autoplay').addEventListener('click', function () {
+  if (autoSlideInterval) {
+    stopAutoSlide();
+    this.textContent = 'Start';
+  } else {
+    startAutoSlide();
+    this.textContent = 'Stop';
+  }
+});
+
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    console.log(`Indicator ${index} clicked`);
+    currentImageIndex = index;
+    images.forEach((img, i) => {
+      img.classList.remove('active');
+      indicators[i].classList.remove('active');
+    });
+    images[currentImageIndex].classList.add('active');
+    indicators[currentImageIndex].classList.add('active');
+  });
+});
+
+startAutoSlide();
