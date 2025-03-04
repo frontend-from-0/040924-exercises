@@ -1,3 +1,37 @@
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+.item {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between; 
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.content{
+  margin-top: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 1px solid black;
+  display: none;
+}
+.active{
+  display:block;
+}
+
+.activeIcon{
+  transform: rotate(180deg); 
+}
+
+
+
+
