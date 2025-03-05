@@ -2,13 +2,29 @@ let currentImageIndex = 0;
 const images = document.querySelectorAll('.carousel img');
 const imageArrayLength = images.length;
 const indexOfLastElementInImageArray = imageArrayLength - 1;
+
+function removeAddClass() {
+  for (let i = 0; i < imageArrayLength; i++) {
+    console.log(`Removing active class from the ${i} element in image array`);
+    images[i].classList.remove('active');
+    indicators[i].classList.remove('active');
+  }
+
+  console.log(
+    `Add active class to the ${currentImageIndex} element in image array`
+  );
+  images[currentImageIndex].classList.add('active');
+  indicators[currentImageIndex].classList.add('active');
+
+}
 console.log(
   'Index of the last image in the image array',
   indexOfLastElementInImageArray
 );
-
-document.getElementById('next-btn').addEventListener('click', function () {
+const nextButton = document.getElementById('next-btn');
+nextButton.addEventListener('click', function nextSlide() {
   console.log('Current image index', currentImageIndex);
+
   if (currentImageIndex >= indexOfLastElementInImageArray) {
     console.log(
       'Current image index is >= than indexOfLastElementInImageArray. Setting currentImageIndex to 0.'
@@ -20,19 +36,10 @@ document.getElementById('next-btn').addEventListener('click', function () {
     );
     currentImageIndex++;
   }
+  removeAddClass();
 
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
-
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
 });
+
 
 const indicators = document.querySelectorAll('.indicator');
 
@@ -43,21 +50,12 @@ document.getElementById('prev-btn').addEventListener('click', function () {
     currentImageIndex--;
   }
 
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
+  removeAddClass();
 
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
 });
 
 document.getElementById("0").addEventListener('click', function () {
- 
+
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -66,7 +64,7 @@ document.getElementById("0").addEventListener('click', function () {
   indicators[0].classList.add('active');
 });
 document.getElementById("1").addEventListener('click', function () {
- 
+
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -76,7 +74,7 @@ document.getElementById("1").addEventListener('click', function () {
 });
 
 document.getElementById("2").addEventListener('click', function () {
- 
+
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -85,3 +83,21 @@ document.getElementById("2").addEventListener('click', function () {
   indicators[2].classList.add('active');
 });
 
+let clickCount = 0;
+let intervalId;
+// This section was assisted by AI
+const playBtn = document.getElementById("play");
+playBtn.addEventListener('click', function () {
+  clickCount++;
+  if (clickCount % 2) {
+    this.textContent = "Pause";
+    function autoSlide() {
+      nextButton.click();
+    }
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(autoSlide, 3000);
+  } else {
+    this.textContent = "Play";
+    if (intervalId) clearInterval(intervalId);
+  }
+});

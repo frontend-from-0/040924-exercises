@@ -47,6 +47,7 @@
   background-color: #f5f5f5;
   border: none;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .carousel-indicators {
