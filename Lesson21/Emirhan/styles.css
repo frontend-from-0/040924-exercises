@@ -5,33 +5,33 @@
 }
 
 .item {
-  margin-top: 50px;
+  margin-top: 15px;
   margin-left: 50px;
   margin-right: 50px;
   border: 1px solid black;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
+
 .icon {
   width: 25px;
   height: 25px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.content{
+
+.content {
   margin-top: 5px;
   margin-left: 50px;
   margin-right: 50px;
   border: 1px solid black;
   display: none;
 }
-.active{
-  display:block;
+
+.active {
+  display: block;
 }
 
-.activeIcon{
-  transform: rotate(180deg); 
+.activeIcon {
+  transform: rotate(180deg);
 }
-
-
-
-
