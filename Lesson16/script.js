@@ -143,4 +143,4 @@
    - Logs the updated list.
 */
 
-const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
+const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];

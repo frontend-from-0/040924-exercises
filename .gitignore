@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 settings.json
 node_modules/prettier/esm/standalone.mjs
 Lesson18/.DS_Store
@@ -40,3 +41,8 @@ node_modules/prettier/esm/parser-meriyah.mjs
 node_modules/prettier/esm/parser-postcss.mjs
 node_modules/prettier/esm/parser-typescript.mjs
 node_modules/prettier/esm/parser-yaml.mjs
+=======
+.DS_Store
+settings.json
+**/node_modules/
+>>>>>>> d5baf98c24625454526c6dee05f1ed829cae2026

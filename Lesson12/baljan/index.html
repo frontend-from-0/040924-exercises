@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the platform
+    </p>
+    <form id="survey-form">
+      <label id="name-label">
+        Name
+        <input id="name" type="text" placeholder="Enter your name" required />
+      </label>
+
+      <label id="email-label">
+        Email
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+        />
+      </label>
+
+      <label id="number-label">
+        Age
+        <input id="number" type="number" min="13" max="99" placeholder="Age" />
+      </label>
+
+      <label>
+        Which option best describes your current role?
+        <select id="dropdown">
+          <option value="" disabled selected>Select your current role</option>
+          <option>Student</option>
+          <option>Full Time Job</option>
+          <option>Full Time Learner</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>
+        <input type="radio" name="role" value="Definetely" />
+        Definetely
+      </label>
+
+      <label>
+        <input type="radio" name="role" value="Maybe" />
+        Maybe
+      </label>
+
+      <label>
+        <input type="radio" name="role" value="Not sure" />
+        Not sure
+      </label>
+
+      <label>
+        What is your favorite feature of freeCodeCamp?
+        <select id="dropdown">
+          <option value="" disabled selected>Choose an option</option>
+          <option>Challenges</option>
+          <option>Projects</option>
+          <option>Community</option>
+          <option>Open Source</option>
+        </select>
+      </label>
+
+      <label>
+        What would you like to see improved? (Check all that apply)
+      </label>
+      <label>
+        <input type="checkbox" value="Front-end Projects" />
+        Front-end Projects
+      </label>
+
+      <label>
+        <input type="checkbox" value="Back-end Projects" />
+        Back-end Projects
+      </label>
+
+      <label>
+        <input type="checkbox" value="Data Visualization" />
+        Data Visualization
+      </label>
+
+      <label>
+        <input type="checkbox" value="Challenges" />
+        Challenges
+      </label>
+
+      <label>
+        <input type="checkbox" value="Videos" />
+        Videos
+      </label>
+
+      <label>
+        Any comments or suggestions?
+        <textarea placeholder="Enter your comment here..."></textarea>
+      </label>
+
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
