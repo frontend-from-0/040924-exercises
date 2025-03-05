@@ -20,7 +20,7 @@ window.onload = function () {
   startCarousel();
 };
 
-function removeAddClasses() {
+function updateActiveImage() {
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -36,7 +36,7 @@ nextBtn.addEventListener('click', function () {
   } else {
     currentImageIndex++;
   }
-  removeAddClasses();
+  updateActiveImage();
 });
 
 prevBtn.addEventListener('click', function () {
@@ -46,18 +46,17 @@ prevBtn.addEventListener('click', function () {
     currentImageIndex--;
   }
 
-  removeAddClasses();
+  updateActiveImage();
 });
 
 function startCarousel() {
   interval = setInterval(function () {
-    images[currentImageIndex].classList.remove('active');
-
     currentImageIndex = (currentImageIndex + 1) % images.length;
-    images[currentImageIndex].classList.add('active');
+   updateActiveImage();
   }, 2000);
 
   startButton.classList.add('hidden');
+ stopButton.classList.remove('hidden');
   prevBtn.classList.add('hidden');
   nextBtn.classList.add('hidden');
 }
@@ -71,6 +70,7 @@ startButton.addEventListener('click', function () {
 function stopCarousel() {
   clearInterval(interval);
   startButton.classList.remove('hidden');
+  stopButton.classList.add('hidden');
   prevBtn.classList.remove('hidden');
   nextBtn.classList.remove('hidden');
 }
@@ -83,11 +83,7 @@ stopButton.addEventListener('click', function () {
 
 indicators.forEach((indicator, index) => {
   indicator.addEventListener('click', function () {
-    images[currentImageIndex].classList.remove('active');
-    indicators[currentImageIndex].classList.remove('active');
-
     currentImageIndex = index;
-    images[currentImageIndex].classList.add('active');
-    indicators[currentImageIndex].classList.add('active');
+    updateActiveImage();
   });
 });
