@@ -6,7 +6,7 @@ document.getElementById('update-name').addEventListener('click', function () {
 
 // 2. Update Profile Image
 document.getElementById('update-image').addEventListener('click', function () {
-  // TODO: Select the profile picture (ID "profile-pic") and update its "src" attribute to a new image URL (e.g., "new-profile.jpg")
+  // TODO: Selec the profile picture (ID "profile-pic") and update its "src" attribute to a new image URL (e.g., "new-profile.jpg")
   document.getElementById('profile-pic').setAttribute('src', 'new-profile.jpg');
 });
 
