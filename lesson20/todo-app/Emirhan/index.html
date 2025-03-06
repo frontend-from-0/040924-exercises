@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Todo app</title>
-  </head>
-  <body>
-    <main>
-      <h1>Todo List</h1>
-      <form id="todoForm">
-        <input type="text" id="todoInput" placeholder="Do homework..." aria-label="task to do"/>
-        <button type="submit">Add</button>
-        <button type="button" id="clearListBtn">Clear list</button>
-      </form>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Todo app</title>
+</head>
 
-      <ul id="list">
-        <!-- <li class="todo-list-item">
+<body>
+  <main>
+    <h1>Todo List</h1>
+    <form id="todoForm">
+      <input type="text" id="todoInput" placeholder="Do homework..." aria-label="task to do" />
+      <button type="submit"><i class="fa-solid fa-plus"></i></button>
+      <button type="button" id="clearListBtn"><i class="fa-solid fa-trash"></i>
+      </button>
+    </form>
+
+    <ul id="list">
+      <!-- <li class="todo-list-item">
           <span class="todo-text">Do homework</span>
           <button>X</button>
         </li> -->
-      </ul>   
-    </main>
+    </ul>
 
-    <script src="./script.js"></script>
-  </body>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
 </html>

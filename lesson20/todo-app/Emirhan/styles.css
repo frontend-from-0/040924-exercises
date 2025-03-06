@@ -1,14 +1,16 @@
 * {
   box-sizing: border-box;
+  font-family: "Big Shoulders Stencil", sans-serif;
+  font-size: 35px;
 }
 
 body {
   font-size: 16px;
-  
 }
 
 h1 {
   text-align: center;
+  font-size: 1.5rem;
 }
 
 main {
@@ -38,6 +40,7 @@ ul {
 
 .todo-text {
   color:black;
+  cursor: pointer;
 }
 
 .todo-text.completed {
@@ -45,6 +48,16 @@ ul {
 }
 
 .btn-danger {
-  background-color: red;
   cursor: pointer;
+}
+
+.error-message{
+  position : fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color:#f44336 ;
+  color: white;
+  border-radius: 5px;
+
 }
