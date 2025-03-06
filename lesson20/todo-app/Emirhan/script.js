@@ -51,12 +51,21 @@ function handleTodoFormSubmit(event) {
   todoInput.value = "";
 
   /*
-
   create span element, add text, add class
   create button element, add text, add event listener
 
-
    */
+  let span = document.createElement('span');
+  span.textContent = 'Example';
+  span.classList.add('todo-text');
+  span.id = "spanElement";
+
+  document.body.appendChild(span);
+
+  document.getElementById('spanElement').addEventListener("click", function(){
+   
+  });
+
 }
 
 document.getElementById("clearListBtn").addEventListener("click", function () {
