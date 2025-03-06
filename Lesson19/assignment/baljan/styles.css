@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+.bg-blue {
+  background-color: lightblue;
+}
+
 .profile-card {
   background: #fff;
   border: 1px solid #ddd;

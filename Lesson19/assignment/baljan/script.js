@@ -17,13 +17,9 @@ document.getElementById('update-image').addEventListener('click', function () {
 const profileCards = document.getElementsByClassName('profile-card');
 
 document.getElementById('change-theme').addEventListener('click', function () {
-  // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
-  for (let i = 0; i < theme.length; i++) {
-    if (theme[i].style.backgroundColor === '#add8e6') {
-      theme[i].style.backgroundColor = '#fff';
-    } else {
-      theme[i].style.backgroundColor = '#add8e6';
-    }
+  // Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
+  for (let i = 0; i < profileCards.length; i++) {
+    profileCards[i].classList.toggle('bg-blue');
   }
 });
 
