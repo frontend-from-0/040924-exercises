@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 320px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-card h2,
+.profile-card p,
+.profile-card h3 {
+  margin: 10px 0;
+}
+
+.social-media,
+.skills {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.social-media ul,
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media li,
+.skills li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.theme-blue {
+  background-color: #add8e6;
+}
+
+#social-form {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#social-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+#social-form button {
+  padding: 8px 15px;
+  background: #ffdefd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#social-form button:hover {
+  background: #ccffd5;
+}
+
+.social-media a {
+  color: #15e05c;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+.social-media li a {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.social-media li a:hover {
+  background: rgba(21, 224, 92, 0.1);
+}
