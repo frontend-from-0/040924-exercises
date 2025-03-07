@@ -49,12 +49,6 @@ function addTodoToList(todoText) {
   });
 }
 
-function removeTodoFromLocalStorage(todoText) {
-  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
-  const updatedTodos = prevTodos.filter((todo) => todo !== todoText);
-  localStorage.setItem('tasks', JSON.stringify(updatedTodos));
-}
-
 function updateTodoInLocalStorage(todoText, completed) {
   const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
   const updatedTodos = prevTodos.map((todo) => {
@@ -63,6 +57,12 @@ function updateTodoInLocalStorage(todoText, completed) {
     }
     return todo;
   });
+  localStorage.setItem('tasks', JSON.stringify(updatedTodos));
+}
+
+function removeTodoFromLocalStorage(todoText) {
+  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
+  const updatedTodos = prevTodos.filter((todo) => todo !== todoText);
   localStorage.setItem('tasks', JSON.stringify(updatedTodos));
 }
 
