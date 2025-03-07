@@ -74,9 +74,9 @@ class ShoppingCart {
   constructor() {
     this._items = [];
     this._discounts = {
-      "SAVE10": 0.10,
-      "SAVE20": 0.20,
-      "SAVE30": 0.30
+      SAVE10: 0.1,
+      SAVE20: 0.2,
+      SAVE30: 0.3,
     };
   }
 
@@ -86,7 +86,7 @@ class ShoppingCart {
       console.log('Cart is empty');
     } else {
       console.log('Your cart contains:');
-      this._items.forEach(item => {
+      this._items.forEach((item) => {
         console.log(`${item.quantity}x ${item.name} - $${item.price} each`);
       });
       console.log(`Total cost: $${this.getTotal().toFixed(2)}`);
@@ -95,7 +95,7 @@ class ShoppingCart {
 
   // STEP 2: Add Item
   addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
+    const existingItem = this._items.find((item) => item.name === name);
 
     if (existingItem) {
       existingItem.quantity += quantity;
@@ -110,7 +110,7 @@ class ShoppingCart {
   // STEP 3: Remove Item
   removeItem(name) {
     const initialLength = this._items.length;
-    this._items = this._items.filter(item => item.name !== name);
+    this._items = this._items.filter((item) => item.name !== name);
 
     if (this._items.length === initialLength) {
       console.log(`${name} not found in cart`);
@@ -123,7 +123,7 @@ class ShoppingCart {
   // STEP 4: Calculate Total
   getTotal() {
     const total = this._items.reduce(
-      (sum, item) => sum + (item.price * item.quantity),
+      (sum, item) => sum + item.price * item.quantity,
       0
     );
     return parseFloat(total.toFixed(2));
@@ -172,14 +172,12 @@ cart.removeItem('Apple');
 cart.viewCart();
 
 // Get total cost
-console.log("Total:", cart.getTotal());
+console.log('Total:', cart.getTotal());
 
 // Apply discount
-cart.applyDiscount("SAVE10");
-cart.applyDiscount("SAVE20");
-cart.applyDiscount("INVALIDCODE");
-
-
+cart.applyDiscount('SAVE10');
+cart.applyDiscount('SAVE20');
+cart.applyDiscount('INVALIDCODE');
 
 /*const myCart5 = new ShoppingCart();
 
