@@ -60,6 +60,8 @@ form{
 }
 
 .search-result{
+    position: relative;
+    display: inline-block;
     margin-bottom: 60px;
     width: 30%;
     height: 100%;
@@ -107,6 +109,30 @@ form{
 
 #show-more-button:hover{
     opacity: 0.8;
+}
+
+
+.fullscreen-button {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.search-result:hover .fullscreen-button {
+    opacity: 1;
+}
+
+.fullscreen-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 

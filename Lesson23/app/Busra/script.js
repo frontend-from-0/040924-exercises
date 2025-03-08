@@ -1,9 +1,7 @@
 
 
 const formElement = document.querySelector('form');
-
 const searchInput = document.getElementById('search-input');
-
 const searchResults = document.querySelector('.search-results');
 const showMoreButton = document.getElementById('show-more-button');
 
@@ -19,11 +17,8 @@ async function searchImages(){
     const data = await response.json();
 
     const results = data.results;
-    console.log(results);
-
-    if(page ===1){
+        if(page ===1){
         searchResults.innerHTML = "";
-
     }
 
     results.map((result) =>{
@@ -33,15 +28,39 @@ async function searchImages(){
         image.src = result.urls.small;
         image.alt = result.alt_description;
 
-    
-
         const imageLink = document.createElement('a');
         imageLink.href = result.links.html;
         imageLink.target = '_blank';
         imageLink.textContent = result.alt_description;
 
-        imageContainer.appendChild(image);
+
+        const photographer = document.createElement('p');
+        const photographerLink = document.createElement('a');
+        photographerLink.href = result.user.links.html;
+        photographerLink.target = '_blank';
+        photographerLink.textContent = `📸 ${result.user.name}`;
+        photographer.appendChild(photographerLink);
+
+
+        const fullScreenButton = document.createElement('button');
+        fullScreenButton.textContent = '⛶';
+        fullScreenButton.classList.add('fullscreen-button');
+        fullScreenButton.addEventListener('click', () =>{
+            if(image.requestFullscreen){
+                image.requestFullscreen();
+            } else if(image.webkitRequestFullscreen){
+                image.webkitRequestFullscreen();
+            }else if(image.msRequestFullscreen){
+                image.msRequestFullscreen();
+            }     
+        });
+
+
+        
+        imageContainer.appendChild(image); 
+        imageContainer.appendChild(fullScreenButton); 
         imageContainer.appendChild(imageLink);
+        imageContainer.appendChild(photographer);
         searchResults.appendChild(imageContainer);
 
 
@@ -50,17 +69,14 @@ async function searchImages(){
     page++;
     if(page >1){
         showMoreButton.style.display='block';
-    }
-   
+    }  
 }
 
 formElement.addEventListener('submit', (e)=>{
     e.preventDefault();
     page = 1;
     searchImages();
-
-   
-    
+    searchInput.value = "";
 });  
 
 showMoreButton.addEventListener('click', ()=>{
