@@ -1,0 +1,15 @@
+{
+  "name": "040924-exercises",
+  "version": "1.0.0",
+  "description": "Exercise project for group 040924",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "author": "Code2Career AB",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.5.0"
+  }
+}
