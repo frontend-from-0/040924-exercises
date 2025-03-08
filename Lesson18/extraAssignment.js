@@ -44,7 +44,6 @@ before moving to the next one.
    in the `menu` array.
 */
 
-
 /*
 -----------------------------------------------------------
   STEP 3: Create the Order Class
@@ -60,7 +59,6 @@ before moving to the next one.
      the total price.
 */
 
-
 /*
 -----------------------------------------------------------
   STEP 4: Combine Restaurant and Order
@@ -71,7 +69,6 @@ before moving to the next one.
    - Accept an `Order` object as a parameter.
    - Display the details of the order.
 */
-
 
 /*
 -----------------------------------------------------------
