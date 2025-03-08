@@ -32,7 +32,6 @@ Node.js or a browser console.
 console.log('---------- 1: Create the ShoppingCart Class ----------');
 
 class ShoppingCart {
-
   constructor() {
     this._items = [];
   }
@@ -40,14 +39,13 @@ class ShoppingCart {
   viewCart() {
     if (this._items.length === 0) {
       console.log('Cart is empty');
-    }else {
+    } else {
       console.log('Your cart contains: ', this._items);
     }
   }
 }
 const myCart = new ShoppingCart();
 myCart.viewCart();
-
 
 /*
 -----------------------------------------------------------
@@ -64,37 +62,40 @@ myCart.viewCart();
 console.log('---------- 2: Add Items to the Cart ----------');
 
 class ShoppingCart {
-
   constructor() {
-
     this._items = [];
   }
 
   addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
+    const existingItem = this._items.find((item) => item.name === name);
 
     if (existingItem) {
       existingItem.quantity += quantity;
-      console.log(`${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`);
-    }else{
-      this._items.push({name, price, quantity});
+      console.log(
+        `${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`
+      );
+    } else {
+      this._items.push({ name, price, quantity });
       console.log(`${name} added to cart. Quantity: ${quantity}`);
     }
     this.showTotalQuantity();
   }
 
-    viewCart() {
-      if (this._items.length === 0 ) {
-        console.log('Cart is empty');
-      }else {
-        console.log('Your cart contains: ', this._items);
-      }
+  viewCart() {
+    if (this._items.length === 0) {
+      console.log('Cart is empty');
+    } else {
+      console.log('Your cart contains: ', this._items);
     }
+  }
 
-    showTotalQuantity() {
-      const totalQuantity = this._items.reduce((sum, item) => sum + item.quantity, 0);
-      console.log(`Total items in cart: ${totalQuantity}`);
-    }
+  showTotalQuantity() {
+    const totalQuantity = this._items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+    console.log(`Total items in cart: ${totalQuantity}`);
+  }
 }
 const myCart2 = new ShoppingCart();
 myCart2.viewCart();
@@ -119,7 +120,6 @@ myCart2.viewCart();
 console.log('---------- 3: Remove Items from the Cart ----------');
 
 class ShoppingCart {
-
   constructor() {
     this._items = [];
   }
@@ -127,40 +127,44 @@ class ShoppingCart {
   viewCart() {
     if (this._items.length === 0) {
       console.log('Cart is empty');
-    }else {
+    } else {
       console.log('Your cart contains: ', this._items);
     }
   }
 
   addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
+    const existingItem = this._items.find((item) => item.name === name);
 
-    if(existingItem) {
+    if (existingItem) {
       existingItem.quantity += quantity;
-      console.log(`${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`);
-    }else {
-      this._items.push({name, price, quantity});
+      console.log(
+        `${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`
+      );
+    } else {
+      this._items.push({ name, price, quantity });
     }
     this.showTotalQuantity();
   }
 
   removeItem(name) {
-    const itemExists = this._items.find(item => item.name === name);
+    const itemExists = this._items.find((item) => item.name === name);
 
-    if(itemExists) {
-      this._items = this._items.filter(item => item.name !== name);
+    if (itemExists) {
+      this._items = this._items.filter((item) => item.name !== name);
       console.log(`${name} removed from cart`);
-    }else {
+    } else {
       console.log(`${name} not found in cart`);
     }
     this.showTotalQuantity();
   }
 
   showTotalQuantity() {
-    const totalQuantity = this._items.reduce((sum, item) => sum + item.quantity, 0);
+    const totalQuantity = this._items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
     console.log(`Total items in cart: ${totalQuantity}`);
   }
-
 }
 
 const myCart3 = new ShoppingCart();
@@ -188,7 +192,6 @@ myCart3.removeItem('Grapes');
 console.log('---------- 4: Calculate the Total Cost ----------');
 
 class ShoppingCart {
-
   constructor() {
     this._items = [];
   }
@@ -196,45 +199,52 @@ class ShoppingCart {
   viewCart() {
     if (this._items.length === 0) {
       console.log(`Cart is empty.`);
-    }else {
+    } else {
       console.log(`Your cart contains: `, this._items);
     }
   }
 
   addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
+    const existingItem = this._items.find((item) => item.name === name);
 
     if (existingItem) {
       existingItem.quantity += quantity;
-      console.log(`${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`);
-    }else {
-      this._items.push({name, price, quantity});
+      console.log(
+        `${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`
+      );
+    } else {
+      this._items.push({ name, price, quantity });
     }
     this.showTotalQuantity();
   }
 
   removeItem(name) {
-    const itemExists = this._items.find(item => item.name === name);
-    if(itemExists) {
-      this._items = this._items.filter(item => item.name !== name);
+    const itemExists = this._items.find((item) => item.name === name);
+    if (itemExists) {
+      this._items = this._items.filter((item) => item.name !== name);
       console.log(`${name} removed from cart`);
-    }else {
+    } else {
       console.log(`${name} not found in cart`);
     }
     this.showTotalQuantity();
   }
 
   showTotalQuantity() {
-    const totalQuantity = this._items.reduce((sum, item) => sum + item.quantity, 0);
+    const totalQuantity = this._items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
     console.log(`Total items in cart: ${totalQuantity}`);
   }
 
   getTotal() {
-    const totalCost = this._items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalCost = this._items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
     console.log(`Total cost: $${totalCost.toFixed(2)}`);
     return totalCost;
   }
-
 }
 
 const myCart4 = new ShoppingCart();
@@ -244,7 +254,6 @@ myCart4.addItem('Banana', 10, 4);
 myCart4.viewCart();
 
 myCart4.getTotal();
-
 
 /*
 -----------------------------------------------------------
@@ -264,10 +273,10 @@ class ShoppingCart {
   constructor() {
     this._items = [];
     this._discounts = {
-      "SAVE10": 0.10,
-      "SAVE20": 0.20,
-      "SAVE30": 0.30
-    }
+      SAVE10: 0.1,
+      SAVE20: 0.2,
+      SAVE30: 0.3,
+    };
   }
 
   viewCart() {
@@ -275,30 +284,40 @@ class ShoppingCart {
       console.log(`Cart is empty.`);
     } else {
       console.log(`Your cart contains: `);
-      this._items.forEach(item => {console.log(`${item.quantity} x ${item.name} - $${item.price}`);});
+      this._items.forEach((item) => {
+        console.log(`${item.quantity} x ${item.name} - $${item.price}`);
+      });
       console.log(`Total cost: $${this.getTotal().toFixed(2)}`);
     }
   }
 
   addItem(name, price, quantity) {
-    const existingItem = this._items.find(item => item.name === name);
+    const existingItem = this._items.find((item) => item.name === name);
 
     if (existingItem) {
       existingItem.quantity += quantity;
-      console.log(`${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`);
-    }else {
-      this._items.push({name, price, quantity});
+      console.log(
+        `${name} quantity increased by ${quantity}. Total: ${existingItem.quantity}`
+      );
+    } else {
+      this._items.push({ name, price, quantity });
     }
     this.showTotalQuantity();
   }
 
   showTotalQuantity() {
-    const totalQuantity = this._items.reduce((sum, item) => sum + item.quantity, 0);
+    const totalQuantity = this._items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
     console.log(`Total items in cart: ${totalQuantity}`);
   }
 
   getTotal() {
-    const totalCost = this._items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalCost = this._items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
     return totalCost;
   }
 
@@ -306,7 +325,7 @@ class ShoppingCart {
     if (this._discounts.hasOwnProperty(code)) {
       const discountRate = this._discounts[code];
       const total = this.getTotal();
-      const discountedTotal = total - (total * discountRate);
+      const discountedTotal = total - total * discountRate;
       console.log(`Discount applied: ${code} (${discountRate * 100}%)`);
       console.log(`Total after discount: $${discountedTotal.toFixed(2)}`);
       return discountedTotal;
@@ -325,6 +344,6 @@ myCart5.viewCart();
 
 console.log(myCart5.getTotal());
 
-myCart5.applyDiscount("SAVE10");
-myCart5.applyDiscount("SAVE20");
-myCart5.applyDiscount("INVALIDCODE");
+myCart5.applyDiscount('SAVE10');
+myCart5.applyDiscount('SAVE20');
+myCart5.applyDiscount('INVALIDCODE');

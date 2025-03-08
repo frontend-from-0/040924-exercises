@@ -1,6 +1,6 @@
 function handleTodoFormSubmit(event) {
   event.preventDefault();
-  const todoInput = document.getElementById("todoInput");
+  const todoInput = document.getElementById('todoInput');
   const todoInputValue = todoInput.value.trim();
 
   if (todoInputValue === '') {
@@ -13,27 +13,26 @@ function handleTodoFormSubmit(event) {
   localStorage.setItem('todos', JSON.stringify(prevTodos));
 
   renderTodos();
-  todoInput.value = "";
+  todoInput.value = '';
 }
 
-
 function createTodoItem(todo, index) {
-  const todoItem = document.createElement("li");
-  todoItem.classList.add("todo-item");
+  const todoItem = document.createElement('li');
+  todoItem.classList.add('todo-item');
 
-  const todoText = document.createElement("span");
-  todoText.classList.add("todo-text");
+  const todoText = document.createElement('span');
+  todoText.classList.add('todo-text');
   todoText.textContent = todo.text;
 
   if (todo.completed) {
-    todoText.classList.add("completed");
+    todoText.classList.add('completed');
   }
 
-  todoText.addEventListener("click", () => toggleTodoCompletion(index));
+  todoText.addEventListener('click', () => toggleTodoCompletion(index));
 
-  const deleteButton = document.createElement("button");
-  deleteButton.textContent = "X";
-  deleteButton.addEventListener("click", (e) => {
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'X';
+  deleteButton.addEventListener('click', (e) => {
     e.stopPropagation();
     removeFromLocalStorage(index);
     renderTodos();
@@ -45,9 +44,9 @@ function createTodoItem(todo, index) {
 }
 
 function toggleTodoCompletion(index) {
-  let todos = JSON.parse(localStorage.getItem("todos")) || [];
+  let todos = JSON.parse(localStorage.getItem('todos')) || [];
   todos[index].completed = !todos[index].completed;
-  localStorage.setItem("todos", JSON.stringify(todos));
+  localStorage.setItem('todos', JSON.stringify(todos));
   renderTodos();
 }
 
@@ -69,15 +68,14 @@ function removeFromLocalStorage(index) {
 }
 
 window.addEventListener('DOMContentLoaded', function () {
-  const addBtn = document.getElementById("addBtn");
-  const clearListBtn = document.getElementById("clearListBtn");
+  const addBtn = document.getElementById('addBtn');
+  const clearListBtn = document.getElementById('clearListBtn');
 
-  addBtn.addEventListener("click", handleTodoFormSubmit);
-  clearListBtn.addEventListener("click", function() {
+  addBtn.addEventListener('click', handleTodoFormSubmit);
+  clearListBtn.addEventListener('click', function () {
     localStorage.removeItem('todos');
     renderTodos();
   });
 
   renderTodos();
 });
-
