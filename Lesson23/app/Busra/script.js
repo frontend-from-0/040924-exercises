@@ -56,17 +56,38 @@ async function searchImages(){
             likeButton.classList.remove('liked');
         }
 
-        likeButton.addEventListener('click', () =>{
-            if(likedImages.includes(result.id)){
+
+        function toggleLike(result, likeButton) {
+            let likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
+        
+            if (likedImages.includes(result.id)) {
                 const index = likedImages.indexOf(result.id);
-                likedImages.splice(index,1);
+                likedImages.splice(index, 1);
+                likeButton.textContent = "🤍";
                 likeButton.classList.remove('liked');
-            }else{
+            } else {
                 likedImages.push(result.id);
                 likeButton.classList.add('liked');
+                likeButton.textContent = "🖤";
             }
+        
             localStorage.setItem('likedImages', JSON.stringify(likedImages));
+        }
+        
+        likeButton.addEventListener('click', () => {
+            toggleLike(result, likeButton);
         });
+
+        const likeButtonHtml = document.querySelectorAll('like-button');
+
+        // fullscreende olduğu gibi default olarak ekranda bulunan like butonuna tıklandığında togglelike fonksiyonunu çalıştırmak istiyorum fakat olmuyor consolda herhangi bir hata da almıyorum
+
+        likeButtonHtml.forEach((button) => {
+            button.addEventListener('click', toggleLike);
+         });
+
+
+
 
 
         const fullScreenButtonHtml = document.querySelectorAll('.fullscreen-button');
@@ -101,6 +122,8 @@ async function searchImages(){
      fullScreenButtonHtml.forEach((button) => {
         button.addEventListener('click', toggleFullScreen);
      });
+
+
 
 
         
