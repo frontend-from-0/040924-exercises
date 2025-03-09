@@ -7,7 +7,7 @@ body {
 
 header {
   background-color: #e2001a;
-  color: white;
+  color:#f9e200 ;
   padding: 20px 0;
   text-align: center;
 }
@@ -39,7 +39,7 @@ header h1 {
   width: 100%;
   padding: 15px;
   background-color: #f9e200;
-  color: #e2001a;
+  color: #e20000;
   text-align: left;
   border: none;
   font-size: 1.1rem;
