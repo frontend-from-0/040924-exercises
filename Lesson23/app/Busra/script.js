@@ -43,14 +43,42 @@ async function searchImages(){
         photographerLink.textContent = `📸 ${result.user.name}`;
         photographer.appendChild(photographerLink);
 
+        const likeButton = document.createElement('button');
+        likeButton.textContent = '🤍';
+        likeButton.classList.add('like-button');
+
+        const likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
 
 
+        if(likedImages.includes(result.id)){
+            likeButton.classList.add('liked');
+        }else{
+            likeButton.classList.remove('liked');
+        }
+
+        likeButton.addEventListener('click', () =>{
+            if(likedImages.includes(result.id)){
+                const index = likedImages.indexOf(result.id);
+                likedImages.splice(index,1);
+                likeButton.classList.remove('liked');
+            }else{
+                likedImages.push(result.id);
+                likeButton.classList.add('liked');
+            }
+            localStorage.setItem('likedImages', JSON.stringify(likedImages));
+        });
 
 
         const fullScreenButtonHtml = document.querySelectorAll('.fullscreen-button');
         const fullScreenButton = document.createElement('button');
         fullScreenButton.textContent = '⛶';
         fullScreenButton.classList.add('fullscreen-button');
+
+        const likeFulscreenButtonContainer = document.createElement('div');
+        likeFulscreenButtonContainer.classList.add('like-fullscreen-button-container');
+        likeFulscreenButtonContainer.appendChild(likeButton);
+        likeFulscreenButtonContainer.appendChild(fullScreenButton);
+
 
         
 
@@ -77,7 +105,7 @@ async function searchImages(){
 
         
         imageContainer.appendChild(image); 
-        imageContainer.appendChild(fullScreenButton); 
+        imageContainer.appendChild(likeFulscreenButtonContainer);
         imageContainer.appendChild(imageLink);
         imageContainer.appendChild(photographer);
         searchResults.appendChild(imageContainer);
