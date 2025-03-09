@@ -13,6 +13,8 @@ async function searchImages(){
     inputData =searchInput.value;
     const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
 
+  
+
     const response = await fetch(url);
     const data = await response.json();
 
@@ -42,18 +44,35 @@ async function searchImages(){
         photographer.appendChild(photographerLink);
 
 
+
+
+
+        const fullScreenButtonHtml = document.querySelectorAll('.fullscreen-button');
         const fullScreenButton = document.createElement('button');
         fullScreenButton.textContent = '⛶';
         fullScreenButton.classList.add('fullscreen-button');
-        fullScreenButton.addEventListener('click', () =>{
-            if(image.requestFullscreen){
+
+        
+
+        function toggleFullScreen(){
+            if (image.requestFullscreen) {
                 image.requestFullscreen();
-            } else if(image.webkitRequestFullscreen){
+            } else if (image.webkitRequestFullscreen) {
                 image.webkitRequestFullscreen();
-            }else if(image.msRequestFullscreen){
+            } else if (image.msRequestFullscreen) {
                 image.msRequestFullscreen();
-            }     
-        });
+            }
+        }
+
+        
+       fullScreenButton.addEventListener('click', toggleFullScreen);
+
+
+     // Ana sayfada görünen resimlerin tam ekran olmasını sağlamak için koydum fakat neden çalışmadığını anlayamadım.Consoleda herhangi bir hata da almıyorum
+
+     fullScreenButtonHtml.forEach((button) => {
+        button.addEventListener('click', toggleFullScreen);
+     });
 
 
         
