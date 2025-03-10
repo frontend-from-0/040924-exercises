@@ -51,7 +51,9 @@ h1 {
   border-bottom: 1px solid #ddd;
   text-align: left;
   border-top: 5px solid #9e69b5;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .accordion-title:hover {
