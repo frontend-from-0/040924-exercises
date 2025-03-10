@@ -178,15 +178,3 @@ console.log('Total:', cart.getTotal());
 cart.applyDiscount('SAVE10');
 cart.applyDiscount('SAVE20');
 cart.applyDiscount('INVALIDCODE');
-
-/*const myCart5 = new ShoppingCart();
-
-myCart5.addItem('Apple', 5, 2);
-myCart5.addItem('Banana', 10, 4);
-myCart5.viewCart();
-
-console.log(myCart5.getTotal());
-
-myCart5.applyDiscount("SAVE10");
-myCart5.applyDiscount("SAVE20");
-myCart5.applyDiscount("INVALIDCODE");*/
