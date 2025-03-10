@@ -42,7 +42,7 @@ console.log(sumObjectValues({ a: 10, b: 20, c: 5 }));
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
 const testObject = {
-  name: Mila', age: 5 };
+  name: 'Mila', age: 5 };
 
 function printObjectKeys(obj) {
       for (const key in obj) {
