@@ -232,10 +232,10 @@ function replaceCharacter(str, oldChar, newChar) {
 */
 
 function titleCase(sentence) {
-  const words = sentence.split(' ').map(words => words.charAt(0).toUpperCase()+ words.slice(1)).join(" ");
+  const words = sentence.split(' ').map(words => words.charAt(0).toUpperCase() + words.slice(1)).join(" ");
   console.log(words);
 
-}titleCase("Hi all, I am learning JS.");
+} titleCase("Hi all, I am learning JS.");
 
 /*
 20. Switch: Traffic Light
@@ -457,4 +457,5 @@ function calculate(value1, whichOperator, value2) {
       console.log("operator is not define");
   }
 }
+
 
