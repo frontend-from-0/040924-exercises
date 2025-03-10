@@ -7,6 +7,21 @@ console.log(
   indexOfLastElementInImageArray
 );
 
+//update carousel and indicators
+function updateCarousel() {
+  for (let i = 0; i < imageArrayLength; i++) {
+    console.log(`Removing active class from the ${i} element in image array`);
+    images[i].classList.remove('active');
+    indicators[i].classList.remove('active');
+  }
+
+  console.log(
+    `Add active class to the ${currentImageIndex} element in image array`
+  );
+  images[currentImageIndex].classList.add('active');
+  indicators[currentImageIndex].classList.add('active');
+}
+
 // Next button
 document.getElementById('next-btn').addEventListener('click', function () {
   console.log('Current image index', currentImageIndex);
@@ -21,18 +36,7 @@ document.getElementById('next-btn').addEventListener('click', function () {
     );
     currentImageIndex++;
   }
-
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
-
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+  updateCarousel();
 });
 
 // Previous button
@@ -44,36 +48,17 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   } else {
     currentImageIndex--;
   }
-
-  for (let i = 0; i < imageArrayLength; i++) {
-    console.log(`Removing active class from the ${i} element in image array`);
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
-
-  console.log(
-    `Add active class to the ${currentImageIndex} element in image array`
-  );
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+  updateCarousel();
 });
 
 // Auto slideshow function
-function slideShow() {
+const carouselAutoChange = setInterval(() => {
   currentImageIndex = (currentImageIndex + 1) % imageArrayLength;
-  // Remove 'active' class from all images and indicators
-  for (let i = 0; i < imageArrayLength; i++) {
-    images[i].classList.remove('active');
-    indicators[i].classList.remove('active');
-  }
+  updateCarousel(); // Call the function
+}, 3000);
 
-  // Add 'active' class to the current image and indicator
-  images[currentImageIndex].classList.add('active');
-  indicators[currentImageIndex].classList.add('active');
+document
+  .getElementById('pause-btn')
+  .addEventListener('click', () => clearInterval(carouselAutoChange));
 
-  // Call slideShow again after 3 seconds
-  setTimeout(slideShow, 3000);
-}
-
-// Start the slideshow
-slideShow();
+//Don't forget to add functionality for play/pause buttons
