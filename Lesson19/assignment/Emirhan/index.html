@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enhanced Profile Card Updater</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="profile-card">
+      <img
+        id="profile-pic"
+        src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Profile Picture"
+      />
+      <h2 id="profile-name">John Doe</h2>
+      <p id="profile-desc">A short description goes here.</p>
+
+      <div class="controls">
+        <!-- Buttons for tasks -->
+        <button id="update-name">Update Name</button>
+        <button id="update-image">Update Image</button>
+        <button id="change-theme">Change Theme</button>
+        <button id="toggle-desc">Toggle Description</button>
+        <button id="add-social">Add Social Media Link</button>
+        <button id="add-skill">Add Skill</button>
+      </div>
+
+      <!-- New sections for additional tasks -->
+      <div class="social-media">
+        <h3>Social Media</h3>
+        <ul id="social-list">
+          <!-- Initially empty -->
+        </ul>
+      </div>
+
+      <div class="skills">
+        <h3>Skills</h3>
+        <ul id="skills-list">
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
