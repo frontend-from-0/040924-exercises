@@ -206,7 +206,7 @@ viewContact('Charlie', contacts);
    - Add a function to sort contacts alphabetically by name.
 3. Search by multiple fields:
    - e.g., find a contact by phone number or email.
-*/  
+*/
 
 // Partial Name Search
 function partialNameSearch(partialName, contactList) {
