@@ -33,7 +33,7 @@ document.getElementById('add-social').addEventListener('click', function() {
   // TODO: Dynamically create a new list item containing a link to a social media profile (e.g., "https://twitter.com/example")
   // Append it to the unordered list with ID "social-list"
   let ul = document.getElementById("social-list");
-    let li = document.createElement("li"); 
+    const li = document.createElement("li"); 
     const link = document.createElement("a");
     link.textContent = "Visit X"; 
     link.href = "www.x.com";
