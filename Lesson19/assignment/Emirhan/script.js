@@ -24,7 +24,7 @@ document.getElementById('change-theme').addEventListener('click', function() {
     if (profileDesc.style.display === "none"){
       document.getElementById("profile-desc").textContent = "";
     }else{
-      document.getElementById("profile-desc").textContent = "none";
+      document.getElementById("profile-desc").style.display = "none";
     }
   });
 
