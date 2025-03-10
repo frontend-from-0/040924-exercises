@@ -34,7 +34,7 @@ document.getElementById('add-social').addEventListener('click', function() {
   // Append it to the unordered list with ID "social-list"
   let ul = document.getElementById("social-list");
     let li = document.createElement("li"); 
-    let link = document.createElement("a");
+    const link = document.createElement("a");
     link.textContent = "Visit X"; 
     link.href = "www.x.com";
     li.appendChild(link);
