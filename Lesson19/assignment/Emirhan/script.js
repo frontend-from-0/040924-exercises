@@ -45,7 +45,7 @@ document.getElementById('add-social').addEventListener('click', function() {
 document.getElementById('add-skill').addEventListener('click', function() {
   // TODO: Create a new list item with a skill (e.g., "CSS") and append it to the skills list (ID "skills-list")
   let ul = document.getElementById("skills-list");
-    let li = document.createElement("li"); 
+    const li = document.createElement("li"); 
     const link = document.createElement("a");
     link.textContent = "CSS"; 
     li.appendChild(link);
