@@ -72,71 +72,16 @@ Node.js or a browser console.
 3. Use an object to store discount codes and their values.
 */
 
-const item = {
-  name: 'Shoes',
-  price: {
-    value: 75,
-    currency: 'USD',
-  },
-  quantity: 2,
-};
-
 class ShoppingCart {
-  constructor() {
+  constructor(name, price, quantity) {
     this._items = [];
   }
-
   viewCart() {
-    if (this._items.length > 0) {
-      console.log('ShoppingCart Items: ');
-      for (const item of this._items) {
-        console.log(
-          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`
-        );
-      }
-    } else {
-      console.log('Shopping Cart is empty');
-    }
-  }
-  addItem(name, price, quantity) {
-    // let maybeItem;
 
-    // for (const item of this._items) {
-    //   if (item.name === name) {
-    //     maybeItem = item;
-    //     break;
-    //   }
-    // }
-
-    const existingItem = this._items.find((item) => item.name === name);
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      const newItem = { name, price, quantity };
-      console.log('Adding new item: ', newItem);
-      this._items.push(newItem);
-    }
   }
 
-  removeItem(name) {
-    const updatedItems = [];
-    for (const item of this._items) {
-      if (item.name !== name) {
-        updatedItems.push(item);
-      }
-    }
-    this._items = updatedItems;
+  addItem(newItem) {
+    this._items.push(newItem);
   }
 }
 
-const cart1 = new ShoppingCart();
-cart1.viewCart();
-
-cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 2);
-cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 4);
-
-cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
-cart1.viewCart();
-
-cart1.removeItem('Bag', { value: 100, currency: 'USD' }, 1);
-cart1.viewCart();
