@@ -6,10 +6,10 @@
    - Example: "user@example.com" -> "example.com"
 */
 
-let example1 = 'user@example.com';
+const example1 = 'user@example.com';
 function getDomain(email) {
-  let isaret = email.indexOf('@');
-  let sonuc = email.slice(isaret + 1);
+  const isaret = email.indexOf('@');
+  const sonuc = email.slice(isaret + 1);
   return sonuc;
 }
 let domain = getDomain(example1);
@@ -168,6 +168,7 @@ function sliceLastN(text, n) {
 */
 let score = 76.5;
 function gradeChecker(score) {
+  /*
   switch (true) {
     case (score >= 90):
       console.log("Grade = A");
@@ -190,8 +191,24 @@ function gradeChecker(score) {
     default:
       console.log("Deger Giriniz");
       break;
+  }*/
+  if (score >= 90) {
+    console.log("Grade = A");
+  } else if (score >= 80) {
+    console.log("Grade = B");
+  } else if (score >= 70) {
+    console.log("Grade = C");
+  } else if (score >= 60) {
+    console.log("Grade = D");
+  } else if (score >= 0) {
+    console.log("Grade = F");
+  } else if (score > 100) {
+    console.log("Hatali Deger Girildi");
+  } else {
+    console.log("Deger Giriniz");
   }
-} gradeChecker(score);
+
+} gradeChecker(55);
 
 /*
 18. Character Replacement
@@ -213,10 +230,12 @@ function replaceCharacter(str, oldChar, newChar) {
      - Joins them back
    - Log the transformed string.
 */
-let sentence19 = "merhaba bugun hava nasil";
-function titleCase(sentence19) {
 
-}
+function titleCase(sentence) {
+  const words = sentence.split(' ').map(words => words.charAt(0).toUpperCase()+ words.slice(1)).join(" ");
+  console.log(words);
+
+}titleCase("Hi all, I am learning JS.");
 
 /*
 20. Switch: Traffic Light
