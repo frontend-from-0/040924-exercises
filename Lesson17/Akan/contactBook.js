@@ -71,11 +71,9 @@ Function: addContact(name, phone, email)
 */
 
 function addContact(newName, newPhone, newEmail, contactList) {
-  for (let i = 0; i < contactList.length; i++) {
-    if (newName === contactList[i].name) {
-      console.warn('The contact already exist');
-      return;
-    }
+  if (findContact(newName, contactList)) {
+    console.warn('The contact already exists');
+    return;
   }
   const contactListLengthPrev = contactList.length;
   contactList.push({
@@ -88,13 +86,8 @@ function addContact(newName, newPhone, newEmail, contactList) {
   if (contactListLengthPrev < contactListLengthNew) {
     console.log('Contact added successfully.');
   } else {
-    console.log('An error occured when adding a contact.');
+    console.log('An error occurred when adding a contact.');
   }
-
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-  // contactListLengthPrev < contactListLengthNew
-  //   ? console.log("Contact added successfully.")
-  //   : console.log("An error occured when adding a contact.");
 }
 
 /*
@@ -108,7 +101,7 @@ Function: viewContact(name)
 */
 
 function viewContact(name, contactList) {
-  const contact = findContact(name, contactList);
+  const contact = contactList.find(contact => contact.name === name);
   if (contact) {
     console.log(
       `name: ${contact.name}, phone:${contact.phone}, email:${contact.email}`
@@ -138,7 +131,7 @@ function findContact(name, contactList) {
 }
 
 function updateContact(name, newPhone, newEmail, contactList) {
-  const contactIndex = contactList.findIndex(contact => contact.name === name);
+  const isContactFound = findContact(name, contactList);
   if (contactIndex !== -1) {
     contactList[contactIndex].phone = newPhone;
     contactList[contactIndex].email = newEmail;
@@ -159,7 +152,7 @@ Function: removeContact(name)
 - Logs "Contact removed successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
- function removeContact(name, contactList) {
+function removeContact(name, contactList) {
   const contactIndex = contactList.findIndex((contact) => contact.name === name);
   if (contactIndex !== -1) {
     contactList.splice(contactIndex, 1);
@@ -213,7 +206,7 @@ viewContact('Charlie', contacts);
    - Add a function to sort contacts alphabetically by name.
 3. Search by multiple fields:
    - e.g., find a contact by phone number or email.
-*/
+*/  
 
 // Partial Name Search
 function partialNameSearch(partialName, contactList) {
@@ -235,9 +228,9 @@ function sortContacts(contactList) {
 
 // Search by multiple fields
 function searchByField(value, contactList) {
-  const results = contactList.filter(contact => 
-    contact.name.includes(value) || 
-    contact.phone.includes(value) || 
+  const results = contactList.filter(contact =>
+    contact.name.includes(value) ||
+    contact.phone.includes(value) ||
     contact.email.includes(value)
   );
   if (results.length > 0) {
