@@ -232,7 +232,8 @@ replaceCharacter(str18, 'Dunya', 'Evren');
 
 function titleCase(sentence) {
   const words = sentence
-    .split(' ').map((words) => words.charAt(0).toUpperCase() + words.slice(1))
+    .split(' ')
+    .map((words) => words.charAt(0).toUpperCase() + words.slice(1))
     .join(' ');
   console.log(words);
 }
