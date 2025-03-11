@@ -59,12 +59,10 @@ body {
 .theme-blue {
   background-color: #add8e6;
 }
-.toggle-desc{
+.toggle-desc {
   opacity: 0;
 }
 
-
-.toggle-desc-active{
+.toggle-desc-active {
   opacity: 1;
 }
-

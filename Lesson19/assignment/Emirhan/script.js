@@ -15,27 +15,25 @@ document.getElementById('update-image').addEventListener('click', function () {
 });
 
 // 3. Change Theme
- document.getElementById('change-theme').addEventListener('click', function () {
+document.getElementById('change-theme').addEventListener('click', function () {
   // TODO: Toggle the background color of the ".profile-card" between white (#fff) and lightblue (#add8e6)
-    const theme =  document.querySelector('.profile-card');
-    if (!theme.classList.contains('theme-blue')){
-      theme.classList.add('theme-blue');
-    }else{
-      theme.classList.remove('theme-blue');
-    }
-    
+  const theme = document.querySelector('.profile-card');
+  if (!theme.classList.contains('theme-blue')) {
+    theme.classList.add('theme-blue');
+  } else {
+    theme.classList.remove('theme-blue');
+  }
 });
 // 4. Toggle Description
 document.getElementById('toggle-desc').addEventListener('click', function () {
   // TODO: Toggle the display property of the element with ID "profile-desc" between "none" and its default display.
   const profileDesc = document.getElementById('profile-desc');
 
-  if (!profileDesc.classList.contains('toggle-desc-active')){
+  if (!profileDesc.classList.contains('toggle-desc-active')) {
     profileDesc.classList.add('toggle-desc-active');
-  }else{
+  } else {
     profileDesc.classList.remove('toggle-desc-active');
   }
-  
 });
 
 // 5. Add Social Media Link
