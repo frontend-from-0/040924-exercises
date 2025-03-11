@@ -15,7 +15,6 @@ function removeAddClass() {
   );
   images[currentImageIndex].classList.add('active');
   indicators[currentImageIndex].classList.add('active');
-
 }
 console.log(
   'Index of the last image in the image array',
@@ -37,9 +36,7 @@ nextButton.addEventListener('click', function nextSlide() {
     currentImageIndex++;
   }
   removeAddClass();
-
 });
-
 
 const indicators = document.querySelectorAll('.indicator');
 
@@ -51,11 +48,9 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   }
 
   removeAddClass();
-
 });
 
-document.getElementById("0").addEventListener('click', function () {
-
+document.getElementById('0').addEventListener('click', function () {
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -63,8 +58,7 @@ document.getElementById("0").addEventListener('click', function () {
   images[0].classList.add('active');
   indicators[0].classList.add('active');
 });
-document.getElementById("1").addEventListener('click', function () {
-
+document.getElementById('1').addEventListener('click', function () {
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -73,8 +67,7 @@ document.getElementById("1").addEventListener('click', function () {
   indicators[1].classList.add('active');
 });
 
-document.getElementById("2").addEventListener('click', function () {
-
+document.getElementById('2').addEventListener('click', function () {
   for (let i = 0; i < imageArrayLength; i++) {
     images[i].classList.remove('active');
     indicators[i].classList.remove('active');
@@ -86,18 +79,18 @@ document.getElementById("2").addEventListener('click', function () {
 let clickCount = 0;
 let intervalId;
 // This section was assisted by AI
-const playBtn = document.getElementById("play");
+const playBtn = document.getElementById('play');
 playBtn.addEventListener('click', function () {
   clickCount++;
   if (clickCount % 2) {
-    this.textContent = "Pause";
+    this.textContent = 'Pause';
     function autoSlide() {
       nextButton.click();
     }
     if (intervalId) clearInterval(intervalId);
     intervalId = setInterval(autoSlide, 3000);
   } else {
-    this.textContent = "Play";
+    this.textContent = 'Play';
     if (intervalId) clearInterval(intervalId);
   }
 });
