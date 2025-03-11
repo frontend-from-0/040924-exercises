@@ -16,6 +16,7 @@ Follow the step-by-step guide below. Test each step
 before moving to the next one.
 */
 
+
 /*
 -----------------------------------------------------------
   STEP 1: Create the Restaurant Class
@@ -30,6 +31,47 @@ before moving to the next one.
 4. Add a method `viewMenu()` to display all menu items.
 */
 
+class Restaurant {
+   constructor(name, location) {
+      this.name = name;
+      this.location = location;
+      this.menu = [];
+   }
+
+   addMenuItem(name, price, category) {
+      const newItem = new MenuItem(name, price, category);
+      this.menu.push(newItem);
+   }
+
+   viewMenu() {
+      console.log(`Menu for ${this.name}:`);
+      this.menu.forEach(item => {
+         console.log(`${item.name} - ${item.price} USD - Category: ${item.category}`);
+      });
+   }
+
+   placeOrder(order) {
+      this.orders.push(order);
+      console.log(`Order placed successfully!`);
+      order.viewOrder();
+      const total = order.calculateTotal(this);
+      console.log(`Total amount: ${total} USD`);
+   }
+
+   listOrders() {
+      this.orders.forEach((order, index) => {
+         console.log(`Order ${index + 1}:`);
+         order.viewOrder();
+      });
+   }
+
+   calculateTotal() {
+      return this.orders.reduce((total, order) => total + order.calculateTotal(this), 0);
+   }
+}
+
+
+
 /*
 -----------------------------------------------------------
   STEP 2: Create the MenuItem Class
@@ -43,6 +85,15 @@ before moving to the next one.
    class to create a new `MenuItem` object and store it 
    in the `menu` array.
 */
+
+class MenuItem {
+   constructor(name, price, category) {
+      this.name = name;
+      this.price = price;
+      this.category = category;
+   }
+}
+
 
 /*
 -----------------------------------------------------------
@@ -59,6 +110,34 @@ before moving to the next one.
      the total price.
 */
 
+class Order {
+   constructor() {
+      this.items = [];
+   }
+
+   addItem(name, quantity) {
+      this.items.push({ name, quantity });
+   }
+
+   calculateTotal(restaurant) {
+      let total = 0;
+      this.items.forEach(orderItem => {
+         const menuItem = restaurant.menu.find(item => item.name === orderItem.name);
+         if (menuItem) {
+            total += menuItem.price * orderItem.quantity;
+         }
+      });
+      return total;
+   }
+
+   viewOrder() {
+      console.log('Order details:');
+      this.items.forEach(item => {
+         console.log(`${item.name} x${item.quantity}`);
+      });
+   }
+}
+
 /*
 -----------------------------------------------------------
   STEP 4: Combine Restaurant and Order
@@ -69,6 +148,14 @@ before moving to the next one.
    - Accept an `Order` object as a parameter.
    - Display the details of the order.
 */
+
+placeOrder(order) {
+   this.orders.push(order);
+   console.log(`Order placed successfully!`);
+   order.viewOrder();
+   const total = order.calculateTotal(this);
+   console.log(`Total amount: ${total} USD`);
+}
 
 /*
 -----------------------------------------------------------
@@ -81,3 +168,15 @@ before moving to the next one.
    of all orders combined).
 4. Add functionality for discounts or special offers.
 */
+
+listOrders() {
+   this.orders.forEach((order, index) => {
+      console.log(`Order ${index + 1}:`);
+      order.viewOrder();
+   });
+}
+
+calculateTotal() {
+   return this.orders.reduce((total, order) => total + order.calculateTotal(this), 0);
+}
+}

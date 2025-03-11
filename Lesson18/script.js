@@ -86,6 +86,7 @@ class ShoppingCart {
     this._items = [];
   }
 
+
   viewCart() {
     if (this._items.length > 0) {
       console.log('ShoppingCart Items: ');
@@ -98,17 +99,11 @@ class ShoppingCart {
       console.log('Shopping Cart is empty');
     }
   }
+
+
   addItem(name, price, quantity) {
-    // let maybeItem;
-
-    // for (const item of this._items) {
-    //   if (item.name === name) {
-    //     maybeItem = item;
-    //     break;
-    //   }
-    // }
-
     const existingItem = this._items.find((item) => item.name === name);
+
     if (existingItem) {
       existingItem.quantity += quantity;
     } else {
@@ -118,25 +113,45 @@ class ShoppingCart {
     }
   }
 
+
   removeItem(name) {
-    const updatedItems = [];
-    for (const item of this._items) {
-      if (item.name !== name) {
-        updatedItems.push(item);
-      }
+
+    this._items = this._items.filter((item) => item.name !== name);
+  }
+
+
+  getTotal() {
+    return this._items.reduce((total, item) => total + item.price.value * item.quantity, 0);
+  }
+
+
+  applyDiscount(code) {
+    const discountCodes = {
+      'SAVE10': 0.1,
+      'SAVE20': 0.2
+    };
+    const discount = discountCodes[code.toUpperCase()];
+    if (discount) {
+      const total = this.getTotal();
+      const discountedTotal = total - total * discount;
+      console.log(`Discount applied! Total after discount: ${discountedTotal.toFixed(2)} ${this._items[0]?.price.currency}`);
+    } else {
+      console.log('Invalid discount code');
     }
-    this._items = updatedItems;
   }
 }
 
 const cart1 = new ShoppingCart();
 cart1.viewCart();
 
+
 cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 2);
 cart1.addItem('Shoes', { value: 75, currency: 'USD' }, 4);
-
 cart1.addItem('Bag', { value: 100, currency: 'USD' }, 1);
 cart1.viewCart();
 
-cart1.removeItem('Bag', { value: 100, currency: 'USD' }, 1);
+cart1.removeItem('Bag');
 cart1.viewCart();
+
+cart1.applyDiscount('SAVE10');
+cart1.applyDiscount('SAVE50'); 
