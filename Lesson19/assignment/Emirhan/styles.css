@@ -56,6 +56,15 @@ body {
   gap: 20px;
 }
 
-.theme-color {
+.theme-blue {
   background-color: #add8e6;
 }
+.toggle-desc{
+  opacity: 0;
+}
+
+
+.toggle-desc-active{
+  opacity: 1;
+}
+
