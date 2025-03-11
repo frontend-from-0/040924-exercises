@@ -16,7 +16,6 @@ Follow the step-by-step guide below. Test each step
 before moving to the next one.
 */
 
-
 /*
 -----------------------------------------------------------
   STEP 1: Create the Restaurant Class
@@ -39,38 +38,21 @@ class Restaurant {
    }
 
    addMenuItem(name, price, category) {
-      const newItem = new MenuItem(name, price, category);
-      this.menu.push(newItem);
+      let menuItem = {
+         name: name,
+         price: price,
+         category: category,
+      };
+      this.menu.push(menuItem);
    }
 
    viewMenu() {
-      console.log(`Menu for ${this.name}:`);
-      this.menu.forEach(item => {
-         console.log(`${item.name} - ${item.price} USD - Category: ${item.category}`);
-      });
-   }
-
-   placeOrder(order) {
-      this.orders.push(order);
-      console.log(`Order placed successfully!`);
-      order.viewOrder();
-      const total = order.calculateTotal(this);
-      console.log(`Total amount: ${total} USD`);
-   }
-
-   listOrders() {
-      this.orders.forEach((order, index) => {
-         console.log(`Order ${index + 1}:`);
-         order.viewOrder();
-      });
-   }
-
-   calculateTotal() {
-      return this.orders.reduce((total, order) => total + order.calculateTotal(this), 0);
+      console.log('Menu Items: ');
+      for (const item of this.menu) {
+         console.log(`${'item.name'}, price: ${'item.price'}, category: ${'item.category'}`);
+      }
    }
 }
-
-
 
 /*
 -----------------------------------------------------------
@@ -86,13 +68,35 @@ class Restaurant {
    in the `menu` array.
 */
 
-class MenuItem {
-   constructor(name, price, category) {
-      this.name = name;
-      this.price = price;
-      this.category = category;
+
+constructor(name, price, category) {
+   this.name = name;
+   this.price = price;
+   this.category = category;
+}
+
+class Restaurant {
+   constructor() {
+      this.menu = [];
+   }
+
+   addMenuItem(name, price, category) {
+
+      const newItem = new MenuItem(name, price, category);
+      this.menu.push(newItem);
+   }
+
+   displayMenu() {
+      if (this.menu.length === 0) {
+         console.log("Menu is empty.");
+      } else {
+         this.menu.forEach(item => {
+            console.log(`${item.name} - ${item.category}: $${item.price.toFixed(2)}`);
+         });
+      }
    }
 }
+
 
 
 /*
@@ -119,22 +123,20 @@ class Order {
       this.items.push({ name, quantity });
    }
 
-   calculateTotal(restaurant) {
+   calculateTotal() {
       let total = 0;
-      this.items.forEach(orderItem => {
-         const menuItem = restaurant.menu.find(item => item.name === orderItem.name);
-         if (menuItem) {
-            total += menuItem.price * orderItem.quantity;
-         }
-      });
+      for (const item of this.items) {
+         total += item.price * item.quantity;
+      }
       return total;
    }
 
    viewOrder() {
-      console.log('Order details:');
-      this.items.forEach(item => {
-         console.log(`${item.name} x${item.quantity}`);
-      });
+      console.log('Order Items: ');
+      for (const item of this.items) {
+         console.log(`${item.name}, quantity: ${item.quantity}`);
+      }
+      console.log(`Total: $${this.calculateTotal().toFixed(2)}`);
    }
 }
 
@@ -149,12 +151,10 @@ class Order {
    - Display the details of the order.
 */
 
-placeOrder(order) {
-   this.orders.push(order);
-   console.log(`Order placed successfully!`);
-   order.viewOrder();
-   const total = order.calculateTotal(this);
-   console.log(`Total amount: ${total} USD`);
+class Restaurant {
+   placeOrder(order) {
+      order.viewOrder();
+   }
 }
 
 /*
@@ -169,14 +169,47 @@ placeOrder(order) {
 4. Add functionality for discounts or special offers.
 */
 
-listOrders() {
-   this.orders.forEach((order, index) => {
-      console.log(`Order ${index + 1}:`);
-      order.viewOrder();
-   });
-}
+class Restaurant {
+   constructor(name, location) {
+      this.name = name;
+      this.location = location;
+      this.menu = [];
+      this.orders = [];
+   }
 
-calculateTotal() {
-   return this.orders.reduce((total, order) => total + order.calculateTotal(this), 0);
-}
+   addMenuItem(name, price, category) {
+      const newItem = new MenuItem(name, price, category);
+      this.menu.push(newItem);
+   }
+
+   displayMenu() {
+      if (this.menu.length === 0) {
+         console.log("Menu is empty.");
+      } else {
+         this.menu.forEach(item => {
+            console.log(`${item.name} - ${item.category}: $${item.price.toFixed(2)}`);
+         });
+      }
+   }
+
+   placeOrder(order) {
+      this.orders.push(order);
+      order.viewOrder();
+   }
+
+   listOrders() {
+      console.log('Orders: ');
+      this.orders.forEach((order, index) => {
+         console.log(`Order ${index + 1}:`);
+         order.viewOrder();
+      });
+   }
+
+   requestBill() {
+      let total = 0;
+      this.orders.forEach(order => {
+         total += order.calculateTotal();
+      });
+      console.log(`Total Bill: $${total.toFixed(2)}`);
+   }
 }
