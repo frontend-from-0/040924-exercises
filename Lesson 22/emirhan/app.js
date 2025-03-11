@@ -94,4 +94,3 @@ playBtn.addEventListener('click', function () {
     if (intervalId) clearInterval(intervalId);
   }
 });
-
