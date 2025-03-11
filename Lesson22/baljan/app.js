@@ -6,6 +6,7 @@ console.log(
   'Index of the last image in the image array',
   indexOfLastElementInImageArray
 );
+const indicators = document.querySelectorAll('.indicator');
 
 //update carousel and indicators
 function updateCarousel() {
@@ -21,6 +22,15 @@ function updateCarousel() {
   images[currentImageIndex].classList.add('active');
   indicators[currentImageIndex].classList.add('active');
 }
+
+//indicator button
+indicators.forEach((indicator) => {
+  indicator.addEventListener('click', (event) => {
+    currentImageIndex = parseInt(event.target.getAttribute('data-index'), 10);
+    console.log('Clicked indicator index:', currentImageIndex);
+    updateCarousel();
+  });
+});
 
 // Next button
 document.getElementById('next-btn').addEventListener('click', function () {
@@ -40,8 +50,6 @@ document.getElementById('next-btn').addEventListener('click', function () {
 });
 
 // Previous button
-const indicators = document.querySelectorAll('.indicator');
-
 document.getElementById('prev-btn').addEventListener('click', function () {
   if (currentImageIndex <= 0) {
     currentImageIndex = indexOfLastElementInImageArray;
@@ -52,13 +60,38 @@ document.getElementById('prev-btn').addEventListener('click', function () {
 });
 
 // Auto slideshow function
-const carouselAutoChange = setInterval(() => {
-  currentImageIndex = (currentImageIndex + 1) % imageArrayLength;
-  updateCarousel(); // Call the function
-}, 3000);
+let slideShowInterval;
+let isPlaying = false;
 
-document
-  .getElementById('pause-btn')
-  .addEventListener('click', () => clearInterval(carouselAutoChange));
+function startSlideShow() {
+  slideShowInterval = setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % imageArrayLength;
+    updateCarousel();
+  }, 3000);
+}
 
-//Don't forget to add functionality for play/pause buttons
+document.addEventListener('DOMContentLoaded', function () {
+  startSlideShow();
+  isPlaying = true;
+  document.getElementById('play-btn').classList.remove('active');
+  document.getElementById('pause-btn').classList.add('active');
+});
+
+document.getElementById('play-btn').addEventListener('click', function () {
+  if (!isPlaying) {
+    startSlideShow();
+    isPlaying = true;
+
+    document.getElementById('play-btn').classList.toggle('active');
+    document.getElementById('pause-btn').classList.toggle('active');
+  }
+});
+
+document.getElementById('pause-btn').addEventListener('click', function () {
+  clearInterval(slideShowInterval);
+  slideShowInterval = null;
+  isPlaying = false;
+
+  document.getElementById('play-btn').classList.add('active');
+  document.getElementById('pause-btn').classList.remove('active');
+});
