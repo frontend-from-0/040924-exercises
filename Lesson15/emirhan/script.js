@@ -21,13 +21,13 @@ console.log(domain);
    - If true, log: "<word> found in sentence."
    - Else, log: "<word> not found in sentence."
 */
-let sentence = ('Hello Word');
+let sentence = 'Hello Word';
 function containsWord(sentence) {
   let cevap = sentence.includes('Word');
   if (cevap === true) {
-    console.log("<word> found in sentence.");
+    console.log('<word> found in sentence.');
   } else {
-    console.log("<word> not found in sentence.");
+    console.log('<word> not found in sentence.');
   }
 }
 containsWord(sentence, 'Word');
@@ -38,14 +38,14 @@ containsWord(sentence, 'Word');
    - If it does, log: "This is a PDF file."
    - Otherwise, log: "Not a PDF file."
 */
-let fileName = "example.udf";
+let fileName = 'example.udf';
 
 function checkFileExtension(fileName) {
-  let endsWith = fileName.endsWith(".pdf");
+  let endsWith = fileName.endsWith('.pdf');
   if (endsWith === true) {
-    console.log("This is a PDF file.");
+    console.log('This is a PDF file.');
   } else {
-    console.log("Not a PDF file.");
+    console.log('Not a PDF file.');
   }
 }
 checkFileExtension(fileName);
@@ -58,16 +58,16 @@ checkFileExtension(fileName);
    - Otherwise, log: "<str> is not a palindrome"
 */
 
-let str = "level";
+let str = 'level';
 function isPalindrome(str) {
   let reverse = str.split('').reverse().join('');
   if (reverse === str) {
-    console.log(str + " is a palindrome");
+    console.log(str + ' is a palindrome');
   } else {
-    console.log(str + " is not a palindrome");
+    console.log(str + ' is not a palindrome');
   }
-} isPalindrome(str);
-
+}
+isPalindrome(str);
 
 /*
 10. Check Even or Odd (if-else)
@@ -78,30 +78,29 @@ function isPalindrome(str) {
 const number = 13;
 function evenOrOdd(number) {
   if (number % 2 === 1) {
-    console.log("number is odd");
-
+    console.log('number is odd');
   } else {
-    console.log("number is even");
+    console.log('number is even');
   }
-
-} evenOrOdd(number);
+}
+evenOrOdd(number);
 /*
 11. URL Protocol Checker
    - Define a function `checkProtocol(url)` that converts the URL to lowercase
      and checks if it starts with "https" using .startsWith().
    - Log "Secure connection" if true, otherwise "Unsecure connection".
 */
-let url = "https://www.code2career.dev/";
+let url = 'https://www.code2career.dev/';
 function checkProtocol(url) {
   let urlLowerCase = url.toLowerCase();
-  let urlSafe = urlLowerCase.startsWith("https");
+  let urlSafe = urlLowerCase.startsWith('https');
   if (urlSafe === true) {
-    console.log("Secure connection");
-
+    console.log('Secure connection');
   } else {
-    console.log("Unsecure connection");
+    console.log('Unsecure connection');
   }
-} checkProtocol(url);
+}
+checkProtocol(url);
 
 /*
 13. Repeat a String
@@ -112,20 +111,20 @@ function checkProtocol(url) {
 function repeatWord(word, times) {
   const result13 = word.repeat(times);
   console.log(result13);
-
-} repeatWord("Emir", 6);
+}
+repeatWord('Emir', 6);
 /*
 14. Replace Substring
    - Define a function `censorWord(sentence, target)` that replaces `target`
      with "****" (use .replaceAll() or multiple .replace()).
    - Log the censored sentence.
 */
-let metin = "Merhabalar ben Emir";
+let metin = 'Merhabalar ben Emir';
 function censorWord(sentence, word) {
   let result14 = metin.replace(sentence, word);
   console.log(result14);
-} censorWord("ben", "****");
-
+}
+censorWord('ben', '****');
 
 /*
 15. Check First Character (if-else)
@@ -133,16 +132,16 @@ function censorWord(sentence, word) {
      (use .charAt(0) or [0]).
    - Log "Starts with A" or "Does not start with A".
 */
-let startsWithWord = "sA man";
+let startsWithWord = 'sA man';
 function startsWithA(str) {
   let result15 = startsWithWord.charAt(0);
-  if (result15 === "A") {
-    console.log("Starts with A");
+  if (result15 === 'A') {
+    console.log('Starts with A');
   } else {
-    console.log("Does not start with A");
+    console.log('Does not start with A');
   }
-
-} startsWithA(str);
+}
+startsWithA(str);
 
 /*
 16. Slice Last N Characters
@@ -150,12 +149,12 @@ function startsWithA(str) {
      the last `n` characters of `text`.
    - Log the result.
 */
-let text = "Log the result";
+let text = 'Log the result';
 function sliceLastN(text, n) {
   let result16 = text.slice(-n);
   console.log(result16);
-
-} sliceLastN(text, 3);
+}
+sliceLastN(text, 3);
 /*
 17. Switch: Grade Checker
    - Define a function `gradeChecker(score)` that uses a switch (or if-else chain):
@@ -193,22 +192,22 @@ function gradeChecker(score) {
       break;
   }*/
   if (score >= 90) {
-    console.log("Grade = A");
+    console.log('Grade = A');
   } else if (score >= 80) {
-    console.log("Grade = B");
+    console.log('Grade = B');
   } else if (score >= 70) {
-    console.log("Grade = C");
+    console.log('Grade = C');
   } else if (score >= 60) {
-    console.log("Grade = D");
+    console.log('Grade = D');
   } else if (score >= 0) {
-    console.log("Grade = F");
+    console.log('Grade = F');
   } else if (score > 100) {
-    console.log("Hatali Deger Girildi");
+    console.log('Hatali Deger Girildi');
   } else {
-    console.log("Deger Giriniz");
+    console.log('Deger Giriniz');
   }
-
-} gradeChecker(55);
+}
+gradeChecker(55);
 
 /*
 18. Character Replacement
@@ -216,12 +215,12 @@ function gradeChecker(score) {
      (or a loop) to swap all occurrences of oldChar with newChar.
    - Log the result.
 */
-let str18 = "Dunya Cok Guzel";
+let str18 = 'Dunya Cok Guzel';
 function replaceCharacter(str, oldChar, newChar) {
   let result = str18.replaceAll(oldChar, newChar);
   console.log(result);
-
-} replaceCharacter(str18, "Dunya", "Evren");
+}
+replaceCharacter(str18, 'Dunya', 'Evren');
 /*
 19. Title Case a Sentence
    - Define a function `titleCase(sentence)` that:
@@ -232,10 +231,12 @@ function replaceCharacter(str, oldChar, newChar) {
 */
 
 function titleCase(sentence) {
-  const words = sentence.split(' ').map(words => words.charAt(0).toUpperCase() + words.slice(1)).join(" ");
+  const words = sentence
+    .split(' ').map((words) => words.charAt(0).toUpperCase() + words.slice(1))
+    .join(' ');
   console.log(words);
-
-} titleCase("Hi all, I am learning JS.");
+}
+titleCase('Hi all, I am learning JS.');
 
 /*
 20. Switch: Traffic Light
@@ -245,35 +246,37 @@ function titleCase(sentence) {
      - "green" -> log: "Go"
      - anything else -> "Invalid color"
 */
-let color = "Green";
+let color = 'Green';
 function trafficLight(color) {
   switch (color) {
-    case "Red":
-      console.log("Stop");
+    case 'Red':
+      console.log('Stop');
       break;
-    case "Yellow":
-      console.log("Caution");
+    case 'Yellow':
+      console.log('Caution');
       break;
-    case "Green":
-      console.log("Go");
+    case 'Green':
+      console.log('Go');
       break;
   }
-} trafficLight(color);
+}
+trafficLight(color);
 /*
 21. Check String Length (if-else)
    - Define a function `isLongString(str)` that checks if the string length
      is more than 10.
    - Log "Long string" or "Short string".
 */
-let str21 = "Check String Length (if-else)";
+let str21 = 'Check String Length (if-else)';
 function isLongString(str21) {
   let result21 = str21.length;
   if (result21 >= 10) {
-    console.log("Long string");
+    console.log('Long string');
   } else {
-    console.log("Short string");
+    console.log('Short string');
   }
-} isLongString(str21);
+}
+isLongString(str21);
 /*
 22. Convert to Lowercase Then Check
    - Define a function `isSpam(text)` that converts the text to lowercase
@@ -281,15 +284,16 @@ function isLongString(str21) {
    - If it does, log "This text is spam."
    - Otherwise, log "This text is not spam."
 */
-let metin22 = "Convert to Lowercase Then Check spam";
+let metin22 = 'Convert to Lowercase Then Check spam';
 function isSpam(text) {
-  let result22 = metin22.toLowerCase().includes("spam");
+  let result22 = metin22.toLowerCase().includes('spam');
   if (result22 === true) {
-    console.log("This text is spam.");
+    console.log('This text is spam.');
   } else {
-    console.log("This text is not spam.");
+    console.log('This text is not spam.');
   }
-} isSpam(metin22);
+}
+isSpam(metin22);
 
 /*
 23. Extract Initials
@@ -299,12 +303,12 @@ function isSpam(text) {
 */
 function getInitials(fullName) {
   let fullName3 = fullName.toUpperCase();
-  let fullName2 = fullName3.split(" ");
+  let fullName2 = fullName3.split(' ');
   let fullName4 = fullName3.charAt(0);
 
   console.log(fullName4);
-
-} getInitials("Emir Bayatli");
+}
+getInitials('Emir Bayatli');
 /*
 24. Switch: Month to Season
    - Define a function `getSeason(monthNum)` (1-12). Use switch or if-else:
@@ -320,33 +324,31 @@ function getSeason(monthNum) {
     case 12:
     case 1:
     case 2:
-      console.log("Winter");
+      console.log('Winter');
       break;
 
     case 3:
     case 4:
     case 5:
-      console.log("Spring");
+      console.log('Spring');
       break;
 
     case 6:
     case 7:
     case 8:
-      console.log("Summer");
+      console.log('Summer');
       break;
     case 9:
     case 10:
     case 11:
-      console.log("Autumn");
+      console.log('Autumn');
       break;
     default:
-      console.log("Invalid month");
+      console.log('Invalid month');
       break;
   }
-
-} getSeason(monthNum);
-
-
+}
+getSeason(monthNum);
 
 /*
 25. Check If String Contains Number
@@ -354,17 +356,17 @@ function getSeason(monthNum) {
      .match() to check if there's any digit in the string.
    - Log "Contains number" or "No number found".
 */
-let findNumber = "Check If String Contains Number";
+let findNumber = 'Check If String Contains Number';
 
 function containsNumber(str) {
   let isTrue = findNumber.match(/\d/);
   if (isTrue) {
-    console.log("Contains number");
+    console.log('Contains number');
   } else {
-    console.log("No number found");
+    console.log('No number found');
   }
-
-} containsNumber(findNumber);
+}
+containsNumber(findNumber);
 /*
 26. Pad a String
    - Define a function `padString(str, maxLength)` that if str.length < maxLength,
@@ -376,11 +378,11 @@ function padString(str, maxLength) {
   if (maxLength > str26) {
     let newStr = str.padEnd(maxLength, '*');
     console.log(newStr);
-  }
-  else {
+  } else {
     console.log(str);
   }
-} padString("Log the padded string.", 70);
+}
+padString('Log the padded string.', 70);
 /*
 27. If-Else: Voting Eligibility
    - Define a function `canVote(age)` that logs:
@@ -389,15 +391,13 @@ function padString(str, maxLength) {
 */
 let age = -19;
 function canVote(age) {
-
   if (age >= 18) {
-    console.log("Can vote");
+    console.log('Can vote');
+  } else {
+    console.log('Too young to vote');
   }
-  else {
-    console.log("Too young to vote");
-  }
-
-} canVote(age);
+}
+canVote(age);
 /*
 28. Reverse Words in a Sentence
    - Define a function `reverseWords(sentence)` that:
@@ -407,9 +407,13 @@ function canVote(age) {
    - Log the result.
 */
 function reverseWords(sentence) {
-  let reversed = sentence.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+  let reversed = sentence
+    .split(' ')
+    .map((word) => word.split('').reverse().join(''))
+    .join(' ');
   console.log(reversed);
-} reverseWords("Hi I am learning JavaScript");
+}
+reverseWords('Hi I am learning JavaScript');
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
@@ -419,11 +423,12 @@ function reverseWords(sentence) {
 function findWordPosition(sentence, word) {
   let find = sentence.indexOf(word);
   if (find === -1) {
-    console.log("Not found");
+    console.log('Not found');
   } else {
     console.log(find);
   }
-} findWordPosition("Examle sentences in my js code", "Emir");
+}
+findWordPosition('Examle sentences in my js code', 'Emir');
 /*
 30. Switch: Simple Calculator
    - Define a function `calculate(a, operator, b)` that uses switch to handle:
@@ -437,25 +442,23 @@ function findWordPosition(sentence, word) {
 
 function calculate(value1, whichOperator, value2) {
   switch (whichOperator) {
-    case "+":
+    case '+':
       let result = value1 + value2;
       console.log(result);
       break;
-    case "-":
+    case '-':
       let result2 = value1 - value2;
       console.log(result2);
       break;
-    case "*":
+    case '*':
       let result3 = value1 * value2;
       console.log(result3);
       break;
-    case "/":
+    case '/':
       let result4 = value1 / value2;
       console.log(result4);
       break;
     default:
-      console.log("operator is not define");
+      console.log('operator is not define');
   }
 }
-
-
