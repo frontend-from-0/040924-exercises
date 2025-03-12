@@ -20,5 +20,5 @@ jobs:
       - name: Run Prettier Check
         run: npx prettier --check .
 
-      - name: Run Prettier and Fix Issues
-        run: npx prettier --write .
+      - name: Run Prettier
+        run: npx prettier --check .
