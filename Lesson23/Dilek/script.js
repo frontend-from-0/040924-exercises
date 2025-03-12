@@ -55,7 +55,7 @@ function addImagesToPage(src, alt, author, authorProfile) {
 
   const newImage = document.createElement('img');
   newImage.src = src;
-  newImage.alt = alt || 'Alt text not found';
+  newImage.alt = alt || 'Alt text not found.';
 
   const authorLink = document.createElement('a');
   authorLink.textContent = `Photo by: ${author}`;
