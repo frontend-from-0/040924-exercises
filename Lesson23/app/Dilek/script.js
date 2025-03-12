@@ -101,7 +101,7 @@ function showFavorites() {
   const favorites = getFavorites();
 
   if (favorites.length === 0) {
-    alert('No favorites found.');
+    alert('No favorites found');
     return;
   }
 
