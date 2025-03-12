@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  background-image: radial-gradient(#00000040 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.carousel {
+  width: 800px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.7;
+  transform: translateY(-50%);
+}
+
+.carousel-btn {
+  padding: 10px 20px;
+  background-color: rgba(245, 245, 245, 0.9);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.carousel-btn:hover {
+  background-color: #ddd;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #555;
+}
+
+/* Butonların düzeni ve konumları */
+.carousel-navigation .prev-btn {
+  left: 20px;
+  top: 50%;
+}
+
+.carousel-navigation .next-btn {
+  right: 20px;
+  top: 50%;
+}
+
+/* Stop butonunun düzeni */
+#toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(245, 245, 245, 0.9);
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+#toggle-btn:hover {
+  background-color: #ddd;
+}
