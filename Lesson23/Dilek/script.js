@@ -114,7 +114,6 @@ function showFavorites() {
     );
   });
 }
-
 document
   .getElementById('fetch-button')
   .addEventListener('click', () => fetchImages());
