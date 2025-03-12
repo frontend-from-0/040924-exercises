@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script name="3c1430c5b8"></script>
+    <script
+      src="https://kit.fontawesome.com/3c1430c5b8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="script.js"></script>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <select id="image-count-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <button id="fetch-button" class="button">Fetch Images</button>
+    <div id="image-container"></div>
+    <button id="show-favorites-button" class="button">Show Favorites</button>
+
+    <!-- Create you own secrets.js file add add const ACCESS_KEY with value of the access key for your own Unsplash app. + -->
+    <script src="./secrets.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
