@@ -31,19 +31,6 @@
   opacity: 1;
 }
 
-#play-btn,
-#pause-btn {
-  display: none; /* Hide buttons by default */
-}
-
-#play-btn.active {
-  display: inline-block; /* Show only when active */
-}
-
-#pause-btn.active {
-  display: inline-block; /* Show only when active */
-}
-
 .play-controls {
   position: absolute;
   top: 50%;
