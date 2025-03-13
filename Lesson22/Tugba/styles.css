@@ -73,17 +73,20 @@
 
 .carousel-toggle-btn {
   position: absolute;
-  bottom: 50px; /* Indicator'ların hemen üstüne */
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
-  background-color: #fff;
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #555;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
 .carousel-toggle-btn:hover {
-  background-color: #ddd;
+  background-color: rgba(255, 255, 255, 1);
+  border-color: black;
 }

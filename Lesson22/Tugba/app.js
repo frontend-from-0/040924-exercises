@@ -39,6 +39,7 @@ document.getElementById('prev-btn').addEventListener('click', function () {
   changeImage(prevIndex);
 });
 
+// Indicator Click Event
 indicators.forEach((indicator, index) => {
   indicator.addEventListener('click', function () {
     changeImage(index);
@@ -54,24 +55,31 @@ function startAutoSlide() {
     changeImage(nextIndex);
   }, 3000);
   isAutoSliding = true;
+  startButton.style.display = 'none';
+  stopButton.style.display = 'block';
 }
 
 function stopAutoSlide() {
   clearInterval(autoSlideInterval);
   isAutoSliding = false;
+  startButton.style.display = 'block';
+  stopButton.style.display = 'none';
 }
 
-const toggleButton = document.createElement('button');
-toggleButton.innerText = 'Start/Stop';
-toggleButton.classList.add('carousel-toggle-btn'); //
-document.querySelector('.carousel').appendChild(toggleButton);
+// Creating Start & Stop Buttons
+const startButton = document.createElement('button');
+startButton.innerText = 'Start';
+startButton.classList.add('carousel-toggle-btn');
+startButton.style.display = 'none'; // Başlangıçta gizli
+
+const stopButton = document.createElement('button');
+stopButton.innerText = 'Stop';
+stopButton.classList.add('carousel-toggle-btn');
+
+document.querySelector('.carousel').appendChild(startButton);
+document.querySelector('.carousel').appendChild(stopButton);
+
+startButton.addEventListener('click', startAutoSlide);
+stopButton.addEventListener('click', stopAutoSlide);
 
 startAutoSlide();
-
-toggleButton.addEventListener('click', function () {
-  if (isAutoSliding) {
-    stopAutoSlide();
-  } else {
-    startAutoSlide();
-  }
-});
