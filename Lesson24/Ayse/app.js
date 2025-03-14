@@ -14,46 +14,71 @@ HTTP status codes are three-digit numbers that the server sends in response to a
 400... - Errors (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found)
 500... - Service error (500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable)
 */
-
 const URL = 'https://jsonplaceholder.typicode.com/posts';
 
 document.getElementById('fetch-posts').addEventListener('click', getPosts);
 
+/*
+- .then() bir callback fonksiyonu alır ve Promise çözülünce bu fonksiyon çalışır.
+- fetch() bir Promise döner, bu yüzden ilk .then()'de response parametresini kullanırız ama isterseniz başka bir isim de kullanabilirsiniz, Örn, apple gibi.
+- Her .then()'in içinde dönen değer, bir önceki .then()'in sonucudur.
+*/
+
 function getPosts() {
-  console.log('Getting posts');
-  fetch(URL)
-    .then((response) => response.json())
+  fetch(URL) // API çağrısı yapıyoruz. Adrese GET isteği gönderiyoruz.fetch() fonksiyonu, önce bir PROMİSE, Response nesnesi döndürür.
+    .then((response) => response.json()) // Gelen yanıtı JSON formatına çeviriyoruz. Çünkü API'den gelen veriler string olarak gelir.
+    // Postları HTML'ye Eklemek İçin Hazırlık
     .then((posts) => {
+      // posts → API'den gelen tüm postların listesi (Array) - İkinci .then() -> JSON verisini kullan
       posts.forEach((post) => {
         const liItem = document.createElement('li');
+        liItem.id = `post-${post.id}`; // Delete post için ekledim.
         liItem.classList.add('post');
+
         const postTitle = document.createElement('h2');
         postTitle.classList.add('post-title');
-        postTitle.textContent = post.title;
+        postTitle.textContent = posts.title;
+
         const pItem = document.createElement('p');
         pItem.classList.add('post-body');
-        pItem.textContent = post.body;
+        pItem.textContent = posts.body;
 
+        // Update Butonu Eklemek
         const updatePostButton = document.createElement('a');
-        updatePostButton.href = `./update-post.html?id=${post.id}`;
-        updatePostButton.textContent = 'Update';
-        updatePostButton.classList.add('button', 'button--success');
+        updatePostButton.href = `./update-post.html?id=${post.id}`; // Güncelleme sayfasına yönlendiriyoruz.
+        updatePostButton.textContent = 'Update'; //Butonun metni
+        updatePostButton.classList.add('button', 'button-success'); //Butonun class'ları, Stil sınıfları ekliyoruz.
 
+        // Delete Butonu Eklemek
         const deletePostButton = document.createElement('button');
-        deletePostButton.textContent = 'Delete';
-        deletePostButton.addEventListener('click', () => deletePost(post.id));
-        deletePostButton.classList.add('button', 'button--danger');
+        deletePostButton.textContent = 'Delete'; //Butonun metni
+        deletePostButton.addEventListener('click', () => deletePost(post.id)); // Silme işlemi için event listener
+        deletePostButton.classList.add('button', 'button-danger');
 
+        // 'liItem' içine başlık, içerik ve güncelleme butonunu ekliyoruz
         liItem.appendChild(postTitle);
         liItem.appendChild(pItem);
         liItem.appendChild(updatePostButton);
         liItem.appendChild(deletePostButton);
+        // 'liItem'ı 'posts-container' ul'sine ekliyoruz
         document.getElementById('posts-container').appendChild(liItem);
-        // Updated styles of the post so that it looks better
       });
     });
 }
 
+function deletePost(postId) {
+  fetch(`${URL}/${postId}`, { method: 'DELETE' }) // API'a DELETE isteği gönderiyoruz.
+    .then((response) => {
+      if (response.ok) {
+        document.getElementById(`post-${postId}`).remove(); // Silinen postu HTML'den kaldırıyoruz.
+      } else {
+        throw new Error('Post could not be deleted');
+      }
+    })
+    .catch((error) => console.error('Failing: ', error));
+}
+
+/*
 function getPostById() {}
 
 function createPost() {
@@ -72,3 +97,4 @@ function deletePost(postId) {
     method: 'DELETE',
   });
 }
+*/
