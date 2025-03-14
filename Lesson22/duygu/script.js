@@ -1,15 +1,15 @@
 let currentImageIndex = 0;
-const images = document.querySelectorAll(".carousel img");
-const indicators = document.querySelectorAll(".indicator");
-const nextBtn = document.getElementById("next-btn");
-const prevBtn = document.getElementById("prev-btn");
-const autoplayBtn = document.getElementById("toggle-autoplay");
+const images = document.querySelectorAll('.carousel img');
+const indicators = document.querySelectorAll('.indicator');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const autoplayBtn = document.getElementById('toggle-autoplay');
 let autoSlideInterval = null;
 
 function updateCarousel(index) {
   images.forEach((img, i) => {
-    img.classList.toggle("active", i === index);
-    indicators[i].classList.toggle("active", i === index);
+    img.classList.toggle('active', i === index);
+    indicators[i].classList.toggle('active', i === index);
   });
 }
 
@@ -26,19 +26,19 @@ function prevImage() {
 function startAutoSlide() {
   if (autoSlideInterval) return;
   autoSlideInterval = setInterval(nextImage, 5000);
-  autoplayBtn.textContent = "Stop";
+  autoplayBtn.textContent = 'Stop';
 }
 
 function stopAutoSlide() {
   clearInterval(autoSlideInterval);
   autoSlideInterval = null;
-  autoplayBtn.textContent = "Start";
+  autoplayBtn.textContent = 'Start';
 }
 
-nextBtn.addEventListener("click", nextImage);
-prevBtn.addEventListener("click", prevImage);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
 
-autoplayBtn.addEventListener("click", () => {
+autoplayBtn.addEventListener('click', () => {
   if (autoSlideInterval) {
     stopAutoSlide();
   } else {
@@ -47,7 +47,7 @@ autoplayBtn.addEventListener("click", () => {
 });
 
 indicators.forEach((indicator, index) => {
-  indicator.addEventListener("click", () => {
+  indicator.addEventListener('click', () => {
     currentImageIndex = index;
     updateCarousel(currentImageIndex);
   });
