@@ -1,47 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Carousel</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <div class="carousel">
-      <div class="carousel-container">
-        <img
-          class="active"
-          src="https://images.unsplash.com/photo-1682687982029-edb9aecf5f89?auto=format&fit=crop&w=800&q=80"
-          alt="Image 1"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1682695798522-6e208131916d?auto=format&fit=crop&w=800&q=80"
-          alt="Image 2"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=800&q=80"
-          alt="Image 3"
-        />
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-      <div class="carousel-navigation">
-        <button id="prev-btn" class="carousel-btn">Prev</button>
-        <button id="toggle-autoplay" class="carousel-btn">Stop</button>
-        <button id="next-btn" class="carousel-btn">Next</button>
-      </div>
+<body>
 
-      <button id="toggle-autoplay" class="carousel-btn autoplay-btn">
-        Stop
-      </button>
-
-      <div class="carousel-indicators">
-        <div class="indicator active"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-      </div>
+  <div class="carousel">
+    <div class="carousel-container">
+      <img class="active"
+        src="https://images.unsplash.com/photo-1682687982029-edb9aecf5f89?auto=format&fit=crop&w=800&q=80"
+        alt="Image 1">
+      <img
+        src="https://images.unsplash.com/photo-1682695798522-6e208131916d?auto=format&fit=crop&w=800&q=80"
+        alt="Image 2">
+      <img
+        src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=800&q=80"
+        alt="Image 3">
     </div>
 
-    <script src="app.js"></script>
-  </body>
+    <div class="carousel-navigation">
+      <button id="prev-btn" class="carousel-btn">Prev</button>
+      <button id="toggle-autoplay" class="carousel-btn">Stop</button>
+      <button id="next-btn" class="carousel-btn">Next</button>
+    </div>
+
+    <button id="toggle-autoplay" class="carousel-btn autoplay-btn">Stop</button>
+
+    <div class="carousel-indicators">
+      <div class="indicator active"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>
