@@ -29,3 +29,10 @@ function addImagesToPage(src, alt) {
 const button = document.getElementById('fetch-button');
 
 button.addEventListener('click', () => fetchImages());
+
+document.querySelector('select').addEventListener('change', () => {
+  const option = document.querySelector('select').value;
+  parseInt(option);
+
+  console.log(option);
+});

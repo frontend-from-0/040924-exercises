@@ -52,7 +52,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-select {
+.select {
   width: auto;
   padding: 10px 20px;
   border-radius: 5px;
@@ -60,9 +60,10 @@ select {
   background-color: #f9f9f9;
   font-size: 16px;
   color: #333;
+  cursor: pointer;
 }
 
-select option {
+.select option {
   padding: 10px;
   background-color: #fff;
   color: #333;
