@@ -17,14 +17,12 @@ h1 {
   margin-bottom: 20px;
 }
 
-
 .select-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
-
 
 label {
   font-size: 16px;
@@ -40,7 +38,6 @@ select {
   min-width: 60px;
   width: auto;
 }
-
 
 .button-container {
   text-align: center;
@@ -62,7 +59,6 @@ select {
 .button:hover {
   background-color: #45a049;
 }
-
 
 #image-container {
   display: flex;

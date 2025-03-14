@@ -8,11 +8,13 @@ function fetchImages() {
       if (response.ok) {
         return response.json();
       }
-      throw new Error(`Request failed! ${response.status}, ${response.statusText}`);
+      throw new Error(
+        `Request failed! ${response.status}, ${response.statusText}`
+      );
     })
     .then((data) => {
       document.getElementById('image-container').innerHTML = '';
-      data.forEach(image => addImagesToPage(image));
+      data.forEach((image) => addImagesToPage(image));
     })
     .catch((error) => console.log(error));
 }
