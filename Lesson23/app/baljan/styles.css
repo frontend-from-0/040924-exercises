@@ -11,60 +11,103 @@ h1 {
   color: #333;
 }
 
-#image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.image {
-  margin: 10px;
-}
-
-.image img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #45a049;
-}
-
 .controls {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.select {
-  width: auto;
+label {
   padding: 10px 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.select,
+.button {
+  width: 200px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
 }
 
 .select option {
-  padding: 10px;
-  background-color: #fff;
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.button:focus,
+.select:focus {
+  outline: 2px solid #1b3115;
+}
+
+.button:hover {
+  background-color: #45a149;
+}
+
+#image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 16px;
   color: #333;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .select,
+  .button {
+    width: 50%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
 }
