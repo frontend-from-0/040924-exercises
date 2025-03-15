@@ -70,3 +70,51 @@ ul {
 .button--danger:hover {
   background-color: #79000cf4;
 }
+
+.message {
+  color: #155724;
+  /* Yeşil yazı rengi */
+  font-size: 18px;
+  /* Belirgin yazı boyutu */
+  padding: 10px 20px;
+  /* Yatayda ve dikeyde padding ekle */
+  border-radius: 5px;
+  /* Yuvarlak köşeler */
+  display: none;
+  /* Başlangıçta görünmesin */
+  animation: fadeOut 5s forwards;
+  /* Animasyonu ekle */
+}
+
+/* Başarı Mesajı Stili */
+.success-message {
+  color: #155724;
+  /* Yeşil yazı rengi */
+}
+
+/* Hata Mesajı Stili */
+.error-message {
+  color: #ff0000;
+  /* Kırmızı yazı rengi */
+}
+
+.success-message.show,
+.error-message.show {
+  display: block;
+  /* Görünür hale getirme */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

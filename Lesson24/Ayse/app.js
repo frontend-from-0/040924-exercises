@@ -37,23 +37,24 @@ function getPosts() {
 
         const postTitle = document.createElement('h2');
         postTitle.classList.add('post-title');
-        postTitle.textContent = posts.title;
+        postTitle.textContent = post.title;
 
         const pItem = document.createElement('p');
         pItem.classList.add('post-body');
-        pItem.textContent = posts.body;
+        pItem.textContent = post.body;
 
         // Update Butonu Eklemek
         const updatePostButton = document.createElement('a');
         updatePostButton.href = `./update-post.html?id=${post.id}`; // Güncelleme sayfasına yönlendiriyoruz.
         updatePostButton.textContent = 'Update'; //Butonun metni
-        updatePostButton.classList.add('button', 'button-success'); //Butonun class'ları, Stil sınıfları ekliyoruz.
+        updatePostButton.classList.add('button', 'button--success'); //Butonun class'ları, Stil sınıfları ekliyoruz.
 
         // Delete Butonu Eklemek
         const deletePostButton = document.createElement('button');
         deletePostButton.textContent = 'Delete'; //Butonun metni
         deletePostButton.addEventListener('click', () => deletePost(post.id)); // Silme işlemi için event listener
-        deletePostButton.classList.add('button', 'button-danger');
+        deletePostButton.classList.add('button', 'button--danger');
+
 
         // 'liItem' içine başlık, içerik ve güncelleme butonunu ekliyoruz
         liItem.appendChild(postTitle);
@@ -79,7 +80,7 @@ function deletePost(postId) {
 }
 
 /*
-function getPostById() {}
++++function getPostById() {}
 
 function createPost() {
   // Get the form data
@@ -90,9 +91,9 @@ function createPost() {
   // Clear the form
 }
 
-function updatePost() {}
++++function updatePost() {}
 
-function deletePost(postId) {
++++function deletePost(postId) {
   fetch(`${URL}/${postId}`, {
     method: 'DELETE',
   });
