@@ -1,56 +1,55 @@
-// Create post formunu seçer
 const form = document.getElementById('createPostForm');
-
-// Hata ve başarı mesajlarını dışarıda tanımlar
 const errorMessage = document.getElementById('create-error-message');
 const successMessage = document.getElementById('create-success-message');
 
-// Form gönderildiğinde createPost fonksiyonunu çalıştırır
-form.addEventListener('submit', function (event) {
-  event.preventDefault(); // Form gönderildiğinde sayfa yenilenmesin
+// Mesaj gösterme fonksiyonu
+function showMessage(element, message) {
+  element.textContent = message;
+  element.classList.remove('visible');
+  setTimeout(() => {
+    element.classList.add('visible');
+  }, 10);
+}
 
-  // Form verilerini alın ve boşlukları temizler
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
   const title = document.getElementById('create-post-title').value.trim();
   const body = document.getElementById('create-post-body').value.trim();
 
-  // Verileri doğrulayın: Eğer herhangi bir alan boşsa, hata mesajını gösterir
   if (!title || !body) {
-    errorMessage.textContent = 'Please fill in both the title and content fields.';
-    errorMessage.classList.add('show');  // Hata mesajını göster
-    successMessage.classList.remove('show');  // Başarı mesajını gizle
-    return; // İşlemi burada durdurun
+    showMessage(
+      errorMessage,
+      'Please fill in both the title and content fields!'
+    );
+    successMessage.classList.remove('visible');
+    return;
   } else {
-    // Eğer form verileri geçerliyse, hata mesajını varsa gizler
-    errorMessage.classList.remove('show');
+    errorMessage.classList.remove('visible');
   }
 
-  // Yeni post verisini oluşturur
   const newPost = {
     title: title,
-    body: body
+    body: body,
   };
 
-  // API isteği gönderin: POST isteği ile yeni post oluşturur
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newPost) // Veriyi JSON formatına çevirir
+    body: JSON.stringify(newPost),
   })
-    .then(response => response.json())
-    .then(createdPost => {
-      // Başarı mesajını göster
-      successMessage.textContent = 'Post Created Successfully!';
-      successMessage.classList.add('show');  // CSS ile animasyon başlat
-      console.log(createdPost);
+    .then((response) => response.json())
+    .then((createdPost) => {
+      showMessage(successMessage, 'Post Created Successfully!');
+      errorMessage.classList.remove('visible');
 
-      // Formu temizler
+      // Formu temizle
       document.getElementById('create-post-title').value = '';
       document.getElementById('create-post-body').value = '';
     })
-    .catch(error => {
-      errorMessage.textContent = 'Error creating post, please try again.';
-      errorMessage.classList.add('show');  // Hata mesajını göster
-      successMessage.classList.remove('show'); // Başarı mesajını gizle
+    .catch((error) => {
+      showMessage(errorMessage, 'Error creating post, please try again!');
+      successMessage.classList.remove('visible');
       console.log(error);
     });
 });

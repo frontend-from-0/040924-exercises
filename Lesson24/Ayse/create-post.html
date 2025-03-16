@@ -1,50 +1,49 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <title>Create New Post</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-  <title>Create New Post</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  <body>
+    <div class="container">
+      <h1>Create New Post</h1>
 
-<body>
-  <h1>Create New Post</h1>
+      <form id="createPostForm" novalidate>
+        <div>
+          <label for="create-post-title">Title</label>
+          <input type="text" id="create-post-title" name="title" required />
+        </div>
 
-  <form id="createPostForm">
-    <div>
-      <label for="create-post-title">Title</label>
-      <input type="text" id="create-post-title" name="title" required />
+        <div>
+          <label for="create-post-body">Body</label>
+          <textarea id="create-post-body" name="body" required></textarea>
+        </div>
+
+        <button type="submit" class="button button--success">
+          Create Post
+        </button>
+
+        <button type="button" id="goHomeButton" class="button button-homePage">
+          Go to Home Page
+        </button>
+      </form>
+
+      <div id="create-success-message" class="success-message message"></div>
+
+      <div id="create-error-message" class="error-message message"></div>
     </div>
 
-    <div>
-      <label for="create-post-body">Body</label>
-      <textarea id="create-post-body" name="body" required></textarea>
-    </div>
+    <script src="./create-post.js"></script>
 
-    <button type="submit">Create Post</button>
-  </form>
-
-  <!-- Başarı mesajı için bir div -->
-  <div id="create-success-message" class="success-message"></div>
-
-  <!--     <div id=" create-success-message" class="success-message" style="display: none;"></div> -->
-
-  <!-- Hata mesajı için bir div -->
-  <div id="create-error-message" class="error-message"></div>
-
-  <!-- Ana sayfaya dönüş butonu -->
-  <button id="goHomeButton" style="margin-top: 20px;">Go to Home Page</button>
-
-  <!-- create-post.js dosyasını dahil edin -->
-  <script src="./create-post.js"></script>
-
-  <!-- Ana sayfaya yönlendirme için script -->
-  <script>
-    document.getElementById('goHomeButton').addEventListener('click', function () {
-      window.location.href = 'index.html';
-    });
-  </script>
-</body>
-
+    <script>
+      document
+        .getElementById('goHomeButton')
+        .addEventListener('click', function () {
+          window.location.href = 'index.html';
+        });
+    </script>
+  </body>
 </html>
