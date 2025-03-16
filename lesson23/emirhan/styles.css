@@ -24,7 +24,7 @@ h1 {
 
 .button {
   padding: 10px 20px;
-  background-color: #4A90E2;
+  background-color: #4a90e2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -35,15 +35,15 @@ h1 {
 }
 
 .button:hover {
-  background-color: #357ABD;
+  background-color: #357abd;
 }
 
 .btn {
-  background-color: #4A90E2;
+  background-color: #4a90e2;
 }
 
 .btn:hover {
-  background-color: #357ABD;
+  background-color: #357abd;
 }
 
 img {
@@ -59,7 +59,7 @@ input {
   padding: 10px;
   font-size: 16px;
   box-sizing: border-box;
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
   color: #333;
   border: none;
   border-radius: 4px;
