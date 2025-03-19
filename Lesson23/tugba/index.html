@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <label for="image-count">Number of images:</label>
+    <select id="image-count">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="15">15</option>
+    </select>
+
+    <button id="fetch-button" class="button">Fetch Images</button>
+    <div id="image-container"></div>
+
+    <script src="./secrets.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
