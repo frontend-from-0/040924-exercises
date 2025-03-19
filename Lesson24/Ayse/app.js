@@ -48,5 +48,5 @@ function deletePost(postId) {
         throw new Error('Post could not be deleted');
       }
     })
-    .catch((error) => console.error('Failing: ', error));
+    .catch((error) => console.error(`Failed to delete post ${postId}: `, error));
 }

@@ -2,7 +2,6 @@ const form = document.getElementById('createPostForm');
 const errorMessage = document.getElementById('create-error-message');
 const successMessage = document.getElementById('create-success-message');
 
-// Mesaj gösterme fonksiyonu
 function showMessage(element, message) {
   element.textContent = message;
   element.classList.remove('visible');
@@ -43,7 +42,6 @@ form.addEventListener('submit', function (event) {
       showMessage(successMessage, 'Post Created Successfully!');
       errorMessage.classList.remove('visible');
 
-      // Formu temizle
       document.getElementById('create-post-title').value = '';
       document.getElementById('create-post-body').value = '';
     })

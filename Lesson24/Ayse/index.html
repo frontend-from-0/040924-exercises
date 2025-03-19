@@ -1,33 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Posts</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
 
-  <body>
-    <div class="container">
-      <h1>Posts</h1>
-      <button id="fetch-posts" class="button button--success">
-        Fetch all posts
-      </button>
+<head>
+  <title>Posts</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-      <button id="create-post-btn" class="button button--success">
-        Create New Post
-      </button>
-    </div>
+<body>
+  <div class="container">
+    <h1>Posts</h1>
+    <button id="fetch-posts" class="button button--success">
+      Fetch all posts
+    </button>
 
-    <ul id="posts-container"></ul>
+    <a href="create-post.html" id="create-post-btn" class="button button--success">
+      Create New Post
+    </a>
+  </div>
 
-    <script>
-      document
-        .getElementById('create-post-btn')
-        .addEventListener('click', function () {
-          window.location.href = 'create-post.html';
-        });
-    </script>
-    <script src="./app.js"></script>
-  </body>
+  <ul id="posts-container"></ul>
+
+  <script src="./app.js"></script>
+</body>
+
 </html>
