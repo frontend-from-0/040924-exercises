@@ -63,7 +63,20 @@ function createPost() {
   // If form data is valid, make an API request to create the post (POST request)
   // Once succesccful response is recieved, show a success message on the screen
   // Clear the form
-}
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}createPost();
 
 function updatePost() {}
 
@@ -71,4 +84,6 @@ function deletePost(postId) {
   fetch(`${URL}/${postId}`, {
     method: 'DELETE',
   });
+  
+  console.log(`Deleted Post ID: ${postId}`);
 }

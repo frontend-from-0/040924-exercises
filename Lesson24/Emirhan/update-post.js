@@ -1,7 +1,24 @@
 const params = new URLSearchParams(window.location.search);
 const postId = params.get('id');
+
 console.log(params, postId);
 
+fetch(`${URL}/${postId}`, {
+  method: 'PUT',
+  body: JSON.stringify({
+    id: postId,
+    title: postTitle,
+    body: pItem,
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+  console.log(`Update Post ID: ${postId}`);
 // TODO
 // Make API request to fetch the post with the given ID (Get request)
 // Prefill the form in update-post.html with the post title and body
