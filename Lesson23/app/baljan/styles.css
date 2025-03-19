@@ -40,7 +40,6 @@ label {
 .select,
 .button {
   width: 200px;
-  height: 40px;
   padding: 10px 20px;
   background-color: var(--primary-color);
   color: white;
