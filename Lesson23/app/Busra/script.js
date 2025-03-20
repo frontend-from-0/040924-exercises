@@ -18,12 +18,15 @@ async function searchImages() {
     searchResults.innerHTML = '';
   }
 
-  results.map((result) => {
+  results.forEach((result) => {
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('search-result');
+
     const image = document.createElement('img');
     image.src = result.urls.small;
     image.alt = result.alt_description;
+    image.dataset.id = result.id;
+    image.dataset.largeImage = result.urls.full;
 
     const imageLink = document.createElement('a');
     imageLink.href = result.links.html;
@@ -40,86 +43,116 @@ async function searchImages() {
     const likeButton = document.createElement('button');
     likeButton.textContent = '🤍';
     likeButton.classList.add('like-button');
+    likeButton.dataset.id = result.id;
 
-    const likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
-
-    if (likedImages.includes(result.id)) {
-      likeButton.classList.add('liked');
-    } else {
-      likeButton.classList.remove('liked');
-    }
-
-    function toggleLike(result, likeButton) {
-      let likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
-
-      if (likedImages.includes(result.id)) {
-        const index = likedImages.indexOf(result.id);
-        likedImages.splice(index, 1);
-        likeButton.textContent = '🤍';
-        likeButton.classList.remove('liked');
-      } else {
-        likedImages.push(result.id);
-        likeButton.classList.add('liked');
-        likeButton.textContent = '🖤';
-      }
-
-      localStorage.setItem('likedImages', JSON.stringify(likedImages));
-    }
-
-    likeButton.addEventListener('click', () => {
-      toggleLike(result, likeButton);
-    });
-
-    const likeButtonHtml = document.querySelectorAll('like-button');
-
-    // fullscreende olduğu gibi default olarak ekranda bulunan like butonuna tıklandığında togglelike fonksiyonunu çalıştırmak istiyorum fakat olmuyor consolda herhangi bir hata da almıyorum
-
-    likeButtonHtml.forEach((button) => {
-      button.addEventListener('click', toggleLike);
-    });
-
-    const fullScreenButtonHtml =
-      document.querySelectorAll('.fullscreen-button');
     const fullScreenButton = document.createElement('button');
     fullScreenButton.textContent = '⛶';
     fullScreenButton.classList.add('fullscreen-button');
 
-    const likeFulscreenButtonContainer = document.createElement('div');
-    likeFulscreenButtonContainer.classList.add(
-      'like-fullscreen-button-container'
-    );
-    likeFulscreenButtonContainer.appendChild(likeButton);
-    likeFulscreenButtonContainer.appendChild(fullScreenButton);
-
-    function toggleFullScreen() {
-      if (image.requestFullscreen) {
-        image.requestFullscreen();
-      } else if (image.webkitRequestFullscreen) {
-        image.webkitRequestFullscreen();
-      } else if (image.msRequestFullscreen) {
-        image.msRequestFullscreen();
-      }
-    }
-
-    fullScreenButton.addEventListener('click', toggleFullScreen);
-
-    // Ana sayfada görünen resimlerin tam ekran olmasını sağlamak için koydum fakat neden çalışmadığını anlayamadım.Consoleda herhangi bir hata da almıyorum
-
-    fullScreenButtonHtml.forEach((button) => {
-      button.addEventListener('click', toggleFullScreen);
-    });
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('like-fullscreen-button-container');
+    buttonContainer.appendChild(likeButton);
+    buttonContainer.appendChild(fullScreenButton);
 
     imageContainer.appendChild(image);
-    imageContainer.appendChild(likeFulscreenButtonContainer);
+    imageContainer.appendChild(buttonContainer);
     imageContainer.appendChild(imageLink);
     imageContainer.appendChild(photographer);
     searchResults.appendChild(imageContainer);
   });
 
+  attachEventListeners();
+
   page++;
   if (page > 1) {
     showMoreButton.style.display = 'block';
   }
+}
+
+function toggleLike(event) {
+  const button = event.target;
+  const imageId = button.dataset.id;
+  let likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
+
+  if (likedImages.includes(imageId)) {
+    likedImages = likedImages.filter((id) => id !== imageId);
+    button.textContent = '🤍';
+    button.classList.remove('liked');
+  } else {
+    likedImages.push(imageId);
+    button.textContent = '🖤';
+    button.classList.add('liked');
+  }
+
+  localStorage.setItem('likedImages', JSON.stringify(likedImages));
+}
+
+function toggleFullScreen(event) {
+  const imageElement = event.target.closest('.search-result').querySelector('img');
+  if (!imageElement) return;
+
+  const largeImageUrl = imageElement.dataset.largeImage || imageElement.src;
+
+
+  const overlay = document.createElement('div');
+  overlay.id = 'fullscreen-overlay';
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'; 
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = '999';
+
+ 
+  const fullScreenImage = document.createElement('img');
+  fullScreenImage.id = 'fullscreen-image';
+  fullScreenImage.src = largeImageUrl;
+  fullScreenImage.style.maxWidth = '90vw';
+  fullScreenImage.style.maxHeight = '90vh';
+  fullScreenImage.style.borderRadius = '10px';
+  fullScreenImage.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.5)';
+
+  
+  overlay.addEventListener('click', closeFullScreen);
+  fullScreenImage.addEventListener('click', (e) => e.stopPropagation());
+
+  overlay.appendChild(fullScreenImage);
+  document.body.appendChild(overlay);
+
+
+  document.addEventListener('keydown', handleEscape);
+}
+
+function closeFullScreen() {
+  const overlay = document.getElementById('fullscreen-overlay');
+  if (overlay) {
+    overlay.remove();
+    document.removeEventListener('keydown', handleEscape);
+  }
+}
+
+function handleEscape(event) {
+  if (event.key === 'Escape') {
+    closeFullScreen();
+  }
+}
+
+
+
+function attachEventListeners() {
+  document.querySelectorAll('.like-button').forEach((button) => {
+    button.removeEventListener('click', toggleLike);
+    button.addEventListener('click', toggleLike);
+  });
+
+  document.querySelectorAll('.fullscreen-button').forEach((button) => {
+    button.removeEventListener('click', toggleFullScreen);
+    button.addEventListener('click', toggleFullScreen);
+  });
 }
 
 formElement.addEventListener('submit', (e) => {
@@ -129,6 +162,6 @@ formElement.addEventListener('submit', (e) => {
   searchInput.value = '';
 });
 
-showMoreButton.addEventListener('click', () => {
-  searchImages();
-});
+showMoreButton.addEventListener('click', searchImages);
+
+document.addEventListener('DOMContentLoaded', attachEventListeners);

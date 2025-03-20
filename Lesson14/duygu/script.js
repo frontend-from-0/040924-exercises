@@ -1,5 +1,6 @@
 // Topic: JavaScript Basics
 // Focus: Variables, data types, arithmetic, strings, random numbers, template literals, increments
+
 // Instructions: Complete each exercise below by writing your code where indicated.
 
 // 1. Declare variables firstNumber=5 and secondNumber=3 and log their sum.
