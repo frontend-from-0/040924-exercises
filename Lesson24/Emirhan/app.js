@@ -27,6 +27,7 @@ function getPosts() {
       posts.forEach((post) => {
         const liItem = document.createElement('li');
         liItem.classList.add('post');
+        liItem.id = `post-${post.id}`;
         const postTitle = document.createElement('h2');
         postTitle.classList.add('post-title');
         postTitle.textContent = posts.title;
@@ -36,6 +37,7 @@ function getPosts() {
 
         const updatePostButton = document.createElement('a');
         updatePostButton.href = `./update-post.html?id=${post.id}`;
+        updatePostButton.id = 'update-post-btn';
         updatePostButton.textContent = 'Update';
         updatePostButton.classList.add('button', 'button--success');
 
@@ -54,36 +56,12 @@ function getPosts() {
     });
 }
 
-function getPostById() {}
-
-function createPost() {
-  // Get the form data
-  // Validate the form data
-  // If form data is not valid, show error messages on the screen (do NOT use alert!)
-  // If form data is valid, make an API request to create the post (POST request)
-  // Once succesccful response is recieved, show a success message on the screen
-  // Clear the form
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify({
-      title: 'foo',
-      body: 'bar',
-      userId: 1,
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-}createPost();
-
-function updatePost() {}
 
 function deletePost(postId) {
   fetch(`${URL}/${postId}`, {
     method: 'DELETE',
   });
-  
+  const deletedItem = document.getElementById(`post-${postId}`);
+  deletedItem.classList.add('none');
   console.log(`Deleted Post ID: ${postId}`);
 }

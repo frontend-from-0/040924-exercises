@@ -4,24 +4,33 @@
     <title>Posts</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
+
   <body>
     <div class="container">
       <h1>Posts</h1>
-
       <button id="fetch-posts" class="button button--success">
         Fetch all posts
       </button>
+      <a href="./create-post.html" class="button button--success"
+        >Create Post</a
+      >
+      <a href="./get-post.html" class="button button--success">Get Post</a>
 
-      <!--
+      <div class="posts-container"><ul id="posts-container"></ul></div>
+    </div>
+
+    <div class="alert alert--success">✅ Completed Successfully!</div>
+    <div class="alert alert--error">❌ An error occurred. Please try again..</div>
+
+    <script src="./app.js"></script>
+    <!-- <script src="./update-post.js"></script> -->
+  </body>
+</html>
+
+<!--
       Fetch all posts and display them on the page.
       For every post, add a button to update the post and delete a post.
       When the update button is clicked, redirect user to the update post page with a form to update the post.
       When the delete button is clicked, send request to delete the post.
       Add a button to create a new post. When the button is clicked, redirect user to the create post page with a form to create a new post.
-    --></div>
-    <ul id="posts-container"></ul>
-
-    <script src="./app.js"></script>
-    <script src="./update-post.js"></script>
-  </body>
-</html>
+    -->
