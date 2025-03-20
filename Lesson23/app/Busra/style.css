@@ -79,7 +79,7 @@ form {
   text-decoration: none;
   color: #333;
   display: block;
-  padding: 10px;
+  margin: 10px;
   text-transform: capitalize;
 }
 
@@ -148,8 +148,7 @@ form {
   opacity: 1;
 }
 
-.like-button,
-.fullscreen-button {
+.button {
   background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   border: none;
