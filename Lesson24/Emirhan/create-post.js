@@ -1,7 +1,6 @@
 document
   .getElementById('create-post-btn')
   .addEventListener('click', function createPost() {
-    // Get the form data
     // Validate the form data
     // If form data is not valid, show error messages on the screen (do NOT use alert!)
     // If form data is valid, make an API request to create the post (POST request)
@@ -21,7 +20,12 @@ document
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-      .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        
+      }
+      return response.json();
+    })
       .then((post) => {
         const liItem = document.createElement('li');
         liItem.classList.add('post');
@@ -32,12 +36,13 @@ document
         pItem.classList.add('post-body');
         pItem.textContent = post.body;
 
-        
-    
         liItem.appendChild(postTitle);
         liItem.appendChild(pItem);
-        document.getElementById('posts-container').appendChild(liItem);
-    
+        document.getElementById('posts-container').appendChild(liItem);   
         
+        title.value = '';
+        body.value = '';
+        userId.value = '';
       });
   });
+         

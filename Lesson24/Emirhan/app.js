@@ -51,7 +51,7 @@ function getPosts() {
         liItem.appendChild(updatePostButton);
         liItem.appendChild(deletePostButton);
         document.getElementById('posts-container').appendChild(liItem);
-        // Updated styles of the post so that it looks better
+        
       });
     });
 }

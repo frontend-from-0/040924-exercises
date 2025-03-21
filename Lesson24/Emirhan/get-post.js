@@ -18,6 +18,8 @@ document
         liItem.appendChild(postTitle);
         liItem.appendChild(pItem);
         document.getElementById('posts-container').appendChild(liItem);
+
+        document.getElementById('get-post-value').value = '';
       });
       
   });
