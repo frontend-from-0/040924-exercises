@@ -1,4 +1,3 @@
-import { ACCESS_KEY } from './secrets.js';
 const BASE_URL = 'https://api.unsplash.com';
 function fetchImages() {
   const imageCount = document.getElementById('image-count-select').value;
@@ -97,13 +96,19 @@ function addImagesToPage(src, alt, author, authorProfile) {
 }
 
 function showFavorites() {
-  document.getElementById('image-container').replaceChildren();
+  const imageContainer = document.getElementById('image-container');
+  const messageElement = document.getElementById('favorites-message');
+  imageContainer.replaceChildren();
+
   const favorites = getFavorites();
 
   if (favorites.length === 0) {
-    alert('No favorites found');
+    messageElement.textContent = 'No favorites found';
+    messageElement.classList.remove('hidden');
     return;
   }
+
+  messageElement.classList.add('hidden');
 
   favorites.forEach((imageData) => {
     addImagesToPage(
