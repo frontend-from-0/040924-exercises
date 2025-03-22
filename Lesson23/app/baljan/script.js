@@ -45,12 +45,14 @@ function addImagesToPage(src, alt, firstName, lastName) {
   document.getElementById('image-container').appendChild(imageItem);
 }
 
+const button = document.getElementById('fetch-button');
+button.disabled = true;
+
 document.querySelector('select').addEventListener('change', (event) => {
   selectedCount = parseInt(event.target.value);
   console.log('Selected number of images:', selectedCount);
+  button.disabled = false;
 });
-
-const button = document.getElementById('fetch-button');
 
 button.addEventListener('click', () => {
   fetchImages();

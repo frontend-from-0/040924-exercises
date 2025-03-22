@@ -20,6 +20,7 @@ body {
 
 h1 {
   color: var(--secondary-color);
+  font-size: var(--font-size-large);
 }
 
 .controls {
@@ -33,19 +34,19 @@ h1 {
 
 label {
   padding: 10px 20px;
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: bold;
 }
 
 .select,
 .button {
   width: 200px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--border-radius);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-small);
   cursor: pointer;
   transition: background-color var(--transition-duration) ease;
   text-align: left;
@@ -68,7 +69,7 @@ label {
 
 #image-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 20px;
   padding: 20px;
@@ -81,8 +82,8 @@ label {
 }
 
 .image-item img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -95,24 +96,30 @@ p {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 22px;
-  }
-
-  label {
     font-size: var(--font-size-medium);
   }
 
+  label {
+    font-size: var(--font-size-small);
+  }
+
+  #image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   img {
-    width: 150px;
-    height: 150px;
+    width: 80%;
+    height: auto;
   }
 
   .select,
   .button {
     width: 50%;
-    height: 40px;
     margin-bottom: 10px;
-    padding: 12px;
+    padding: 10px;
     font-size: var(--font-size-small);
   }
 
