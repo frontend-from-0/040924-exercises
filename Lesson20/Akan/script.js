@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  todos.forEach((todo) => addTodoToDOM(todo));
+  todos.forEach((todo) => addTodoToDOM(todo, todos));
 
   document
     .getElementById('todoForm')
@@ -30,7 +30,7 @@ function handleTodoFormSubmit(event) {
   }
 }
 
-function addTodoToDOM(todo) {
+function addTodoToDOM(todo, todos) {
   const listItemElement = document.createElement('li');
   listItemElement.classList.add('todo-list-item');
 
