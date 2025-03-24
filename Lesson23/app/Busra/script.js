@@ -3,15 +3,20 @@ const searchInput = document.getElementById('search-input');
 const searchResults = document.querySelector('.search-results');
 const showMoreButton = document.getElementById('show-more-button');
 
+
+
 let inputData = '';
 let page = 1;
 
 async function searchImages() {
-  inputData = searchInput.value;
+  
+  inputData = searchInput.value.trim();
+ 
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
 
   const response = await fetch(url);
   const data = await response.json();
+
 
   const results = data.results;
   if (page === 1) {
@@ -42,12 +47,13 @@ async function searchImages() {
 
     const likeButton = document.createElement('button');
     likeButton.textContent = '🤍';
-    likeButton.classList.add('like-button');
+    likeButton.classList.add('like-button', 'button');
+
     likeButton.dataset.id = result.id;
 
     const fullScreenButton = document.createElement('button');
     fullScreenButton.textContent = '⛶';
-    fullScreenButton.classList.add('fullscreen-button');
+    fullScreenButton.classList.add('fullscreen-button','button');
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('like-fullscreen-button-container');
@@ -67,6 +73,7 @@ async function searchImages() {
   if (page > 1) {
     showMoreButton.style.display = 'block';
   }
+ 
 }
 
 function toggleLike(event) {
@@ -155,11 +162,14 @@ function attachEventListeners() {
   });
 }
 
+
+
 formElement.addEventListener('submit', (e) => {
   e.preventDefault();
   page = 1;
+  inputData = searchInput.value;
   searchImages();
-  searchInput.value = '';
+  
 });
 
 showMoreButton.addEventListener('click', searchImages);
