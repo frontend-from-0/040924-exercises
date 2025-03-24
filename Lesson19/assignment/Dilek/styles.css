@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 320px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-card h2,
+.profile-card p,
+.profile-card h3 {
+  margin: 10px 0;
+}
+
+.social-media,
+.skills {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.social-media ul,
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media li,
+.skills li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.social-link {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #c0cce6;
+}
+
+.theme-blue {
+  background-color: #add8e6;
+}
