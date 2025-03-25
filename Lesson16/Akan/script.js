@@ -313,7 +313,7 @@ findWordsWithLetter(words, 'a');
 
 const textArrayEx24 = [1, 2, 3];
 
-function pushPopExample(textArrayEx24, 4) {
+function pushPopExample(array, itemToPush) {
   arr.push(itemToPush);
   console.log(arr);
   const popped = arr.pop();
