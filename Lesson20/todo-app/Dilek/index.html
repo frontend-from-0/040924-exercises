@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Todo app</title>
+  </head>
+  <body>
+    <main>
+      <section class="todo-container">
+        <h1>Todo List</h1>
+        <form id="todoForm">
+          <label for="todoInput" class="visually-hidden">New Task</label>
+          <input
+            type="text"
+            id="todoInput"
+            placeholder="New Task"
+            aria-label="task to do"
+          />
+
+          <select id="prioritySelect" aria-label="Select priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+
+          <button type="submit">Add</button>
+          <button type="button" id="clearListBtn">Clear List</button>
+        </form>
+
+        <ul id="list">
+          <!-- <li class="todo-list-item">
+          <span class="todo-text">Do homework</span>
+          <button>X</button>
+        </li> -->
+        </ul>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

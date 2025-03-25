@@ -7,9 +7,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
+  "author": "Code2Career AB",
+  "license": "MIT",
   "devDependencies": {
     "prettier": "3.5.0"
-  },
-  "author": "Code2Career AB",
-  "license": "MIT"
+  }
 }
