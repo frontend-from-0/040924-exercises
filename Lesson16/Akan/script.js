@@ -4,7 +4,6 @@
    to log each character in the string on a separate line.
 */
 
-
 function printCharacters(str) {
   for (const char of str) {
     console.log(char);
@@ -42,13 +41,15 @@ console.log(sumObjectValues({ a: 10, b: 20, c: 5 }));
     - Example: { name: "Alice", age: 25 } -> logs "name", then "age"
 */
 const testObject = {
-  name: 'Mila', age: 5 };
+  name: 'Mila',
+  age: 5,
+};
 
 function printObjectKeys(obj) {
-      for (const key in obj) {
-        console.log(key + ':' + obj[key]);
-      }
-    }
+  for (const key in obj) {
+    console.log(key + ':' + obj[key]);
+  }
+}
 printObjectKeys(testObject);
 /*
 11. Sum Array Using do-while Loop
@@ -59,14 +60,14 @@ printObjectKeys(testObject);
 
 const numbers = [1, 2, 3, 4, 5];
 
-  function sumWithDoWhile(numbers) {
-    let sum = 0;
-let i = 0;
-do {
-  sum += numbers[i];
-  i++;
-} while (i < numbers.length);
-return sum;
+function sumWithDoWhile(numbers) {
+  let sum = 0;
+  let i = 0;
+  do {
+    sum += numbers[i];
+    i++;
+  } while (i < numbers.length);
+  return sum;
 }
 sumWithDoWhile([1, 2, 3, 4, 5]);
 
@@ -266,7 +267,10 @@ averageArray(numbers);
     - Log the flattened array.
 */
 
-const twoDArray = [[1, 2], [3, 4]];
+const twoDArray = [
+  [1, 2],
+  [3, 4],
+];
 
 function flattenArray(twoDArray) {
   const flatArray = [];
