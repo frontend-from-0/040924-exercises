@@ -130,8 +130,19 @@ const usersExercise8 = [
       price: 9.99,
     },
   ];
+ 
+  const titlesAndAuthors = booksExercise9.map((book) => `${booksExercise9.title} written by ${booksExercise9.author}`);
+
+  console.log(titlesAndAuthors);
+
+
   
   // Exercise 10:
   // Given an array of prices, add a currency symbol to each price using .map().
   const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
+
+
+  const priceWithEuro = pricesExercise10.map((item) => `${item} euro`);
+  console.log(priceWithEuro);
+
   

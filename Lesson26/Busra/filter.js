@@ -22,6 +22,9 @@ const sentencesExercise5 = [
     "The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.",
     "The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.",
   ];
+
+  const filteredSentences = sentencesExercise5.filter(sentence => sentence.split(' ').length <= 10);
+  console.log(filteredSentences);
   
   // Exercise 6:
   // Given an array of products, filter out the products that are out of stock (where the quantity is 0).
@@ -87,10 +90,16 @@ const sentencesExercise5 = [
       quantity: 14,
     },
   ];
+
+  const noExistendProducts = productsExercise6.filter((product) => product.quantity === 0);
+  console.log(noExistendProducts);
   
   // Exercise 7:
   // Given an array of numbers, filter out the numbers that are divisible by 3.
   const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const divisibleBy3 = numbersExercise7.filter((number)=> number % 3 ===0);
+  console.log(divisibleBy3);
   
   // Exercise 8:
   // Given an array of strings, filter out the strings that have more than 5 characters.
@@ -106,6 +115,10 @@ const sentencesExercise5 = [
     "island",
     "jungle",
   ];
+
+  const moreThan5Characters = wordsExercise8.filter((word) => word.length > 5);
+
+  console.log(moreThan5Characters);
   
   // Exercise 9:
   // Given an array of objects representing students, filter out the students who have a grade lower than C.
@@ -171,6 +184,9 @@ const sentencesExercise5 = [
       grade: "B-",
     },
   ];
+
+  const lowerThanC = studentsExercise9.filter((student) => student.grade >= "C");
+  console.log(lowerThanC);
   
   // Exercise 10:
   // Given an array of user objects, filter out the users who have a name starting with the letter "J".
@@ -236,4 +252,7 @@ const sentencesExercise5 = [
       email: "sophia@example.com",
     },
   ];
+
+  const nameStartWithJ = usersExercise10.filter((user) => user.name.startsWith("J"));
+  console.log(nameStartWithJ);
   
