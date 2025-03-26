@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple image gallery to display fetched images."
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <div class="controls">
+      <label for="image-count"
+        >Select a number, and we'll fetch awesome images for you!</label
+      >
+      <select id="image-number" class="select">
+        <option value="" disabled selected>Select</option>
+        <option value="1">1 Image</option>
+        <option value="5">5 Images</option>
+        <option value="10">10 Images</option>
+      </select>
+      <button id="fetch-button" class="button">Fetch Images</button>
+    </div>
+    <div id="image-container"></div>
+
+    <script src="./secrets.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
