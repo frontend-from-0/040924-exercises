@@ -20,6 +20,10 @@ body {
 
 h1 {
   color: var(--secondary-color);
+<<<<<<< HEAD
+=======
+  font-size: var(--font-size-large);
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
 }
 
 .controls {
@@ -33,20 +37,32 @@ h1 {
 
 label {
   padding: 10px 20px;
+<<<<<<< HEAD
   font-size: var(--font-size-large);
+=======
+  font-size: var(--font-size-medium);
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   font-weight: bold;
 }
 
 .select,
 .button {
   width: 200px;
+<<<<<<< HEAD
   height: 40px;
   padding: 10px 20px;
+=======
+  padding: 5px 10px;
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--border-radius);
+<<<<<<< HEAD
   font-size: var(--font-size-large);
+=======
+  font-size: var(--font-size-small);
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   cursor: pointer;
   transition: background-color var(--transition-duration) ease;
   text-align: left;
@@ -69,7 +85,11 @@ label {
 
 #image-container {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+=======
+  grid-template-columns: repeat(3, 1fr);
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   gap: 20px;
   margin-top: 20px;
   padding: 20px;
@@ -82,8 +102,13 @@ label {
 }
 
 .image-item img {
+<<<<<<< HEAD
   width: 200px;
   height: 200px;
+=======
+  width: 100%;
+  height: 100%;
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   object-fit: cover;
   border-radius: 5px;
 }
@@ -96,6 +121,7 @@ p {
 
 @media (max-width: 600px) {
   h1 {
+<<<<<<< HEAD
     font-size: 22px;
   }
 
@@ -106,14 +132,38 @@ p {
   img {
     width: 150px;
     height: 150px;
+=======
+    font-size: var(--font-size-medium);
+  }
+
+  label {
+    font-size: var(--font-size-small);
+  }
+
+  #image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
   }
 
   .select,
   .button {
     width: 50%;
+<<<<<<< HEAD
     height: 40px;
     margin-bottom: 10px;
     padding: 12px;
+=======
+    margin-bottom: 10px;
+    padding: 10px;
+>>>>>>> 36685361bc75132d456b3bb89320e0140723543c
     font-size: var(--font-size-small);
   }
 
