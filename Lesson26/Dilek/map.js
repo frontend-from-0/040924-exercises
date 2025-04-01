@@ -137,7 +137,7 @@ const booksTitlesAndAuthors = booksExercise9.map(
 console.log('booksTitlesAndAuthors', booksTitlesAndAuthors);
 
 // // Exercise 10:
-// // Given an array of prices, add a currency symbol to each price using .map() .
+// // Given an array of prices, add a currency symbol to each price using .map().
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
 
 const pricesWithCurrency = pricesExercise10.map((price) => `$${price}`);
