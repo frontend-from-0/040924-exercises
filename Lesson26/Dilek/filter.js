@@ -211,7 +211,7 @@ const studentsWithGradeLowerThanC = studentsExercise9.filter(
 console.log('Students with grade lower than C:', studentsWithGradeLowerThanC);
 
 // // Exercise 10:
-// // Given an array of user objects, filter out the users who have a name starting with the letter "J".
+// // Given an array of user objects, filter out the users who have a name starting with the letter "J" .
 const usersExercise10 = [
   {
     id: 1,
