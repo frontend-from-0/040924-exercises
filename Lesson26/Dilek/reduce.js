@@ -21,7 +21,7 @@ const maxValue = numbersEx2.reduce(
 console.log(maxValue);
 
 // Exercise 4:
-// Calculate the average of all numbers in the given array.
+// Calculate the average of all numbers in the given array .
 const numbersEx4 = [10, 20, 30, 40, 50];
 
 const average =

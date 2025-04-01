@@ -7,7 +7,7 @@ const numbersFromHighToLow = scores.sort((a, b) => b - a);
 console.log('numbersFromHighToLow', numbersFromHighToLow);
 
 // Exercise 5: Complex Sorting
-// Sort an array of strings by their length.
+// Sort an array of strings by their length .
 // Expected output: ["pen", "book", "paper", "pencil", "notebook"]
 
 const words = ['notebook', 'pen', 'paper', 'book', 'pencil'];
