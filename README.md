@@ -4,7 +4,8 @@
 
 Before you can work with this project, follow these steps:
 
-### 1. Install the necessary tools  
+### 1. Install the necessary tools
+
 Open your terminal, go to the main folder of the project (called the **root folder**), and run this command:
 
 ```
