@@ -84,7 +84,8 @@ class Order {
     console.log('Order Summary:');
     this.items.forEach((item) => {
       console.log(
-        `${item.quantity}x ${item.menuItem.name} - $${item.menuItem.price * item.quantity
+        `${item.quantity}x ${item.menuItem.name} - $${
+          item.menuItem.price * item.quantity
         }`
       );
     });
