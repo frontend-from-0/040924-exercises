@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+</head>
+
+<body>
+  <h1>Image Gallery</h1>
+
+
+  <label for="image-count" class="sr-only">Number of Images</label>
+  <select id="image-count" class="select">
+    <option value="5">5 Images</option>
+    <option value="10">10 Images</option>
+    <option value="15">15 Images</option>
+  </select>
+
+
+  <button id="fetch-button" class="button" aria-label="Fetch Images">Fetch Images</button>
+  <div id="image-container" aria-live="polite"></div>
+
+
+  <script src="./secrets.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
