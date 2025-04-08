@@ -8,13 +8,8 @@
     "format:check": "prettier --check ."
   },
   "devDependencies": {
-
     "prettier": "^3.5.3"
   },
   "author": "Code2Career AB",
   "license": "MIT"
-
-
-  }
-
 }
