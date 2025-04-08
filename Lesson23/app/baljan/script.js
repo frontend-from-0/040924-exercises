@@ -45,15 +45,6 @@ function addImagesToPage(src, alt, firstName, lastName) {
   document.getElementById('image-container').appendChild(imageItem);
 }
 
-<<<<<<< HEAD
-document.querySelector('select').addEventListener('change', (event) => {
-  selectedCount = parseInt(event.target.value);
-  console.log('Selected number of images:', selectedCount);
-});
-
-const button = document.getElementById('fetch-button');
-
-=======
 const button = document.getElementById('fetch-button');
 button.disabled = true;
 
@@ -63,7 +54,6 @@ document.querySelector('select').addEventListener('change', (event) => {
   button.disabled = false;
 });
 
->>>>>>> a2d91e5c1292bf7a6db2bd23239eb059265ed904
 button.addEventListener('click', () => {
   fetchImages();
 });
