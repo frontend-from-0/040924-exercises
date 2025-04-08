@@ -91,8 +91,8 @@ const sentencesExercise5 = [
     },
   ];
 
-  const noExistendProducts = productsExercise6.filter((product) => product.quantity === 0);
-  console.log(noExistendProducts);
+  const outOfStockProducts = productsExercise6.filter((product) => product.quantity === 0);
+  console.log(outOfStockProducts);
   
   // Exercise 7:
   // Given an array of numbers, filter out the numbers that are divisible by 3.
@@ -185,8 +185,10 @@ const sentencesExercise5 = [
     },
   ];
 
-  const lowerThanC = studentsExercise9.filter((student) => student.grade >= "C");
-  console.log(lowerThanC);
+  const passingGrades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C'];
+
+const filteredStudents = studentsExercise9.filter((student) => passingGrades.includes(student.grade));
+console.log(filteredStudents);
   
   // Exercise 10:
   // Given an array of user objects, filter out the users who have a name starting with the letter "J".

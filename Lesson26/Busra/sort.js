@@ -3,7 +3,7 @@
 // Expected output: [100, 40, 25, 10, 5, 1]
 const scores = [40, 100, 1, 5, 25, 10];
 
-scores.sort((a,b) => b-a);
+const sortedScores = [...scores].sort((a, b) => b - a);
 console.log(scores);
 
 

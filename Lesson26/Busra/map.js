@@ -131,7 +131,7 @@ const usersExercise8 = [
     },
   ];
  
-  const titlesAndAuthors = booksExercise9.map((book) => `${booksExercise9.title} written by ${booksExercise9.author}`);
+  const titlesAndAuthors = booksExercise9.map((book) => `${book.title} written by ${book.author}`);
 
   console.log(titlesAndAuthors);
 
