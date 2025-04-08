@@ -15,65 +15,69 @@ class ShoppingCart {
       console.log('ShoppingCart Items: ');
       for (const item of this._items) {
         console.log(
-          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`,
+          `${item.name}, price: ${item.price.value} ${item.price.currency}, quantity: ${item.quantity}`
         );
       }
     } else {
       console.log('Shopping Cart is empty');
     }
   }
-  
-// ADD ITEM
-addItem(name, priceValue, quantity, currency= 'USD') {
-  const price = {value: priceValue, currency};
-  const existingItem = this._items.find((item) => item.name === name);
+
+  // ADD ITEM
+  addItem(name, priceValue, quantity, currency = 'USD') {
+    const price = { value: priceValue, currency };
+    const existingItem = this._items.find((item) => item.name === name);
     if (existingItem) {
       existingItem.quantity += quantity;
-      console.log(`Updated quantity for '${name}'. New quantity: ${existingItem.quantity}`);
+      console.log(
+        `Updated quantity for '${name}'. New quantity: ${existingItem.quantity}`
+      );
     } else {
-      const newItem = {name, price, quantity};
+      const newItem = { name, price, quantity };
       this._items.push(newItem);
-      console.log("New item added: ", newItem);
+      console.log('New item added: ', newItem);
     }
   }
 
-// REMOVE ITEM
-removeItem(name) {
-  const updatedItems = [];
-  for (const item of this._items) {
-    if (item.name !== name) {
-      updatedItems.push(item);
+  // REMOVE ITEM
+  removeItem(name) {
+    const updatedItems = [];
+    for (const item of this._items) {
+      if (item.name !== name) {
+        updatedItems.push(item);
+      }
+    }
+    this._items = updatedItems;
+  }
+
+  // GET TOTAL
+  getTotal() {
+    let total = 0;
+    for (const item of this._items) {
+      total += item.price.value * item.quantity;
+    }
+    return total;
+  }
+
+  // APPLY DISCOUNT
+  applyDiscount(code) {
+    const discounts = {
+      SAVE10: 0.1,
+      SAVE20: 0.2,
+    };
+
+    if (discounts[code]) {
+      const discountAmount = this.getTotal() * discounts[code];
+      const newTotal = this.getTotal() - discountAmount;
+      this.total -= discountAmount;
+      console.log(`Discount applied: ${discountAmount.toFixed(2) + ' USD'}`);
+      console.log(
+        `Price after discount: ${this.getTotal().toFixed(2) + ' USD'}`
+      );
+    } else {
+      console.log('Invalid discount code.');
     }
   }
-  this._items = updatedItems;
-}
-
-// GET TOTAL
-getTotal() {
-  let total = 0; 
-  for (const item of this._items) { 
-    total += item.price.value * item.quantity; 
-  }
-  return total; 
-}
-
-// APPLY DISCOUNT
-applyDiscount(code) {
-  const discounts = {
-    SAVE10: 0.1,
-    SAVE20: 0.2
-  };
-
-  if (discounts[code]) {
-    const discountAmount = this.getTotal() * discounts[code];
-    const newTotal = this.getTotal() - discountAmount;
-    this.total -= discountAmount;
-    console.log(`Discount applied: ${discountAmount.toFixed(2) + ' USD'}`);
-    console.log(`Price after discount: ${this.getTotal().toFixed(2) + ' USD'}`);
-  } else {
-    console.log('Invalid discount code.');
-  } 
-}   
 }
 
 // TEST
@@ -96,7 +100,6 @@ console.log('\nTotal Price: $' + cart.getTotal().toFixed(2));
 console.log('\n- Discount -');
 cart.applyDiscount('SAVE10');
 cart.applyDiscount('SAVE30');
-
 
 /*
 -----------------------------------------------------------

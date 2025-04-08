@@ -26,14 +26,14 @@ class Restaurant {
 
   viewMenu() {
     if (this.menu.length === 0) {
-      console.log("The menu is empty.");
+      console.log('The menu is empty.');
       return;
     }
 
-    console.log("Menu Items:");
+    console.log('Menu Items:');
     for (const menuItem of this.menu) {
       console.log(
-        `${menuItem.name}, Price: $${menuItem.price}, Category: ${menuItem.category}`,
+        `${menuItem.name}, Price: $${menuItem.price}, Category: ${menuItem.category}`
       );
     }
   }
@@ -43,7 +43,6 @@ class Restaurant {
     order.viewOrder();
     this.orders.push(order);
   }
-
 
   listOrders() {
     if (this.orders.length === 0) {
@@ -70,7 +69,7 @@ class Restaurant {
   applyDiscount(discountCode) {
     const discounts = {
       SAVE10: 0.1,
-      SAVE20: 0.2
+      SAVE20: 0.2,
     };
     if (discounts[discountCode]) {
       const discountRate = discounts[discountCode];
@@ -84,7 +83,6 @@ class Restaurant {
       return;
     }
   }
-
 }
 
 class Order {
@@ -94,7 +92,9 @@ class Order {
   }
 
   addItem(menuItemName, quantity) {
-    const menuItem = this.restaurant.menu.find(item => item.name === menuItemName);
+    const menuItem = this.restaurant.menu.find(
+      (item) => item.name === menuItemName
+    );
     if (!menuItem) {
       console.log('Item not found in the menu.');
       return;
@@ -102,7 +102,7 @@ class Order {
     const item = {
       name: menuItem.name,
       price: menuItem.price,
-      quantity: quantity
+      quantity: quantity,
     };
     this.items.push(item);
   }
@@ -117,20 +117,22 @@ class Order {
 
   viewOrder() {
     if (this.items.length === 0) {
-      console.log("The order is empty.");
+      console.log('The order is empty.');
       return;
     }
-    console.log("Order Items:");
+    console.log('Order Items:');
     for (const item of this.items) {
-      console.log(`${item.name}, Quantity: ${item.quantity}, Price: $${item.price}`);
+      console.log(
+        `${item.name}, Quantity: ${item.quantity}, Price: $${item.price}`
+      );
     }
     console.log(`Total: $${this.calculateTotal()}`);
   }
 }
 
-const myRestaurant = new Restaurant("Happy Restaurant", "Sofia, Bulgaria");
-myRestaurant.addMenuItem("Spaghetti", 12.99, "Main Course");
-myRestaurant.addMenuItem("Pizza", 9.99, "Main Course");
+const myRestaurant = new Restaurant('Happy Restaurant', 'Sofia, Bulgaria');
+myRestaurant.addMenuItem('Spaghetti', 12.99, 'Main Course');
+myRestaurant.addMenuItem('Pizza', 9.99, 'Main Course');
 myRestaurant.addMenuItem('Burger', 8.99, 'Main Course');
 myRestaurant.viewMenu();
 
@@ -157,8 +159,6 @@ myRestaurant.applyDiscount('SAVE20');
 
 console.log('\n--- Apply discount-30 ---');
 myRestaurant.applyDiscount('SAVE30');
-
-
 
 /*
 In this project, you'll create a simple restaurant 
