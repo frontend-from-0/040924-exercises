@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="carousel">
+      <div class="carousel-container">
+        <img
+          class="active"
+          src="https://images.unsplash.com/photo-1605127943669-7733ab15d636?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Picture of carousel toy in amusement park."
+        />
+        <img
+          src="https://images.unsplash.com/photo-1619537901863-9807597cb0b2?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="A group of friends sitting by a bonfire on the beach, playing guitar."
+        />
+        <img
+          src="https://images.unsplash.com/photo-1562848780-eb15ac8281df?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Street decorations with a disco ball hanging"
+        />
+      </div>
+
+      <div class="carousel-navigation">
+        <button class="carousel-btn prev-btn" id="prev-btn">Prev</button>
+        <button class="carousel-btn next-btn" id="next-btn">Next</button>
+        <button class="carousel-btn toggle-btn" id="toggle-btn">Stop</button>
+      </div>
+
+      <div class="carousel-indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
