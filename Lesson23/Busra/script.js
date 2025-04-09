@@ -88,11 +88,12 @@ function toggleLike(event) {
 }
 
 function toggleFullScreen(event) {
-  const imageElement = event.target.closest('.search-result').querySelector('img');
+  const imageElement = event.target
+    .closest('.search-result')
+    .querySelector('img');
   if (!imageElement) return;
 
   const largeImageUrl = imageElement.dataset.largeImage || imageElement.src;
-
 
   const overlay = document.createElement('div');
   overlay.id = 'fullscreen-overlay';
@@ -101,12 +102,11 @@ function toggleFullScreen(event) {
   overlay.style.left = '0';
   overlay.style.width = '100vw';
   overlay.style.height = '100vh';
-  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'; 
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
   overlay.style.display = 'flex';
   overlay.style.alignItems = 'center';
   overlay.style.justifyContent = 'center';
   overlay.style.zIndex = '999';
-
 
   const fullScreenImage = document.createElement('img');
   fullScreenImage.id = 'fullscreen-image';
@@ -116,13 +116,11 @@ function toggleFullScreen(event) {
   fullScreenImage.style.borderRadius = '10px';
   fullScreenImage.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.5)';
 
-
   overlay.addEventListener('click', closeFullScreen);
   fullScreenImage.addEventListener('click', (e) => e.stopPropagation());
 
   overlay.appendChild(fullScreenImage);
   document.body.appendChild(overlay);
-
 
   document.addEventListener('keydown', handleEscape);
 }
@@ -140,8 +138,6 @@ function handleEscape(event) {
     closeFullScreen();
   }
 }
-
-
 
 function attachEventListeners() {
   document.querySelectorAll('.like-button').forEach((button) => {
