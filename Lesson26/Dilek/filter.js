@@ -121,7 +121,7 @@ const wordsExercise8 = [
 ];
 
 const wordsWithMoreThan5Characters = wordsExercise8.filter(
-  (words) => words.length > 5
+  (word) => word.length > 5
 );
 console.log('Words with more than 5 characters:', wordsWithMoreThan5Characters);
 
@@ -209,6 +209,7 @@ const studentsWithGradeLowerThanC = studentsExercise9.filter(
   (student) => grades.indexOf(student.grade) > grades.indexOf('C')
 );
 console.log('Students with grade lower than C:', studentsWithGradeLowerThanC);
+// Anna'nın yukarıdaki çözümle ilgili yorumu: This solution works 👍 alternatively, you could only add passing grades in the array and then check if the current grade is included in that array. Or vice versa. 🙂
 
 // // Exercise 10:
 // // Given an array of user objects, filter out the users who have a name starting with the letter "J" .
