@@ -14,7 +14,11 @@ function fetchImages() {
     .then((data) => {
       document.getElementById('image-container').innerHTML = ''; // Clear old images
       data.forEach((image) => {
-        addImageToPage(image.urls.small, image.alt_description, image.user.name);
+        addImageToPage(
+          image.urls.small,
+          image.alt_description,
+          image.user.name
+        );
       });
     })
     .catch((error) => {
@@ -44,7 +48,6 @@ function addImageToPage(src, alt, author) {
   container.appendChild(caption);
   document.getElementById('image-container').appendChild(container);
 }
-
 
 const button = document.getElementById('fetch-button');
 button.addEventListener('click', () => fetchImages());
