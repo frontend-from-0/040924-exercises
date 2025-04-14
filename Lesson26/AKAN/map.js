@@ -63,8 +63,7 @@ const usersExercise8 = [
   },
 ];
 
-
-const emailAddresses = usersExercise8.map(user => user.email);
+const emailAddresses = usersExercise8.map((user) => user.email);
 console.log(emailAddresses);
 
 // Exercise 9:
@@ -132,7 +131,7 @@ const booksExercise9 = [
   },
 ];
 
-const bookTitlesAndAuthors = booksExercise9.map(book => ({
+const bookTitlesAndAuthors = booksExercise9.map((book) => ({
   title: book.title,
   author: book.author,
 }));
@@ -143,5 +142,7 @@ console.log(bookTitlesAndAuthors);
 // Given an array of prices, add a currency symbol to each price using .map().
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
 
-const pricesWithCurrency = pricesExercise10.map(price => `$${(price / 100).toFixed(2)}`);
+const pricesWithCurrency = pricesExercise10.map(
+  (price) => `$${(price / 100).toFixed(2)}`
+);
 console.log(pricesWithCurrency);

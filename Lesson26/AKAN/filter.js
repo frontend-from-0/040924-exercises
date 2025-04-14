@@ -23,7 +23,9 @@ const sentencesExercise5 = [
   'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
 
-const filteredSentencesExercise5 = sentencesExercise5.filter(sentence => sentence.split(' ').length <= 10);
+const filteredSentencesExercise5 = sentencesExercise5.filter(
+  (sentence) => sentence.split(' ').length <= 10
+);
 console.log(filteredSentencesExercise5);
 
 // Exercise 6:
@@ -91,13 +93,17 @@ const productsExercise6 = [
   },
 ];
 
-const inStockProducts = productsExercise6.filter(product => product.quantity > 0);
+const inStockProducts = productsExercise6.filter(
+  (product) => product.quantity > 0
+);
 console.log(inStockProducts);
 
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const filteredNumbersExercise7 = numbersExercise7.filter(number => number % 3 !== 0);
+const filteredNumbersExercise7 = numbersExercise7.filter(
+  (number) => number % 3 !== 0
+);
 console.log(filteredNumbersExercise7);
 
 // Exercise 8:
@@ -114,7 +120,9 @@ const wordsExercise8 = [
   'island',
   'jungle',
 ];
-const filteredWordsExercise8 = wordsExercise8.filter(word => word.length <= 5);
+const filteredWordsExercise8 = wordsExercise8.filter(
+  (word) => word.length <= 5
+);
 console.log(filteredWordsExercise8);
 
 // Exercise 9:
@@ -183,10 +191,10 @@ const studentsExercise9 = [
 ];
 
 const passingGrades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C'];
-const filteredStudentsExercise9 = studentsExercise9.filter(student => passingGrades.includes(student.grade));
+const filteredStudentsExercise9 = studentsExercise9.filter((student) =>
+  passingGrades.includes(student.grade)
+);
 console.log(filteredStudentsExercise9);
-
-
 
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
@@ -253,5 +261,7 @@ const usersExercise10 = [
   },
 ];
 
-const filteredUsersExercise10 = usersExercise10.filter(user => !user.name.startsWith('J'));
+const filteredUsersExercise10 = usersExercise10.filter(
+  (user) => !user.name.startsWith('J')
+);
 console.log(filteredUsersExercise10);

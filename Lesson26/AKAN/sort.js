@@ -10,5 +10,4 @@ console.log(scores);
 
 const words = ['notebook', 'pen', 'paper', 'book', 'pencil'];
 const sortedWords = words.sort((a, b) => a.length - b.length);
-console.log(sortedWords); 
-
+console.log(sortedWords);
