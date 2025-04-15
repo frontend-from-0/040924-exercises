@@ -55,7 +55,7 @@ console.log(userName);
 
 // 11. Rewrite the code using the nullish coalescing operator to assign a default value to storedData only if userInput is null or undefined.
 let userInput = 0;
-let storedData = userInput || 'Default Value';
+let storedData = userInput ?? 'Default Value';
 
 console.log(storedData);
 
