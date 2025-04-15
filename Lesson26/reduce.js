@@ -13,28 +13,10 @@
 // Calculate the sum of all numbers in the given array.
 const numbersEx1 = [1, 2, 3, 4, 5];
 
-const numbersSum = numbersEx1.reduce((acc, current) => {
-  return acc + current;
-});
-console.log(numbersSum);
-
 // Exercise 2:
 // Find the maximum value in the given array. (Hint: Use -Infinity to compare values to)
 const numbersEx2 = [8, 3, 11, 6, 4];
 
-const maxValue = numbersEx2.reduce((total, num) => {
-  if (num > total) {
-    return num;
-  } else {
-    return total;
-  }
-}, -Infinity);
-console.log(maxValue);
 // Exercise 4:
 // Calculate the average of all numbers in the given array.
 const numbersEx4 = [10, 20, 30, 40, 50];
-
-const numbersAverage = numbersEx4.reduce((acc, current) => {
-  return acc + current;
-});
-console.log(numbersAverage / numbersEx4.length);
