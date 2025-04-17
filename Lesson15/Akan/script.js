@@ -330,7 +330,7 @@ function containsNumber(str) {
 function padString(str, maxLength) {
   console.log(str.padEnd(maxLength, '*'));
 }
-
+padString('Define a function', 30);
 /*
 27. If-Else: Voting Eligibility
    - Define a function `canVote(age)` that logs:
