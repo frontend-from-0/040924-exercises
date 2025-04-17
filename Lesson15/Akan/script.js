@@ -148,7 +148,7 @@ startsWithA('Apple');
 function sliceLastN(text, n) {
   console.log(text.slice(-n));
 }
-
+sliceLastN('Define a function', 3);
 /*
 17. Switch: Grade Checker
    - Define a function `gradeChecker(score)` that uses a switch (or if-else chain):
