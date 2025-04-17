@@ -63,7 +63,8 @@ function isPalindrome(str) {
     console.log(str + " is not a palindrome");
   }
 }
-
+isPalindrome('backwards');
+isPalindrome('aabbaa');
 /*
 10. Check Even or Odd (if-else)
    - Define a function `evenOrOdd(number)` that:
