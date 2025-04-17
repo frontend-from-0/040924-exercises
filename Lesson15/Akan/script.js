@@ -76,6 +76,8 @@ function evenOrOdd(number) {
     console.log("Odd");
   }
 }
+evenOrOdd(10);
+evenOrOdd(5);
 
 /*
 11. URL Protocol Checker
