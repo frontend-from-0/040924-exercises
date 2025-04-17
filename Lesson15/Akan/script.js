@@ -363,7 +363,7 @@ function reverseWorlds(sentence) {
   }
   console.log(words.join(' '));
 }
-
+reverseWords('Joins them back');
 /*
 29. Check Substring Position
    - Define a function `findWordPosition(sentence, word)` that uses .indexOf(word)
