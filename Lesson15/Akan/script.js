@@ -380,6 +380,7 @@ function findWorldPosition(sentence,world) {
     console.log("Not found");
   }
 }
+findWordPosition('Log the index or log "Not found" if it's -1.', 'index');
 /*
 30. Switch: Simple Calculator
    - Define a function `calculate(a, operator, b)` that uses switch to handle:
