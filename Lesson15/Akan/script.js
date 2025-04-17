@@ -371,7 +371,7 @@ function reverseWorlds(sentence) {
    - Log the index or log "Not found" if it's -1.
 */
 
-function findWorldPosition(sentence,world) {
+function findWordPosition(sentence, word) {
   let index = sentence.indexOf(word);
   if (index != -1) {
     console.log(index);
