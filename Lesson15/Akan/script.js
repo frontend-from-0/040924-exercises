@@ -346,7 +346,8 @@ function canVote(age) {
     console.log("Too young to vote");
   }
 }
-
+canVote(30);
+canVote(10);
 /*
 28. Reverse Words in a Sentence
    - Define a function `reverseWords(sentence)` that:
