@@ -27,7 +27,7 @@ function containsWord(sentence, word) {
     console.log(word + " not found in sentence.");
   }
 }
-
+containsWord('This is my sentence', 'my');
 /*
 6. File Extension Check
    - Define a function `checkFileExtension(filename)` that checks if the filename
