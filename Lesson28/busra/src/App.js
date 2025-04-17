@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import LoginModal from './components/LoginModal';
+import SignupModal from './components/SignupModal';
 
 function App() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+
+  const handleLoginClick = () => setShowLogin(true);
+  const handleSignupClick = () => setShowSignup(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar 
+        onLoginClick={handleLoginClick} 
+        onSignupClick={handleSignupClick} 
+      />
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+      {showSignup && <SignupModal onClose={() => setShowSignup(false)} />}
     </div>
   );
 }
