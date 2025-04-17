@@ -121,7 +121,7 @@ repeatWord('Hello', 10);
 function censorWord(sentence, target) {
   console.log(sentence.replaceAll(target, '****'));
 }
-
+censorWord('Log the censored sentence.', 'censored');
 /*
 15. Check First Character (if-else)
    - Define a function `startsWithA(str)` that checks if the string starts with 'A'
