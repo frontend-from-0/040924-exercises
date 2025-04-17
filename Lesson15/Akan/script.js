@@ -262,7 +262,7 @@ function isSpam(text) {
 function getInitials(fullName) {
   let names = fullName.split(' ');
   let initials = '';
-  for (let i = 0; i < names.length; i+) {
+  for (let i = 0; i < names.length; i++) {
     initials += names[i].charAt(0).toUpperCase() + '.';
   }
   console.log(initials);
