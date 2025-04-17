@@ -24,7 +24,7 @@ function containsWord(sentence, word) {
     console.log(word + " found in sentence.");
   }
   else {
-    console.log(world + " not found in sentence.");
+    console.log(word + " not found in sentence.");
   }
 }
 
