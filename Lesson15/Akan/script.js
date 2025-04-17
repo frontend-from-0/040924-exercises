@@ -19,7 +19,7 @@ function getDomain(email) {
    - Else, log: "<word> not found in sentence."
 */
 
-function containsWorld(sentence, world) {
+function containsWord(sentence, word) {
   if (sentence.includes(word)) {
     console.log(world + " found in sentence.");
   }
