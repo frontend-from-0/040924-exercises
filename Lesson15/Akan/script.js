@@ -319,7 +319,7 @@ function containsNumber(str) {
     console.log("No number found");
   }
 }
-
+containsNumber('Check If String Contains Number 123');
 /*
 26. Pad a String
    - Define a function `padString(str, maxLength)` that if str.length < maxLength,
