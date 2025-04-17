@@ -10,7 +10,7 @@ function getDomain(email) {
   let domain = email.slice(email.indexOf('@') + 1);
   console.log(domain);
 }
-
+getDomain(test@gmail.com);
 /*
 5. Check Substring
    - Define a function `containsWord(sentence, word)` that checks if the `sentence`
