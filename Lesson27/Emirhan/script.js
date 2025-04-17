@@ -7,12 +7,22 @@ const personE17 = {
     city: 'New York',
   },
 };
+const {
+  name,
+  age,
+  address: { city },
+} = personE17;
+
+console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
 
 // 7. Default Parameters
 // Add Default Parameters to an Existing Arrow Function, Default tax rate 0.1, default discount is 0.
-const calculateTotal = (price, taxRate, discount) => {
+const calculateTotal = (price, taxRate = 0.1, discount = 0) => {
   return price + price * taxRate - discount;
 };
+console.log(calculateTotal(10, 0.2, 5));
+
+// 32:14
 
 // 9. Handle Missing Properties
 // Update the code to use optional chaining to safely access userCountry (userEx9.profile.address.country) and provide a default value of 'Unknown' if the property is missing.
