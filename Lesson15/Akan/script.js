@@ -128,7 +128,8 @@ function startsWithA(str) {
     console.log("Starts with A");
   }
 }
-
+startsWithA('Test');
+startsWithA('Apple');
 /*
 16. Slice Last N Characters
    - Define a function `sliceLastN(text, n)` that uses .slice(-n) to extract
