@@ -267,6 +267,7 @@ function getInitials(fullName) {
   }
   console.log(initials);
 }
+getInitials('John Doe');
 /*
 24. Switch: Month to Season
    - Define a function `getSeason(monthNum)` (1-12). Use switch or if-else:
