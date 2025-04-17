@@ -198,7 +198,7 @@ function titleCase(sentence) {
   }
   console.log(words.join(' '));
 }
-
+titleCase('Uppercases the first letter of each word');
 /*
 20. Switch: Traffic Light
    - Define a function `trafficLight(color)` that uses a switch statement:
