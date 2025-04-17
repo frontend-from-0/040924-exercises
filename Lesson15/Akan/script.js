@@ -106,7 +106,7 @@ function repeatWord(word, times) {
 
   console.log(repeatWorld(world, times));
 }
-
+repeatWord('Hello', 10);
 
 /*
 14. Replace Substring
