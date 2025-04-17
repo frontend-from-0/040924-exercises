@@ -372,7 +372,7 @@ function reverseWorlds(sentence) {
 */
 
 function findWorldPosition(sentence,world) {
-  let index = sentence.indexOf(world);
+  let index = sentence.indexOf(word);
   if (index != -1) {
     console.log(index);
   }
