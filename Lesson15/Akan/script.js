@@ -20,7 +20,7 @@ function getDomain(email) {
 */
 
 function containsWorld(sentence, world) {
-  if (sentence.includes(world)) {
+  if (sentence.includes(word)) {
     console.log(world + " found in sentence.");
   }
   else {
