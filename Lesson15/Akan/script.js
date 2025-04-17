@@ -181,7 +181,7 @@ function gradeChecker(score) {
 function replaceCharacter(str, oldChar, newChar) {
   console.log(str.replaceAll(oldChar, newChar));
 }
-
+replaceCharacter('Log the result.', 'L', 'l');
 /*
 19. Title Case a Sentence
    - Define a function `titleCase(sentence)` that:
