@@ -303,7 +303,8 @@ function getSeason(monthNum) {
       console.log("Invalid month");
   }
 }
-
+getSeason(4);
+getSeason(10);
 /*
 25. Check If String Contains Number
    - Define a function `containsNumber(str)` that uses a loop or a method like
