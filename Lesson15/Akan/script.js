@@ -99,7 +99,8 @@ function checkProtocol(url) {
    - Log the repeated result.
 */
 
-function repeatWorld(world.times) {
+function repeatWord(word, times) {
+
   console.log(repeatWorld(world, times));
 }
 
