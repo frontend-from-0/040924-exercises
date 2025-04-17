@@ -107,7 +107,7 @@ checkProtocol('http://localhost:3000/');
 
 function repeatWord(word, times) {
 
-  console.log(repeatWorld(world, times));
+  console.log(word.repeat(times));
 }
 repeatWord('Hello', 10);
 
