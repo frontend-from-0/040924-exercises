@@ -252,6 +252,7 @@ function isSpam(text) {
     console.log("This text is not spam.");
   }
 }
+isSpam('This text is spam.');
 /*
 23. Extract Initials
    - Define a function `getInitials(fullName)` that uses .split() to get each name part,
