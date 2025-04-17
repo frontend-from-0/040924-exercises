@@ -236,6 +236,7 @@ function isLongString(str) {
     console.log("Long string");
   }
 }
+isLongString('Check String Length (if-else)');
 /*
 22. Convert to Lowercase Then Check
    - Define a function `isSpam(text)` that converts the text to lowercase
