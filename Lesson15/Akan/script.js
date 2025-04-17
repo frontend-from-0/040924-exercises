@@ -21,7 +21,7 @@ getDomain(test@gmail.com);
 
 function containsWord(sentence, word) {
   if (sentence.includes(word)) {
-    console.log(world + " found in sentence.");
+    console.log(word + " found in sentence.");
   }
   else {
     console.log(world + " not found in sentence.");
