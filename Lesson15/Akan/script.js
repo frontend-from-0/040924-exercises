@@ -409,3 +409,8 @@ function calculate(a, operator, b) {
       console.log("Invalid operator");
   }
 }
+
+calculate(4, '+', 10);
+calculate(4, '*', 10);
+calculate(4, '-', 10);
+
