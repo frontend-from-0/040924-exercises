@@ -356,7 +356,7 @@ function canVote(age) {
    - Log the result.
 */
 
-function reverseWorlds(sentence) {
+function reverseWords(sentence) {
   let words = sentence.split(' ');
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i].split('').reverse().join('');
