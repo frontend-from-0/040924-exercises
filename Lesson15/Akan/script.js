@@ -42,6 +42,8 @@ function checkFileExtension(filename) {
   else
     console.log('Not a PDF file.');
 }
+checkFileExtension('myDocument.pdf');
+checkFileExtension('myImage.jpg');
 
 /*
 8. Palindrome Check
