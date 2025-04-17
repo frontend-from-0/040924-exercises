@@ -95,6 +95,9 @@ function checkProtocol(url) {
   else
     console.log("Unsecure connection");
 }
+checkProtocol('https://github.com/');
+checkProtocol('http://localhost:3000/');
+
 /*
 13. Repeat a String
    - Define a function `repeatWord(word, times)` that uses the .repeat() method
