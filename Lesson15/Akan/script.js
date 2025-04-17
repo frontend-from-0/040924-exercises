@@ -124,7 +124,7 @@ function censorWord(sentence, target) {
 */
 
 function startsWithA(str) {
-  if (str.chartAt(0 == 'A')) {
+  if (str.charAt(0 == 'A')) {
     console.log("Starts with A");
   }
 }
