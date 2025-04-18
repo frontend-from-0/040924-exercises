@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function LoginModal({ onClose }) {
+export default function LoginModal({ onClose }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -34,12 +34,16 @@ function LoginModal({ onClose }) {
               required
             />
           </div>
+
+          <div className='button-container'>
           <button type="submit">Submit</button>
-        </form>
+       
         <button onClick={onClose}>Close</button>
+
+          </div>
+          </form>
       </div>
     </div>
   );
 }
 
-export default LoginModal;
