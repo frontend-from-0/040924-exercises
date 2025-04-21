@@ -8,6 +8,17 @@ const personE17 = {
   },
 };
 
+const {
+  name: firstName,
+  age: newAge,
+  address: {city}
+} = personE17;
+
+console.log(firstName);
+console.log(newAge);
+console.log(city);
+console.log(`----------`);
+
 // 7. Default Parameters
 // Add Default Parameters to an Existing Arrow Function, Default tax rate 0.1, default discount is 0.
 const calculateTotal = (price, taxRate, discount) => {
