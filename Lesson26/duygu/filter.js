@@ -3,7 +3,7 @@
 const numbersExercise1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const filteredNumbersExercise1 = numbersExercise1.filter(
-  (number) => number % 2 === 1,
+  (number) => number % 2 === 1
 );
 
 console.log(filteredNumbersExercise1);
@@ -11,82 +11,82 @@ console.log(filteredNumbersExercise1);
 // Exercise 2:
 // Given an array of strings, filter out the strings that contain the letter "a".
 const wordsExercise2 = [
-  "apple",
-  "banana",
-  "car",
-  "dog",
-  "elephant",
-  "flower",
-  "guitar",
-  "house",
-  "island",
-  "jungle",
+  'apple',
+  'banana',
+  'car',
+  'dog',
+  'elephant',
+  'flower',
+  'guitar',
+  'house',
+  'island',
+  'jungle',
 ];
 
-const wordsWithoutA = wordsExercise2.filter((word) => !word.includes("a"));
+const wordsWithoutA = wordsExercise2.filter((word) => !word.includes('a'));
 console.log(wordsWithoutA);
 
 // Exercise 3:
 // Given an array of objects representing books, filter out the books with a price less than $10.
 const booksExercise9 = [
   {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    genre: "Fiction",
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    genre: 'Fiction',
     price: 12.99,
   },
   {
-    title: "1984",
-    author: "George Orwell",
-    genre: "Fiction",
+    title: '1984',
+    author: 'George Orwell',
+    genre: 'Fiction',
     price: 10.99,
   },
   {
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    genre: "Fiction",
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    genre: 'Fiction',
     price: 9.99,
   },
   {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    genre: "Fiction",
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    genre: 'Fiction',
     price: 7.99,
   },
   {
-    title: "To the Lighthouse",
-    author: "Virginia Woolf",
-    genre: "Fiction",
+    title: 'To the Lighthouse',
+    author: 'Virginia Woolf',
+    genre: 'Fiction',
     price: 14.99,
   },
   {
-    title: "Brave New World",
-    author: "Aldous Huxley",
-    genre: "Fiction",
+    title: 'Brave New World',
+    author: 'Aldous Huxley',
+    genre: 'Fiction',
     price: 11.99,
   },
   {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    genre: "Fiction",
+    title: 'The Catcher in the Rye',
+    author: 'J.D. Salinger',
+    genre: 'Fiction',
     price: 8.99,
   },
   {
-    title: "Moby-Dick",
-    author: "Herman Melville",
-    genre: "Fiction",
+    title: 'Moby-Dick',
+    author: 'Herman Melville',
+    genre: 'Fiction',
     price: 13.99,
   },
   {
-    title: "The Hobbit",
-    author: "J.R.R. Tolkien",
-    genre: "Fantasy",
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
     price: 10.99,
   },
   {
     title: "Harry Potter and the Sorcerer's Stone",
-    author: "J.K. Rowling",
-    genre: "Fantasy",
+    author: 'J.K. Rowling',
+    genre: 'Fantasy',
     price: 9.99,
   },
 ];
@@ -99,193 +99,199 @@ console.log(booksOver10);
 const usersExercise4 = [
   {
     id: 1,
-    name: "John",
+    name: 'John',
     age: 25,
-    email: "john@example.com",
+    email: 'john@example.com',
   },
   {
     id: 2,
-    name: "Alice",
+    name: 'Alice',
     age: 32,
-    email: "alice@example.com",
+    email: 'alice@example.com',
   },
   {
     id: 3,
-    name: "Bob",
+    name: 'Bob',
     age: 28,
-    email: "bob@example.com",
+    email: 'bob@example.com',
   },
   {
     id: 4,
-    name: "Emily",
+    name: 'Emily',
     age: 21,
-    email: "emily@example.com",
+    email: 'emily@example.com',
   },
   {
     id: 5,
-    name: "Michael",
+    name: 'Michael',
     age: 35,
-    email: "michael@example.com",
+    email: 'michael@example.com',
   },
   {
     id: 6,
-    name: "Sara",
+    name: 'Sara',
     age: 29,
-    email: "sara@example.com",
+    email: 'sara@example.com',
   },
-
 
   {
     id: 7,
-    name: "David",
+    name: 'David',
     age: 42,
-    email: "david@example.com",
+    email: 'david@example.com',
   },
   {
     id: 8,
-    name: "Olivia",
+    name: 'Olivia',
     age: 31,
-    email: "olivia@example.com",
+    email: 'olivia@example.com',
   },
   {
     id: 9,
-    name: "Daniel",
+    name: 'Daniel',
     age: 27,
-    email: "daniel@example.com",
+    email: 'daniel@example.com',
   },
   {
     id: 10,
-    name: "Sophia",
+    name: 'Sophia',
     age: 23,
-    email: "sophia@example.com",
+    email: 'sophia@example.com',
   },
 ];
 
 const filtredUsers = usersExercise4.filter((user) => user.age >= 25);
 console.log(filtredUsers);
 
-
-const userNamesUppercase = usersExercise4.filter((user) => user.age >= 25).map(user => user.name.toUpperCase());
+const userNamesUppercase = usersExercise4
+  .filter((user) => user.age >= 25)
+  .map((user) => user.name.toUpperCase());
 
 // Exercise 5:
 // Given an array of sentences, filter out the sentences that have more than 10 words.
 const sentencesExercise5 = [
-  "The quick brown fox jumps over the lazy dog.",
-  "I love to code and solve problems.",
-  "The sun sets in the west.",
-  "Life is like a box of chocolates.",
-  "The cat meowed loudly.",
-  "She walked along the beach, enjoying the salty breeze.",
-  "The rain poured down, soaking everything in sight.",
-  "He smiled and waved goodbye.",
-  "The mountain peaks were covered in snow.",
-  "The room was filled with laughter and joy.",
-  "I have been dreaming of traveling the world and exploring new cultures and cuisines.",
-  "The city lights shimmered in the night sky, creating a mesmerizing spectacle.",
-  "She diligently practiced the piano for hours, striving for perfection in every note.",
-  "The ancient ruins stood as a testament to a long-lost civilization, captivating the imaginations of visitors.",
-  "As the waves crashed against the shore, a sense of tranquility washed over me.",
-  "In the depths of the forest, hidden treasures await those who dare to seek them.",
-  "The starry night sky stretched endlessly, a canvas of beauty and mystery.",
-  "With each step, the hiker felt closer to the summit, fueled by determination and a sense of adventure.",
-  "The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.",
-  "The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.",
+  'The quick brown fox jumps over the lazy dog.',
+  'I love to code and solve problems.',
+  'The sun sets in the west.',
+  'Life is like a box of chocolates.',
+  'The cat meowed loudly.',
+  'She walked along the beach, enjoying the salty breeze.',
+  'The rain poured down, soaking everything in sight.',
+  'He smiled and waved goodbye.',
+  'The mountain peaks were covered in snow.',
+  'The room was filled with laughter and joy.',
+  'I have been dreaming of traveling the world and exploring new cultures and cuisines.',
+  'The city lights shimmered in the night sky, creating a mesmerizing spectacle.',
+  'She diligently practiced the piano for hours, striving for perfection in every note.',
+  'The ancient ruins stood as a testament to a long-lost civilization, captivating the imaginations of visitors.',
+  'As the waves crashed against the shore, a sense of tranquility washed over me.',
+  'In the depths of the forest, hidden treasures await those who dare to seek them.',
+  'The starry night sky stretched endlessly, a canvas of beauty and mystery.',
+  'With each step, the hiker felt closer to the summit, fueled by determination and a sense of adventure.',
+  'The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.',
+  'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
 
-const wordsMoreThanTen = sentencesExercise5.filter(sentence => sentence.split(" ").length > 10);
+const wordsMoreThanTen = sentencesExercise5.filter(
+  (sentence) => sentence.split(' ').length > 10
+);
 console.log(wordsMoreThanTen);
 
 // Exercise 6:
 // Given an array of products, filter out the products that are out of stock (where the quantity is 0).
 const productsExercise6 = [
   {
-    name: "Laptop",
-    brand: "Apple",
+    name: 'Laptop',
+    brand: 'Apple',
     price: 1999,
     quantity: 0,
   },
   {
-    name: "Smartphone",
-    brand: "Samsung",
+    name: 'Smartphone',
+    brand: 'Samsung',
     price: 899,
     quantity: 20,
   },
   {
-    name: "TV",
-    brand: "LG",
+    name: 'TV',
+    brand: 'LG',
     price: 1499,
     quantity: 15,
   },
   {
-    name: "Headphones",
-    brand: "Sony",
+    name: 'Headphones',
+    brand: 'Sony',
     price: 299,
     quantity: 30,
   },
   {
-    name: "Smartwatch",
-    brand: "Apple",
+    name: 'Smartwatch',
+    brand: 'Apple',
     price: 399,
     quantity: 25,
   },
   {
-    name: "Camera",
-    brand: "Canon",
+    name: 'Camera',
+    brand: 'Canon',
     price: 999,
     quantity: 0,
   },
   {
-    name: "Gaming Console",
-    brand: "Microsoft",
+    name: 'Gaming Console',
+    brand: 'Microsoft',
     price: 499,
     quantity: 8,
   },
   {
-    name: "Tablet",
-    brand: "Samsung",
+    name: 'Tablet',
+    brand: 'Samsung',
     price: 649,
     quantity: 18,
   },
   {
-    name: "Smart Speaker",
-    brand: "Amazon",
+    name: 'Smart Speaker',
+    brand: 'Amazon',
     price: 99,
     quantity: 0,
   },
   {
-    name: "Fitness Tracker",
-    brand: "Fitbit",
+    name: 'Fitness Tracker',
+    brand: 'Fitbit',
     price: 129,
     quantity: 14,
   },
 ];
 
-const outOfStockProducts = productsExercise6.filter(product => product.quantity === 0);
+const outOfStockProducts = productsExercise6.filter(
+  (product) => product.quantity === 0
+);
 console.log(outOfStockProducts);
 
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const numbersofDivisibleByThree = numbersExercise7.filter(num => num % 3 === 0);
+const numbersofDivisibleByThree = numbersExercise7.filter(
+  (num) => num % 3 === 0
+);
 console.log(numbersofDivisibleByThree);
 
 // Exercise 8:
 // Given an array of strings, filter out the strings that have more than 5 characters.
 const wordsExercise8 = [
-  "apple",
-  "banana",
-  "car",
-  "dog",
-  "elephant",
-  "flower",
-  "guitar",
-  "house",
-  "island",
-  "jungle",
+  'apple',
+  'banana',
+  'car',
+  'dog',
+  'elephant',
+  'flower',
+  'guitar',
+  'house',
+  'island',
+  'jungle',
 ];
 
-const countingCharacters = wordsExercise8.filter(word => word.length > 5);
+const countingCharacters = wordsExercise8.filter((word) => word.length > 5);
 console.log(countingCharacters);
 
 // Exercise 9:
@@ -293,67 +299,69 @@ console.log(countingCharacters);
 const studentsExercise9 = [
   {
     id: 1,
-    name: "Alice",
+    name: 'Alice',
     age: 18,
-    grade: "A",
+    grade: 'A',
   },
   {
     id: 2,
-    name: "Bob",
+    name: 'Bob',
     age: 19,
-    grade: "B",
+    grade: 'B',
   },
   {
     id: 3,
-    name: "Charlie",
+    name: 'Charlie',
     age: 20,
-    grade: "B+",
+    grade: 'B+',
   },
   {
     id: 4,
-    name: "David",
+    name: 'David',
     age: 19,
-    grade: "A-",
+    grade: 'A-',
   },
   {
     id: 5,
-    name: "Emma",
+    name: 'Emma',
     age: 18,
-    grade: "A+",
+    grade: 'A+',
   },
   {
     id: 6,
-    name: "Frank",
+    name: 'Frank',
     age: 20,
-    grade: "B",
+    grade: 'B',
   },
   {
     id: 7,
-    name: "Grace",
+    name: 'Grace',
     age: 19,
-    grade: "D+",
+    grade: 'D+',
   },
   {
     id: 8,
-    name: "Hannah",
+    name: 'Hannah',
     age: 20,
-    grade: "A-",
+    grade: 'A-',
   },
   {
     id: 9,
-    name: "Isaac",
+    name: 'Isaac',
     age: 18,
-    grade: "D",
+    grade: 'D',
   },
   {
     id: 10,
-    name: "Julia",
+    name: 'Julia',
     age: 19,
-    grade: "B-",
+    grade: 'B-',
   },
 ];
 
-const GradesLowerThanC = studentsExercise9.filter(student => student.grade > "C");
+const GradesLowerThanC = studentsExercise9.filter(
+  (student) => student.grade > 'C'
+);
 console.log(GradesLowerThanC);
 
 // Exercise 10:
@@ -361,66 +369,67 @@ console.log(GradesLowerThanC);
 const usersExercise10 = [
   {
     id: 1,
-    name: "John",
+    name: 'John',
     age: 25,
-    email: "john@example.com",
+    email: 'john@example.com',
   },
   {
     id: 2,
-    name: "Alice",
+    name: 'Alice',
     age: 32,
-    email: "alice@example.com",
+    email: 'alice@example.com',
   },
   {
     id: 3,
-    name: "Bob",
+    name: 'Bob',
     age: 28,
-    email: "bob@example.com",
+    email: 'bob@example.com',
   },
   {
     id: 4,
-    name: "Emily",
+    name: 'Emily',
     age: 21,
-    email: "emily@example.com",
+    email: 'emily@example.com',
   },
   {
     id: 5,
-    name: "Michael",
+    name: 'Michael',
     age: 35,
-    email: "michael@example.com",
+    email: 'michael@example.com',
   },
   {
     id: 6,
-    name: "Sara",
+    name: 'Sara',
     age: 29,
-    email: "sara@example.com",
+    email: 'sara@example.com',
   },
   {
     id: 7,
-    name: "David",
+    name: 'David',
     age: 42,
-    email: "david@example.com",
+    email: 'david@example.com',
   },
   {
     id: 8,
-    name: "Olivia",
+    name: 'Olivia',
     age: 31,
-    email: "olivia@example.com",
+    email: 'olivia@example.com',
   },
   {
     id: 9,
-    name: "Daniel",
+    name: 'Daniel',
     age: 27,
-    email: "daniel@example.com",
+    email: 'daniel@example.com',
   },
   {
     id: 10,
-    name: "Sophia",
+    name: 'Sophia',
     age: 23,
-    email: "sophia@example.com",
+    email: 'sophia@example.com',
   },
 ];
 
-
-const nameOfStartingJ = usersExercise10.filter(user => user.name.startsWith("J"));
+const nameOfStartingJ = usersExercise10.filter((user) =>
+  user.name.startsWith('J')
+);
 console.log(nameOfStartingJ);

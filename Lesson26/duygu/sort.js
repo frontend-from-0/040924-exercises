@@ -3,16 +3,14 @@
 // Expected output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 const numbers = [3, 1, 4, 11, 5, 9, 2, 6, 5, 3, 5];
 
-
 const newArray = numbers.sort((a, b) => a - b);
 console.log(newArray);
-
 
 // Exercise 2: Sorting Strings
 // Sort an array of strings in alphabetical order.
 // Expected output: ["apple", "banana", "grape", "orange", "pear"]
-const fruits = ["banana", "APPLE", "PEAR", "orange", "grape"];
-const sortedFruits = fruits.map(fruit => fruit.toLowerCase()).sort();
+const fruits = ['banana', 'APPLE', 'PEAR', 'orange', 'grape'];
+const sortedFruits = fruits.map((fruit) => fruit.toLowerCase()).sort();
 console.log(sortedFruits);
 
 // Exercise 3: Descending Order
@@ -27,21 +25,23 @@ console.log(newScoresArray);
 // Sort an array of objects based on a specific property (e.g., age).
 // Expected output: Sorted array by age in ascending order
 const people = [
-  { name: "John", age: 30 },
-  { name: "Jane", age: 25 },
-  { name: "Gary", age: 35 },
-  { name: "Ellen", age: 22 }
+  { name: 'John', age: 30 },
+  { name: 'Jane', age: 25 },
+  { name: 'Gary', age: 35 },
+  { name: 'Ellen', age: 22 },
 ];
 
-const sortingObjects = [...people].sort((person1, person2) => person2.age - person1.age);
+const sortingObjects = [...people].sort(
+  (person1, person2) => person2.age - person1.age
+);
 console.log(sortingObjects, people);
 
 // Exercise 5: Complex Sorting
 // Sort an array of strings by their length.
 // Expected output: ["pen", "book", "paper", "pencil", "notebook"]
 
-const words = ["notebook", "pen", "paper", "book", "pencil"];
-const newSorted = [...words].sort((word1, word2) => word1.length - word2.length);
+const words = ['notebook', 'pen', 'paper', 'book', 'pencil'];
+const newSorted = [...words].sort(
+  (word1, word2) => word1.length - word2.length
+);
 console.log(newSorted);
-
-
