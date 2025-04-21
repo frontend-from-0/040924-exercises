@@ -20,7 +20,7 @@ console.log(sortedFruits);
 // Expected output: [100, 40, 25, 10, 5, 1]
 const scores = [40, 100, 1, 5, 25, 10];
 
-const newScoresArray = scores.sort((a, b) => b-a);
+const newScoresArray = scores.sort((a, b) => b - a);
 console.log(newScoresArray);
 
 // Exercise 4: Sorting Objects
@@ -33,7 +33,7 @@ const people = [
   { name: "Ellen", age: 22 }
 ];
 
-const sortingObjects = [...people].sort((person1,person2) => person2.age - person1.age);
+const sortingObjects = [...people].sort((person1, person2) => person2.age - person1.age);
 console.log(sortingObjects, people);
 
 // Exercise 5: Complex Sorting
@@ -41,7 +41,7 @@ console.log(sortingObjects, people);
 // Expected output: ["pen", "book", "paper", "pencil", "notebook"]
 
 const words = ["notebook", "pen", "paper", "book", "pencil"];
-const newSorted = [...words].sort((word1,word2) => word1.length - word2.length);
+const newSorted = [...words].sort((word1, word2) => word1.length - word2.length);
 console.log(newSorted);
 
 

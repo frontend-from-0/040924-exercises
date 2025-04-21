@@ -15,7 +15,7 @@
 const numbersEx1 = [1, 2, 3, 4, 5];
 
 const sumNumbers = numbersEx1.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue; 
+  return accumulator + currentValue;
 }, 0);
 
 console.log(sumNumbers);

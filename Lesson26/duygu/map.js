@@ -175,7 +175,7 @@ const studentsExercise5 = [
 ];
 
 const studentNamesAndGrades = studentsExercise5.map(student => `${student.name} ${student.grade}`);
-console.log (studentNamesAndGrades);	
+console.log(studentNamesAndGrades);
 
 // Exercise 6:
 // Given an array of numbers, convert each number to a string representation using .map().

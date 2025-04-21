@@ -161,11 +161,11 @@ const usersExercise4 = [
   },
 ];
 
-const filtredUsers = usersExercise4.filter((user)=> user.age >= 25);
+const filtredUsers = usersExercise4.filter((user) => user.age >= 25);
 console.log(filtredUsers);
 
 
-const userNamesUppercase = usersExercise4.filter((user)=> user.age >= 25).map(user => user.name.toUpperCase());
+const userNamesUppercase = usersExercise4.filter((user) => user.age >= 25).map(user => user.name.toUpperCase());
 
 // Exercise 5:
 // Given an array of sentences, filter out the sentences that have more than 10 words.
