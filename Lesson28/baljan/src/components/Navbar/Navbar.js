@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="container">
         <div className="nav-row">
-          <a href="./index.html" className="logo">
+          <a href="#" className="logo">
             <strong>Freelancer</strong> portfolio
           </a>
 

@@ -9,6 +9,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__wrapper">
+          <div className="footer__text">
+            <p>Connect with me on social media:</p>
+          </div>
           <ul className="social">
             <li className="social__item">
               <a href="#!">
@@ -26,13 +29,10 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div className="copyright">
-            <p>All rights reserved</p>
-          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
