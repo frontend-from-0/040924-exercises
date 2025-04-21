@@ -2,7 +2,8 @@
 // Calculate the sum of all numbers in the given array.
 const numbersEx1 = [1, 2, 3, 4, 5];
 const sumEx1 = numbersEx1.reduce(
-  (accumulator, currentValue) => accumulator + currentValue
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
 );
 
 console.log(sumEx1);

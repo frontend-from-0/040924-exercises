@@ -23,10 +23,9 @@ const sentencesExercise5 = [
   'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
 
-const filteredSentences = sentencesExercise5.filter((sentence) => {
-  const words = sentence.split(' ');
-  return words.length <= 10;
-});
+const filteredSentences = sentencesExercise5.filter(
+  (sentence) => sentence.split(' ').length <= 10
+);
 
 console.log(filteredSentences);
 
@@ -197,11 +196,13 @@ const studentsExercise9 = [
   },
 ];
 
-const filteredStudents = studentsExercise9.filter((student) => {
-  return student.grade !== 'C';
-});
+const lowGrades = ['C-', 'D+', 'D', 'D-', 'F'];
 
-console.log(filteredStudents);
+const studentsAboveC = studentsExercise9.filter(
+  (student) => !lowGrades.includes(student.grade)
+);
+
+console.log(studentsAboveC);
 
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
