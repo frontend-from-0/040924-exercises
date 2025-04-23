@@ -4,11 +4,7 @@ export function Card({ cake }) {
   return (
     <div className="Card" style={cake.theme}>
       <h1>{cake.name}</h1>
-      <img
-        className="avatar"
-        src={cake.image}
-        alt={cake.name}
-      />
+      <img className="avatar" src={cake.image} alt={cake.name} />
       <ul>
         {cake.tasks.map((task, index) => (
           <li key={index}>{task}</li>

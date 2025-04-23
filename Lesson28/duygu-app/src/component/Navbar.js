@@ -2,10 +2,10 @@ import './Navbar.css';
 
 export function Navbar() {
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Recipes", href: "/recipes" },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Recipes', href: '/recipes' },
   ];
 
   return (
