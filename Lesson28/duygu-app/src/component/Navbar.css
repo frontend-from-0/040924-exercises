@@ -1,0 +1,24 @@
+.Navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.Navbar__List {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar__List a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
