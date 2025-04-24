@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css'; 
+import './Navbar.css';
 
 export default function Navbar({ onLoginClick, onSignupClick }) {
   return (
@@ -12,12 +12,14 @@ export default function Navbar({ onLoginClick, onSignupClick }) {
           <li>Contact</li>
         </ul>
         <div className="navbar-buttons">
-          <button className="navbar-button" onClick={onLoginClick}>Login</button>
-          <button className="navbar-button" onClick={onSignupClick}>Signup</button>
+          <button className="navbar-button" onClick={onLoginClick}>
+            Login
+          </button>
+          <button className="navbar-button" onClick={onSignupClick}>
+            Signup
+          </button>
         </div>
       </nav>
     </div>
   );
 }
-
-

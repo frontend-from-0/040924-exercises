@@ -5,10 +5,10 @@ export default function LoginModal({ onClose }) {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    console.log("Email:", email);
-    console.log("Password:", password);
-    onClose(); 
+    e.preventDefault();
+    console.log('Email:', email);
+    console.log('Password:', password);
+    onClose();
   };
 
   return (
@@ -35,15 +35,13 @@ export default function LoginModal({ onClose }) {
             />
           </div>
 
-          <div className='button-container'>
-          <button type="submit">Submit</button>
-       
-        <button onClick={onClose}>Close</button>
+          <div className="button-container">
+            <button type="submit">Submit</button>
 
+            <button onClick={onClose}>Close</button>
           </div>
-          </form>
+        </form>
       </div>
     </div>
   );
 }
-

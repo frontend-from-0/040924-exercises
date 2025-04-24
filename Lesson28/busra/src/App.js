@@ -12,9 +12,9 @@ function App() {
 
   return (
     <div>
-      <Navbar 
-        onLoginClick={handleLoginClick} 
-        onSignupClick={handleSignupClick} 
+      <Navbar
+        onLoginClick={handleLoginClick}
+        onSignupClick={handleSignupClick}
       />
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
       {showSignup && <SignupModal onClose={() => setShowSignup(false)} />}
