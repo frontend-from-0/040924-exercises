@@ -24,7 +24,7 @@ const cakes = [
       color: '#4e342e',
     },
     tasks: [
-      'Soak the ladyfinger biscuits in coffee.',
+      'Soak the ladyfinger biscuits in coffee',
       'Layer with mascarpone cream.',
       'Dust with cocoa powder and chill in the fridge for a few hours.',
     ],
