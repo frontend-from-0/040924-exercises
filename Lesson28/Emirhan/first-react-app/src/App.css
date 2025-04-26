@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  max-width: 56.24rem;
+  margin: 0 auto;
+}

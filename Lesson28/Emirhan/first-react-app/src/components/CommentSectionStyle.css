@@ -1,0 +1,15 @@
+.comment-title {
+  font-size: 2rem;
+}
+
+.comment-input {
+  width: 40rem;
+  height: 10rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+  margin-left: 1rem;
+  border-radius: .7rem;
+  border: 1px solid #989898ef;
+
+}
