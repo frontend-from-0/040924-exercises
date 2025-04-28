@@ -46,18 +46,19 @@ function addTodoToList(todoText) {
 
   spanElement.addEventListener('click', () => {
     spanElement.style.textDecorationLine = 'line-through';
+    markTodoAsCompleted(todoText);
   });
 }
 
-function updateTodoInLocalStorage(todoText, completed) {
-  const prevTodos = JSON.parse(localStorage.getItem('tasks')) || [];
-  const updatedTodos = prevTodos.map((todo) => {
-    if (todo.text === todoText) {
-      return { text: todoText, completed: completed };
+function markTodoAsCompleted(todoText) {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const updatedTasks = tasks.map((task) => {
+    if (task.text === todoText) {
+      return { text: task.text, completed: true };
     }
-    return todo;
+    return task;
   });
-  localStorage.setItem('tasks', JSON.stringify(updatedTodos));
+  localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 }
 
 function removeTodoFromLocalStorage(todoText) {
