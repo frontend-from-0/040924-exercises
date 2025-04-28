@@ -7,7 +7,7 @@ body {
 
 header {
   background-color: #e2001a;
-  color:#f9e200 ;
+  color: #f9e200;
   padding: 20px 0;
   text-align: center;
 }
@@ -58,7 +58,6 @@ header h1 {
   color: #f9e200;
 }
 
-
 .accordion-body {
   padding: 20px;
   background-color: #f9f9f9;
@@ -73,7 +72,7 @@ header h1 {
 
 .accordion-body.show {
   display: block;
-  max-height: 500px;
+  max-height: 1000px;
 }
 
 .team-lineup ul {
