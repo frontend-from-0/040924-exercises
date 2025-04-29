@@ -14,4 +14,3 @@ export function Card({ cake }) {
     </div>
   );
 }
-
