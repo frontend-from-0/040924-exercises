@@ -8,11 +8,20 @@ const personE17 = {
   },
 };
 
+const {
+  name,
+  age,
+  address: { city },
+} = personE17;
+console.log(name, age, city);
+
 // 7. Default Parameters
 // Add Default Parameters to an Existing Arrow Function, Default tax rate 0.1, default discount is 0.
-const calculateTotal = (price, taxRate, discount) => {
+const calculateTotal = (price, taxRate = 0.1, discount = 0) => {
   return price + price * taxRate - discount;
 };
+
+console.log(calculateTotal(100));
 
 // 9. Handle Missing Properties
 // Update the code to use optional chaining to safely access userCountry (userEx9.profile.address.country) and provide a default value of 'Unknown' if the property is missing.
@@ -23,6 +32,9 @@ const userEx9 = {
   },
 };
 
+const userCountry = userEx9.profile?.address?.country ?? 'Unknown';
+console.log(userCountry);
+
 // 10. Optional Chaining with Function Calls
 // Update the code to safely call the getName function using optional chaining, considering that profile or getName might be missing.
 
@@ -32,15 +44,18 @@ const userEx10 = {
   },
 };
 
+const userName = userEx10.profile?.getName?.() ?? 'Unknown';
+console.log(userName);
+
 // 11. Rewrite the code using the nullish coalescing operator to assign a default value to storedData only if userInput is null or undefined.
 let userInput;
-let storedData = userInput ? userInput : 'Default Value';
+let storedData = userInput ?? 'Default Value';
 
 console.log(storedData); // Default Value
 
 // 12. Rewrite the code using the nullish coalescing operator to display number of users even if it is 0.
 let userCount = 0;
-let displayCount = userCount || 'No users';
+let displayCount = userCount ?? 'No users';
 
 console.log(displayCount); // No users
 
@@ -50,9 +65,6 @@ const config = {
   timeout: null,
 };
 
-const timeout =
-  config.timeout !== undefined && config.timeout !== null
-    ? config.timeout
-    : 3000;
+const timeout = config.timeout ?? 3000;
 
 console.log(timeout); // 3000
