@@ -1,4 +1,4 @@
-import AuthorInfoStyle from './AuthorInfoStyle.css';
+import './AuthorInfoStyle.css';
 export function AuthorInfo() {
   return (
     <div className="author-info">
