@@ -1,4 +1,4 @@
-import { ContentStyle } from './ContentStyle.css';
+import './ContentStyle.css';
 export function Content() {
   return (
     <section className="app-content">
