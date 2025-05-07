@@ -1,22 +1,18 @@
-import { CommentSectionStyle } from './CommentSectionStyle.css';
+import './CommentSectionStyle.css';
 export function CommentSection() {
   return (
-    <div>
-      <div className="comment-section">
-        <h4 className="comment-title pale">Join the conversation</h4>
-      </div>
-      <div>
-        <img
-          src="./images/avatar-man.png"
-          alt="avatar man"
-          className="avatar"
-        />
-        <input
+    <div className="comment-input-group">
+      <img src="./images/avatar-man.webp" alt="avatar man" className="avatar" />
+      <form>
+        <textarea
           type="text"
           placeholder="Add a comment..."
           className="comment-input"
         />
-      </div>
+        <button type="submit" className="comment-button">
+          Submit
+        </button>
+      </form>
     </div>
   );
 }

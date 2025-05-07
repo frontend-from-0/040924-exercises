@@ -8,10 +8,7 @@ import { CommentSection } from './components/CommentSection';
 function App() {
   return (
     <div className="App">
-      <header>
-        <Header />
-      </header>
-      <div className="container"></div>
+      <Header />
       <MainImage />
       <Content />
       <AuthorInfo />

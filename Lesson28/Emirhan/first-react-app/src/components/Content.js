@@ -1,7 +1,7 @@
 import { ContentStyle } from './ContentStyle.css';
 export function Content() {
   return (
-    <div className="app-content">
+    <section className="app-content">
       <p>
         If you’re thinking of starting a blog of your own, but just don’t have a
         clue on what to blog about, then fear not!
@@ -40,6 +40,6 @@ export function Content() {
         month, others are just a hobby for their owners, but all have the same
         purpose at their core… the love of writing and sharing information.
       </p>
-    </div>
+    </section>
   );
 }

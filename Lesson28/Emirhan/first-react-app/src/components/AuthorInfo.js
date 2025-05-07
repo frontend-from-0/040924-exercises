@@ -3,7 +3,7 @@ export function AuthorInfo() {
   return (
     <div className="author-info">
       <img
-        src="./images/avatar-women.png"
+        src="./images/avatar-women.webp"
         alt="avatar women"
         className="avatar"
       />
