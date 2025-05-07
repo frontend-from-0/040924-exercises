@@ -1,4 +1,4 @@
-import { HeaderStyle } from './HeaderStyle.css';
+import  './HeaderStyle.css';
 export function Header() {
   return (
     <header className="app-header">
