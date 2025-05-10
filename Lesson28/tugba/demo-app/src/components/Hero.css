@@ -1,0 +1,39 @@
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1519092503391-16a955fda811?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.button-primary, .button-secondary {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  color: #7BA07B;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-primary:hover, .button-secondary:hover {
+  background-color: #7BA07B;
+  color: white;
+}
