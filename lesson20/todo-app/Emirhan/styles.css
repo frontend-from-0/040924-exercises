@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  font-family: "Big Shoulders Stencil", sans-serif;
+  font-size: 35px;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+main {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+input {
+  flex: 1;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-text {
+  color:black;
+  cursor: pointer;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+
+.btn-danger {
+  cursor: pointer;
+}
+
+.error-message{
+  position : fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color:#f44336 ;
+  color: white;
+  border-radius: 5px;
+
+}
