@@ -9,5 +9,6 @@ The card contains a profile picture, name, and description. Three buttons are al
 - Toggle Description: Hide or show the profile description.
 
 ## Additional:
+
 - Add Social Media Link: Dynamically add a new social media link to a list.
 - Add a New Skill: Append a new skill to the skills list.
