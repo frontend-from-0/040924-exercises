@@ -1,19 +1,22 @@
 * {
   box-sizing: border-box;
-  font-family: "Big Shoulders Stencil", sans-serif;
-  font-size: 35px;
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
   font-size: 16px;
+  background-color: #F5F5F5;
+  color: #333;
 }
 
-h1 {
+.title {
   text-align: center;
   font-size: 1.5rem;
+  color: #3F51B5;
 }
 
-main {
+.container {
   max-width: 500px;
   margin: 50px auto;
 }
@@ -26,6 +29,9 @@ form {
 
 input {
   flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 ul {
@@ -36,28 +42,37 @@ ul {
 .todo-list-item {
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 6px;
 }
 
-.todo-text {
-  color:black;
+.btn-remove {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
 }
 
-.todo-text.completed {
-  text-decoration: line-through;
+.btn-remove:hover {
+  background-color: #d32f2f;
 }
 
-.btn-danger {
-  cursor: pointer;
-}
-
-.error-message{
-  position : fixed;
-  left: 50%;
-  transform: translateX(-50%);
+.error-message {
   padding: 10px 20px;
-  background-color:#f44336 ;
+  background-color: #f44336;
   color: white;
   border-radius: 5px;
+  max-width: 400px;
+  margin: 10px auto;
+  text-align: center;
+}
 
+.completed {
+  text-decoration: line-through;
+  color: #B0BEC5;
 }
