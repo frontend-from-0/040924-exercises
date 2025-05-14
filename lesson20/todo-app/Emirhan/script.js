@@ -1,3 +1,7 @@
+const ulElement = document.getElementById('list');
+const addListBtn = document.getElementById('addListBtn');
+const todoInput = document.getElementById('todoInput');
+const clearListBtn = document.getElementById('clearListBtn');
 function errorMessage(message) {
   const error = document.createElement('div');
   error.classList.add('error-message');
@@ -8,65 +12,49 @@ function errorMessage(message) {
   }, 3000);
 }
 
-document
-  .getElementById('todoForm')
-  .addEventListener('submit', (event) => handleTodoFormSubmit(event));
-
-function handleTodoFormSubmit(event) {
+addListBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  const todoInput = document.getElementById('todoInput');
+  const id = Date.now();
   const todoInputValue = todoInput.value;
-  console.log(todoInputValue + ' VALUE OF INPUT');
-
   if (todoInputValue === '' || todoInputValue === ' ') {
     errorMessage('This field cannot be left blank');
     return;
   }
+  createElement(id, todoInputValue);
+  todoInput.value = '';
+});
 
-  // If we get data from localStorage directly, we will get in a string format.
-  // To get it in a form of array, we need to parse it using JSON.parse() method:
-  // let prevTodos = JSON.parse(localStorage.getItem("tasks")) || [];
-  // We well talk more about JSON after a few lessons.
-
-  //localStorage
-  const prevTodos = JSON.parse(localStorage.getItem('Todos')) || [];
-  prevTodos.push(todoInputValue);
-  localStorage.setItem('Todos', JSON.stringify(prevTodos));
-
+function createElement(id, todoInputValue) {
   const listItemElement = document.createElement('li');
   listItemElement.classList.add('todo-list-item');
-
   const spanElement = document.createElement('span');
   spanElement.classList.add('todo-text');
   spanElement.textContent = todoInputValue;
-
+  localStorage.setItem(id, todoInputValue);
   const removeTodoBtn = document.createElement('i');
   removeTodoBtn.classList.add('btn-remove', 'fa-solid', 'fa-xmark');
   removeTodoBtn.addEventListener('click', () => {
     listItemElement.remove();
+    localStorage.removeItem(id);
   });
-
-  listItemElement.appendChild(spanElement);
-  listItemElement.appendChild(removeTodoBtn);
-  const ulElement = document.getElementById('list');
-  ulElement.appendChild(listItemElement);
-  todoInput.value = '';
-
-  /*
-  create span element, add text, add class
-  create button element, add text, add event listener
-
-   */
-
   spanElement.addEventListener('click', function () {
     spanElement.classList.add('completed');
   });
+  listItemElement.appendChild(spanElement);
+  listItemElement.appendChild(removeTodoBtn);
+  ulElement.appendChild(listItemElement);
 }
 
-document.getElementById('clearListBtn').addEventListener('click', function () {
+clearListBtn.addEventListener('click', function () {
   const liElements = document.querySelectorAll('li');
   liElements.forEach((li) => li.remove());
   localStorage.clear();
 });
 
-// TODO: when page is loaded, get todo items from local storage and add them to the unordered list element
+window.addEventListener('DOMContentLoaded', () => {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    createElement(key, value);
+  }
+});
