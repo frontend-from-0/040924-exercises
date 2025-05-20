@@ -1,0 +1,10 @@
+.title {
+  padding: 1.25rem;
+  font-size: 3rem;
+  max-width: 43.75rem;
+}
+
+.header-content {
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
