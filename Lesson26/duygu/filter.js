@@ -360,7 +360,7 @@ const studentsExercise9 = [
 ];
 
 const GradesLowerThanC = studentsExercise9.filter(
-  (student) => student.grade > 'C'
+  (student) => ['A+', 'A', 'A-', 'B+', 'B', 'B-'].includes(student.grade)
 );
 console.log(GradesLowerThanC);
 
