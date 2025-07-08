@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-size: 24px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -46,6 +45,7 @@ ul {
   padding: 8px 12px;
   margin-top: 10px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .btn-remove {
@@ -75,4 +75,14 @@ ul {
 .completed {
   text-decoration: line-through;
   color: #b0bec5;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
 }
