@@ -11,7 +11,7 @@ const personE17 = {
 const {
   name: firstName,
   age: newAge,
-  address: {city}
+  address: { city },
 } = personE17;
 
 console.log(firstName);
@@ -29,11 +29,9 @@ const calculateTotal = (price, taxRate = 0.1, discount = 0) => {
   return price + price * taxRate - discount;
 };
 
-
 console.log(calculateTotal(100));
 console.log(calculateTotal(50, 0.2, 0));
 console.log(`----------`);
-
 
 // 9. Handle Missing Properties
 // Update the code to use optional chaining to safely access userCountry (userEx9.profile.address.country) and provide a default value of 'Unknown' if the property is missing.
@@ -60,11 +58,9 @@ const name = userEx10?.profile?.getName?.();
 console.log(name);
 console.log(`----------`);
 
-
 // 11. Rewrite the code using the nullish coalescing operator to assign a default value to storedData only if userInput is null or undefined.
 let userInput;
 let storedData = userInput ?? 'Default Value';
-
 
 console.log(storedData);
 
@@ -77,7 +73,7 @@ console.log(displayCount);
 // 13. Rewrite the code using the nullish coalescing operator to assign a default value of 3000 to timeout if config.timeout is null or undefined.
 
 const config = {
-  timeout: null
+  timeout: null,
 };
 
 const timeout = config.timeout ?? 3000;
