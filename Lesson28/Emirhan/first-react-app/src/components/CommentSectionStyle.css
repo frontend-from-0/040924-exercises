@@ -1,0 +1,33 @@
+.comment-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.comment-input {
+  width: 40rem;
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid #989898ef;
+  text-align: start;
+}
+
+.comment-button {
+  padding: 1rem 2rem;
+  background-color: #353539;
+  color: white;
+  border-radius: 0.7rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  transition: 0.3s;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.comment-button:hover {
+  background-color: #4a4a4a;
+}
