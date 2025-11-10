@@ -44,7 +44,7 @@ printObjectKeys({ name: 'Alice', age: 25 });
     - Log the total.
 */
 function sumWithDoWhile(numbers) {
-  result = 0;
+  let result = 0;
   let i = 0;
   do {
     result += numbers[i];
