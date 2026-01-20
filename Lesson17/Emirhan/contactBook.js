@@ -30,6 +30,7 @@ const contacts = [
   { name: 'Dilek', phone: '0 224 555 88 77', email: 'xyz@yahoo.com' },
   { name: 'Ali', phone: '0 225 555 88 77', email: 'xds@yahoo.com' },
   { name: 'Ayşe', phone: '0 224 555 88 55', email: 'sdf@yahoo.com' },
+  { name: 'Fatma', phone: '0 322 555 88 77', email: 'fda@yahoo.com' },
 ];
 
 /*
@@ -132,18 +133,32 @@ Function: updateContact(name, newPhone, newEmail)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-function findContact(name, contactList) {
-  for (const contact of contactList) {
-    if (contact.name === name) {
-      return true;
-    }
+// function findContact(name, contactList) {
+//   for (const contact of contactList) {
+//     if (contact.name === name) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+function updateContact(name, newName, newPhone, newEmail, contactList) {
+  const index = contactList.findIndex((contact) => contact.name === name);
+
+  console.log('index ', index);
+
+  if (index == -1) {
+    console.error(`No contact found with the name: ${name} `);
+  } else {
+    contactList[index].name = newName;
+    contactList[index].phone = newPhone;
+    contactList[index].email = newEmail;
+    console.log('Contact updated successfully.');
   }
-  return false;
 }
 
-function updateContact(name, newPhone, newEmail, contactList) {
-  const isContactFound = findContact(name, contactList);
-}
+console.log('----------///-----------');
+updateContact('Ali', 'Ahmet', '5551555566', '123@example.com', contacts);
 
 /*
 -----------------------------------------------------------
@@ -156,6 +171,17 @@ Function: removeContact(name)
 - Logs "Contact removed successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
+
+function removeContact(name, contactList) {
+  const index = contactList.findIndex((contact) => contact.name === name);
+  if (index == -1) {
+    console.error(`No contact found with the name: ${name} `);
+  } else {
+    contactList.splice(index, 1);
+    console.log('Contact removed successfully');
+  }
+}
+removeContact('Fatma', contacts);
 
 /*
 -----------------------------------------------------------
@@ -182,13 +208,12 @@ viewContact('Bob', contacts);
 console.log("\nViewing Charlie's contact:");
 viewContact('Charlie', contacts);
 
-// console.log("\nUpdating Bob's contact:");
-// updateContact("Bob", "999-999-9999", "bob@updated.com");
-// viewContact("Bob");
+console.log("\nUpdating Bob's contact:");
+updateContact('Bob', 'David', '999-999-9999', 'bob@updated.com', contacts);
+viewContact('Bob', contacts);
 
-// console.log("\nRemoving Alice:");
-// removeContact("Alice");
-// displayAllContacts();
+console.log('\nRemoving Alice:');
+removeContact('Alice', contacts);
 
 /*
 -----------------------------------------------------------
