@@ -72,16 +72,90 @@ Node.js or a browser console.
 3. Use an object to store discount codes and their values.
 */
 
+const discountCodes = {
+  SAVE10: 10,
+  SAVE20: 20,
+  SAVE30: 30,
+};
+
 class ShoppingCart {
-  constructor(name, price, quantity) {
+  constructor() {
     this._items = [];
   }
   viewCart() {
-
+    return console.log(this._items);
   }
 
-  addItem(newItem) {
-    this._items.push(newItem);
+  addItem(name, price, quantity) {
+    const existingItem = this._items.find((item) => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      this._items.push({ name, price, quantity });
+    }
+  }
+  removeItem(name) {
+    const index = this._items.findIndex((item) => item.name === name);
+    if (index === -1) {
+      console.error(`No product found with the name: ${name} `);
+    } else {
+      this._items.splice(index, 1);
+      console.log('Product removed successfully');
+    }
+  }
+  getTotal() {
+    let totalPrice = 0;
+    for (let i = 0; i < this._items.length; i++) {
+      totalPrice += this._items[i].price * this._items[i].quantity;
+    }
+    return totalPrice;
+  }
+  applyDiscount(code) {
+    const totalPrice = this.getTotal();
+    if (!discountCodes[code]) {
+      console.log('Invalid discount code');
+      return totalPrice;
+    }
+    const discountPercent = discountCodes[code];
+    const discountedTotal = totalPrice - (totalPrice * discountPercent) / 100;
+    console.log(`${discountPercent}% discount applied`);
+    return discountedTotal;
   }
 }
 
+console.log('--- CART TEST START ---');
+
+const cart = new ShoppingCart();
+
+console.log('\n1️⃣ View empty cart');
+cart.viewCart();
+
+console.log('\n2️⃣ Add items');
+cart.addItem('Shoes', 100, 2);
+cart.addItem('T-Shirt', 50, 1);
+cart.viewCart();
+
+console.log('\n3️⃣ Add same item again (quantity should increase)');
+cart.addItem('Shoes', 100, 1);
+cart.viewCart();
+
+console.log('\n4️⃣ Get total (expected: 350)');
+console.log('Total:', cart.getTotal());
+
+console.log('\n5️⃣ Apply valid discount (SAVE10 → expected: 315)');
+console.log('Discounted total:', cart.applyDiscount('SAVE10'));
+
+console.log('\n6️⃣ Apply invalid discount (NOPE → expected: 350)');
+console.log('Discounted total:', cart.applyDiscount('NOPE'));
+
+console.log('\n7️⃣ Remove item (T-Shirt)');
+cart.removeItem('T-Shirt');
+cart.viewCart();
+
+console.log('\n8️⃣ Remove non-existing item');
+cart.removeItem('Laptop');
+
+console.log('\n9️⃣ Final total (expected: 300)');
+console.log('Total:', cart.getTotal());
+
+console.log('--- CART TEST END ---');
