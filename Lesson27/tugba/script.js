@@ -53,13 +53,13 @@ console.log(name10);
 
 // 11. Rewrite the code using the nullish coalescing operator to assign a default value to storedData only if userInput is null or undefined.
 let userInput;
-let storedData = userInput ? userInput : 'Default Value';
+const storedData = userInput ?? 'Default Value';
 
 console.log(storedData);
 
 // 12. Rewrite the code using the nullish coalescing operator to display number of users even if it is 0.
 let userCount = 0;
-let displayCount = userCount || 'No users';
+const displayCount = userCount ?? 'No users';
 
 console.log(displayCount);
 
@@ -69,9 +69,6 @@ const config = {
   timeout: null,
 };
 
-const timeout =
-  config.timeout !== undefined && config.timeout !== null
-    ? config.timeout
-    : 3000;
+const timeout = config.timeout ?? 3000;
 
 console.log(timeout);
